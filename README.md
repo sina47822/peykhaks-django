@@ -37,8 +37,8 @@ after that use django app to run all the project
 python manage.py makemigrations /
 python manage.py migrate /
 python manage.py createsuperuser
-'''
+```
 after that you can run server and enjoy
-'''
+```
 python manage.py runserver
-'''
+```
