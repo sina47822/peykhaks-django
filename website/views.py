@@ -12,8 +12,18 @@ from website.models import CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO
 from product.models import Product ,PriceList
 
 def index(request):
+    posts = Post.objects.all().order_by('-publish_date')[:8]
+    products = Product.objects.all().order_by('-publish_date')[:8]
+    categories = Category.objects.all()
+    tags = Tags.objects.all()
     pricelist = PriceList.objects.filter().first()
-    context = {'pricelist':pricelist}
+
+    context = {'posts': posts,
+                'products':products,
+                'categories':categories,         
+                'tags':tags,
+                'pricelist':pricelist,
+                }
 
     return render (request,'website/index.html', context)
 

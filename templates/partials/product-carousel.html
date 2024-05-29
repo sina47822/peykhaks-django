@@ -1,0 +1,24 @@
+{% load humanize %}
+{% load static %}
+
+
+<section>
+	<div class="container-fluid">
+		<div id="owl-demo-2" class="owl-carousel owl-theme">
+            {% for product in products %}
+			<article class="thumbnail item">
+				<a href="{% url 'product:productdetails' product.slug %}">
+					<img src="{{product.image}}" class="img-responsive" />
+				</a>
+				<div class="caption">
+					<h4>{{product.title}}</h4>
+                    <p class="flex-text">{{product.publish_date|naturaltime }}</p>
+					<p class="flex-text">{{product.summery |safe |truncatechars:100}}</p>
+					<a href="{% url 'product:productdetails' product.slug %}" class="btn btn-primary btn-block">مشاهده محصول</a>
+				</div>
+			</article>
+            {% endfor %}
+
+		</div><!-- #owl-demo-2 -->
+	</div><!-- .container -->
+</section>

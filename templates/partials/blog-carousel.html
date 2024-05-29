@@ -1,0 +1,25 @@
+{% load humanize %}
+{% load static %}
+
+
+<section>
+	<div class="container-fluid">
+		<div id="owl-demo-3" class="owl-carousel owl-theme">
+
+			{% for post in posts %}
+			<article class="thumbnail item">
+				<a href="{% url 'website:blog-detail' post.slug %}">
+					<img src="{{post.image.url}}" class="img-responsive" />
+				</a>
+				<div class="caption">
+					<h4>{{post.title}}</h4>
+					<p class="flex-text">{{post.publish_date|naturaltime }}</p>
+					<p class="flex-text">{{post.post_summery|safe|truncatechars:100 }}</p>
+					<a href="{% url 'website:blog-detail' post.slug %}" class="btn btn-primary btn-block">مطالعه مقاله</a>
+				</div>
+			</article>
+            {% endfor %}
+
+		</div><!-- #owl-demo-2 -->
+	</div><!-- .container -->
+</section>
