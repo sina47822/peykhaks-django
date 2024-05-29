@@ -1,0 +1,31 @@
+{% load static %}
+
+<header class="main-header">
+    <div class="top-menu-section d-flex align-items-center justify-content-between">
+
+        {% include "./navs/top-nav.html"%}
+
+        <div class="d-flex socials">
+            <a href=""><i class="fal fa-thumbs-up"></i></a>
+            <a href=""><i class="fal fa-hashtag"></i></a>
+            <a href=""><i class="fa-brands fa-facebook"></i></a>
+            <a href=""><i class="fa-brands fa-youtube"></i></a>
+
+        </div>
+    </div>
+    <div class="header-logo">
+        <div class="search-box">
+            search
+            <a href=""><i class="fal fa-search" aria-hidden="true"></i></a>
+            <input type="text" placeholder="Code / Standard / Keyword" >
+
+        </div>
+        <div class="logo me-4">
+
+            <a href="/"><img src="{% static 'logo/logo.svg' %}" alt="peykhaksang logo" width="110px" height="auto"></a>
+
+        </div>
+    </div>
+    {% include "./navs/center-nav.html"%}
+
+</header>

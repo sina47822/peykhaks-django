@@ -1,0 +1,69 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+
+{% block title %}Shop{% endblock title%}
+{% block seodescription %} Shop description {% endblock seodescription%}
+{% block seoimage %} Shop image {% endblock seoimage%}
+
+
+{% block content %}
+
+    <div class="product-list-holder m-4 row">
+      {% for product in page_obj %}
+        <div class="col-lg-3 col-sm-6 col-xs-12">
+            <!-- products list-->
+
+            <div class="product-list-holder card mb-4">
+                {% if product.slug %}
+                <a href="{% url 'product:productdetails' slug=product.slug %}">
+                    <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                </a>
+                {% else %}
+                <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                {% endif %}
+                <div class="card-body">
+                    <div class="small text-muted">
+                        <span class="publish-date"> تاریخ انتشار : {{ product.publish_date }}</span>
+                        <a href="{% url 'product:productcategory' slug=product.categories.slug %}"> <span class="category"> دسته بندی : {{ product.categories }}</span></a>
+                    </div>
+                    
+                    <h2 class="card-title h4">{{product.title}}</h2>
+                    <p class="card-text summery">
+                        {{product.summery | safe}}    
+                    </p>
+                    {% if product.slug %}
+                    <a class="btn btn-primary read-more" href="{% url 'product:productdetails' slug=product.slug %}">→ بیشتر بخوانید </a>
+                    {% else %}
+                    <a class="btn btn-primary read-more" href="#">→ بیشتر بخوانید </a>
+
+                    {% endif %}
+
+                </div>
+            </div>
+        </div>
+      {% endfor %}
+      <nav aria-label="Pagination" >
+        <hr class="my-0" />
+        <ul class="pagination justify-content-center my-4">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">&laquo; first</a></li>
+            {% endif %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+    
+            {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+            <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+    
+            {% endif %}
+        </ul>
+    </nav>
+    </div>
+
+    {% include "partials/price-list.html"%}
+    <div class="product-table-holder m-5">
+    {% include "partials/product-table.html"%}
+    </div>
+{% endblock content%}

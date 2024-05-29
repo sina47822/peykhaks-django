@@ -1,0 +1,62 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+
+
+{% block title %}{{ seo.title }}{% endblock title%}
+{% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+{% block seoimage %} {{ seo.image }} {% endblock seoimage%}
+
+
+{% block content %}
+
+
+<!-- Nested row for non-featured blog posts-->
+<div class="blog-post-holder row m-5">
+    {% for post in page_obj %}    
+    <div class="col-lg-3 ">
+        <!-- Blog post-->
+
+        <div class="card mb-4">
+            <a href="{% url 'website:blog-detail' slug=post.slug %}"><img class="card-img-top" width="250px" height="auto" src="{{ post.image.url }}" alt="..." /></a>
+            <div class="card-body">
+                <div class="small text-muted">
+                    <span class="details"> تاریخ انتشار : {{ post.publish_date }}</span>
+                    <a href=""> <span class="author"> نویسنده : {{ post.author.get_full_name }}</span></a>
+                    <a href=""> <span class="category"> دسته بندی : {{ post.categories }}</span></a> 
+                    <span class="post-view"> تعداد بازدید : {{ post.total_views }}</span>
+
+                </div>
+                
+                <h2 class="card-title h4 title">موضوع مقاله : {{post.title}}</h2>
+                <p class="card-text summery"> شرح مختصر :
+                    {{post.post_summery |safe |truncatechars:100}}    
+                </p>
+                <a class="btn btn-primary read-more" href="{% url 'website:blog-detail' slug=post.slug %}">→ مطالعه بیشتر </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <nav aria-label="Pagination" >
+        <hr class="my-0" />
+        <ul class="pagination justify-content-center my-4">
+            {% if page_obj.has_previous %}
+                <li class="page-item"><a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">&laquo; first</a></li>
+            {% endif %}
+            <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+    
+            {% if page_obj.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+            <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+    
+            {% endif %}
+        </ul>
+    </nav>
+</div>
+
+<!-- Pagination Controls -->
+
+
+{% endblock content%}

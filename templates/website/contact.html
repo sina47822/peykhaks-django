@@ -1,0 +1,223 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+
+
+{% block title %}Contact Us{% endblock title%}
+{% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+
+
+{% block content %}
+
+
+<section class="breadcrump">
+    <div class="container row">
+        <div class="col-6 col-xs-6">home/contact us</div>
+        <div class="col-6 col-xs-6 d-flex justify-content-end">ارتباط با ما</div>
+    </div>
+</section>
+
+<section class="">       
+    <!-- contact us Page content-->
+    <div class="container">
+        <div class="contact-us-holder row container">
+            <div class="col-sm-4">
+                <div class="">
+                    <div class="address-header">
+                        <div class="container">
+                            <h2 class="">آدرس شرکت پی خاک سنگ</h2>
+                        </div>
+                    </div>
+                    <div class="address">
+                        <div class="container">
+                            <p>تهران، خیابان پیروزی، ضلع جنوب خیابان، بلوار ابوذر شمالی، نرسیده به پل اول، کوچه ششم شرقی، پلاک ۹، <strong>شرکت پی خاک سنگ</strong></p>
+                        </div>
+                    </div>
+                    <div class="work-time-header">
+                        <div class="container">
+                            <h2 class="">ساعت‌های کاری</h2>
+                  </div>
+                    </div>
+                    <div class="work-times" >
+                        <div class="container">
+                            <p>همه روزه از ساعت ۷ صبح الی ۵ عصر (به جز روزهای تعطیل)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-lg-8">
+              <div class="contacts-form bg-light p-5">
+                <form action="/contact-us/" method="post" id="form_contact" name="form_contact" novalidate="novalidate">
+              
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6">
+                        <label>نام*</label>
+                        <input type="text" class="form-control" id="txtContactName" name="txtContactName" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6">
+                        <label>نام خانوادگی*</label>
+                        <input type="text" class="form-control" id="txtContactSurname" name="txtContactSurname" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6">
+                        <label>آدرس ایمیل*</label>
+                        <input type="text" class="form-control" id="txtContactEmail" name="txtContactEmail" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6">
+                        <label>آدرس سایت یا شبکه اجتماعی*</label>
+                        <input type="text" class="form-control" id="txtContactPhone" name="txtContactPhone" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6">
+                        <label>نام شرکت*</label>
+                        <input type="text" class="form-control" id="txtContactCompany" name="txtContactCompany" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                      <div class="col-xs-12 col-sm-6">
+                        <label>نام شهر*</label>
+                        <input type="text" class="form-control" id="txtAddress" name="txtAddress" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                    </div>
+                  </div>
+  
+                   <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-6">
+                        <label>سمت شغلی*</label>
+                        <input type="text" class="form-control" id="txtContactJob" name="txtContactJob" value="">
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="form-group">
+                    <div class="row">
+                      <div class="col-xs-12 col-sm-12">
+                        <label>متن پیام*</label>
+                        <textarea rows="5" class="form-control" id="txtContactMessage" name="txtContactMessage"></textarea>
+                        <div class="help-block with-errors"><ul class="list-unstyled"><li></li></ul></div>
+                      </div>
+                      <div class="col-xs-12 col-sm-12">
+                        <small class="d-flex align-items-center justify-content-start">
+                          <input type="checkbox" id="txtPrivacyform" name="txtPrivacyform">
+                          <p>
+                          من شرایط و ضوابط ارسال پیام در وبسایت پی خاک سنگ را خوانده ام و با آن موافق هستم  
+                          </p>
+                        </small>
+                      </div>
+                      <div class="col-xs-12 col-sm-12">
+                        <small class="d-flex align-items-center justify-content-start">
+                          <input type="checkbox" id="txtPrivacyform2" name="txtPrivacyform2">
+                          <p>
+                             من موافقت خودم را بابت در اختیار گذاشتن اطلاعات شخصی اختیار شرکت پی خاک سنگ با آگاهی به آنکه اطلاعات در این شرکت محفوظ می ماند و برای اهداف مارکتینگ استفاده نمی شود، اعلام می کنم
+                          </p>
+                        </small>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="form-group">
+                    <div class="row">  
+                      <div class="col-xs-12 col-sm-6 txt-small">
+                        <button class="btn btn-primary pull-right" type="submit">ارسال پیام</button>
+                      </div>
+                    </div>
+                  </div>
+                  
+  
+                </form>
+              </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 bg-light mb-4 p-5">
+                <div class="">
+                    <section class="">
+                        <div class="container">
+                            <div class="col-12">
+                                <div class="wrap">
+                                    <div class="call-us-header" >
+                                        <div class="container">
+                                            <h2 class="">راه‌های ارتباطی با پی خاک سنگ</h2>
+                                        </div>
+                                    </div>
+                                    <div class="call-us-header">
+                                        <div class="container">
+                                            <h3 class="elementor-heading-title elementor-size-small">خطوط تماس مخصوص استعلام قیمت</h3>
+                                        </div>
+                                    </div>
+                                    <div class="call-us-header">
+                                        <div class="container">
+                                            <p><a href="tel:02133163222">021-33163222</a>
+                                            <br>
+                                            <a href="tel:02133076061">021-33076061</a></p>
+                                        </div>
+                                    </div>
+                                    <div class="call-us-header">
+                                        <div class="container">
+                                            <h3 class=" ">خطوط تماس مخصوص شرایط پرداخت</h3>
+                                        </div>
+                                    </div>
+                                    <div class="call-us-header">
+                                        <div class="container">
+                                            <p>
+                                                <a href="tel:09123199334">0912-3199334</a>
+                                                <br>
+                                                <a href="tel:09338128542">0933-8128542</a>
+                                            </p>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="call-us-header">
+                                        <div class="container">
+                                            <h3 class="">دریافت لیست قیمت از طریق تلگرام</h3>
+                                        
+                                        </div>
+                                    </div>
+                                    <div class="">
+                                        <div class="container">
+                                            <p>09371604119</p>
+                                        
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="col-sm-6 bg-light mb-4 p-5">
+                <img src="assets/media/call-us-1.jpg" alt="ارتباط با پی خاک سنگ">
+            </div>
+        </div>
+        <div class="row m-4 bg-light">
+            <div class="header my-3">
+                <h2>
+                    مکان یابی از روی نقشه
+                </h2>
+            </div>
+            <div class="col-sm-12 align-items-center justify-content-center p-5">
+                <iframe class="" src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d1620.2445084103022!2d51.491663!3d35.689582!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDQxJzIyLjUiTiA1McKwMjknMzAuMCJF!5e0!3m2!1sen!2sus!4v1715278917634!5m2!1sen!2sus" style="box-shadow: 0 2px 10px rgba(0,0,0,0.3); border-radius: 30px;" width="100%" height="400px" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<article></article>
+
+
+{% endblock content%}

@@ -1,0 +1,122 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+    {% block title %}{{ seo.title }}{% endblock title%}
+    {% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+    {% block seoimage %} {{ seo.image }} {% endblock seoimage%}
+
+{% block content %}
+
+<section class=""> 
+   
+    <!-- Page content-->
+    <div class="mt-4">
+        <div class="row container w-95 justify-content-center">
+            <!-- Blog entries-->
+            <header class="py-5 bg-light border-bottom mb-4">
+                <div class="">
+                    <div class="header-blog-holder d-flex flex-column justify-content-between align-items-center">
+                        <img class="mb-3" src="{{post.image.url}}" width="400px" height="auto" alt="{{post.title}}">
+                        <h1 class="fw-bolder">
+                            {{post.title}}
+                        </h1>
+                        <p class=" mb-0" > شرح مختصر :
+                            {{post.post_summery | safe |truncatechars:100}}    
+                        </p>
+                        <div class="small text-muted">
+                            <span> تاریخ انتشار : {{ post.publish_date }}</span>
+                            <a href=""> <span> نویسنده : {{ post.author.get_full_name }}</span></a>
+                            <a href=""> <span> دسته بندی : {{ post.categories }}</span></a> 
+                            <span> تعداد بازدید : {{ post.total_views }}</span>
+
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="col-lg-8">
+
+                <div class="blog-post-detail-holder mx-3 ">
+                    <!-- Blog post-->
+
+                    <div class="card mb-4 px-3">
+                        <p class="card-text">  
+                            {{post.desc_1 | safe}}    
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        جستجو
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="جستجو بر اساس کلید واژه" aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="button">جستجو</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card m-4">
+                    <div class="card-header">دسته بندی ها</div>
+                    <div class=" card-body">
+                        <div class="">
+                        {% for cat in categories %}
+
+                            <a class="cat-tag-item-card" href="{% url 'website:blog-category' slug=cat.slug %}"><span>{{cat.name}}</span></a>
+                        {% endfor %}
+                    </div>
+
+                    </div>
+                </div>
+                <!-- tags widget-->
+                <div class="card m-4">
+                    <div class="card-header">دسته بندی ها</div>
+                    <div class="card-body">
+                        <div class="cat-tag-item-card-holder">
+                        {% for tag in tags %}
+                            <a class="cat-tag-item-card" href="{% url 'website:blog-tags' slug=tag.slug %}"><span>{{tag.name}}</span></a>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widget posts-->
+                <div class="card mb-4">
+                    <div class="card-header">آخرین مقالات</div>
+                    <div class="posts-list-latests card-body d-flex flex-column justify-content-between align-items-center">
+                        {% for post in posts %}
+                        <div class="posts d-flex">
+                            <img src="{{post.image.url}} " width="100px" height="100px" alt="{{post.title}}">
+                            <div class="content ms-3">
+                                <div class="title">{{post.title}}</div>
+                                <div class="description">{{post.post_summery | safe |truncatechars:100}}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Side widget products-->
+                <div class="card mb-4">
+                    <div class="card-header">آخرین محصولات</div>
+                    <div class="posts-list-latests card-body d-flex flex-column justify-content-between">
+                        {% for product in products %}
+                        <div class="posts d-flex">
+                            <img src="{{product.image.url}}" width="100px" height="100px" alt="{{product.title}}">
+                            <div class="content ms-3">
+                                <div class="title">{{product.title}}</div>
+                                <div class="description">{{product.summery | safe |truncatechars:100}}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+{% endblock content%}

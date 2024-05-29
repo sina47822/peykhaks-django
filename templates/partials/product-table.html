@@ -1,0 +1,30 @@
+{% load static %}
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">نام محصول</th>
+        <th scope="col">قیمت</th>
+        <th scope="col">قیمت در تخفیف ویژه</th>
+        <th>صفحه محصول</th>
+        <th scope="col">تصویر محصول</th>
+      </tr>
+    </thead>
+    {% for product in products %}
+    <tbody>
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.offer_price}}</td>
+        {% if product.slug %}
+        <td><a href="{% url 'product:productdetails' slug=product.slug %}">صفحه محصول</a></td>
+        {% else %}
+        <td><a href="">no slug</a></td>
+        {% endif %}
+        <td><img class="product-image-show" src="{{product.image.url}}" alt="{{product.title}}"></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+</table>

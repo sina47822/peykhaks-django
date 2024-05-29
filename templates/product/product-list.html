@@ -1,0 +1,30 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+
+
+{% block title %}Contact Us{% endblock title%}
+{% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+
+
+{% block content %}
+
+
+<form method="post">
+    {% csrf_token %}
+    {{ formset.management_form }}
+    <table>
+        {% for form in formset %}
+            <tr>
+                <td>{{ form.instance.title }}</td>
+                <td>{{ form.as_table }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Update Prices</button>
+</form>
+
+
+{% endblock content%}
+
+

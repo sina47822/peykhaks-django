@@ -1,0 +1,26 @@
+<nav class="top-nav navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="{% url 'website:home' %}">
+                    <strong>پی خاک سنگ</strong>
+                </a></li>
+                <li class="nav-item"><a href="{% url 'website:about' %}">درباره ما</a></li>
+                <li class="nav-item"><a href="{% url 'website:contact' %}">ارتباط با ما</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">بانک اطاعات</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <li class="dropdown-item"><a href="{% url 'website:blog-list' %}">مقالات</a></li>
+                        <li class="dropdown-item"><a href="#">استاندارد</a></li>
+                        <li class="dropdown-item"><a href="#">کتاب</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="{% url 'website:shop' %}">محصولات</a></li>
+                <li class="nav-item"><a href="{% url 'website:Terms-and-conditions' %}">شرایط و قوانین</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>

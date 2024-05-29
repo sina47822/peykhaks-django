@@ -1,0 +1,158 @@
+{% extends '../core/base.html' %}
+{% load humanize %}
+{% load static %}
+
+
+
+{% block title %}Blog{% endblock title%}
+{% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+
+
+
+{% block content %}
+
+
+<section class=""> 
+    <header class="py-5 bg-light border-bottom mb-4">
+        <div class="container">
+            <div class="text-center my-5">
+                <h1 class="fw-bolder">
+                    به وبلاگ پی خاک سنگ خوش آمدید
+                </h1>
+                <p class="lead mb-0">
+                    در این قسمت میتوانید با انتخاب دسته بندی مورد نظر خود سریع تر به مطلب مورد نظر برسید
+                </p>
+            </div>
+        </div>
+    </header>   
+    <!-- Page content-->
+    <div class="mt-4">
+        <div class="row">
+            <!-- Blog entries-->
+
+            <div class=" col-lg-8">
+                <!-- Nested row for non-featured blog posts-->
+                <div class="blog-post-holder row m-5">
+                    {% for post in page_obj %}    
+                    <div class="col-lg-3 ">
+                        <!-- Blog post-->
+
+                        <div class="card mb-4">
+                            <a href="{% url 'website:blog-detail' slug=post.slug %}"><img class="card-img-top" width="250px" height="auto" src="{{ post.image.url }}" alt="..." /></a>
+                            <div class="card-body">
+                                <div class="small text-muted">
+                                    <span class="details"> تاریخ انتشار : {{ post.publish_date|naturaltime }}</span>
+                                    <a href=""> <span class="author"> نویسنده : {{ post.author.get_full_name }}</span></a>
+                                    <a href=""> <span class="category"> دسته بندی : {{ post.categories }}</span></a> 
+                                    <span class="post-view"> تعداد بازدید : {{ post.total_views }}</span>
+
+                                </div>
+                                
+                                <h2 class="card-title h4 title">موضوع مقاله : {{post.title}}</h2>
+                                <p class="card-text summery"> شرح مختصر :
+                                    {{post.post_summery |safe |truncatechars:100}}    
+                                </p>
+                                <a class="btn btn-primary read-more" href="{% url 'website:blog-detail' slug=post.slug %}">→ مطالعه بیشتر </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <!-- Pagination-->
+                <nav aria-label="Pagination" >
+                    <hr class="my-0" />
+                    <ul class="pagination justify-content-center my-4">
+                        {% if page_obj.has_previous %}
+                            <li class="page-item"><a class="page-link" href="?page=1" tabindex="-1" aria-disabled="true">&laquo; first</a></li>
+                        {% endif %}
+                        <li class="page-item active" aria-current="page"><a class="page-link" href="?page={{ page_obj.number }}">{{ page_obj.number }}</a></li>
+                
+                        {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a></li>
+                        <li class="page-item disabled"><a class="page-link" href="#!">...</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></li>
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">next</a></li>
+                
+                        {% endif %}
+                    </ul>
+                </nav>
+            </div>
+            <!-- Side widgets-->
+            <div class="col-lg-4">
+                <!-- Search widget-->
+                <div class="card m-4">
+                    <div class="card-header">
+                        جستجو
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="جستجو بر اساس کلید واژه" aria-label="Enter search term..." aria-describedby="button-search" />
+                            <button class="btn btn-primary" id="button-search" type="button">جستجو</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Categories widget-->
+                <div class="card m-4">
+                    <div class="card-header">دسته بندی ها</div>
+                    <div class=" card-body">
+                        <div class="">
+                        {% for cat in categories %}
+
+                            <a class="cat-tag-item-card" href="{% url 'website:blog-category' slug=cat.slug %}"><span>{{cat.name}}</span></a>
+                        {% endfor %}
+                    </div>
+
+                    </div>
+                </div>
+                <!-- tags widget-->
+                <div class="card m-4">
+                    <div class="card-header">دسته بندی ها</div>
+                    <div class="card-body">
+                        <div class="cat-tag-item-card-holder">
+                        {% for tag in tags %}
+                            <a class="cat-tag-item-card" href="{% url 'website:blog-tags' slug=tag.slug %}"><span>{{tag.name}}</span></a>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <!-- Side widget posts-->
+                <div class="card m-4">
+                    <div class="card-header">آخرین مقالات</div>
+                    <div class="posts-list-latests card-body d-flex flex-column justify-content-between align-items-center">
+                        {% for post in latests %}
+                        <div class="posts d-flex">
+                            <img src="{{post.image.url}} " width="100px" height="100px" alt="{{post.title}}">
+                            <div class="content ms-3">
+                                <div class="title">{{post.title}}</div>
+                                <div class="description">{{post.post_summery | safe |truncatechars:100}}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- Side widget products-->
+                <div class="card m-4">
+                    <div class="card-header">آخرین محصولات</div>
+                    <div class="posts-list-latests card-body d-flex flex-column justify-content-between">
+                        {% for product in products %}
+                        <div class="posts d-flex">
+                            <img src="{{product.image.url}}" width="100px" height="100px" alt="{{product.title}}">
+                            <div class="content ms-3">
+                                <div class="title">{{product.title}}</div>
+                                <div class="description">{{product.summery | safe |truncatechars:100}}</div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+{% endblock content%}

@@ -1,0 +1,35 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeyKhakSang | {% block title %}{% endblock title%}</title>
+    {% include "./css-files.html" %}
+
+    <meta name="description" content="{% block seodescription %}{% endblock seodescription%}">
+    {% if seo.image %}
+        <meta property="og:image" content="{% block seoimage %}{% endblock seoimage%}">
+    {% endif %}
+
+    <!-- Additional SEO tags -->
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <meta name="robots" content="index, follow">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png'%}">
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest'%}"></head>
+<body>
+    {% include "../partials/header.html"%}
+
+    {% block content %}
+    {% endblock content%}  
+
+
+    {% include "../partials/footer.html"%}
+    
+    {% include "./js-files.html" %}
+
+</body>
+</html>
