@@ -2,24 +2,30 @@
 {% load static %}
 
 
-<section>
-	<div class="container-fluid">
-		<div id="owl-demo-3" class="owl-carousel owl-theme">
 
+<div class="pks-post-carousel container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="news-slider" class="owl-carousel">
 			{% for post in posts %}
-			<article class="thumbnail item">
-				<a href="{% url 'website:blog-detail' post.slug %}">
-					<img src="{{post.image.url}}" class="img-responsive" />
-				</a>
-				<div class="caption">
-					<h4>{{post.title}}</h4>
-					<p class="flex-text">{{post.publish_date|naturaltime }}</p>
-					<p class="flex-text">{{post.post_summery|safe|truncatechars:100 }}</p>
-					<a href="{% url 'website:blog-detail' post.slug %}" class="btn btn-primary btn-block">مطالعه مقاله</a>
+			<div class="post-slide">
+				<div class="post-img">
+					<img src="{{post.image.url}}" alt="">
+					<a href="{% url 'website:blog-detail' post.slug %}" class="over-layer"><i class="fa fa-link"></i></a>
 				</div>
-			</article>
+				<div class="post-content">
+					<h3 class="post-title">
+					<a href="{% url 'website:blog-detail' post.slug %}">{{post.title}}</a>
+					</h3>
+					<p class="post-description">{{post.post_summery|safe|truncatechars:100 }}</p>
+					<span class="post-date"><i class="fa fa-clock-o"></i>{{post.publish_date|naturaltime }}</span>
+					<a href="#" class="read-more">مطالعه مقاله</a>
+				</div>
+			</div>
+
             {% endfor %}
 
-		</div><!-- #owl-demo-2 -->
-	</div><!-- .container -->
-</section>
+		</div>
+	</div>
+  </div>
+</div>

@@ -1,24 +1,30 @@
 {% load humanize %}
 {% load static %}
 
-
-<section>
-	<div class="container-fluid">
-		<div id="owl-demo-2" class="owl-carousel owl-theme">
+<div class="pks-post-carousel container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<div id="news-slider-2" class="owl-carousel">
             {% for product in products %}
-			<article class="thumbnail item">
-				<a href="{% url 'product:productdetails' product.slug %}">
-					<img src="{{product.image}}" class="img-responsive" />
-				</a>
-				<div class="caption">
-					<h4>{{product.title}}</h4>
-                    <p class="flex-text">{{product.publish_date|naturaltime }}</p>
-					<p class="flex-text">{{product.summery |safe |truncatechars:100}}</p>
-					<a href="{% url 'product:productdetails' product.slug %}" class="btn btn-primary btn-block">مشاهده محصول</a>
+
+            <div class="post-slide">
+				<div class="post-img">
+					<img src="{{product.image.url}}" alt="">
+					<a href="{% url 'product:productdetails' product.slug %}" class="over-layer"><i class="fa fa-link"></i></a>
 				</div>
-			</article>
+				<div class="post-content">
+					<h3 class="post-title">
+					<a href="{% url 'product:productdetails' product.slug %}">{{product.title}}</a>
+					</h3>
+					<p class="post-description">{{product.summery |safe |truncatechars:100}}</p>
+					<span class="post-date"><i class="fa fa-clock-o"></i>{{product.publish_date|naturaltime }}</span>
+					<a href="#" class="read-more">مشاهده محصول</a>
+				</div>
+			</div>
+
             {% endfor %}
 
-		</div><!-- #owl-demo-2 -->
-	</div><!-- .container -->
-</section>
+		</div>
+	</div>
+  </div>
+</div>
