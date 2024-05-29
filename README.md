@@ -25,7 +25,7 @@ after that for run the project you need to add virtual enviroment
 python -m venv env
 ```
 then upgrade your pip
-'''
+```
 python -m pip install --upgrade pip
 ```
 then install all apps
