@@ -104,3 +104,11 @@ class CategorySEO(models.Model):
     Category_seo = models.ForeignKey(Category, on_delete=models.CASCADE, blank=True, null=True, related_name='postcategory')
     def __str__(self):
         return self.title
+        
+class SliderModel(models.Model):
+    title = models.CharField(max_length=255)
+    alt = models.CharField(max_length=255)
+    image = models.ImageField(upload_to='slider/', null=True, blank=True)
+        
+    def __str__(self):
+        return self.title

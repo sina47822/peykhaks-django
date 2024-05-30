@@ -8,7 +8,7 @@ from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
 
 # models.fields
-from website.models import CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO
+from website.models import SliderModel,CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO
 from product.models import Product ,PriceList
 
 def index(request):
@@ -17,12 +17,14 @@ def index(request):
     categories = Category.objects.all()
     tags = Tags.objects.all()
     pricelist = PriceList.objects.filter().first()
+    images = SliderModel.objects.all()
 
     context = {'posts': posts,
                 'products':products,
                 'categories':categories,         
                 'tags':tags,
                 'pricelist':pricelist,
+                'images':images,
                 }
 
     return render (request,'website/index.html', context)

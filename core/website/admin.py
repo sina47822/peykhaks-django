@@ -1,5 +1,5 @@
 from django.contrib import admin
-from website.models import Post, Category, Tags, PostSEO,TagsSEO,CategorySEO
+from website.models import Post, Category, SliderModel, Tags, PostSEO,TagsSEO,CategorySEO
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
 
@@ -54,3 +54,8 @@ class TagsAdmin(admin.ModelAdmin):
     inlines = [TagSEOInline] 
 
 admin.site.register(Tags,TagsAdmin)
+class SliderModelAdmin(admin.ModelAdmin):
+    list_display = ('title',)
+    search_fields = ['title']
+admin.site.register(SliderModel,SliderModelAdmin)
+

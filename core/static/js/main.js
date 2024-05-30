@@ -163,7 +163,22 @@ $(document).ready(function() {
   });
 });
 
+$(document).ready(function(){
 
+   $('.owl-carousel-single').owlCarousel({
+    margin:0,
+    autoplay:true, 
+    autoplayTimeout:1500,    
+    autoplayHoverPause:false, 
+    animateOut: 'fadeOut',
+    // animateIn: 'fadeIn',
+    loop:true,   
+    nav:false,   
+    items: 1,  
+    rtl: true,  
+     
+  })
+});
 
 // switch price list checked box
 $(document).ready(function(){
