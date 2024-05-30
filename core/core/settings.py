@@ -26,11 +26,18 @@ SECRET_KEY = config("SECRET_KEY", default="test")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", cast=bool, default=True)
 
-ALLOWED_HOSTS = config(
-    "ALLOWED_HOSTS",
-    cast=lambda v: [s.strip() for s in v.split(",")],
-    default="*",
-)
+ALLOWED_HOSTS = [
+    "localhost",  # Local development
+    "127.0.0.1",  # Local development
+    "peykhaksang.com",  # Production site
+    "www.peykhaksang.com",  # Production site
+
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",  # Local development
+    "https://peykhaksang.com",  # Production site
+]
 
 SITE_ID = 1
 

@@ -14,8 +14,9 @@ services:
     expose:
       - "8000"
     environment:
+      - ALLOWED_HOSTS=peykhaksang.com,www.peykhaksang.com
       - SECRET_KEY=test
-      - DEBUG=True
+      - DEBUG=False
     depends_on:
       - db
 
