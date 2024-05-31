@@ -8,11 +8,7 @@ django-robots==6.1
 django-tinymce==4.0.0
 et-xmlfile==1.1.0
 gunicorn==22.0.0
-MarkupPy==1.14
 mysqlclient==2.2.4
-numpy==1.26.4
-odfpy==1.4.1
-openpyxl==3.1.2
 packaging==24.0
 pandas==2.2.2
 pillow==10.3.0
@@ -29,3 +25,5 @@ tabulate==0.9.0
 tzdata==2024.1
 django-robots
 humanize
+gunicorn
+psycopg2-binary

@@ -1,0 +1,16 @@
+{% load static %}
+
+<section class="pks_main_slider">
+
+
+        <div id="pks_slider" class="pks_slider owl-carousel owl-carousel-single owl-theme">
+        {% for image in images %}
+          <div class="item">
+            <img src="{{image.image.url}}" alt="{{image.alt}}">
+        </div>
+        {% endfor %}
+        </div>
+  
+
+
+</section>
