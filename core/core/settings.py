@@ -39,7 +39,7 @@ CSRF_TRUSTED_ORIGINS = [
     "https://peykhaksang.com",  # Production site
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 
 
 # Application definition
