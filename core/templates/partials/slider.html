@@ -3,10 +3,7 @@
 <section class="pks_main_slider">
 
 
-        <div id="pks_slider" class="owl-carousel owl-carousel-single owl-theme">
-          <div class="item">
-            <img src="https://peykhaksang.com/media/slider/B5ECE1ABB44C5FC2D9F3096E1DF9212D.jpg" alt="">
-          </div>
+        <div id="pks_slider" class="pks_slider owl-carousel owl-carousel-single owl-theme">
         {% for image in images %}
           <div class="item">
             <img src="{{image.image.url}}" alt="{{image.alt}}">
