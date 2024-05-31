@@ -81,6 +81,7 @@ class Product(models.Model):
     ) 
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length = 250, null = True, blank = True , unique=True)
+    Code = models.CharField(max_length=15, null = True, unique=True)
     description = HTMLField(null = True, blank = True )
     summery = HTMLField(null = True, blank = True )
     price = models.DecimalField(max_digits=10, decimal_places=0)

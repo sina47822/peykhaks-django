@@ -165,7 +165,7 @@ $(document).ready(function() {
 
 $(document).ready(function(){
 
-   $('.owl-carousel-single').owlCarousel({
+   $('#pks_slider').owlCarousel({
     margin:0,
     autoplay:true, 
     autoplayTimeout:1500,    

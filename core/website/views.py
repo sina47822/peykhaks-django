@@ -12,8 +12,8 @@ from website.models import SliderModel,CategorySEO, Post, Category , Tags ,PostS
 from product.models import Product ,PriceList
 
 def index(request):
-    posts = Post.objects.all().order_by('-publish_date')[:8]
-    products = Product.objects.all().order_by('-publish_date')[:8]
+    posts = Post.objects.all().order_by('-id')
+    products = Product.objects.all().order_by('-publish_date')
     categories = Category.objects.all()
     tags = Tags.objects.all()
     pricelist = PriceList.objects.filter().first()
@@ -69,8 +69,8 @@ def posttags(request, slug):
 
 
 def blog(request):
-    posts = Post.objects.all().order_by('-publish_date')
-    products = Product.objects.all().order_by('-publish_date')[:5]
+    posts = Post.objects.all().order_by('publish_date')
+    products = Product.objects.all().order_by('publish_date')[:5]
     categories = Category.objects.all()
     tags = Tags.objects.all()
 
@@ -80,7 +80,7 @@ def blog(request):
     page_obj = paginator.get_page(page_number)
 
 
-    latests = Post.objects.all().order_by('-publish_date')[:5]  # Example: fetching the 1 latest posts
+    latests = Post.objects.all().order_by('publish_date')[:5]  # Example: fetching the 1 latest posts
     context = {'posts': posts,
                 'latests': latests,
                 'products':products,
@@ -92,8 +92,8 @@ def blog(request):
 def blogposts(request, slug): 
     post = get_object_or_404(Post, slug =slug )
     seo = PostSEO.objects.filter(post=post).first()  # Retrieve the first PostSEO object associated with the post
-    posts = Post.objects.all().order_by('-publish_date')[:4]
-    products = Product.objects.all().order_by('-publish_date')[:4]
+    posts = Post.objects.all().order_by('-id')[:4]
+    products = Product.objects.all().order_by('-id')[:4]
     categories = Category.objects.all()
     tags = Tags.objects.all()
 
@@ -111,8 +111,8 @@ def blogposts(request, slug):
 
 def ProductShop(request):
     pricelist = PriceList.objects.filter().first()
-    products = Product.objects.all().order_by('-publish_date')[1:]
-    latests = Post.objects.all().order_by('-publish_date')[:1]  # Example: fetching the 1 latest posts
+    products = Product.objects.all().order_by('publish_date')[1:]
+    latests = Post.objects.all().order_by('publish_date')[:1]  # Example: fetching the 1 latest posts
 
     paginator = Paginator(products, 8)  # Show 10 posts per page
     page_number = request.GET.get('page')

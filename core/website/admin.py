@@ -2,13 +2,14 @@ from django.contrib import admin
 from website.models import Post, Category, SliderModel, Tags, PostSEO,TagsSEO,CategorySEO
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
+from django.utils.html import format_html
 
 
 # تعریف منابع (resources) برای مدل‌ها
 class PostResource(resources.ModelResource):
     class Meta:
         model = Post
-        fields = ('id','title', 'slug', 'desc_1', 'desc_2', 'post_summery', 'categories', 'tags', 'image', 'publish_date', 'author', 'total_views', 'blog_status')
+        fields = ('image','id','title', 'slug', 'desc_1', 'desc_2', 'post_summery', 'categories', 'tags',  'publish_date', 'author', 'total_views', 'blog_status')
 
 
 def duplicate_selected_posts(modeladmin, request, queryset):
@@ -28,9 +29,12 @@ class SEOInline(admin.StackedInline):
     can_delete = False
 
 class PostAdmin(ImportExportModelAdmin):
+    def image_tag(self, obj):
+        return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(obj.image.url))
+
     resource_class = PostResource
     date_hierarchy = 'create_date'
-    list_display = ('id','title' ,'create_date', 'slug', 'categories')
+    list_display = ('image_tag','id','title' ,'create_date', 'slug', 'categories')
     list_filter = ('create_date', )
     search_fields = ['title', 'desc_1', 'desc_2', 'slug']
     inlines = [SEOInline]

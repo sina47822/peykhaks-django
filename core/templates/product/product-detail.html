@@ -1,6 +1,6 @@
 {% extends '../core/base.html' %}
 {% load static %}
-
+{% load humanize %}
 
 
 {% block title %}{{ seo.title }}{% endblock title%}
@@ -36,13 +36,15 @@
 
     
                     <span class="d-flex">خلاصه محصول: {{product.summery | safe}}</span>
-    
-                    {% if product.offer_price < product.price %}
-                    <p>قیمت محصول : <del>{{product.price}}</del>                     <span class="text-body-secondary">{{product.offer_price}}</span></p>
-                    {%else%}
-                    <p>قیمت محصول : {{product.price}}</p>
-                    {% endif %}
-
+                    <div class="product-price-holder">
+                      {% if product.offer_price < product.price %}
+                      <p class="product-del-price">قیمت محصول : <del>{{product.price | intcomma}}</del> 
+                        
+                        <span class="product-price">{{product.offer_price| intcomma}}</span></p>
+                      {%else%}
+                      <p class="product-price">قیمت محصول : {{product.price| intcomma}}</p>
+                      {% endif %}
+                    </div>
                     {% if product.stock >= 1 %}
                         <button class="btn btn-primary">اضافه کردن به لیست سفارش</button>
                     {% else %}
@@ -57,7 +59,7 @@
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                         توضیحات محصول
                     </button>
                   </h2>

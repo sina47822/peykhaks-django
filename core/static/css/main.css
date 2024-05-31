@@ -931,6 +931,16 @@ a{
 }
 }
 
+.product-price-holder .product-price{
+  font-size: 20px;
+  font-weight: 900;
+  color: #333;
+}
+.product-price-holder .product-del-price{
+  font-size: 20px;
+  font-weight: 400;
+  color: #ccc;
+}
 /* blog-details */
 
 
@@ -1083,6 +1093,7 @@ background: #4DC7A0;
 
 
 .pks_main_slider .owl-carousel-single .item {
-background: #a37c5a;
+background: #d3d3d3;
 text-align: center;
 }
+
