@@ -162,3 +162,5 @@ cython_debug/
 media/
 static/admin/
 peykhaks_db
+core/static_volume/
+static_volume/
