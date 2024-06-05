@@ -546,6 +546,9 @@ footer .row{
   .center-nav{
       padding: 0.75rem 80pxpx;
   }
+  .price-list-columns{
+    width: 100%;
+  }
 }
 
 /* On screens that are 600px or less, set the background color to olive */
@@ -1097,3 +1100,25 @@ background: #d3d3d3;
 text-align: center;
 }
 
+@media (max-width: 800px) {
+  .price-list-khak{
+    .columns{
+        display: block;
+    }
+    .price-list-columns{
+      width: 100%;
+    }
+  }
+  .price-list-beton{
+    .columns{
+        display: block;
+    }
+    .price-list-columns{
+      width: 100%;
+    }
+  }
+  
+}
+@media (max-width: 900) and (min-width: 600px) {
+
+}

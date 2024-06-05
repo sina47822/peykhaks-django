@@ -138,10 +138,28 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function() {
   $("#news-slider").owlCarousel({
-      items : 6,
-      itemsDesktop:[1199,6],
-      itemsDesktopSmall:[980,3],
-      itemsMobile : [600,1],
+      responsive: {
+        0: {
+          items: 1
+          // nav: true
+        },
+        480: {
+          items: 2,
+          nav: false
+        },
+        768: {
+          items: 3,
+          // nav: true,
+          loop: false
+        },
+        992: {
+          items: 4,
+          // nav: true,
+          loop: false
+        }
+      },
+      responsiveRefreshRate: 200,
+      responsiveBaseElement: window,
       navigation:true,
       navigationText:["",""],
       pagination:true,
@@ -156,10 +174,28 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
   $("#news-slider-2").owlCarousel({
-      items : 6,
-      itemsDesktop:[1199,6],
-      itemsDesktopSmall:[980,3],
-      itemsMobile : [600,1],
+      responsive: {
+        0: {
+          items: 1
+          // nav: true
+        },
+        480: {
+          items: 2,
+          nav: false
+        },
+        768: {
+          items: 3,
+          // nav: true,
+          loop: false
+        },
+        992: {
+          items: 4,
+          // nav: true,
+          loop: false
+        }
+      },
+      responsiveRefreshRate: 200,
+      responsiveBaseElement: window,
       navigation:true,
       navigationText:["",""],
       pagination:true,
