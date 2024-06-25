@@ -1,31 +1,43 @@
 {% load humanize %}
 {% load static %}
 
-
-
 <div class="pks-post-carousel container-fluid">
-	<div class="row">
-		<div class="col-md-12">
-			<div id="news-slider" class="owl-carousel">
-			{% for post in posts %}
-			<div class="post-slide">
-				<div class="post-img">
-					<img src="{{post.image.url}}" alt="">
-					<a href="{% url 'website:blog-detail' post.slug %}" class="over-layer"><i class="fa fa-link"></i></a>
-				</div>
-				<div class="post-content">
-					<h3 class="post-title">
-					<a href="{% url 'website:blog-detail' post.slug %}">{{post.title}}</a>
-					</h3>
-					<p class="post-description">{{post.post_summery|safe|truncatechars:100 }}</p>
-					<span class="post-date"><i class="fa fa-clock-o"></i>{{post.publish_date|naturaltime }}</span>
-					<a href="#" class="read-more">مطالعه مقاله</a>
-				</div>
-			</div>
-
-            {% endfor %}
-
-		</div>
-	</div>
-  </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="news-slider" class="owl-carousel">
+                {% for post in posts %}
+                    <div class="post-slide">
+                        <div class="post-img">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="">
+                            {% else %}
+                                <img src="{% static 'path/to/default/image.jpg' %}" alt="">
+                            {% endif %}
+                            {% if post.slug %}
+                                <a href="{% url 'website:blog-detail' post.slug %}" class="over-layer"><i class="fa fa-link"></i></a>
+                            {% else %}
+                                <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
+                            {% endif %}
+                        </div>
+                        <div class="post-content">
+                            <h3 class="post-title">
+                                {% if post.slug %}
+                                    <a href="{% url 'website:blog-detail' post.slug %}">{{ post.title }}</a>
+                                {% else %}
+                                    {{ post.title }}
+                                {% endif %}
+                            </h3>
+                            <p class="post-description">{{ post.post_summery|safe|truncatechars:100 }}</p>
+                            <span class="post-date"><i class="fa fa-clock-o"></i> {{ post.publish_date|naturaltime }}</span>
+                            {% if post.slug %}
+                                <a href="{% url 'website:blog-detail' post.slug %}" class="read-more">مطالعه مقاله</a>
+                            {% else %}
+                                <a href="#" class="read-more">مطالعه مقاله</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>

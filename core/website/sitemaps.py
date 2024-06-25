@@ -22,10 +22,10 @@ class BlogSitemap(Sitemap):
     priority = 0.5
 
     def items(self):
-        return Post.objects.filter(blog_status='Published')
+        return Post.objects.filter(blog_status='published')
 
     def lastmod(self, obj):
-        return obj.publish_date
+        return obj.update_date
 
     def location(self, obj):
         return obj.get_absolute_url()
