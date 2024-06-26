@@ -2,24 +2,28 @@
 {% load static %}
 
 {% block content %}
-    <h1>product lists</h1>
+  <div class="container">
+    <h1 class="mt-5">لیست همه محصولات پی خاک سنگ</h1>
     <a href="{% url 'product:product-create' %}">
       <h5>ساخت محصول جدید</h5>
     </a>
-    <table>
+    <table class="table">
+      <thead>
         <tr>
-          <th>id</th>
-          <th>code</th>
-          <th>نام محصول</th>
-          <th>قیمت</th>
-          <th>قیمت با تخفیف</th>
-          <th></th>
-          <th></th>
+          <th scope="col">id</th>
+          <th scope="col">code</th>
+          <th scope="col">نام محصول</th>
+          <th scope="col">قیمت</th>
+          <th scope="col">قیمت با تخفیف</th>
+          <th scope="col">ویرایش</th>
+          <th scope="col">پاک کردن</th>
 
         </tr>
+      <thead>
         {% for product in products %}
+      <tbody>
         <tr>
-          <td>{{product.id}}</td>
+          <th scope="row">{{product.id}}</th>
           <td>{{product.Code}}</td>
           <td><a href="{% url 'product:product-detail' slug=product.slug %}">
             <h5>{{product.title}}</h5>
@@ -34,7 +38,9 @@
           </a></td>
 
         </tr>
-        {% endfor %}
+      </tbody>
+      {% endfor %}
 
-      </table>
+    </table>
+  </div>
 {% endblock content%}
