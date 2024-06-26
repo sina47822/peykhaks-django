@@ -1,0 +1,9 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+{% block content %}
+<form action="" method="post"> {% csrf_token %}
+    <p>مطمئن هستید که میخواهید محصول "{{object}}" را پاک کنید؟</p>
+    <input type="submit" value="Confirm">
+</form>
+{% endblock content%}

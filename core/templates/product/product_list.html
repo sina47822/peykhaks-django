@@ -1,0 +1,40 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+{% block content %}
+    <h1>product lists</h1>
+    <a href="{% url 'product:product-create' %}">
+      <h5>ساخت محصول جدید</h5>
+    </a>
+    <table>
+        <tr>
+          <th>id</th>
+          <th>code</th>
+          <th>نام محصول</th>
+          <th>قیمت</th>
+          <th>قیمت با تخفیف</th>
+          <th></th>
+          <th></th>
+
+        </tr>
+        {% for product in products %}
+        <tr>
+          <td>{{product.id}}</td>
+          <td>{{product.Code}}</td>
+          <td><a href="{% url 'product:product-detail' slug=product.slug %}">
+            <h5>{{product.title}}</h5>
+          </a></td>
+          <td>{{product.price}}</td>
+          <td>{{product.offer_price}}</td>
+          <td><a href="{% url 'product:product-edit' slug=product.slug %}">
+            <h5>edit</h5>
+          </a></td>
+          <td><a href="{% url 'product:product-delete' slug=product.slug %}">
+            <h5>delete</h5>
+          </a></td>
+
+        </tr>
+        {% endfor %}
+
+      </table>
+{% endblock content%}

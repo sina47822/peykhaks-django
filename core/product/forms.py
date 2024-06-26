@@ -18,3 +18,8 @@ class ProductAdminForm(forms.ModelForm):
         widgets = {
             'description': TinyMCE(attrs={'cols': 80, 'rows': 30}),
         }
+
+class ProductForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['id','title','Code', 'price', 'offer_price','stock']
