@@ -1,12 +1,13 @@
-FROM python:3.11.4-slim-buster
+FROM python:3.11-slim
 
 # set environment variables
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
+
 WORKDIR /app
 COPY requirements.txt /app/
-RUN python3 -m pip install --upgrade pip
-RUN pip install -r requirements.txt
+RUN python3 -m pip install --trusted-host https://mirror-pypi.runflare.com -i https://mirror-pypi.runflare.com/simple/ --upgrade pip
+RUN pip install --trusted-host https://mirror-pypi.runflare.com -i https://mirror-pypi.runflare.com/simple/ -r requirements.txt
 COPY ./core /app/
 
 # RUN apt-get update \
