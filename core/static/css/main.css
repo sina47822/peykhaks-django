@@ -1085,7 +1085,7 @@ content:"\f105";
 
 
 .pks_main_slider .owl-carousel .item{
-height: 60vh;
+height: 100vh;
 padding: 0rem;
 }
 
@@ -1119,6 +1119,14 @@ text-align: center;
   }
   
 }
+
+.index-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
 @media (max-width: 900) and (min-width: 600px) {
 
 }

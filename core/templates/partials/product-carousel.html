@@ -18,7 +18,7 @@
 					</h3>
 					<p class="post-description">{{product.summery |safe |truncatechars:100}}</p>
 					<span class="post-date"><i class="fa fa-clock-o"></i>{{product.publish_date|naturaltime }}</span>
-					<a href="#" class="read-more">مشاهده محصول</a>
+					<a href="{% url 'product:productdetails' product.slug %}" class="read-more">مشاهده محصول</a>
 				</div>
 			</div>
 
