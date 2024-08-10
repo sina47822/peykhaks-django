@@ -1,6 +1,6 @@
 # peykhaks-django
 
-# how to run this project to your server
+## how to run this project to your server
 first clone this project to your server 
 for this job put ssh key in project or you need to access if its not public
 then clone the project
@@ -16,10 +16,10 @@ git config --global user.email 'sinaa.afshar@gmail.com' /
 ```
 you need to change name, email and branch if you want to use this project
 
-# next
+## next
 you need to change wsgi and manage.py to read setting from dev file
 you can find manage.py in root project and wsgi in core files
-# install env
+## install env
 after that for run the project you need to add virtual enviroment
 ```
 python -m venv env
@@ -40,29 +40,29 @@ Since the release of pip 10.0, you should be able to fix this permanently just b
 pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org pip setuptools
 ```
 You may want to add the trusted hosts and proxy to your config file.
-
+---
 pip.ini (Windows) or pip.conf (unix)
 
-Unix
-Global
+***Unix***
+*Global*
     In a “pip” subdirectory of any of the paths set in the environment variable XDG_CONFIG_DIRS (if it exists), for example /etc/xdg/pip/pip.conf.
     This will be followed by loading /etc/pip.conf.
-User
+*User*
 
     $HOME/.config/pip/pip.conf, which respects the XDG_CONFIG_HOME environment variable.
     The legacy “per-user” configuration file is also loaded, if it exists: $HOME/.pip/pip.conf.
-Site
+*Site*
     $VIRTUAL_ENV/pip.conf
     
-<b> Windows </b>
-Global
+***Windows***
+*Global*
         On Windows 7 and later: C:\ProgramData\pip\pip.ini (hidden but writeable)
         On Windows Vista: Global configuration is not supported.
         On Windows XP: C:\Documents and Settings\All Users\Application Data\pip\pip.ini
-User
+*User*
     %APPDATA%\pip\pip.ini
     The legacy “per-user” configuration file is also loaded, if it exists: %HOME%\pip\pip.ini
-Site
+*Site*
     %VIRTUAL_ENV%\pip.ini
 
 ```
