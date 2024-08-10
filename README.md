@@ -45,16 +45,16 @@ pip.ini (Windows) or pip.conf (unix)
 ***Unix***
 ---
 *Global*
-/
-    In a “pip” subdirectory of any of the paths set in the environment variable XDG_CONFIG_DIRS (if it exists), for example /etc/xdg/pip/pip.conf.
-    This will be followed by loading /etc/pip.conf.
+>
+ >   In a “pip” subdirectory of any of the paths set in the environment variable XDG_CONFIG_DIRS (if it exists), for example /etc/xdg/pip/pip.conf.
+ >  This will be followed by loading /etc/pip.conf.
 *User*
-/
-    $HOME/.config/pip/pip.conf, which respects the XDG_CONFIG_HOME environment variable.
-    The legacy “per-user” configuration file is also loaded, if it exists: $HOME/.pip/pip.conf.
+>
+ >   $HOME/.config/pip/pip.conf, which respects the XDG_CONFIG_HOME environment variable.
+ >  The legacy “per-user” configuration file is also loaded, if it exists: $HOME/.pip/pip.conf.
 *Site*
-/
-    $VIRTUAL_ENV/pip.conf
+>
+ >   $VIRTUAL_ENV/pip.conf
     
 ***Windows***
 ---
