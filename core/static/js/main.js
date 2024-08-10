@@ -138,76 +138,106 @@ var $ = jQuery.noConflict();
 
 $(document).ready(function() {
   $("#news-slider").owlCarousel({
-      responsive: {
-        0: {
-          items: 1
-          // nav: true
-        },
-        480: {
-          items: 2,
-          nav: false
-        },
-        768: {
-          items: 3,
-          // nav: true,
-          loop: false
-        },
-        992: {
-          items: 4,
-          // nav: true,
-          loop: false
-        }
-      },
-      responsiveRefreshRate: 200,
-      responsiveBaseElement: window,
-      navigation:true,
-      navigationText:["",""],
-      pagination:true,
-      autoPlay:true,
-      rtl: true,
-      autoplay:true, 
-      autoplayTimeout:6000,
-      autoplayHoverPause:true, 
-      animateOut: 'fadeOut',
+    responsive: {
+      0: {
+        items: 1,
+        nav: true,
+        loop: true
 
+      },
+      480: {
+        items: 2,
+        nav: false,
+        loop: true
+
+      },
+      768: {
+        items: 3,
+        nav: true,
+        loop: true
+      },
+      992: {
+        items: 4,
+        nav: true,
+        loop: true
+      }
+    },
+    rtl: true,
+    navigation:true,
+    navigationText:["",""],
+    pagination:true,
+    autoPlay:true,
+    autoplayTimeout:4000,    
+    autoplayHoverPause:true, 
+    animateOut: 'fadeOut',
+    rtlClass: "owl-rtl",
+    responsiveClass: "owl-responsive",
+    dragClass: "owl-drag",
+    itemClass: "owl-item",
+    stageClass: "owl-stage",
+    stageOuterClass: "owl-stage-outer",
+    grabClass: "owl-grab",
+    lazyLoad: false,
+
+  });
+  $(".next").click(function () {
+    owl.trigger("owl.next");
+  });
+  $(".prev").click(function () {
+    owl.trigger("owl.prev");
   });
 });
 $(document).ready(function() {
   $("#news-slider-2").owlCarousel({
       responsive: {
         0: {
-          items: 1
-          // nav: true
+          items: 1,
+          nav: true,
+          loop: true
+
         },
         480: {
           items: 2,
-          nav: false
+          nav: true,
+          loop: true
+
         },
         768: {
           items: 3,
-          // nav: true,
-          loop: false
+          nav: true,
+          loop: true
         },
         992: {
           items: 4,
-          // nav: true,
-          loop: false
+          nav: true,
+          loop: true
         }
       },
-      responsiveRefreshRate: 200,
-      responsiveBaseElement: window,
+      rtl: true,
       navigation:true,
       navigationText:["",""],
       pagination:true,
       autoPlay:true,
-      rtl: true,
-      autoplay:true, 
       autoplayTimeout:4000,    
       autoplayHoverPause:true, 
       animateOut: 'fadeOut',
+      rtlClass: "owl-rtl",
+      responsiveClass: "owl-responsive",
+      dragClass: "owl-drag",
+      itemClass: "owl-item",
+      stageClass: "owl-stage",
+      stageOuterClass: "owl-stage-outer",
+      grabClass: "owl-grab",
+      lazyLoad: false,
 
+    });
+    $(".next").click(function () {
+      owl.trigger("owl.next");
+    });
+    $(".prev").click(function () {
+      owl.trigger("owl.prev");
+    });
   });
-});
 
 $(document).ready(function(){
 

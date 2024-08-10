@@ -101,7 +101,6 @@ footer .row{
   padding: 20px ;
 }
 .footer-cataloge{
-  background-image: url(/assets/media/img-catalogo.png);
   background-repeat: no-repeat;
   background-position: left;
 }
@@ -616,21 +615,20 @@ align-content: justify;
     justify-content: center;
     margin: 0 auto;
     padding: 0 100px;
-    .sidebar {
-      .socials-network , .blog-category , .last-blog-post , .blog-tags{
+
+    }
+    .blog-holder .sidebar .socials-network ,.blog-holder .sidebar .blog-category , .blog-holder .sidebar .last-blog-post , .blog-holder .sidebar .blog-tags {
         padding: 20px;
         background-color: white;
         border-radius: 15px;
         margin: 10px;
       }
-    }
     .main-blog{
       padding: 20px;
       background-color: white;
       border-radius: 15px;
       margin: 10px;
     }
-  }
 
 .blog-post-detail-holder .card-text{
 
@@ -908,6 +906,7 @@ padding-inline: 20px;
 box-shadow: 0 1px 5px rgba(0,0,0,0.2);
 border-radius: 10px;
 margin-bottom: 20px;
+
 }
 .product-top-holder .product-title{
 border-radius: 10px;
@@ -965,6 +964,9 @@ overflow: hidden;
 border-radius: 10px;
 margin: -12px 15px 8px 15px;
 margin-left: -10px;
+height: 300px;
+object-fit: cover;
+object-position: center;
 }
 .pks-post-carousel .post-slide .post-img img{
 width: 100%;
@@ -1085,7 +1087,6 @@ content:"\f105";
 
 
 .pks_main_slider .owl-carousel .item{
-height: 100vh;
 padding: 0rem;
 }
 
@@ -1128,5 +1129,66 @@ text-align: center;
 }
 
 @media (max-width: 900) and (min-width: 600px) {
+  .pks_main_slider .owl-carousel .item {
+    padding: 0rem;
+  }
+.pks_main_slider .owl-carousel-single .item {
+  background: #d3d3d3;
+  text-align: center;
+  }
+.owl-carousel .owl-item img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  }
+  .header-logo .fa-search {
+    color: #fff;
+    background-color: #58585A;
+    padding: 12px 19px !important;
+    margin-left: 0px !important;
+    border-radius: 5px;
+  }
+}
 
+.navbar-nav {
+  --bs-nav-link-padding-y: 3px;
+}
+
+.owl-nav{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 50px;
+
+}
+.owl-prev{
+  padding: 10px 30px;
+  border-radius: 20px;
+  margin-left: 20px;
+  background-color: #001A71;
+  color: white;
+  transition: all .3s ease-in;
+
+}
+.owl-next{
+  padding: 10px 30px;
+  border-radius: 20px;
+  background-color: #001A71;
+  color: white;
+  transition: all .3s ease-in;
+
+}
+.owl-next:hover{
+  background-color:#2196F3 ;
+  color: white;
+}
+.owl-prev:hover{
+  background-color:#2196F3 ;
+  color: white;
+}
+
+.card-img-top{
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
 }
