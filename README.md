@@ -80,17 +80,17 @@ You could also add the -i and --trusted-host options to your requirements.txt li
 -i https://sampleurl.com/pypi-remote/simple --trusted-host sample.host.com
 ```
 
-then install all apps
+## then install all apps
 ```
 pip install -r requirements.txt
 ```
-after that use django app to run all the project
+## after that use django app to run all the project
 ```
 python manage.py makemigrations /
 python manage.py migrate /
 python manage.py createsuperuser
 ```
-after that you can run server and enjoy
+## after that you can run server and enjoy
 ```
 python manage.py runserver
 ```
