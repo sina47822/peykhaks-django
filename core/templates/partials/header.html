@@ -1,12 +1,11 @@
 {% load static %}
 
 <header class="main-header">
-    <div class="top-menu-section d-flex align-items-center justify-content-between">
+    {% comment %} <div class="top-menu-section d-flex align-items-center justify-content-between">
 
         {% include "./navs/top-nav.html"%}
 
         <div class="d-flex socials">
-            <a href=""><i class="fal fa-thumbs-up"></i></a>
             <a href=""><i class="fal fa-hashtag"></i></a>
             <a href=""><i class="fa-brands fa-facebook"></i></a>
             <a href=""><i class="fa-brands fa-youtube"></i></a>
@@ -25,7 +24,7 @@
             <a href="/"><img src="{% static 'logo/logo.svg' %}" alt="peykhaksang logo" width="110px" height="auto"></a>
 
         </div>
-    </div>
+    </div> {% endcomment %}
     {% include "./navs/center-nav.html"%}
 
 </header>

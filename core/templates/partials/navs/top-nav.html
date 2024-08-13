@@ -3,14 +3,16 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
+        <div class="navbar-collapse w-100 collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
                 <li class="nav-item"><a href="{% url 'website:home' %}">
+
                     <strong>پی خاک سنگ</strong>
                 </a></li>
                 <li class="nav-item"><a href="{% url 'website:about' %}">درباره ما</a></li>
                 <li class="nav-item"><a href="{% url 'website:contact' %}">ارتباط با ما</a></li>
-                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">بانک اطاعات</a>
+                <li class="nav-item dropdown dropdown-menu-shadow-stacked"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                    <a class="nav-link " href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="bi bi-ui-radios-grid me-2"></i><span>بانک اطاعات</span></a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <li class="dropdown-item"><a href="{% url 'website:blog-list' %}">مقالات</a></li>
                         <li class="dropdown-item"><a href="#">استاندارد</a></li>
