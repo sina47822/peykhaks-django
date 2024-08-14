@@ -1,83 +1,146 @@
 {% load static %}
 
-<footer>
-    <div class="container">
-        <div class="footer-top-section row">
-            <div class="col-lg-4 col-xs-12">
-                <a href="#" class="">            
-                    <div class="footer-section footer-cataloge">
-                        <div class="">
-                            <div><p>کاتالوگ</p></div>
-                            <div class="line"></div>
-                            <button value="button">دانلود کاتالوگ</button>
+        <!-- =======================
+        Footer START -->
+        <footer class="bg-light pt-5">
+            <div class="container">
+            <!-- Row START -->
+            <div class="row g-4">
+
+                <!-- Widget 1 START -->
+                <div class="col-lg-3">
+                    <!-- logo -->
+                    <a class="me-0" href="index.html">
+                        <img class="light-mode-item h-40px" src="{% static 'logo/logo.svg' %}" alt="logo">
+                        <img class="dark-mode-item h-40px" src="{% static 'logo/logo.svg' %}" alt="logo">
+                    </a>
+                    <p class="my-3">
+                        وبسایت پی خاک سنگ برای این به وجود آمده که به دوستان خود کمک کند آزمایشگاه خود را راه اندازی کنند این کمک از طریق بوجود آوردن مقالات مناسب انجام آزمایش، محصولات تخصصی آزمایشگاه، فراهم آوردن لیست کامل هر سه پایه خاک و بتن و امکان خرید قسطی و انواع فرم ها و کتاب های مورد نیاز شما است
+                    </p>
+                    <!-- Social media icon -->
+                    {% comment %} <ul class="list-inline mb-0 mt-3">
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-facebook" href="#"><i class="fab fa-fw fa-facebook-f"></i></a> </li>
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-instagram" href="#"><i class="fab fa-fw fa-instagram"></i></a> </li>
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-twitter" href="#"><i class="fab fa-fw fa-twitter"></i></a> </li>
+                        <li class="list-inline-item"> <a class="btn btn-white btn-sm shadow px-2 text-linkedin" href="#"><i class="fab fa-fw fa-linkedin-in"></i></a> </li>
+                    </ul> {% endcomment %}
+                </div>
+                <!-- Widget 1 END -->
+
+                <!-- Widget 2 START -->
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h5 class="mb-2 mb-md-4">لینک های مفید</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'website:about' %}">درباره ما</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'website:contact' %}">ارتباط با ما</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'website:blog-list' %}">مقالات</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'website:shop' %}">محصولات</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">سوالات متداول</a></li>
+                            </ul>
+                        </div>
+                  
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h5 class="mb-2 mb-md-4">راهنما و پشتیبانی</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item"><a class="nav-link" href="{% url 'website:blog-list' %}">داکیومنت</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">ارسال تیکت</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">نقشه سایت</a></li>
+                                <li class="nav-item"><a class="nav-link" href="{% url 'website:contact' %}">مشاوره رایگان</a></li>
+                                <li class="nav-item"><a class="nav-link" href="#">شرایط و قوانین</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Link block -->
+                        <div class="col-6 col-md-4">
+                            <h5 class="mb-2 mb-md-4">لینک های سریع</h5>
+                            <ul class="nav flex-column">
+                                <li class="nav-item">     
+                                    <a href="#" class="">            
+                                        <div class="footer-section footer-cataloge">
+                                            <div class="">
+                                                <div><p>کاتالوگ</p></div>
+                                                <div class="line"></div>
+                                                <button value="button">دانلود کاتالوگ</button>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-lg-4 col-xs-12">
-                <a href="#" class="">            
-                    <div class="footer-section footer-contact">
-                        <div class="">
-                            <div><p>ارتباط با ما</p></div>
-                            <div class="line"></div>
-                            <div>
-                                <h3>آدرس :</h3>
-                                <p>خیابان پیروزی خیابان اباذر کوچه پنجم شرقی پلاک 9</p>
+                </div>
+                <!-- Widget 2 END -->
+
+                <!-- Widget 3 START -->
+                <div class="col-lg-3">
+                    <h5 class="mb-2 mb-md-4">تماس با ما</h5>
+                    <!-- Time -->
+                    <p class="mb-2">
+                        تلفن: <span class="h6 fw-light ms-2">093200000000</span>
+                        <span class="d-block small">(همه روزه از ساعت ۷ صبح الی ۵ عصر به جز روزهای تعطیل)</span>
+                    </p>
+
+                    <p class="mb-0 mt-2">ایمیل:<span class="h6 fw-light ms-2">peykhaksang@gmail.com</span></p>
+                    <p class="mb-0 mt-2">آدرس:<span class="h6 fw-light ms-2">تهران، خیابان پیروزی، ضلع جنوب خیابان، بلوار ابوذر شمالی، نرسیده به پل اول، کوچه ششم شرقی، پلاک ۹، شرکت پی خاک سنگ</span></p>
+
+                    {% comment %} <div class="row g-2 mt-2">
+                        <!-- Google play store button -->
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-6">
+                            <a href="#"> <img src="{% static 'images/temprory/images/client/google-play.svg' %}" alt=""> </a>
+                        </div>
+                        <!-- App store button -->
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-6">
+                            <a href="#"> <img src="{% static 'images/temprory/images/client/app-store.svg' %}" alt="app-store"> </a>
+                        </div>
+                    </div> <!-- Row END --> {% endcomment %}
+                </div> 
+                <!-- Widget 3 END -->
+                </div><!-- Row END -->
+
+                <!-- Divider -->
+                <hr class="mt-4 mb-0">
+
+                <!-- Bottom footer -->
+                <div class="py-1">
+                    <div class="container px-0">
+                        <div class="d-lg-flex justify-content-between align-items-center py-2 text-center text-md-left">
+                            <!-- copyright text -->
+                            <div class="text-primary-hover">
+                                <p>کلیه حقوق این وبسایت به گروه صنعتی پی خاک سنگ تعلق دارد Copyright © 2024</p>
+                            </div>
+                            <!-- copyright links-->
+                            <div class="justify-content-center mt-3 mt-lg-0">
+                                <ul class="nav list-inline justify-content-center mb-0">
+
+                                    <li class="list-inline-item"><a class="nav-link" href="#">شرایط استفاده</a></li>
+                                    <li class="list-inline-item"><a class="nav-link pe-0" href="#">قوانین سایت</a></li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </a>
-            </div>
+                </div>
+                <!-- Divider -->
+                <hr class="mt-1 mb-0">
 
-            <div class="col-lg-4 col-xs-12">
-                <a href="#" class="">            
-                    <div class="footer-section footer-cert">
-                        <div class="">
-                            <div><p>کاتالوگ</p></div>
-                            <div class="line"></div>
-                            <button value="button">دانلود کاتالوگ</button>
+                <!-- Bottom footer -->
+                <div class="py-1">
+                    <div class="container px-0">
+                        <div class="d-lg-flex justify-content-between align-items-center py-2 text-center text-md-left">
+                            <!-- copyright text -->
+                            <div class="text-primary">
+                                ارائه شده توسط <a href="https://www.deodar.ir/" target="_blank" class="text-body"> <strong>دئودار</strong> </a>
+                            </div>
+
                         </div>
                     </div>
-                </a>
+                </div>                
             </div>
-        </div>
-        <div class="footer-line"></div>
-        <div class="footer-social row d-flex align-items-center justify-content-between">
-            <div class="col-lg-4 col-xs-12">
-                <div class="d-flex">
-                    <a href=""><i class="fal fa-thumbs-up"></i></a>
-                    <a href=""><i class="fal fa-hashtag"></i></a>
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-youtube"></i></a>
-
-                </div>
-            </div>
-            <div class="col-lg-4 col-xs-12">
-                <a href="#">aparat</a>
-            </div>
-            <div class="footer-site-part col-lg-4 col-xs-12">
-                <a href="#">شرایط فروش</a>
-                <a href="#">شرایط و مقررات سایت</a>
-
-            </div>
-        </div>
-        <div class="footer-line"></div>
-        <div class="footer-copyright d-flex pb-5">
-            <div class="col-lg-4 col-xs-12">
-                <p>کلیه حقوق این وبسایت به گروه صنعتی پی خاک سنگ تعلق دارد Copyright © 2024</p>
-                <div>
-                    <a href="#"><p class="deodar">طراح سایت : گروه طراحی وبسایت دئودار</p></a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-xs-12">
-            </div>
-            <div class="col-lg-4 col-xs-12">
-                <a href="/">
-                    <img src="{% static 'logo/logo.svg' %}" alt="peykhaksang logo" width="110px" height="auto">
-                </a>
-            
-            </div>
-            <div class="back-to-top"><a href="#"><i class="fal fa-arrow-up"></i></a></div>
-    </div>
-    </div>
-</footer>
+        </footer>
+        <!-- =======================
+        Footer END -->
+        <!-- Back to top -->
+<div class="back-top"><i class="fal fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>

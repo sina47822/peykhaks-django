@@ -95,13 +95,13 @@
                 <!-- Categories widget-->
                 <div class="card m-4">
                     <div class="card-header">دسته بندی ها</div>
-                    <div class=" card-body">
-                        <div class="">
-                        {% for cat in categories %}
+                        <div class=" card-body">
+                            <div class="">
+                            {% for cat in categories %}
 
-                            <a class="cat-tag-item-card" href="{% url 'website:blog-category' slug=cat.slug %}"><span>{{cat.name}}</span></a>
-                        {% endfor %}
-                    </div>
+                                <a class="cat-tag-item-card" href="{% url 'website:blog-category' slug=cat.slug %}"><span>{{cat.name}}</span></a>
+                            {% endfor %}
+                        </div>
 
                     </div>
                 </div>

@@ -93,22 +93,19 @@ ul{
   font-size: 10px;
 }
 
-footer{
-  background-color: #58585A;
-}
-
-footer .row{
-  padding: 20px ;
-}
 .footer-cataloge{
+  background-image: url(../images/temprory/images/event/08.jpg);
   background-repeat: no-repeat;
   background-position: left;
+  box-shadow: 0 3px 2px rgba(0,0,0,0.09);
+
 }
 .footer-section{
   border: solid 1px #8a8a8a;
   padding: 20px;
   min-height: 200px;
   margin-bottom: 20px;
+  border: none;
 }
 
 .footer-section .line{
@@ -120,7 +117,7 @@ footer .row{
   padding: 8px 20px;
   border: none;
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #9f9f9f;
   box-shadow: 0 3px 2px rgba(0,0,0,0.09);
   transition: all 0.2s ease-in;
   font-size: 14px;
@@ -130,16 +127,18 @@ footer .row{
   background-color: #001A71;
   box-shadow: 0 2px 15px rgba(0,0,0,0.09);
   color: white;
-  box-shadow: 0 2px 15px rgba(0,0,0,0.2);
 }
 .footer-section h3{
-  color: white;
+  color: rgb(243, 238, 238);
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 .footer-section p{
-  color: white;
+  background-color: rgba(0,0,0,0.2);
+  color: rgb(242, 240, 240);
+  padding: 4px;
+  border-radius: 10px;
   font-size: 15px;
   font-weight: 600;
 }
@@ -147,90 +146,10 @@ footer .row{
 .footer-line{
   padding-bottom: 10px;
   width: 95%;
-  margin: 20px auto;
+  margin: 10px auto;
   border-bottom: 2px solid #757575;
 }
 
-.footer-social, .socials{
-  padding: 5px 8px;
-  i{
-      color: #ccc;
-      font-size: 20px;
-      font-weight: 300;
-      margin-left: 6px;
-      transition: all .3s cubic-bezier(0.075, 0.82, 0.165, 1);
-  }
-  :hover{
-      color:#001A71;
-      font-weight: 400;
-  }
-  a{
-      color:white;
-      font-weight: 600;
-      margin-left: 20px;
-      :hover{
-          color:#001A71;
-          /* background-color: #001A71; */
-          border: none;
-      }
-  }
-}
-
-
-.footer-social .footer-site-part a{
-  padding: 10px;
-  border-radius: 10px;
-  color: black;
-  transition: all .5s ease ;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-  color: white;
-}
-
-.footer-social .footer-site-part a:hover{
-  background-color: #001A71;
-}
-
-
-.footer-copyright{
-  position: relative;
-}
-.footer-copyright i{
-  position: absolute;
-  background-color: #FFD100;
-  font-weight: 500;
-  border-radius: 10px;
-  right: 10px;
-  bottom: 10px;
-  padding: 15px;
-  transition: all 0.2s ease;
-}
-
-.footer-copyright i:hover{
-  color: white;
-  background-color:#001A71;
-}
-
-.footer-copyright p{
-  color: white;
-  font-weight: 700;
-  font-size: 12px;
-}
-.footer-copyright .deodar{
-  color: white;
-  background-color: #001A71;
-  padding: 3px 10px;
-  font-weight: 900;
-  border-radius: 20px;
-  transition: all 0.2s ease;
-  margin-bottom: 20px;
-
-
-}
-.footer-copyright .deodar:hover{
-  color: white;
-  background-color: #58585A;
-  box-shadow: 0 5px 5px rgba(0,0,0,0.2);
-}
 
 .category-list-filter a.active{
   background: red;

@@ -275,7 +275,6 @@ $(document).ready(function(){
     }});
 });
 
-
 var e = {
   init: function () {
       e.preLoader(),
@@ -422,7 +421,7 @@ var e = {
           selectors = document.querySelector(selectors);
       }
       if (e.isVariableDefined(selectors)) {
-          selectors.addClass(className);
+          selectors.classList.add(className);
       }
   },
   select: function (selectors) {
