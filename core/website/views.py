@@ -75,7 +75,7 @@ def blog(request):
     tags = Tags.objects.all()
 
 
-    paginator = Paginator(posts, 4)  # Show 10 posts per page
+    paginator = Paginator(posts, 8)  # Show 10 posts per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
@@ -96,6 +96,7 @@ def blogposts(request, slug):
     products = Product.objects.all().order_by('-id')[:4]
     categories = Category.objects.all()
     tags = Tags.objects.all()
+    related_posts = Post.objects.filter()
 
     context = {'slug': slug,
                'post' : post,
@@ -103,7 +104,8 @@ def blogposts(request, slug):
                'posts': posts,
                'products':products,
                'categories':categories,
-               'tags' : tags
+               'tags' : tags,
+               'related_posts' : related_posts,
                }
 
     return render(request, 'website/blog-detail.html', context) 
