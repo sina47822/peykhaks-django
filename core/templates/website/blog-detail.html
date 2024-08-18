@@ -25,9 +25,9 @@
                                 <!-- Author info -->
                                 <div class="position-relative">
                                     <!-- Avatar -->
-                                    <div class="avatar avatar-xxl">
+                                    {% comment %} <div class="avatar avatar-xxl">
                                         <img class="avatar-img rounded-circle" src="{{ post.author.url }}" alt="avatar">
-                                    </div>
+                                    </div> {% endcomment %}
                                     <a href="#" class="h5 stretched-link mt-2 mb-0 d-block">{{ post.author.get_full_name }}</a>
                                     <p class="mb-2">نویسنده</p>
                                 </div>
@@ -46,7 +46,7 @@
                             <!-- Pre title -->
                             <span>{{ post.publish_date }}</span><span class="mx-2">|</span><div class="badge text-bg-success"> {{ post.categories }} </div>
                             <!-- Title -->
-                            <h1 class="mt-2 mb-0 fs-4">{{post.title}}</h1>
+                            <h1 class="mt-2 mb-0 fs-4"> خلاصه مطلب :{{post.title}}</h1>
                             <!-- Info -->
                             <p class="mt-2">{{post.post_summery | safe}}</p>
                         </div>
