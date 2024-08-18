@@ -53,6 +53,20 @@ Page content START -->
 			<!-- Card item START -->
 			<div class="col-sm-6 col-lg-4 col-xl-3">
 				<div class="card bg-transparent">
+					{% if post.slug %}
+					<a href="{% url 'website:blog-detail' slug=post.slug %}">
+
+						<div class="overflow-hidden rounded-3">
+							<img src="{{ post.image.url }}" class="card-img" alt="course image">
+							<!-- Overlay -->
+							<div class="bg-overlay bg-dark opacity-4"></div>
+							<div class="card-img-overlay d-flex align-items-start p-3">
+								<!-- badge -->
+								<a href="{% url 'website:blog-category' slug=cat.slug %}" class="badge text-bg-danger">{{ post.categories }}</a>
+							</div>
+						</div>
+					</a>
+					{% else %}
 					<div class="overflow-hidden rounded-3">
 						<img src="{{ post.image.url }}" class="card-img" alt="course image">
 						<!-- Overlay -->
@@ -62,11 +76,12 @@ Page content START -->
 							<a href="{% url 'website:blog-detail' slug=post.slug %}" class="badge text-bg-danger">{{ post.categories }}</a>
 						</div>
 					</div>
+					{% endif %}
 
 					<!-- Card body -->
 					<div class="card-body">
 						<!-- Title -->
-						<h5 class="card-title fw-normal"><a href=""></a>{{post.title}}</h5>
+						<h5 class="card-title fw-normal"><a href="{% url 'website:blog-detail' slug=post.slug %}">{{post.title}}</h5></a>
 						<p class="text-truncate-2">{{post.post_summery |safe |truncatechars:100}}</p>
 						<!-- Info -->
 						<div class="d-flex justify-content-between">
