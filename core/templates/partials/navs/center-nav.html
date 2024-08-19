@@ -5,7 +5,7 @@
 	<nav class="navbar navbar-expand-xl">
 		<div class="container-fluid px-3 px-xl-5">
 			<!-- Logo START -->
-			<a class="navbar-brand" href="index.html">
+			<a class="navbar-brand" href="{% url 'website:home' %}">
 				<img class="light-mode-item navbar-brand-item" src="{% static 'logo/logo.svg' %}" alt="peykhaksang logo">
 				<img class="dark-mode-item navbar-brand-item" src="{% static 'logo/logo.svg' %}" alt="peykhaksang logo">
 			</a>
@@ -148,7 +148,7 @@
                                         <li> <a class="dropdown-item" href="/plate-load-test/">آزمایش بارگذاری صفحه</a> </li>
 
                                         <hr>
-										<li> <a class="dropdown-item" href="/blog/">مشاهده همه</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">مشاهده همه</a> </li>
 									</ul>
 								</div>
 
@@ -168,7 +168,7 @@
 										<li> <a class="dropdown-item" href="/testing-the-tensile-strength-of-concrete-by-splitting-method/">آزمایش مقاومت کششی بتن به روش دو نیم شدن</a> </li>
 										<li> <a class="dropdown-item" href="/conditions-for-establishing-a-concrete-laboratory/">شرایط تاسیس آزمایشگاه بتن</a> </li>
                                         <hr>
-										<li> <a class="dropdown-item" href="#">مشاهده همه</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">مشاهده همه</a> </li>
 									</ul>
 								</div>
                                 <div class="col-xl-6 col-xxl-4">
@@ -188,7 +188,7 @@
 										<li> <a class="dropdown-item" href="">.</a> </li>
 
                                         <hr>
-										<li> <a class="dropdown-item" href="#">مشاهده همه</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">مشاهده همه</a> </li>
 									</ul>
 								</div>
 
@@ -227,13 +227,13 @@
      
 <nav class="center-nav">
     <ul class="d-flex align-items-center justify-content-between">
-        <li class=""><a href="{% url 'website:soil-laboratory' %}">
+        <li class=""><a href="{% url 'website:coming-soon' %}">
             آزمایشگاه خاک
         </a></li>
-        <li class=""><a href="{% url 'website:concrete-laboratory' %}">آزمایشگاه بتن</a></li>
-        <li class=""><a href="{% url 'website:asphalt-laboratory' %}">آزمایشگاه آسفالت</a></li>
-        <li class=""><a href="{% url 'website:rock-laboratory' %}">آزمایشگاه سنگ</a></li>
-        <li class=""><a href="{% url 'website:general-laboratory' %}">آزمایشگاه عمومی</a></li>
+        <li class=""><a href="{% url 'website:coming-soon' %}">آزمایشگاه بتن</a></li>
+        <li class=""><a href="{% url 'website:coming-soon' %}">آزمایشگاه آسفالت</a></li>
+        <li class=""><a href="{% url 'website:coming-soon' %}">آزمایشگاه سنگ</a></li>
+        <li class=""><a href="{% url 'website:coming-soon' %}">آزمایشگاه عمومی</a></li>
 
 
         </ul>

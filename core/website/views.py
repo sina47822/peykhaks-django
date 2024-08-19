@@ -135,3 +135,10 @@ def test(request):
 
     context = {'categories': categories,}
     return render (request , 'test.html', context)
+
+def comingsoon (request):
+    return render (request , 'website/comming-soon.html')
+
+
+def page404 (request):
+    return render (request , 'website/404.html')
