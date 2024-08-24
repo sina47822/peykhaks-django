@@ -6,7 +6,8 @@ from django.utils.text import slugify
 from django.utils import timezone
 from django.shortcuts import get_object_or_404, render
 from django.core.paginator import Paginator
-
+# class base view
+from django.views.generic.list import ListView
 # models.fields
 from website.models import SliderModel,CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO
 from product.models import Product ,PriceList
@@ -142,3 +143,57 @@ def comingsoon (request):
 
 def page404 (request):
     return render (request , 'website/404.html')
+
+class SoilListView (ListView):
+    model = Product
+    template_name = "productcat/soil.html" 
+    context_object_name = 'products' 
+    ordering = ['-publish_date'] 
+    paginate_by = 10  # Display 10 products per page
+
+    def get_queryset(self):
+        return Product.objects.filter(categories__name='az1').order_by('publish_date')
+    
+class ConcreteListView (ListView):
+    model = Product
+    template_name = "productcat/concrete.html" 
+    context_object_name = 'products' 
+    ordering = ['-publish_date'] 
+    paginate_by = 10  # Display 10 products per page
+
+    def get_queryset(self):
+        return Product.objects.filter(categories__name='az2').order_by('publish_date')
+    
+class AsphaltListView (ListView):
+    model = Product
+    template_name = "productcat/asphalt.html" 
+    context_object_name = 'products' 
+    ordering = ['-publish_date'] 
+    paginate_by = 10  # Display 10 products per page
+
+    def get_queryset(self):
+        return Product.objects.filter(categories__name='az3').order_by('publish_date')
+    
+    
+class RockListView (ListView):
+    model = Product
+    template_name = "productcat/rock.html" 
+    context_object_name = 'products' 
+    ordering = ['-publish_date'] 
+    paginate_by = 10  # Display 10 products per page
+
+    def get_queryset(self):
+        return Product.objects.filter(categories__name='az4').order_by('publish_date')
+    
+                        
+class WeldListView (ListView):
+    model = Product
+    template_name = "productcat/weld.html" 
+    context_object_name = 'products' 
+    ordering = ['-publish_date'] 
+    paginate_by = 10  # Display 10 products per page
+
+    def get_queryset(self):
+        return Product.objects.filter(categories__name='az7').order_by('publish_date')
+                        
+

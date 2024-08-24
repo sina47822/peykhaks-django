@@ -3737,19 +3737,19 @@ textarea.form-control-lg {
 
 .btn-danger {
   --bs-btn-color: #fff;
-  --bs-btn-bg: #d6293e;
-  --bs-btn-border-color: #d6293e;
+  --bs-btn-bg: #001A71;
+  --bs-btn-border-color:#001A71;
   --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #b62335;
-  --bs-btn-hover-border-color: #ab2132;
+  --bs-btn-hover-bg: #001A71;
+  --bs-btn-hover-border-color: #001A71;
   --bs-btn-focus-shadow-rgb: 220, 73, 91;
   --bs-btn-active-color: #fff;
-  --bs-btn-active-bg: #ab2132;
-  --bs-btn-active-border-color: #a11f2f;
+  --bs-btn-active-bg: #001A71;
+  --bs-btn-active-border-color: #001A71;
   --bs-btn-active-shadow: none;
   --bs-btn-disabled-color: #fff;
-  --bs-btn-disabled-bg: #d6293e;
-  --bs-btn-disabled-border-color: #d6293e;
+  --bs-btn-disabled-bg: #001A71;
+  --bs-btn-disabled-border-color: #b6d629e;
 }
 
 .btn-light {
@@ -18840,7 +18840,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-sm .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 50px;
     display: block;
     width: auto;
   }
@@ -18920,7 +18920,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 575.98px) {
   .navbar-expand-sm .navbar-brand .navbar-brand-item {
-    height: 24px;
+    height: 50px;
   }
   .navbar-expand-sm .navbar-brand {
     padding: 20px 0;
@@ -19031,7 +19031,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-md .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 50px;
     display: block;
     width: auto;
   }
@@ -19111,7 +19111,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 767.98px) {
   .navbar-expand-md .navbar-brand .navbar-brand-item {
-    height: 24px;
+    height: 50px;
   }
   .navbar-expand-md .navbar-brand {
     padding: 20px 0;
@@ -19222,7 +19222,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-lg .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 50px;
     display: block;
     width: auto;
   }
@@ -19302,7 +19302,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 991.98px) {
   .navbar-expand-lg .navbar-brand .navbar-brand-item {
-    height: 24px;
+    height: 50px;
   }
   .navbar-expand-lg .navbar-brand {
     padding: 20px 0;
@@ -19413,7 +19413,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-xl .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 50px;
     display: block;
     width: auto;
   }
@@ -19493,7 +19493,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 1199.98px) {
   .navbar-expand-xl .navbar-brand .navbar-brand-item {
-    height: 24px;
+    height: 50px;
   }
   .navbar-expand-xl .navbar-brand {
     padding: 20px 0;
@@ -19604,7 +19604,7 @@ textarea.form-control-lg {
     z-index: 1100 !important;
   }
   .navbar-expand-xxl .navbar-brand .navbar-brand-item {
-    height: 36px;
+    height: 50px;
     display: block;
     width: auto;
   }
@@ -19684,7 +19684,7 @@ textarea.form-control-lg {
 }
 @media (max-width: 1399.98px) {
   .navbar-expand-xxl .navbar-brand .navbar-brand-item {
-    height: 24px;
+    height: 50px;
   }
   .navbar-expand-xxl .navbar-brand {
     padding: 20px 0;
@@ -19794,7 +19794,7 @@ textarea.form-control-lg {
   z-index: 1100 !important;
 }
 .navbar-expand .navbar-brand .navbar-brand-item {
-  height: 36px;
+  height: 50px;
   display: block;
   width: auto;
 }
@@ -19872,7 +19872,7 @@ textarea.form-control-lg {
   position: relative;
 }
 .navbar-expand .navbar-brand .navbar-brand-item {
-  height: 24px;
+  height: 50px;
 }
 .navbar-expand .navbar-brand {
   padding: 20px 0;

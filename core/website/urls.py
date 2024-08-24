@@ -1,5 +1,5 @@
 from django.urls import path
-from website.views import aboutus,contactus,index,blog,blogposts,ProductShop,TermsAndCondition, test, postcategory,posttags,comingsoon,page404
+from website.views import aboutus,contactus,index,blog,blogposts,ProductShop,TermsAndCondition, test, postcategory,posttags,comingsoon,page404, SoilListView,WeldListView,RockListView,AsphaltListView,ConcreteListView
 from product.views import price_list
 app_name = 'website'
 
@@ -15,11 +15,11 @@ urlpatterns = [
     path('terms-and-conditions/', TermsAndCondition, name='Terms-and-conditions'),
 
         
-    path('blog/geotechnics/', blogposts, name='soil-laboratory'),
-    path('blog/concrete/', blogposts, name='concrete-laboratory'),
-    path('blog/asphalt/', blogposts, name='asphalt-laboratory'),
-    path('blog/rock/', blogposts, name='rock-laboratory'),
-    path('blog/general/', blogposts, name='general-laboratory'),
+    path('geotechnics/', SoilListView.as_view(), name='soil-laboratory'),
+    path('concrete/', ConcreteListView.as_view(), name='concrete-laboratory'),
+    path('asphalt/', AsphaltListView.as_view(), name='asphalt-laboratory'),
+    path('rock/', RockListView.as_view(), name='rock-laboratory'),
+    path('weld/', WeldListView.as_view(), name='weld-laboratory'),
 
     path('test/', test, name='test'),
     path('category/<slug:slug>/',postcategory , name='blog-category'),
