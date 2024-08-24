@@ -57,7 +57,7 @@ Page content START -->
 					<a href="{% url 'website:blog-detail' slug=post.slug %}">
 
 						<div class="overflow-hidden rounded-3">
-							<img src="{{ post.image.url }}" class="card-img" alt="course image">
+							<img src="{{ post.image.url }}" class="card-img" alt="blog image">
 							<!-- Overlay -->
 							<div class="bg-overlay bg-dark opacity-4"></div>
 							<div class="card-img-overlay d-flex align-items-start p-3">
@@ -68,7 +68,7 @@ Page content START -->
 					</a>
 					{% else %}
 					<div class="overflow-hidden rounded-3">
-						<img src="{{ post.image.url }}" class="card-img" alt="course image">
+						<img src="{{ post.image.url }}" class="card-img" alt="blog image">
 						<!-- Overlay -->
 						<div class="bg-overlay bg-dark opacity-4"></div>
 						<div class="card-img-overlay d-flex align-items-start p-3">

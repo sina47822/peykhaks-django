@@ -149,30 +149,30 @@ class SoilListView (ListView):
     template_name = "productcat/soil.html" 
     context_object_name = 'products' 
     ordering = ['-publish_date'] 
-    paginate_by = 10  # Display 10 products per page
+    paginate_by = 8  # Display 10 products per page
 
     def get_queryset(self):
-        return Product.objects.filter(categories__name='az1').order_by('publish_date')
+        return Product.objects.filter(categories__name='soil-equipments').order_by('publish_date')
     
 class ConcreteListView (ListView):
     model = Product
     template_name = "productcat/concrete.html" 
     context_object_name = 'products' 
     ordering = ['-publish_date'] 
-    paginate_by = 10  # Display 10 products per page
+    paginate_by = 8  # Display 10 products per page
 
     def get_queryset(self):
-        return Product.objects.filter(categories__name='az2').order_by('publish_date')
+        return Product.objects.filter(categories__name='concrete-equipments').order_by('publish_date')
     
 class AsphaltListView (ListView):
     model = Product
     template_name = "productcat/asphalt.html" 
     context_object_name = 'products' 
     ordering = ['-publish_date'] 
-    paginate_by = 10  # Display 10 products per page
+    paginate_by = 8  # Display 10 products per page
 
     def get_queryset(self):
-        return Product.objects.filter(categories__name='az3').order_by('publish_date')
+        return Product.objects.filter(categories__name='asphalt-equipments').order_by('publish_date')
     
     
 class RockListView (ListView):
@@ -180,10 +180,10 @@ class RockListView (ListView):
     template_name = "productcat/rock.html" 
     context_object_name = 'products' 
     ordering = ['-publish_date'] 
-    paginate_by = 10  # Display 10 products per page
+    paginate_by = 8  # Display 10 products per page
 
     def get_queryset(self):
-        return Product.objects.filter(categories__name='az4').order_by('publish_date')
+        return Product.objects.filter(categories__name='rock-equipments').order_by('publish_date')
     
                         
 class WeldListView (ListView):
@@ -191,9 +191,9 @@ class WeldListView (ListView):
     template_name = "productcat/weld.html" 
     context_object_name = 'products' 
     ordering = ['-publish_date'] 
-    paginate_by = 10  # Display 10 products per page
+    paginate_by = 8  # Display 10 products per page
 
     def get_queryset(self):
-        return Product.objects.filter(categories__name='az7').order_by('publish_date')
+        return Product.objects.filter(categories__name='weld-equipments').order_by('publish_date')
                         
 

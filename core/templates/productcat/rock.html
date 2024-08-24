@@ -64,7 +64,7 @@ Page content START -->
                     <a href="{% url 'product:productdetails' slug=product.slug %}">
 
                         <div class="overflow-hidden rounded-3">
-                            <img src="{{ product.image.url }}" class="card-img" alt="course image">
+                            <img src="{{ product.image.url }}" class="card-img" alt="product image">
                             <!-- Overlay -->
                             <div class="bg-overlay bg-dark opacity-4"></div>
                             <div class="card-img-overlay d-flex align-items-start p-3">
@@ -75,7 +75,7 @@ Page content START -->
                     </a>
                     {% else %}
                     <div class="overflow-hidden rounded-3">
-                        <img src="{{ product.image.url }}" class="card-img" alt="course image">
+                        <img src="{{ product.image.url }}" class="card-img" alt="product image">
                         <!-- Overlay -->
                         <div class="bg-overlay bg-dark opacity-4"></div>
                         <div class="card-img-overlay d-flex align-items-start p-3">
