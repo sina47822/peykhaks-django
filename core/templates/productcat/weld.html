@@ -1,0 +1,120 @@
+{% extends '../core/base.html' %}
+{% load humanize %}
+{% load static %}
+
+
+
+{% block title %}Soil{% endblock title%}
+{% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+
+
+
+{% block content %}
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+    <!-- =======================
+    Page Banner START -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row position-relative">
+                <!-- SVG decoration -->
+                <figure class="position-absolute top-0 start-0 d-none d-sm-block">	
+                    <svg width="22px" height="22px" viewBox="0 0 22 22" style="transform: scale(-1,1)">
+                        <polygon class="fill-purple" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
+                    </svg>
+                </figure>
+            
+                <!-- Title and breadcrumb -->
+                <div class="col-lg-10 mx-auto text-center position-relative">
+                    <!-- Title -->
+                    <h1 class="fs-2">بخش جوش</h1>
+                    <!-- Breadcrumb -->
+                    <div class="d-flex justify-content-center position-relative">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="{% url 'website:home' %}">صفحه اصلی</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'website:shop' %}">محصولات</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">جوش</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- =======================
+    Page Banner END -->
+    <!-- =======================
+Page content START -->
+<section class="position-relative pt-0 pt-lg-5">
+    <!-- Title and breadcrumb -->
+    <div class="col-lg-10 mx-auto text-center position-relative">
+        <!-- Title -->
+        <h2 class="fs-2">محصولات جوش</h2>
+        <hr class="mb-4">
+    </div>
+	<div class="container">
+        <div class="row g-4">
+            {% for product in products %}
+            <!-- Card item START -->
+            <div class="col-sm-6 col-lg-4 col-xl-3">
+                <div class="card bg-transparent">
+                    {% if product.slug %}
+                    <a href="{% url 'product:productdetails' slug=product.slug %}">
+
+                        <div class="overflow-hidden rounded-3">
+                            <img src="{{ product.image.url }}" class="card-img" alt="course image">
+                            <!-- Overlay -->
+                            <div class="bg-overlay bg-dark opacity-4"></div>
+                            <div class="card-img-overlay d-flex align-items-start p-3">
+                                <!-- badge -->
+                                <a href="" class="badge text-bg-danger">{{ product.categories }}</a>
+                            </div>
+                        </div>
+                    </a>
+                    {% else %}
+                    <div class="overflow-hidden rounded-3">
+                        <img src="{{ product.image.url }}" class="card-img" alt="course image">
+                        <!-- Overlay -->
+                        <div class="bg-overlay bg-dark opacity-4"></div>
+                        <div class="card-img-overlay d-flex align-items-start p-3">
+                            <!-- badge -->
+                            <a href="{% url 'product:productcategory' slug=categories.slug %}" class="badge text-bg-danger">{{ product.categories }}</a>
+                        </div>
+                    </div>
+                    {% endif %}
+
+                    <!-- Card body -->
+                    <div class="card-body">
+                        <!-- Title -->
+                        <h5 class="card-title fw-normal"><a href="{% url 'product:productdetails' slug=product.slug %}">{{product.title}}</h5></a>
+                        <!-- Info -->
+                        <div class="d-flex justify-content-between">
+                            <h6 class="mb-0 fw-normal"><a href="">{{ product.author.get_full_name }}</a></h6>
+                            <span class="small">{{ product.publish_date|naturaltime }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div>
+                <h2>محصولی موجود نیست</h2>
+            </div>
+            {% endfor %}
+		</div> <!-- Row end -->
+
+        {% include "partials/paginator.html"%}
+
+	</div>
+</section>
+<!-- =======================
+Page content END -->
+
+</main>
+
+
+
+
+
+{% endblock content%}
