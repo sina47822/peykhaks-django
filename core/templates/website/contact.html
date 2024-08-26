@@ -10,18 +10,44 @@
 {% block content %}
 
 
-<section class="breadcrump">
-    <div class="container row">
-        <div class="col-6 col-xs-6">home/contact us</div>
-        <div class="col-6 col-xs-6 d-flex justify-content-end">ارتباط با ما</div>
-    </div>
-</section>
+    <!-- =======================
+    Page Banner START -->
+    <section class="py-5">
+      <div class="container">
+          <div class="row position-relative">
+              <!-- SVG decoration -->
+              <figure class="position-absolute top-0 start-0 d-none d-sm-block">	
+                  <svg width="22px" height="22px" viewBox="0 0 22 22" style="transform: scale(-1,1)">
+                      <polygon class="fill-purple" points="22,8.3 13.7,8.3 13.7,0 8.3,0 8.3,8.3 0,8.3 0,13.7 8.3,13.7 8.3,22 13.7,22 13.7,13.7 22,13.7 "></polygon>
+                  </svg>
+              </figure>
+          
+              <!-- Title and breadcrumb -->
+              <div class="col-lg-10 mx-auto text-center position-relative">
+                  <!-- Title -->
+                  <h1 class="fs-2" style="color:black">ارتباط با ما</h1>
+                  <!-- Breadcrumb -->
+                  <div class="d-flex justify-content-center position-relative">
+                      <nav aria-label="breadcrumb">
+                          <ol class="breadcrumb mb-0">
+                              <li class="breadcrumb-item"><a href="{% url 'website:home' %}">صفحه اصلی</a></li>
+                              <li class="breadcrumb-item active" aria-current="page">ارتباط با ما</li>
+                          </ol>
+                      </nav>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+  <!-- =======================
+  Page Banner END -->
+  <!-- =======================
 
 <section class="">       
     <!-- contact us Page content-->
     <div class="container">
         <div class="contact-us-holder row container">
-            <div class="col-sm-4">
+            <div class="col-sm-4 p-3">
                 <div class="">
                     <div class="address-header">
                         <div class="container">
@@ -45,7 +71,70 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-8 bg-light mb-4 p-3">
+              <div class="">
+                  <div class="container">
+                      <div class="col-12">
+
+                          <div class="wrap">
+                              <div class="call-us-header" >
+                                  <div class="container">
+                                      <h2 class="">راه‌های ارتباطی با پی خاک سنگ</h2>
+                                  </div>
+                              </div>
+                              <div class="call-us-header">
+                                  <div class="container">
+                                      <h3 class="elementor-heading-title elementor-size-small">خطوط تماس مخصوص استعلام قیمت</h3>
+                                  </div>
+                              </div>
+                              <div class="call-us-header">
+                                  <div class="container">
+                                      <p><a href="tel:02133163222">021-33163222</a>
+                                      <br>
+                                      <a href="tel:02133076061">021-33076061</a></p>
+                                  </div>
+                              </div>
+                              <div class="call-us-header">
+                                  <div class="container">
+                                      <h3 class=" ">خطوط تماس مخصوص شرایط پرداخت</h3>
+                                  </div>
+                              </div>
+                              <div class="call-us-header">
+                                  <div class="container">
+                                      <p>
+                                          <a href="tel:09123199334">0912-3199334</a>
+                                          <br>
+                                          <a href="tel:09338128542">0933-8128542</a>
+                                      </p>
+                                  
+                                  </div>
+                              </div>
+                              <div class="call-us-header">
+                                  <div class="container">
+                                      <h3 class="">دریافت لیست قیمت از طریق تلگرام</h3>
+                                  
+                                  </div>
+                              </div>
+                              <div class="">
+                                  <div class="container">
+                                      <p>09371604119</p>
+                                  
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+          </div>
+        </div>
+        <div class="row">
             <div class="col-xs-12 col-lg-8">
+              <div class="header my-3 bg-light">
+                  <h2>
+                      فرم ارتباط با ما
+                  </h2>
+              </div>
               <div class="contacts-form bg-light p-5">
                 <form action="/contact-us/" method="post" id="form_contact" name="form_contact" novalidate="novalidate">
               
@@ -77,7 +166,7 @@
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <div class="row">
                       <div class="col-xs-12 col-sm-6">
@@ -92,8 +181,8 @@
                       </div>
                     </div>
                   </div>
-  
-                   <div class="form-group">
+
+                  <div class="form-group">
                     <div class="row">
                       <div class="col-xs-12 col-sm-6">
                         <label>سمت شغلی*</label>
@@ -102,7 +191,7 @@
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <div class="row">
                       <div class="col-xs-12 col-sm-12">
@@ -122,13 +211,13 @@
                         <small class="d-flex align-items-center justify-content-start">
                           <input type="checkbox" id="txtPrivacyform2" name="txtPrivacyform2">
                           <p>
-                             من موافقت خودم را بابت در اختیار گذاشتن اطلاعات شخصی اختیار شرکت پی خاک سنگ با آگاهی به آنکه اطلاعات در این شرکت محفوظ می ماند و برای اهداف مارکتینگ استفاده نمی شود، اعلام می کنم
+                            من موافقت خودم را بابت در اختیار گذاشتن اطلاعات شخصی اختیار شرکت پی خاک سنگ با آگاهی به آنکه اطلاعات در این شرکت محفوظ می ماند و برای اهداف مارکتینگ استفاده نمی شود، اعلام می کنم
                           </p>
                         </small>
                       </div>
                     </div>
                   </div>
-  
+
                   <div class="form-group">
                     <div class="row">  
                       <div class="col-xs-12 col-sm-6 txt-small">
@@ -137,72 +226,14 @@
                     </div>
                   </div>
                   
-  
+
                 </form>
               </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 bg-light mb-4 p-5">
-                <div class="">
-                    <section class="">
-                        <div class="container">
-                            <div class="col-12">
-                                <div class="wrap">
-                                    <div class="call-us-header" >
-                                        <div class="container">
-                                            <h2 class="">راه‌های ارتباطی با پی خاک سنگ</h2>
-                                        </div>
-                                    </div>
-                                    <div class="call-us-header">
-                                        <div class="container">
-                                            <h3 class="elementor-heading-title elementor-size-small">خطوط تماس مخصوص استعلام قیمت</h3>
-                                        </div>
-                                    </div>
-                                    <div class="call-us-header">
-                                        <div class="container">
-                                            <p><a href="tel:02133163222">021-33163222</a>
-                                            <br>
-                                            <a href="tel:02133076061">021-33076061</a></p>
-                                        </div>
-                                    </div>
-                                    <div class="call-us-header">
-                                        <div class="container">
-                                            <h3 class=" ">خطوط تماس مخصوص شرایط پرداخت</h3>
-                                        </div>
-                                    </div>
-                                    <div class="call-us-header">
-                                        <div class="container">
-                                            <p>
-                                                <a href="tel:09123199334">0912-3199334</a>
-                                                <br>
-                                                <a href="tel:09338128542">0933-8128542</a>
-                                            </p>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="call-us-header">
-                                        <div class="container">
-                                            <h3 class="">دریافت لیست قیمت از طریق تلگرام</h3>
-                                        
-                                        </div>
-                                    </div>
-                                    <div class="">
-                                        <div class="container">
-                                            <p>09371604119</p>
-                                        
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </section>
-                </div>
-            </div>
-            <div class="col-sm-6 bg-light mb-4 p-5">
+            <div class="col-sm-4 mb-4">
                 <img src="{% static 'images/temprory/images/about/27.jpg' %}" alt="ارتباط با پی خاک سنگ">
             </div>
+
         </div>
         <div class="row m-4 bg-light">
             <div class="header my-3">
