@@ -1,7 +1,49 @@
-{% load humanize %}
 {% load static %}
+{% load humanize %}
 
-<div class="pks-post-carousel container-fluid">
+<section class="pt-0">
+	<div class="container">
+		<div class="row mb-4">
+			<h2 class="mb-0 fs-3">مقالات سایت</h2>
+		</div>
+
+		<div class="row">
+			<div class="tiny-slider arrow-round arrow-creative arrow-blur">
+				<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-dots="false" data-items="4" data-items-lg="3" data-items-md="2" data-items-xs="1">
+                    {% for post in posts %}
+					<div class="card bg-transparent">
+                        <div class="position-relative">
+                            {% if post.image %}
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img">
+                            {% else %}
+                                <img src="{% static 'images/temprory/images/pattern/01.png' %}" alt="default blog image" class="card-img">
+                            {% endif %}
+							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
+								<div class="w-100 mt-auto">
+									<a href="#" class="badge text-bg-white fs-6 rounded-1">
+                                        <i class="far fa-calendar-alt text-orange me-2">{{ post.publish_date|date:"F Y" }}</i>
+                                    </a>
+								</div>
+							</div>
+						</div>
+						<div class="card-body px-2">
+                            {% if post.slug %}
+							    <h5 class="card-title"><a href="{% url 'website:blog-detail' post.slug %}">{{ post.title }}</a></h5>
+                            {% else %}
+                                <h5 class="card-title">{{ post.title }}</h5>
+                            {% endif %}
+							<p class="mb-0 text-truncate-2">{{ post.post_summery|safe|truncatechars:100 }}</p>
+						</div>
+					</div>
+                    {% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- =======================
+Event END -->
+{% comment %} <div class="pks-post-carousel container-fluid">
     <div class="row">
         <div class="col-md-12">
             <div id="news-slider" class="owl-carousel">
@@ -40,4 +82,4 @@
             </div>
         </div>
     </div>
-</div>
+</div> {% endcomment %}
