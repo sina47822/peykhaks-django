@@ -8,12 +8,11 @@
 
 
 {% block content %}
+<main>
     {% include "partials/slider.html"%}
     <div class="index-page">
 
-        <h2 class="font-weight-bold ">مشاهده مقالات</h2>
         {% include 'partials/blog-carousel.html' %}
-        <h2 class="font-weight-bold">مشاهده محصولات</h2>
         {% include 'partials/product-carousel.html' %}
 
             {% comment %} <section>
@@ -72,12 +71,10 @@
                 </div>
             </section> {% endcomment %}
 
-            <article></article>
-
-        <h2 class="font-weight-bold">لیست قیمت پایه محصولات آزمایشگاه بتن و خاک</h2>
-
+        <article></article>
         {% include 'partials/price-list.html' %}
 
     </div>
+</main>
 
 {% endblock content%}
