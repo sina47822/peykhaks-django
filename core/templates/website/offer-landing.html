@@ -1,0 +1,20 @@
+{% extends '../core/base.html' %}
+{% load static %}
+
+
+{% block title %}Home{% endblock title%}
+{% block seodescription %} {{ seo.description }}{% endblock seodescription%}
+
+
+
+{% block content %}
+<main>
+    {% include "partials/offer-slider.html"%}
+
+    {% comment %} {% include 'partials/product-carousel.html' %} {% endcomment %}
+
+    {% include 'partials/price-list.html' %}
+
+</main>
+
+{% endblock content%}

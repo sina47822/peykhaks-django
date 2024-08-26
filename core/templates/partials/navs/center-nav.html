@@ -138,9 +138,12 @@
 				<ul class="navbar-nav navbar-nav-scroll me-auto">
 					<!-- Nav item 1 Demos -->
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="{% url 'website:home' %}" id="demoMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحه اصلی</a>
+						<a class="nav-link" href="{% url 'website:home' %}" >صفحه اصلی</a>
 					</li>
-
+					<li> <a class="nav-link" href="{% url 'website:about' %}">درباره ما</a></li>
+					<li> <a class="nav-link" href="{% url 'website:contact' %}">ارتباط با ما</a></li>
+					<li> <a class="nav-link" href="{% url 'website:blog-list' %}">وبلاگ</a></li>
+					<li> <a class="nav-link" href="{% url 'website:shop' %}">محصولات</a></li>
 					<!-- Nav item 2 Pages -->
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحات</a>

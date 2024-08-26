@@ -610,8 +610,8 @@ var e = {
                   navPosition: top,
                   autoplayPosition: top,
                   controlsText: [
-                      '<i class="fas fa-chevron-left"></i>',
-                      '<i class="fas fa-chevron-right"></i>'
+                      '<i class="fal fa-chevron-left"></i>',
+                      '<i class="fal fa-chevron-right"></i>'
                   ],
                   loop: sliderLoop,
                   rewind: sliderRewind,

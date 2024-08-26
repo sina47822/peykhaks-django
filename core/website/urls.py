@@ -1,5 +1,5 @@
 from django.urls import path
-from website.views import aboutus,contactus,index,blog,blogposts,ProductShop,TermsAndCondition, test, postcategory,posttags,comingsoon,page404, SoilListView,WeldListView,RockListView,AsphaltListView,ConcreteListView
+from website.views import aboutus,contactus,index,blog,blogposts,ProductShop,TermsAndCondition, test, postcategory,posttags,comingsoon,page404,offerland, SoilListView,WeldListView,RockListView,AsphaltListView,ConcreteListView
 from product.views import price_list
 app_name = 'website'
 
@@ -8,6 +8,8 @@ urlpatterns = [
     path('about-us/', aboutus, name='about'),
     path('404/', page404 , name='404'),
     path('coming-soon/', comingsoon, name='coming-soon'),
+    path('offer-landing/', offerland, name='offer-landing'),
+
 
     path('contact-us/', contactus, name='contact'),
     path('blog/', blog , name='blog-list'),
