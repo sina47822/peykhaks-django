@@ -88,6 +88,10 @@ You could also add the -i and --trusted-host options to your requirements.txt li
 ```
 pip install -r requirements.txt
 ```
+or
+```
+pip install --trusted-host pypi.org --trusted-host pypi.python.org --trusted-host files.pythonhosted.org -r requirements.txt
+```
 ## after that use django app to run all the project
 ```
 python manage.py makemigrations /
