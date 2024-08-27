@@ -1129,12 +1129,6 @@ text-align: center;
   color: white;
 }
 
-.card-img-top{
-  height: 300px;
-  object-fit: cover;
-  object-position: center;
-}
-
 label#flexSwitchCheckCheckedLable {
   font-size: 20px;
 }

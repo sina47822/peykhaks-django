@@ -1,7 +1,7 @@
 {% load static %}
 {% load humanize %}
 
-{% comment %} <section class="pt-0">
+<section class="pt-0">
 	<div class="container">
 		<div class="row mb-4">
 			<h2 class="mb-0 fs-3">مقالات سایت</h2>
@@ -9,14 +9,14 @@
 
 		<div class="row">
 			<div class="tiny-slider arrow-round arrow-creative arrow-blur">
+
 				<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-dots="false" data-items="4" data-items-lg="3" data-items-md="2" data-items-xs="1">
-					
-                    <!-- Card item START -->                    
                     {% for post in posts %}
+
+                    <!-- Card item START -->                    
 					<div class="card bg-transparent">
                         <div class="position-relative">
-                            {% if post.image %}
-                                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img">
+                                <img src="{% static 'images/temprory/images/courses/4by3/21.jpg' %}" alt="{{ post.title }}" class="card-img">
                                 <!-- Overlay -->
                                 <div class="card-img-overlay d-flex align-items-start flex-column p-3">
                                     <!-- Card overlay Top -->
@@ -32,24 +32,6 @@
                                         </a>
                                     </div>
                                 </div>
-                            {% else %}
-                                <img src="{% static 'images/temprory/images/pattern/01.png' %}" alt="default blog image" class="card-img">
-                                <!-- Overlay -->
-                                <div class="card-img-overlay d-flex align-items-start flex-column p-3">
-                                    <!-- Card overlay Top -->
-                                    <div class="w-100 mb-auto d-flex justify-content-end">
-                                        <!-- Favorite icon -->
-                                        <a href="#" class="icon-sm bg-white rounded-2"><i class="fas fa-heart text-danger"></i></a>
-                                    </div>
-                                    <!-- Card overlay bottom -->
-                                    <div class="w-100 mt-auto">
-                                        <!-- Category -->
-                                        <a href="#" class="badge text-bg-white fs-6 rounded-1">
-                                            <i class="far fa-calendar-alt text-orange me-2">{{ post.publish_date|date:"F Y" }}</i>
-                                        </a>
-                                    </div>
-                                </div>
-                            {% endif %}
 
 						</div>
 						<!-- Card body -->
@@ -63,11 +45,13 @@
 						</div>
 					</div>
                     {% endfor %}
+
 				</div>
+
 			</div>
 		</div>
 	</div>
-</section> {% endcomment %}
+</section>
 <!-- =======================
 Event END -->
 <div class="pks-post-carousel container-fluid">

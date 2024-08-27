@@ -11,6 +11,10 @@ from django.views.generic.list import ListView
 # models.fields
 from website.models import SliderModel,CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO
 from product.models import Product ,PriceList
+# forms.fields
+from .forms import EmailPostForm, CommentForm, SearchForm   
+# search fields
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 
 def index(request):
     posts = Post.objects.all().order_by('-id')
@@ -40,7 +44,6 @@ def category(request):
     categories = Category.objects.filter(parent__isnull=True)  # top-level categories
     return render(request, 'website/blog.html', {'categories': categories})
 
-
 def postcategory(request, slug):
     category = get_object_or_404(Category, slug=slug)  # Retrieve the category object based on the slug
     posts = Post.objects.filter(categories=category)  # Filter posts based on the category object
@@ -67,7 +70,6 @@ def posttags(request, slug):
 
     context = {'tag': tag,'page_obj' :page_obj , 'posts': posts, 'seo' : seo}
     return render(request, 'website/tags.html', context)
-
 
 def blog(request):
     posts = Post.objects.all().order_by('publish_date')
@@ -111,7 +113,6 @@ def blogposts(request, slug):
 
     return render(request, 'website/blog-detail.html', context) 
 
-
 def ProductShop(request):
     pricelist = PriceList.objects.filter().first()
     products = Product.objects.all().order_by('publish_date')[1:]
@@ -128,8 +129,10 @@ def ProductShop(request):
                 }
 
     return render (request,'website/shop.html', context)
+
 def TermsAndCondition(request):
     return render (request , 'website/termandcondition.html')
+
 def test(request):
 
     categories = Category.objects.all()
@@ -142,6 +145,7 @@ def comingsoon (request):
 
 def offerland(request):
     return render (request , 'website/offer-landing.html')
+
 def page404 (request):
     return render (request , 'website/404.html')
 
@@ -174,8 +178,7 @@ class AsphaltListView (ListView):
 
     def get_queryset(self):
         return Product.objects.filter(categories__name='asphalt-equipments').order_by('publish_date')
-    
-    
+     
 class RockListView (ListView):
     model = Product
     template_name = "productcat/rock.html" 
@@ -185,8 +188,7 @@ class RockListView (ListView):
 
     def get_queryset(self):
         return Product.objects.filter(categories__name='rock-equipments').order_by('publish_date')
-    
-                        
+                         
 class WeldListView (ListView):
     model = Product
     template_name = "productcat/weld.html" 
@@ -197,4 +199,21 @@ class WeldListView (ListView):
     def get_queryset(self):
         return Product.objects.filter(categories__name='weld-equipments').order_by('publish_date')
                         
+# search view
+def post_search(request):
+    form = SearchForm()
+    query = None
+    results = []
+    if 'query' in request.GET:
+        form = SearchForm(request.GET)
+        if form.is_valid():
+            query = form.cleaned_data['query']
+
+            # A B C D => 1.0 , 0.4 , 0.2 , 0.1
+            search_vector = SearchVector('title', weight='A') + \
+                SearchVector('body', weight="C")
+            search_query = SearchQuery(query)
+            results = Post.published.annotate(search=search_vector, rank=SearchRank(
+                search_vector, search_query)).filter(rank__gte=0.5).order_by('-rank')
+    return render(request, 'blog/post/search.html', {'form': form, 'query': query, 'results': results})
 
