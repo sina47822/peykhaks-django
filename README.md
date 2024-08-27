@@ -59,6 +59,10 @@ pip.ini (Windows) or pip.conf (unix)
   On Windows XP: C:\Documents and Settings\All Users\Application Data\pip\pip.ini  
 ### **User**
   %APPDATA%\pip\pip.ini
+  in my windows i found this file here : C:\Users\sina\APPDATA\local\pip\ ---> and then i create pip ini with this command
+```
+notepad  C:\Users\sina\AppData\Local\pip\pip.ini
+```
   The legacy “per-user” configuration file is also loaded, if it exists: %HOME%\pip\pip.ini
 ### **Site**
    %VIRTUAL_ENV%\pip.ini
