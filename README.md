@@ -69,15 +69,15 @@ notepad  C:\Users\sina\AppData\Local\pip\pip.ini
 
 ```
 [global]
-index=https://my-company/nexus/repository/pypi-group/pypi
-index-url=https://my-company/nexus/repository/pypi-group/simple
-trusted-host=my-company
+index= https://pypi.tuna.tsinghua.edu.cn
+index-url= https://pypi.tuna.tsinghua.edu.cn/simple
+trusted-host= https://pypi.tuna.tsinghua.edu.cn
 ```
 but you can configure this using pip config on user or global level, something like:
 ```
-pip config --user set global.index https://my-company/nexus/repository/pypi-group/pypi
-pip config --user set global.index-url https://my-company/nexus/repository/pypi-group/simple
-pip config --user set global.trusted-host my-company
+pip config --user set global.index  https://pypi.tuna.tsinghua.edu.cn
+pip config --user set global.index-url  https://pypi.tuna.tsinghua.edu.cn/simple/
+pip config --user set global.trusted-host  https://pypi.tuna.tsinghua.edu.cn
 ```
 You could also add the -i and --trusted-host options to your requirements.txt like this:
 ```
