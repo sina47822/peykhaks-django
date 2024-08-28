@@ -1,6 +1,7 @@
 from django.contrib import admin
 from product.forms import ProductAdminForm
 from product.models import Product, Category, StandardAASHTO, StandardASTM, StandardISIRI, Standards, Tags , ProductMedia ,ProductSpecification, ProductSEO,TagsSEO,CategorySEO,PriceList
+from product.models import ProductCategoryModel, WishlistProductModel
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources, fields
 
@@ -11,7 +12,7 @@ from product.resources import CombinedStandardsResource
 class ProductResource(resources.ModelResource):
     class Meta:
         model = Product
-        fields = ('id','title', 'slug', 'description', 'summery','price','offer_price','image', 'categories', 'tags',  'publish_date', 'author', 'total_views', 'is_active','stock','standard','size','guarantee','time_to_bring')
+        fields = ('id','title', 'slug', 'description', 'summery','price','offer_price','image', 'category','status', 'tags',  'publish_date', 'author', 'total_views', 'is_active','stock','standard','size','guarantee','time_to_bring')
 
 class ProductImagesInline(admin.StackedInline):
     model = ProductMedia
@@ -34,7 +35,7 @@ class ProductAdmin(ImportExportModelAdmin):
     resource_class = ProductResource
     form = ProductAdminForm
     date_hierarchy = 'create_date'
-    list_display = ('id','title' ,'create_date', 'slug', 'categories','price', 'offer_price', )
+    list_display = ('id','title' ,'image', 'slug','price', 'offer_price','create_date' )
     list_filter = ('create_date', )
     search_fields = ['title', 'description',]
     prepopulated_fields = {'slug': ('title',)}
@@ -71,3 +72,12 @@ admin.site.register(Standards,StandardsAdmin)
 admin.site.register(StandardISIRI)
 admin.site.register(StandardASTM)
 admin.site.register(StandardAASHTO)
+
+@admin.register(ProductCategoryModel)
+class ProductCategoryModelAdmin(admin.ModelAdmin):
+    list_display = ("id", "title", "created_date")
+
+
+@admin.register(WishlistProductModel)
+class WishlistProductModelAdmin(admin.ModelAdmin):
+    list_display = ("id", "user", "product")

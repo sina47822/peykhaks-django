@@ -32,7 +32,23 @@ class Standards(models.Model):
     standard_isiri =models.ForeignKey(StandardISIRI, on_delete=models.CASCADE,blank=True, null=True)
     def __str__(self):
         return self.title
+class ProductStatusType(models.IntegerChoices):
+    publish = 1 ,("نمایش")
+    draft = 2 ,("عدم نمایش")
+
+class ProductCategoryModel(models.Model):
+    title = models.CharField(max_length=255)
+    slug = models.SlugField(allow_unicode=True,unique=True)
     
+    created_date = models.DateTimeField(auto_now_add=True)
+    updated_date = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ["-created_date"]
+        
+    def __str__(self):
+        return self.title
+
 class Category(models.Model):
     name= models.CharField(max_length=200)
     slug = models.SlugField(max_length = 250, null = True, blank = True , unique=True)
@@ -87,6 +103,10 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=0)
     offer_price = models.DecimalField(max_digits=10, decimal_places=0, blank=True, null=True)
     image = models.ImageField(upload_to='products/thumbnails/', blank=True, null=True)
+
+    category = models.ManyToManyField(ProductCategoryModel) #add at the other time
+    status = models.IntegerField(choices=ProductStatusType.choices,default=ProductStatusType.draft.value)
+
     categories = models.ForeignKey(Category, on_delete=models.SET_NULL ,related_name='products', blank=True, null=True)
     tags = models.ManyToManyField (Tags)
     update_date = models.DateTimeField(auto_now=True)
@@ -165,3 +185,10 @@ class PriceList(models.Model):
 
     def __str__(self):
         return self.title
+    
+class WishlistProductModel(models.Model):
+    user = models.ForeignKey(User,on_delete=models.PROTECT)
+    product = models.ForeignKey(Product,on_delete=models.CASCADE)
+    
+    def __str__(self):
+        return self.product.title

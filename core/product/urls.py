@@ -1,8 +1,10 @@
-from django.urls import path
+from django.urls import path,re_path
 from . import views
 app_name = 'product'
 
 urlpatterns = [
+
+
     path('category/<slug:slug>/', views.productcategory, name='productcategory'),
     path('tags/<slug:slug>/', views.producttags, name='producttags'),
     path('pricelists/', views.price_list, name='pricelists'),
@@ -10,6 +12,13 @@ urlpatterns = [
     path('<slug:slug>/edit/', views.ProductUpdateView.as_view(), name='product-edit'),
     path('<slug:slug>/delete/', views.ProductDeleteView.as_view(), name='product-delete'),
     path('', views.ProductList.as_view(), name='product-list'),
+    path("grid/",views.ShopProductGridView.as_view(),name="product-grid"),
+    path("add-or-remove-wishlist/",views.AddOrRemoveWishlistView.as_view(),name="add-or-remove-wishlist"),
+
     path('p/<slug:slug>/', views.ProductDetail.as_view(), name='product-detail'),
+
+    re_path(r"product/(?P<slug>[-\w]+)/detail/",views.ShopProductDetailView.as_view(),name="product-detail"),
+
     path('<slug:slug>/', views.products_detail, name='productdetails'),
+
 ]

@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" >
     <title>PeyKhakSang | {% block title %}{% endblock title%}</title>
-    {% include "./css-files.html" %}
 
     <meta name="description" content="{% block seodescription %}{% endblock seodescription%}">
     {% if seo.image %}
@@ -19,7 +18,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png'%}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png'%}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png'%}">
-    <link rel="manifest" href="{% static 'favicon/site.webmanifest'%}"></head>
+    <link rel="manifest" href="{% static 'favicon/site.webmanifest'%}">
+    {% include "./css-files.html" %}
+
+    {% block extra_css %} {% endblock extra_css %}
+
+    {% block extra_css_no_compress %} {% endblock extra_css_no_compress %}
+</head>
 <body>
     {% include "../partials/header.html"%}
 
@@ -31,5 +36,66 @@
     
     {% include "./js-files.html" %}
 
+    <!-- JS Cart & Favorite-->
+    <script>
+        {% comment %} function addToCart(product_id) {
+        
+            //console.log(product_id)
+            $.ajax({
+                url: "{%  url 'cart:session-add-product' %}",
+                method: 'POST',
+                data: {
+                    product_id: product_id,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+        
+                },
+                success: function (response) {
+                    $("#total-cart-item-count").html(response.total_quantity)
+                    console.log(response);
+                    // do something with the response data
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                    // handle the error case
+                }
+            });
+        } {% endcomment %}
+        function addToWishlist(element,product_id) {
+        
+            //console.log(product_id)
+            $.ajax({
+                url: "{%  url 'product:add-or-remove-wishlist' %}",
+                method: 'POST',
+                data: {
+                    product_id: product_id,
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+        
+                },
+                success: function (response) {
+
+                    Toastify({
+                        text:response.message,
+                        className: `info`,
+                        style: {
+                            background: "blue",
+                        }
+                        }).showToast();
+                    $(element).toggleClass('active');
+
+                    // do something with the response data
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.log(errorThrown);
+                    // handle the error case
+                }
+            });
+        }
+        
+    </script>
+    {% block extra_js %} {% endblock extra_js %}
+
+    {% block extra_js_no_compress %} {% endblock extra_js_no_compress %}
+
+    {% include 'partials/messages.html' %}
 </body>
 </html>
