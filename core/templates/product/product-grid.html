@@ -12,7 +12,7 @@
 
 <!-- Breadcrumb -->
 <div>
-    <div class="container content-space-t-2 content-space-t-lg-3">
+    <div class="container content-space-t-2 content-space-t-lg-3 mt-4">
         <div class="row">
             <div class="col-sm">
                 <h4 class="mb-0">شبکه محصولات</h4>
@@ -208,7 +208,7 @@
 
                             <h4 class="card-title">
                                 <a class="text-dark"
-                                    href="{% url 'product:product-detail' slug=object.slug %}">{{object.title}}</a>
+                                    href="{% url 'product:productdetails' slug=object.slug %}">{{object.title}}</a>
                             </h4>
                             {% if object.is_discounted %}
                             <p class="card-text text-dark fs-4">
