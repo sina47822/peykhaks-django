@@ -12,12 +12,12 @@
 					<img src="{{product.image.url}}" alt="">
 					<a href="{% url 'product:productdetails' product.slug %}" class="over-layer"><i class="fa fa-link"></i></a>
 				</div>
-				<div class="post-content">
+				<div class="post-content d-flex flex-column aligns-item-center justify-content-center">
 					<h3 class="post-title">
 					<a href="{% url 'product:productdetails' product.slug %}">{{product.title}}</a>
 					</h3>
 					<p class="post-description">{{product.summery |safe |truncatechars:100}}</p>
-					<span class="post-date"><i class="fa fa-clock-o"></i>{{product.publish_date|naturaltime }}</span>
+					{% comment %} <span class="post-date"><i class="fa fa-clock-o"></i>{{product.publish_date|naturaltime }}</span> {% endcomment %}
 					<a href="{% url 'product:productdetails' product.slug %}" class="read-more">مشاهده محصول</a>
 				</div>
 			</div>

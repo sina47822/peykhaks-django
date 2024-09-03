@@ -22,7 +22,7 @@ Event END -->
                                 <a href="#" class="over-layer"><i class="fa fa-link"></i></a>
                             {% endif %}
                         </div>
-                        <div class="post-content">
+                        <div class="post-content  d-flex flex-column aligns-item-center justify-content-center">
                             <h3 class="post-title">
                                 {% if post.slug %}
                                     <a href="{% url 'website:blog-detail' post.slug %}">{{ post.title }}</a>
@@ -31,7 +31,7 @@ Event END -->
                                 {% endif %}
                             </h3>
                             <p class="post-description">{{ post.post_summery|safe|truncatechars:100 }}</p>
-                            <span class="post-date"><i class="fa fa-clock-o"></i> {{ post.publish_date|naturaltime }}</span>
+                            {% comment %} <span class="post-date"><i class="fa fa-clock-o"></i> {{ post.publish_date|naturaltime }}</span> {% endcomment %}
                             {% if post.slug %}
                                 <a href="{% url 'website:blog-detail' post.slug %}" class="read-more">مطالعه مقاله</a>
                             {% else %}
