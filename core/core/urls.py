@@ -44,8 +44,11 @@ urlpatterns = [
     path('robots.txt', include('robots.urls')),
 ] 
 
+# Custom error handlers
+handler400 = 'website.views.handler_400'
+handler403 = 'website.views.handler_403'
 handler404 = 'website.views.handler_404'
-
+handler500 = 'website.views.handler_500'
 # serving static and media for development
 if settings.DEBUG:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

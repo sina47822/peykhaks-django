@@ -19,6 +19,15 @@ from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 def handler_404(request, exception=None, template_name="errors/404.html"):
     context = {}  # You can pass context variables to the template if needed
     return render(request, template_name, context, status=404)
+def handler_500(request, exception=None, template_name="errors/500.html"):
+    context = {}  # You can pass context variables to the template if needed
+    return render(request, template_name, context, status=500)
+def handler_403(request, exception=None, template_name="errors/403.html"):
+    context = {}  # You can pass context variables to the template if needed
+    return render(request, template_name, context, status=403)
+def handler_400(request, exception=None, template_name="errors/400.html"):
+    context = {}  # You can pass context variables to the template if needed
+    return render(request, template_name, context, status=400)
 
 def index(request):
     posts = Post.objects.all().order_by('-id')
