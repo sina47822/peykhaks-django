@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap,BlogSitemap,BlogTagSitemap,BlogCategorySitemap
 from product.sitemaps import ProductTagsSitemap,ProductCategorySitemap,ProductSitemap
-
+from django.conf.urls import handler400, handler403, handler404, handler500
 
 sitemaps = {
     'static': StaticViewSitemap,

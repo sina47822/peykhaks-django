@@ -9,7 +9,7 @@ from product.forms import ProductForm
 # from review.models import ReviewModel,ReviewStatusType
 
 from django.core.exceptions import FieldError
-
+from django.core.exceptions import PermissionDenied
 # from django.http import JsonResponse
 
 def productcategory(request, slug):
@@ -68,11 +68,17 @@ class ProductDetail(DetailView):
     model = Product
     template_name = 'product/product_detail.html'
 
-class ProductCreateView(CreateView):
+class ProductCreateView(LoginRequiredMixin,CreateView):
     model = Product
     fields = ['id','title','Code', 'price', 'offer_price','stock','description','summery','categories','tags','publish_date','author','is_active','guarantee','time_to_bring','size','standard']
     template_name = 'product/product_form.html'
     success_url = '/product/'
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            raise PermissionDenied  # Raises a 403 error
+        return super().dispatch(request, *args, **kwargs)
+
 
     def form_valid(self, form):
         return super().form_valid(form)
@@ -81,10 +87,20 @@ class ProductUpdateView(LoginRequiredMixin,UpdateView):
     model = Product
     form_class = ProductForm
     success_url = '/product/'
+    
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            raise PermissionDenied  # Raises a 403 error
+        return super().dispatch(request, *args, **kwargs)
 
 class ProductDeleteView(LoginRequiredMixin,DeleteView):
     model = Product
     success_url = '/product/'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user.is_authenticated:
+            raise PermissionDenied  # Raises a 403 error
+        return super().dispatch(request, *args, **kwargs)
 
 class ShopProductGridView(ListView):
     template_name = "product/product-grid.html"
