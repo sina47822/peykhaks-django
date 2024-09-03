@@ -12,8 +12,18 @@
     {% include "partials/slider.html"%}
     <div class="index-page">
 
-        {% include 'partials/blog-carousel.html' %}
+        <div class="col-md-12">
+			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
+			<i class="fa-light fa-fire"></i>
+			<h2>پرفروش‌ترین کالاها</h2>
+		</div>
         {% include 'partials/product-carousel.html' %}
+        <div class="col-md-12">
+			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
+                <i class="fa-light fa-book-open-reader"></i>
+                <h2>مقالات پر طرفدار</h2>
+		</div>
+        {% include 'partials/blog-carousel.html' %}
 
             {% comment %} <section>
                 <div class="container mt-5">
