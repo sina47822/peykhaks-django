@@ -630,7 +630,7 @@ color: black;
 /* shop html product list */
 
 .product-list-holder{
-min-height: 300px;
+min-height: 390px;
 position: relative;
 }
 .product-list-holder .publish-date{
@@ -1368,7 +1368,7 @@ h6 {
   color: #8f7d0c;
 }
 
-.card-img, .card-img-top, .card-img-bottom {
+.card-img {
     width: 100%;
     max-height: 200px;
     object-fit: cover;
