@@ -1367,3 +1367,9 @@ h6 {
   margin-left: 20px;
   color: #8f7d0c;
 }
+
+.card-img, .card-img-top, .card-img-bottom {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+}
