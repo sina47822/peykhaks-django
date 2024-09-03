@@ -163,8 +163,6 @@ $(document).ready(function() {
       }
     },
     rtl: true,
-    navigation:true,
-    navigationText:["",""],
     pagination:true,
     autoPlay:true,
     autoplayTimeout:4000,    
@@ -178,7 +176,11 @@ $(document).ready(function() {
     stageOuterClass: "owl-stage-outer",
     grabClass: "owl-grab",
     lazyLoad: false,
-
+    nav:true,
+    navText: [
+      "<i class='fa-light fa-arrow-left'></i>",
+      "<i class='fa-light fa-arrow-right'></i>"
+   ],
   });
   $(".next").click(function () {
     owl.trigger("owl.next");
@@ -214,21 +216,17 @@ $(document).ready(function() {
         }
       },
       rtl: true,
-      navigation:true,
-      navigationText:["",""],
       pagination:true,
       autoPlay:true,
       autoplayTimeout:4000,    
       autoplayHoverPause:true, 
       animateOut: 'fadeOut',
-      rtlClass: "owl-rtl",
-      responsiveClass: "owl-responsive",
-      dragClass: "owl-drag",
-      itemClass: "owl-item",
-      stageClass: "owl-stage",
-      stageOuterClass: "owl-stage-outer",
-      grabClass: "owl-grab",
       lazyLoad: false,
+      nav:true,
+      navText: [
+        "<i class='fa-light fa-arrow-left'></i>",
+        "<i class='fa-light fa-arrow-right'></i>"
+     ],
 
     });
     $(".next").click(function () {

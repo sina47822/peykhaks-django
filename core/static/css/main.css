@@ -905,7 +905,6 @@ position: relative;
 overflow: hidden;
 border-radius: 10px;
 margin: -12px 15px 8px 15px;
-margin-left: -10px;
 height: 300px;
 object-fit: cover;
 object-position: center;
@@ -1096,37 +1095,75 @@ text-align: center;
   --bs-nav-link-padding-y: 3px;
 }
 
+.owl-carousel{
+  position: relative;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
 .owl-nav{
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 50px;
-
 }
 .owl-prev{
-  padding: 10px 30px;
-  border-radius: 20px;
-  margin-left: 20px;
-  background-color: #001A71;
+  background-color: black;
   color: white;
-  transition: all .3s ease-in;
-
+  padding: 16px 20px;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  left: -75px;
+  z-index: 9;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .owl-next{
-  padding: 10px 30px;
-  border-radius: 20px;
-  background-color: #001A71;
+  background-color: black;
   color: white;
-  transition: all .3s ease-in;
+  padding: 16px 20px;
+  border-radius: 50%;
+  position: absolute;
+  display: none;
+  opacity: 0;
+  right: -75px;
+  z-index: 9;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 
 }
-.owl-next:hover{
-  background-color:#2196F3 ;
+.owl-carousel:hover .owl-next{
+  top: 50%;
+  right: 30px;
   color: white;
+  display: block;
+  opacity: 1;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.owl-prev:hover{
-  background-color:#2196F3 ;
+
+.owl-carousel:hover .owl-prev{
+  top: 50%;
+  left: 30px;
   color: white;
+  display: block;
+  opacity: 1;
+  backdrop-filter: blur(5px);
+  background: rgba(0, 0, 0, 0.4) !important;
+  transform: translateY(-50%);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.owl-prev:hover,.owl-next:hover{
+  backdrop-filter: blur(0);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 label#flexSwitchCheckCheckedLable {
