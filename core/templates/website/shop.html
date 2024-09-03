@@ -24,7 +24,7 @@
                 {% endif %}
                 <div class="card-body">
                     <div class="small text-muted">
-                        <span class="publish-date"> تاریخ انتشار : {{ product.publish_date }}</span>
+                        {% comment %} <span class="publish-date"> تاریخ انتشار : {{ product.publish_date }}</span> {% endcomment %}
                         <a href="{% url 'product:productcategory' slug=product.categories.slug %}"> <span class="category"> دسته بندی : {{ product.categories }}</span></a>
                     </div>
                     

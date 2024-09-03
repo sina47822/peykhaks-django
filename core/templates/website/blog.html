@@ -86,7 +86,7 @@ Page content START -->
 						<!-- Info -->
 						<div class="d-flex justify-content-between">
 							<h6 class="mb-0 fw-normal"><a href="">{{ post.author.get_full_name }}</a></h6>
-							<span class="small">{{ post.publish_date|naturaltime }}</span>
+							{% comment %} <span class="small">{{ post.publish_date|naturaltime }}</span> {% endcomment %}
 						</div>
 					</div>
 				</div>
