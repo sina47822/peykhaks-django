@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 # slug is required
 import string, random 
 from django.utils.text import slugify 
@@ -15,6 +15,10 @@ from product.models import Product ,PriceList
 from .forms import EmailPostForm, CommentForm, SearchForm   
 # search fields
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+
+def handler_404(request, exception=None, template_name="errors/404.html"):
+    context = {}  # You can pass context variables to the template if needed
+    return render(request, template_name, context, status=404)
 
 def index(request):
     posts = Post.objects.all().order_by('-id')

@@ -22,6 +22,7 @@ from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap,BlogSitemap,BlogTagSitemap,BlogCategorySitemap
 from product.sitemaps import ProductTagsSitemap,ProductCategorySitemap,ProductSitemap
 
+
 sitemaps = {
     'static': StaticViewSitemap,
     'blog': BlogSitemap,
@@ -42,6 +43,8 @@ urlpatterns = [
         name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', include('robots.urls')),
 ] 
+
+handler404 = 'website.views.handler_404'
 
 # serving static and media for development
 if settings.DEBUG:
