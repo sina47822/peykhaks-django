@@ -11,19 +11,41 @@
 <main>
     {% include "partials/slider.html"%}
     <div class="index-page">
+        {% include 'partials/category-list.html' %}
 
-        <div class="col-md-12">
+        {% comment %} <div class="col-md-12">
 			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
 			<i class="fa-light fa-fire"></i>
-			<h2>پرفروش‌ترین کالاها</h2>
-		</div>
+			<h2 class="section__title">پرفروش‌ترین کالاها</h2>
+		</div> {% endcomment %}
         {% comment %} {% include 'partials/product-carousel.html' %} {% endcomment %}
-        <div class="col-md-12">
+        {% comment %} <div class="col-md-12">
 			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
                 <i class="fa-light fa-book-open-reader"></i>
-                <h2>مقالات پر طرفدار</h2>
-		</div>
+                <h2 class="section__title">مقالات پر طرفدار</h2>
+		</div> {% endcomment %}
         {% comment %} {% include 'partials/blog-carousel.html' %} {% endcomment %}
+        <!--=============== product ===============-->
+        <section class="testimonial section">
+			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
+                <i class="fa-light fa-book-open-reader"></i>
+                <h2 class="section__title">محصولات پر فروش</h2>
+		    </div>
+
+            {% include 'partials/product-carousel.html' %}
+
+
+        </section>
+        <!--=============== blog ===============-->
+
+        <section class="testimonial section">
+			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
+                <i class="fa-light fa-book-open-reader"></i>
+                <h2 class="section__title">مقالات پر طرفدار</h2>
+		    </div>
+            {% include 'partials/blog-carousel.html' %}
+
+        </section>
 
             {% comment %} <section>
                 <div class="container mt-5">

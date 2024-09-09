@@ -1,5 +1,185 @@
 {% load static %}
+{% block extra_css %}
+<style>
+/* price list */
+  .price-list-beton{
+    margin: 20px auto;
+    width: 80%;
+    box-sizing: border-box;
+    display: block;
+  }
+     .price-list-beton .columns{
+        display: flex;
+    }
+     .price-list-beton .price-list-columns {
+        width: 33.3%;
+        padding: 8px;
+      }
+      
+     .price-list-beton .pricebeton {
+        list-style-type: none;
+        border: 1px solid #eee;
+        margin: 0;
+        padding: 0;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+      
+     .price-list-beton .pricebeton:hover {
+        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+      }
+      
+.price-list-beton .pricebeton .header {
+  background-color: #5CA6FF;
+  color: white;
+  font-size: 25px;
+  border-radius: 10px
+  
+}
 
+.price-list-beton .pricebeton .header:hover {
+    background-color:#116EB8;
+    transition: 0.3s;
+}
+
+.price-list-beton .pricebeton li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price-list-beton .pricebeton .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.price-list-beton .buttonbeton {
+  background-color: #5CA6FF;
+  border: none;
+  color: white !important;
+  padding: 10px 35px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 15px;
+  font-weight: bold;
+    transition: 0.3s;
+}
+.price-list-beton .buttonbeton:hover {
+  background-color: #116EB8;
+
+}
+.price-list-beton .list-hover{
+    color: #001C26 !important;
+}
+.price-list-beton .list-hover:hover{
+    color: #318CE8 !important;
+}
+      
+@media only screen and (max-width: 700px) {
+  .price-list-beton .columns {
+    width: 100%;
+  }
+  .price-list-beton .buttonbeton {
+    background-color: #5CA6FF;
+    border: none;
+    color: white !important;
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 15px;
+    font-weight: bold;
+      transition: 0.3s;
+  }
+}
+.price-list-khak{
+  margin: 20px auto;
+  width: 80%;
+  box-sizing: border-box;
+  display: none;}
+  .price-list-khak .columns{
+      display: flex;
+  }
+  .price-list-khak .price-list-columns {
+    width: 33.3%;
+    padding: 8px;
+  }
+      
+  .price-list-khak .price-list-columns .price {
+        list-style-type: none;
+        border: 1px solid #eee;
+        margin: 0;
+        padding: 0;
+        -webkit-transition: 0.3s;
+        transition: 0.3s;
+      }
+      
+      .price-list-khak .price-list-columns .price:hover {
+        box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+      }
+      
+      .price-list-khak .price-list-columns .price .header {
+        background-color: #e63f66;
+        color: white;
+        font-size: 25px;
+        border-radius: 10px
+        
+      }
+      
+      .price-list-khak .price-list-columns .price .header:hover {
+          background-color:#d42a5b;
+          transition: 0.3s;
+      }
+      
+      .price-list-khak .price-list-columns .price li {
+        border-bottom: 1px solid #eee;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      .price-list-khak .price-list-columns .price .grey {
+        background-color: #eee;
+        font-size: 20px;
+      }
+      
+      .price-list-khak.price-list-columns .button {
+        background-color: #e63f66;
+        border: none;
+        color: white !important;
+        padding: 10px 35px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border-radius: 15px;
+        font-weight: bold;
+         transition: 0.3s;
+      }
+      .price-list-khak.price-list-columns .button:hover {
+        background-color: #d42a5b;
+      
+      }
+      .price-list-khak.price-list-columns .list-hover{
+          color: #001C26 !important;
+      }
+      .price-list-khak.price-list-columns .list-hover:hover{
+          color: #318CE8 !important;
+      }
+      
+      @media only screen and (max-width: 600px) {
+        .price-list-khak .price-list-columns .columns {
+          width: 100%;
+        }
+      }
+  .form-switch .form-check-input{
+    width: 3.5em;
+    transition: all 0.4s ease-in-out;
+    }
+  .form-check-input{
+    height: 2em;
+  }
+</style>
+{% endblock extra_css %}
 <div class="price-list-holder d-flex align-items-center justify-content-center mt-3" id="listgheymat">
     <div class="form-check form-switch d-flex flex-column align-items-center justify-content-center">
     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>

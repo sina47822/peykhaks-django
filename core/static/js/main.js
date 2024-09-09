@@ -1320,3 +1320,29 @@ var e = {
     // END: Flatpicker
 };
 e.init();
+
+/*=============== SWIPER TESTIMONIAL ===============*/
+let swiperTestimonial = new Swiper(".testimonial__container", {
+  spaceBetween: 24,
+  loop: true,
+  grabCursor: true,
+
+  pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+  },
+  breakpoints: {
+      576: {
+          slidePreView: 2,
+      },
+      768: {
+          slidePreView: 2,
+          spaceBetween: 48,
+      },
+      990: {
+        slidePreView: 3,
+        spaceBetween: 48,
+    },
+
+  },
+})

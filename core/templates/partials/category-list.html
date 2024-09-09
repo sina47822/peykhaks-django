@@ -1,0 +1,92 @@
+{% load static %}
+{% load humanize %}
+
+<!-- =======================
+IT courses START -->
+<section>
+	<div class="container">
+		<!-- Title -->
+		<div class="row mb-4">
+			<div class="col-lg-8 text-center mx-auto">
+				<h2 class="fs-3">دسته بندی</h2>
+				<p class="mb-0">از این قسمت می توانید دسته بندی اصلی آموزش ها و محصولات پی خاک سنگ را ملاحظه کنید</p>
+			</div>
+		</div>
+
+		<div class="row g-4">
+			<!-- Course item -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/01.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex  flex-column"> 
+						<h2 class="text-white h1 stretched-link">خاک </h2>
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:soil-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی خاک</a>
+							{% comment %} <div class="text-white">23 دوره آموزشی</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/03.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex  flex-column"> 
+						<h2 class="text-white h1 stretched-link">بتن </h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:concrete-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی بتن</a>
+							{% comment %} <div class="text-white">16 دوره آموزشی</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/05.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex  flex-column"> 
+						<h2 class="text-white h1 stretched-link">آسفالت </h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:asphalt-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی آسفالت</a>
+							{% comment %} <div class="text-white">32 دوره آموزشی</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-sm-6 col-lg-4 col-xl-3">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/06.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex flex-column"> 
+						<h2 class="text-white h1 stretched-link">جوش </h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:weld-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی جوش</a>
+							{% comment %} <div class="text-white">48 دوره آموزشی</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+IT courses END -->
