@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from product.models import Product , Category, Tags ,PriceList,ProductSEO,TagsSEO,CategorySEO,ProductStatusType,ProductCategoryModel,WishlistProductModel
+from product.models import Product , Category, Tags ,PriceList,ProductSEO,TagsSEO,CategorySEO,ProductStatusType,ProductCategoryModel,WishlistProductModel,ProductSpecification
 from .forms import PriceUpdateFormset
 from django.core.paginator import Paginator
 
@@ -40,12 +40,16 @@ def products_detail(request, slug):
     # Retrieve tags and category related to the product
     tags = product.tags.all()
     category = product.categories
-
+    specifications = product.specifications.all()
+    other_photo = product.media.all()
+    
     context = {'slug': slug,
                'product' : product,
                 'seo' : seo,
                 'tags': tags,
                 'category': category,
+                'specifications': specifications,
+                'other_photo' : other_photo,
                }
 
     return render(request, 'product/product-detail.html', context) 
@@ -66,8 +70,16 @@ class ProductList(ListView):
 
 class ProductDetail(DetailView):
     model = Product
-    template_name = 'product/product_detail.html'
-
+    template_name = 'product/product-details.html'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Get the product's specifications
+        context['specifications'] = self.object.specifications.all()  # 'specifications' is the related_name in ProductSpecification
+        context['categories'] = self.object.categories.all()
+        context['tags'] = self.object.tags.all()
+        return context
+    
 class ProductCreateView(LoginRequiredMixin,CreateView):
     model = Product
     fields = ['id','title','Code', 'price', 'offer_price','stock','description','summery','categories','tags','publish_date','author','is_active','guarantee','time_to_bring','size','standard']
@@ -138,7 +150,7 @@ class ShopProductGridView(ListView):
 class ShopProductDetailView(DetailView):
     template_name = "product/product-details.html"
     queryset = Product.objects.filter(
-        status=ProductStatusType.publish.value)
+    status=ProductStatusType.publish.value)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

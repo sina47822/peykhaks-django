@@ -113,7 +113,7 @@ class Product(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     publish_date = models.DateTimeField(null=True)
     author = models.ForeignKey(User , on_delete=models.CASCADE, blank=True, null=True)
-    total_views = models.IntegerField(default=0 , )
+    total_views = models.IntegerField(default='1k' , )
     is_active = models.CharField(max_length=100 , choices=STATUS_CHOICES, default='not_active',blank = True, null = True)
 
     stock = models.PositiveIntegerField(blank = True, null = True,)
