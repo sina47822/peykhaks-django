@@ -1,4 +1,6 @@
+from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
+from review.models import ProductReviewModel, ReviewStatusType
 from product.models import Product , Category, Tags ,PriceList,ProductSEO,TagsSEO,CategorySEO,ProductStatusType,ProductCategoryModel,WishlistProductModel,ProductSpecification
 from .forms import PriceUpdateFormset
 from django.core.paginator import Paginator
@@ -68,17 +70,17 @@ class ProductList(ListView):
     # paginate_by = 10
     ordering = 'id'
 
-class ProductDetail(DetailView):
-    model = Product
-    template_name = 'product/product-details.html'
+# class ProductDetail(DetailView):
+#     model = Product
+#     template_name = 'product/product-details.html'
     
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        # Get the product's specifications
-        context['specifications'] = self.object.specifications.all()  # 'specifications' is the related_name in ProductSpecification
-        context['categories'] = self.object.categories.all()
-        context['tags'] = self.object.tags.all()
-        return context
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         # Get the product's specifications
+#         context['specifications'] = self.object.specifications.all()  # 'specifications' is the related_name in ProductSpecification
+#         context['categories'] = self.object.categories
+#         context['tags'] = self.object.tags.all()
+#         return context
     
 class ProductCreateView(LoginRequiredMixin,CreateView):
     model = Product
@@ -149,32 +151,34 @@ class ShopProductGridView(ListView):
     
 class ShopProductDetailView(DetailView):
     template_name = "product/product-details.html"
-    queryset = Product.objects.filter(
-    status=ProductStatusType.publish.value)
+    queryset = Product.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         product = self.get_object()
         context["is_wished"] = WishlistProductModel.objects.filter(
             user=self.request.user, product__id=product.id).exists() if self.request.user.is_authenticated else False
-        # reviews = ReviewModel.objects.filter(product=product,status=ReviewStatusType.accepted.value)
-        # context["reviews"] = reviews
-        # total_reviews_count =reviews.count()
-        # context["reviews_count"] = {
-        #     f"rate_{rate}": reviews.filter(rate=rate).count() for rate in range(1, 6)
-        # }
-        # if total_reviews_count != 0:
-        #     context["reviews_avg"] = {
-        #         f"rate_{rate}": round((reviews.filter(rate=rate).count()/total_reviews_count)*100,2) for rate in range(1, 6)
-        #     }
-        # else:
-        #     context["reviews_avg"] = {f"rate_{rate}": 0 for rate in range(1, 6)}
+        reviews = ProductReviewModel.objects.filter(product=product,status=ReviewStatusType.accepted.value)
+        context["reviews"] = reviews
+        total_reviews_count =reviews.count()
+        context["reviews_count"] = {
+            f"rate_{rate}": reviews.filter(rate=rate).count() for rate in range(1, 6)
+        }
+        if total_reviews_count != 0:
+            context["reviews_avg"] = {
+                f"rate_{rate}": round((reviews.filter(rate=rate).count()/total_reviews_count)*100,2) for rate in range(1, 6)
+            }
+        else:
+            context["reviews_avg"] = {f"rate_{rate}": 0 for rate in range(1, 6)}
         return context
 
     def get_object(self, queryset=None):
         obj = super().get_object(queryset)
-        obj.product_images.prefetch_related()
+        obj.specifications.prefetch_related()
+
+        obj.media.prefetch_related()
         return obj
+
 
 class AddOrRemoveWishlistView(LoginRequiredMixin, View):
 

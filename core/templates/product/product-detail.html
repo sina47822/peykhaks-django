@@ -102,29 +102,29 @@ Page content START -->
 
 				<p>{{product.description | safe}}</p>
 				
-				<!-- Book detail START -->
+				<!-- product detail START -->
 				<div class="col-12">
 					<!-- Tabs START -->
-					<ul class="nav nav-pills nav-pills-bg-soft px-3" id="book-pills-tab" role="tablist">
+					<ul class="nav nav-pills nav-pills-bg-soft px-3" id="product-pills-tab" role="tablist">
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0 active" id="book-pills-tab-1" data-bs-toggle="pill" data-bs-target="#book-pills-1" type="button" role="tab" aria-controls="book-pills-1" aria-selected="true">مشخصات تخصصی محصول</button>
+							<button class="nav-link mb-0 active" id="product-pills-tab-1" data-bs-toggle="pill" data-bs-target="#product-pills-1" type="button" role="tab" aria-controls="product-pills-1" aria-selected="true">مشخصات تخصصی محصول</button>
 						</li>
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0" id="book-pills-tab-2" data-bs-toggle="pill" data-bs-target="#book-pills-2" type="button" role="tab" aria-controls="book-pills-2" aria-selected="false">دیدگاه</button>
+							<button class="nav-link mb-0" id="product-pills-tab-2" data-bs-toggle="pill" data-bs-target="#product-pills-2" type="button" role="tab" aria-controls="product-pills-2" aria-selected="false">دیدگاه</button>
 						</li>
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0" id="book-pills-tab-3" data-bs-toggle="pill" data-bs-target="#book-pills-3" type="button" role="tab" aria-controls="book-pills-3" aria-selected="false">نحوه ارسال </button>
+							<button class="nav-link mb-0" id="product-pills-tab-3" data-bs-toggle="pill" data-bs-target="#product-pills-3" type="button" role="tab" aria-controls="product-pills-3" aria-selected="false">نحوه ارسال </button>
 						</li>
 					</ul>
 					<!-- Tabs END -->
 
 					<!-- Tab contents START -->
-					<div class="tab-content pt-4 px-3" id="book-pills-tabContent">
+					<div class="tab-content pt-4 px-3" id="product-pills-tabContent">
 						<!-- Content START -->
-						<div class="tab-pane fade show active" id="book-pills-1" role="tabpanel" aria-labelledby="book-pills-tab-1">
+						<div class="tab-pane fade show active" id="product-pills-1" role="tabpanel" aria-labelledby="product-pills-tab-1">
 							<div class="row g-4">
 								<div class="col-md-12">
                   <!-- attributes -->
@@ -152,13 +152,13 @@ Page content START -->
 						<!-- Content END -->
 
 						<!-- Content START -->
-						<div class="tab-pane fade" id="book-pills-2" role="tabpanel" aria-labelledby="book-pills-tab-2">
+						<div class="tab-pane fade" id="product-pills-2" role="tabpanel" aria-labelledby="product-pills-tab-2">
 							<!-- Review START -->
 							<div class="row mb-4">
-								<h4 class="mb-4 fs-5">دیدگاه خریداران</h4>
+								<h4 class="mb-4 fs-5">نظرات شما</h4>
 
 								<!-- Rating info -->
-								{% comment %} <div class="col-md-4 mb-3 mb-md-0">
+							  <div class="col-md-4 mb-3 mb-md-0">
 									<div class="text-center">
 										<!-- Info -->
 										<h2 class="mb-0">4.5</h2>
@@ -172,10 +172,10 @@ Page content START -->
 										</ul>
 										<p class="mb-0">(بر اساس 155 دیدگاه)</p>
 									</div>
-								</div> {% endcomment %}
+								</div>
 
 								<!-- Progress-bar and star -->
-								{% comment %} <div class="col-md-8">
+								<div class="col-md-8">
 									<div class="row align-items-center text-center">
 										<!-- Progress bar and Rating -->
 										<div class="col-6 col-sm-8">
@@ -277,17 +277,18 @@ Page content START -->
 											</ul>
 										</div>
 									</div>
-								</div> {% endcomment %}
+								</div>
 							</div>
 							<!-- Review END -->
 
-							<!-- Student review START -->
+							<!-- User review START -->
 							<div class="row">
+                {% for review in reviews %}
 								<!-- Review item START -->
-								{% comment %} <div class="d-md-flex my-4">
+								<div class="d-md-flex my-4">
 									<!-- Avatar -->
 									<div class="avatar avatar-xl me-4 flex-shrink-0">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{static 'images/temprory/images/avatar/01.jpg'}" alt="avatar">
 									</div>
 									<!-- Text -->
 									<div>
@@ -313,68 +314,42 @@ Page content START -->
 								<!-- Divider -->
 								<hr>
 								<!-- Review item END -->
-
-								<!-- Review item START -->
-								<div class="d-md-flex my-4">
-									<!-- Avatar -->
-									<div class="avatar avatar-xl me-4 flex-shrink-0">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
-									</div>
-									<!-- Text -->
-									<div>
-										<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
-											<h5 class="me-3 mb-0">حامد علیزاده</h5>
-											<!-- Review star -->
-											<ul class="list-inline mb-0">
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
-											</ul>
-										</div>
-										<!-- Info -->
-										<p class="small mb-2">2 روز پیش</p>
-										<p class="mb-2">زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-										<!-- Reply button -->
-										<a href="#" class="text-body mb-0"><i class="fas fa-reply me-2"></i>پاسخ</a>
-									</div>	
-								</div> {% endcomment %}
-								<!-- Review item END -->
-								<!-- Divider -->
-								<hr>
+                {% endfor %}
 							</div>
-							<!-- Student review END -->
+							<!-- User review END -->
 
 							<!-- Leave Review START -->
 							<div class="mt-2">
 								<h5 class="mb-4">ثبت دیدگاه</h5>
-								<form class="row g-3">
-									<!-- Name -->
+								<form class="row g-3" action="{% url 'review:submit-review' %}" method="post" id="review_form">
+                  {% csrf_token %} 
+                  <!-- Name -->
+                  <input hidden name="product" value={{product.id}}>
+                  <!-- Name -->
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="inputtext" placeholder="نام" aria-label="First name">
+										<input type="text" class="form-control" id="inputtext" placeholder="نام" aria-label="First name" name="name">
 									</div>
 									<!-- Email -->
 									<div class="col-md-6">
-										<input type="email" class="form-control" placeholder="ایمیل" id="inputEmail4">
+										<input type="email" class="form-control" placeholder="ایمیل" id="inputEmail4" name="email">
 									</div>
 									<!-- Rating -->
 									<div class="col-12">
-										<select id="inputState2" class="form-select  js-choice">
-											<option selected="">★★★★★ (5/5)</option>
-											<option>★★★★☆ (4/5)</option>
-											<option>★★★☆☆ (3/5)</option>
-											<option>★★☆☆☆ (2/5)</option>
-											<option>★☆☆☆☆ (1/5)</option>
+										<select id="inputState2" class="form-select  " name="rate">
+											<option value="5" selected="">★★★★★ (5/5)</option>
+											<option value="4">★★★★☆ (4/5)</option>
+											<option value="3">★★★☆☆ (3/5)</option>
+											<option value="2">★★☆☆☆ (2/5)</option>
+											<option value="1">★☆☆☆☆ (1/5)</option>
 										</select>
 									</div>
 									<!-- Message -->
 									<div class="col-12">
-										<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="دیدگاه خود را بنویسید" rows="3"></textarea>
+										<textarea name="description" class="form-control" id="exampleFormControlTextarea1" placeholder="دیدگاه خود را بنویسید" rows="3"></textarea>
 									</div>
 									<!-- Button -->
 									<div class="col-12">
-										<button type="submit" class="btn btn-primary mb-0">ثبت دیدگاه</button>
+										<button type="submit" class="btn btn-primary mb-0" form="review_form">ثبت دیدگاه</button>
 									</div>
 								</form>
 							</div>
@@ -384,7 +359,7 @@ Page content START -->
 						<!-- Content END -->
 
 						<!-- Content START -->
-						<div class="tab-pane fade" id="book-pills-3" role="tabpanel" aria-labelledby="book-pills-tab-3">
+						<div class="tab-pane fade" id="product-pills-3" role="tabpanel" aria-labelledby="product-pills-tab-3">
 							
               <p>یکی از مشکلات اصلی خریداران کالاهای صنعتی موجود نبودن کالا در بازار و صرف زمان بالای انتظار برای تولید محصولات است، که این مساله زمان راه اندازی آزمایشگاه و هزینه سرمایه گذاری و نگهداری پول نقد را افزایش می دهد، گروه صنعتی پی خاک سنگ همه تلاش خود را در جهت رفع این مشکل و آماده سازی محصولات در انبار و ارسال فوری محصولات کرده است. در نظر داشته باشید که هزینه تولید کالاهای تخصصی بالا و تعداد به نسبت تبدیل مشتری پایین است و همچنین این مهم به هزینه انبار زیاد و سرمایه گذاری زیاد نیاز دارد گروه صنعتی پی خاک سنگ برای حل این مشکل این کار سخت و پر ریسک در بازار را انجام داده است  به این امید که مشتریان از این شرکت حمایت های لازم را انجام داده و سرمایه شرکت در گردش قرار گیرد</p>
 
@@ -440,14 +415,14 @@ Page content START -->
 					</div>
 					<!-- Tab contents END -->
 				</div>
-				<!-- Book detail END -->
+				<!-- product detail END -->
 			</div>
 			<!-- Main content END -->
 
 
 			<!-- Right sidebar START -->
 			<div class="col-xl-4">
-				<div data-sticky data-margin-top="80" data-sticky-for="992">
+				<div data-margin-top="80" data-sticky-for="992">
 					<div class="row justify-content-center">
 						<div class="col-md-8 col-xl-12">
               <!-- Swiper Main Slider -->
@@ -538,7 +513,7 @@ Page content START -->
 									{% comment %} <div class="text-center">
 										<!-- Buttons -->
 										<a href="#" class="btn btn-success-soft mb-2 mb-sm-0 me-00 me-sm-3"><i class="bi bi-cart3 me-2"></i>افزودن به سبد</a>
-										<a href="#" class="btn btn-light mb-0"><i class="bi bi-bookmark me-2"></i>افزودن به علاقه مندی</a>
+										<a href="#" class="btn btn-light mb-0"><i class="bi bi-productmark me-2"></i>افزودن به علاقه مندی</a>
 									</div> {% endcomment %}
 								</div>
 							</div>

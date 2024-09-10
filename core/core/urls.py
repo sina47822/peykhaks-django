@@ -36,6 +36,8 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('product/', include('product.urls')),
+    path('review/', include('review.urls')),
+
     path('', include('website.urls')),
     path('tinymce/', include('tinymce.urls')),
 

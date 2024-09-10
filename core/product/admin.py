@@ -15,11 +15,9 @@ class ProductResource(resources.ModelResource):
         fields = ('id','title', 'slug', 'description', 'summery','price','offer_price','image', 'category','status', 'tags',  'publish_date', 'author', 'total_views', 'is_active','stock','standard','size','guarantee','time_to_bring')
 
 class ProductImagesInline(admin.StackedInline):
-    model = ProductMedia
-    
+    model = ProductMedia  
 class ProductSpecificationInline(admin.StackedInline):
     model = ProductSpecification
-
 class TagSEOInline(admin.StackedInline):
     model = TagsSEO
     can_delete = False
@@ -50,14 +48,12 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name' ,'parent')
     search_fields = ['name', 'parent']
     inlines = [CatSEOInline] 
-
-
 admin.site.register(Category,CategoryAdmin)
+
 class TagsAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ['name']
     inlines = [TagSEOInline] 
-
 admin.site.register(Tags,TagsAdmin)
 
 admin.site.register(PriceList)
@@ -67,7 +63,6 @@ class StandardsAdmin(ImportExportModelAdmin):
     list_display = ('id','title', 'slug' )
     search_fields = ['title']
     prepopulated_fields = {'slug': ('title',)}
-
 admin.site.register(Standards,StandardsAdmin)
 admin.site.register(StandardISIRI)
 admin.site.register(StandardASTM)
@@ -76,7 +71,6 @@ admin.site.register(StandardAASHTO)
 @admin.register(ProductCategoryModel)
 class ProductCategoryModelAdmin(admin.ModelAdmin):
     list_display = ("id", "title", "created_date")
-
 
 @admin.register(WishlistProductModel)
 class WishlistProductModelAdmin(admin.ModelAdmin):

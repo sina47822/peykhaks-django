@@ -107,6 +107,8 @@ class Product(models.Model):
     category = models.ManyToManyField(ProductCategoryModel) #add at the other time
     status = models.IntegerField(choices=ProductStatusType.choices,default=ProductStatusType.draft.value)
 
+    avg_rate = models.FloatField(default=0.0)
+
     categories = models.ForeignKey(Category, on_delete=models.SET_NULL ,related_name='products', blank=True, null=True)
     tags = models.ManyToManyField (Tags)
     update_date = models.DateTimeField(auto_now=True)

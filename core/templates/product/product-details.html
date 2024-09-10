@@ -9,143 +9,6 @@
 
 
 {% block content %}
-<!-- product_detail.html -->
-<h1>{{ product.title }}</h1>
-<p>Price: {{ product.price }}</p>
-<p>Offer Price: {{ product.offer_price }}</p>
-<p>Description: {{ product.description|safe }}</p>
-<p>Summary: {{ product.summery|safe }}</p>
-<p>Status: {{ product.get_is_active_display }}</p>
-<p>Size: {{ product.get_size_display }}</p>
-<p>Guarantee: {{ product.guarantee|yesno:"Yes,No" }}</p>
-<p>Total Views: {{ product.total_views }}</p>
-
-<!-- Specifications -->
-<h2>Specifications</h2>
-<ul>
-  {% for spec in specifications %}
-    <li>{{ spec.name }}: {{ spec.value }}</li>
-  {% empty %}
-    <li>No specifications available for this product.</li>
-  {% endfor %}
-</ul>
-
-<section class="product-holder bg-body-secondary py-4 px-5">
-    <div class="product-top-holder bg-white">
-        <div class="product-container pb-4">
-            <h1 class="product-title px-3 py-4 bg-light border border-light ">{{product.title}}</h1>
-            <div class="row px-4">
-                <div class="col-md-4">
-                    <img src="{{product.image.url}}" class="img-fluid" alt="Product Image">
-                </div>
-                <div class="col-md-8">
-                    <h2 class="title">{{product.title}}</h2>
-                    <div class="product-cat-holder "> دسته بندی:         
-                        <span class="product-cat text-muted">
-                            <a href="{% url 'product:productcategory' slug=category.slug %}">{{ category.name }}</a>
-                        </span>
-                    </div>
-                    <div class="product-tag-holder">تگ ها:
-                        {% for tag in tags %}
-                        <span class="product-tag text-muted">
-                            <a href="{% url 'product:producttags' slug=tag.slug %}">{{ tag.name }}</a>
-                        </span>
-                        {% if not forloop.last %}, {% endif %}
-                        {% endfor %}
-                    </div>
-
-    
-                    <span class="d-flex">خلاصه محصول: {{product.summery | safe}}</span>
-                    <div class="product-price-holder">
-                      {% if product.offer_price < product.price %}
-                      <p class="product-del-price">قیمت محصول : <del>{{product.price | intcomma}}</del> 
-                        
-                        <span class="product-price">{{product.offer_price| intcomma}}</span></p>
-                      {%else%}
-                      <p class="product-price">قیمت محصول : {{product.price| intcomma}}</p>
-                      {% endif %}
-                    </div>
-                    {% if product.stock >= 1 %}
-                        <button class="btn btn-primary">اضافه کردن به لیست سفارش</button>
-                    {% else %}
-                        <button class="btn btn-primary">موجود شد خبرم کن!</button>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="product-center-holder bg-white">
-        <div class="product-container pb-4">
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        توضیحات محصول
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <span class="d-flex">{{product.description | safe}}</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                        مشخصات محصول
-                    </button>
-                  </h2>
-                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                        <table class="table">
-                            <thead>
-                              <tr>
-                                <th scope="col"><strong>عناوین</strong></th>
-                                <th scope="col"><strong>مشخصات</strong> </th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td scope="col">گارانتی</td>
-                                    {% if product.guarantee %}
-                                    <td>دارد</td>
-                                    {% else %}
-                                    <td>ندارد</td>
-                                    {% endif %}
-                                </tr>
-                                <tr>
-                                    <td scope="col"> استاندارد</td>
-                                    <td><a href="{{product.Standard.slug}}">{{product.Standard.title.value}}</a></td>
-                                </tr>
-                                <tr>
-                                    <td scope="col">سایز محصول </td>
-                                    <td>{{product.size}}</td>
-                                </tr>
-                                <tr>
-                                    <td scope="col">زمان تحویل </td>
-                                    <td>{{product.time_to_bring}}</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    
-                    </div>
-                  </div>
-                </div>
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      مشخصات تخصصی محصول
-                    </button>
-                  </h2>
-                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                    <div class="accordion-body">
-                    </div>
-                  </div>
-                </div>
-              </div>
-        </div>
-    </div>
-</section>
 
 <!-- =======================
 Page content START -->
@@ -154,10 +17,6 @@ Page content START -->
 		<div class="row g-4 g-sm-5">
 			<!-- Main content START -->
 			<div class="col-xl-8">
-        <!-- Image -->
-        <div class="rounded-3">
-          <img src="{{product.image.url}}" class="card-img-top" alt="{{product.title}}">
-        </div>
 				<!-- Title -->
 				<h1 class="mb-4 fs-4">{{product.title}}</h1>
 
@@ -179,10 +38,10 @@ Page content START -->
 
 
 				<!-- Content -->
-        {% if product.summery %}
+        		{% if product.summery %}
 				<h4 class="fs-5">خلاصه توضیحات</h4>
 				<p>{{product.summery | safe}}</p>
-        {% endif %}
+        		{% endif %}
 
 				<!-- Additional info -->
 				<div class="row mb-3">
@@ -196,8 +55,8 @@ Page content START -->
 							<li class="list-group-item px-0">
 								<span class="h6 fw-light"><i class="fas fa-fw fa-book text-primary me-2"></i>استاندارد</span>
 								<span class="h6">
-                  <a href="{{product.Standard.slug}}">{{product.Standard.title.value}}</a>
-                </span>
+									<a href="{{product.Standard.slug}}">{{product.Standard.title.value}}</a>
+								</span>
 							</li>
 							<li class="list-group-item px-0">
 								<span class="h6 fw-light"><i class="fas fa-fw fa-font text-primary me-2"></i>سایز محصول</span>
@@ -206,12 +65,12 @@ Page content START -->
 							<li class="list-group-item px-0">
 								<span class="h6 fw-light"><i class="fa-light fa-translate text-primary me-2"></i>گارانتی</span>
 								<span class="h6">
-                  {% if product.guarantee %}
-                  دارد
-                  {% else %}
-                  ندارد
-                  {% endif %}  
-                </span>
+									{% if product.guarantee %}
+									دارد
+									{% else %}
+									ندارد
+									{% endif %}  
+								</span>
 							</li>
 						</ul>
 						<!-- List END -->
@@ -243,96 +102,47 @@ Page content START -->
 
 				<p>{{product.description | safe}}</p>
 				
-				<!-- Book detail START -->
+				<!-- product detail START -->
 				<div class="col-12">
 					<!-- Tabs START -->
-					<ul class="nav nav-pills nav-pills-bg-soft px-3" id="book-pills-tab" role="tablist">
+					<ul class="nav nav-pills nav-pills-bg-soft px-3" id="product-pills-tab" role="tablist">
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0 active" id="book-pills-tab-1" data-bs-toggle="pill" data-bs-target="#book-pills-1" type="button" role="tab" aria-controls="book-pills-1" aria-selected="true">مشخصات تخصصی محصول</button>
+							<button class="nav-link mb-0 active" id="product-pills-tab-1" data-bs-toggle="pill" data-bs-target="#product-pills-1" type="button" role="tab" aria-controls="product-pills-1" aria-selected="true">مشخصات تخصصی محصول</button>
 						</li>
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0" id="book-pills-tab-2" data-bs-toggle="pill" data-bs-target="#book-pills-2" type="button" role="tab" aria-controls="book-pills-2" aria-selected="false">دیدگاه</button>
+							<button class="nav-link mb-0" id="product-pills-tab-2" data-bs-toggle="pill" data-bs-target="#product-pills-2" type="button" role="tab" aria-controls="product-pills-2" aria-selected="false">دیدگاه</button>
 						</li>
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0" id="book-pills-tab-3" data-bs-toggle="pill" data-bs-target="#book-pills-3" type="button" role="tab" aria-controls="book-pills-3" aria-selected="false">نحوه ارسال </button>
+							<button class="nav-link mb-0" id="product-pills-tab-3" data-bs-toggle="pill" data-bs-target="#product-pills-3" type="button" role="tab" aria-controls="product-pills-3" aria-selected="false">نحوه ارسال </button>
 						</li>
 					</ul>
 					<!-- Tabs END -->
 
 					<!-- Tab contents START -->
-					<div class="tab-content pt-4 px-3" id="book-pills-tabContent">
+					<div class="tab-content pt-4 px-3" id="product-pills-tabContent">
 						<!-- Content START -->
-						<div class="tab-pane fade show active" id="book-pills-1" role="tabpanel" aria-labelledby="book-pills-tab-1">
+						<div class="tab-pane fade show active" id="product-pills-1" role="tabpanel" aria-labelledby="product-pills-tab-1">
 							<div class="row g-4">
 								<div class="col-md-12">
                   <!-- attributes -->
                   <div class="row g-4 mt-4">
 
+                    {% for spec in object.specifications.all %}
                     <div class="col-md-6 col-xl-4">
+
                       <!-- Card START -->
                       <div class="card card-body shadow p-4 align-items-start">
-                        <!-- Image -->
-                        <img class="rounded-1 h-60px" src="assets/images/client/uni-logo-03.svg" alt="university logo">
                         <!-- Title -->
-                        <h5 class="card-title mt-3 mb-0">{{ProductSpecification.name}}</h5>
-                        <span>{{ProductSpecification.value}}</span>
-
-                        <!-- Button -->
-                        <a href="index-5.html" class="btn btn-lg btn-link p-0 mt-3 stretched-link"><u>مشاهده</u></a>
+                        <h5 class="card-title mt-2 mb-0">{{spec.name}}</h5>
+                        <span class="card-title mt-2 mb-0">{{spec.value}}</span>
                       </div>
                       <!-- Card END -->
                     </div>
-
-                    <div class="col-md-6 col-xl-4">
-                      <!-- Card START -->
-                      <div class="card card-body shadow p-4 align-items-start">
-                        <!-- Image -->
-                        <img class="rounded-1 h-60px" src="assets/images/client/uni-logo-01.svg" alt="university logo">
-
-                        <!-- Title -->
-                        <h5 class="card-title mt-3 mb-0">دانشگاه مونترآل</h5>
-                        <span>یک دانشگاه دولتی در مونترآل، کانادا</span>
-
-                        <!-- Button -->
-                        <a href="index-5.html" class="btn btn-lg btn-link p-0 mt-3 stretched-link"><u>مشاهده</u></a>
-                      </div>
-                      <!-- Card END -->
-                    </div>
-
-                    <div class="col-md-6 col-xl-4">
-                      <!-- Card START -->
-                      <div class="card card-body shadow p-4 align-items-start">
-                        <!-- Image -->
-                        <img class="rounded-1 h-60px" src="assets/images/client/uni-logo-02.svg" alt="university logo">
-
-                        <!-- Title -->
-                        <h5 class="card-title mt-3 mb-0">دانشگاه بریتیش</h5>
-                        <span>دانشگاه در ونکوور، کانادا</span>
-
-                        <!-- Button -->
-                        <a href="index-5.html" class="btn btn-lg btn-link p-0 mt-3 stretched-link"><u>مشاهده</u></a>
-                      </div>
-                      <!-- Card END -->
-                    </div>
-
-                    <div class="col-md-6 col-xl-4">
-                      <!-- Card START -->
-                      <div class="card card-body shadow p-4 align-items-start">
-                        <!-- Image -->
-                        <img class="rounded-1 h-60px" src="assets/images/client/uni-logo-04.svg" alt="university logo">
-
-                        <!-- Title -->
-                        <h5 class="card-title mt-3 mb-0">دانشگاه آلبرتا</h5>
-                        <span>یک دانشگاه دولتی در کانادا</span>
-
-                        <!-- Button -->
-                        <a href="index-5.html" class="btn btn-lg btn-link p-0 mt-3 stretched-link"><u>مشاهده</u></a>
-                      </div>
-                      <!-- Card END -->
-                    </div>                  
+                    {% endfor%}
+                
 									</div>
 									<!-- Content -->
 									<p class="mt-3 mt-sm-0 mb-0"></p>
@@ -342,13 +152,13 @@ Page content START -->
 						<!-- Content END -->
 
 						<!-- Content START -->
-						<div class="tab-pane fade" id="book-pills-2" role="tabpanel" aria-labelledby="book-pills-tab-2">
+						<div class="tab-pane fade" id="product-pills-2" role="tabpanel" aria-labelledby="product-pills-tab-2">
 							<!-- Review START -->
 							<div class="row mb-4">
-								<h4 class="mb-4 fs-5">دیدگاه خریداران</h4>
+								<h4 class="mb-4 fs-5">نظرات شما</h4>
 
 								<!-- Rating info -->
-								{% comment %} <div class="col-md-4 mb-3 mb-md-0">
+							  <div class="col-md-4 mb-3 mb-md-0">
 									<div class="text-center">
 										<!-- Info -->
 										<h2 class="mb-0">4.5</h2>
@@ -358,14 +168,14 @@ Page content START -->
 											<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 											<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 											<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-											<li class="list-inline-item me-0"><i class="fas fa-star-half-alt text-warning"></i></li>
+											<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 										</ul>
-										<p class="mb-0">(بر اساس 155 دیدگاه)</p>
+										<p class="mb-0">(بر اساس 0 دیدگاه)</p>
 									</div>
-								</div> {% endcomment %}
+								</div>
 
 								<!-- Progress-bar and star -->
-								{% comment %} <div class="col-md-8">
+								<div class="col-md-8">
 									<div class="row align-items-center text-center">
 										<!-- Progress bar and Rating -->
 										<div class="col-6 col-sm-8">
@@ -467,23 +277,25 @@ Page content START -->
 											</ul>
 										</div>
 									</div>
-								</div> {% endcomment %}
+								</div>
 							</div>
 							<!-- Review END -->
 
-							<!-- Student review START -->
+							<!-- User review START -->
 							<div class="row">
+                				{% for review in reviews %}
 								<!-- Review item START -->
-								{% comment %} <div class="d-md-flex my-4">
+								<div class="d-md-flex my-4">
 									<!-- Avatar -->
 									<div class="avatar avatar-xl me-4 flex-shrink-0">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/09.jpg" alt="avatar">
+										<img class="avatar-img rounded-circle" src="{% static 'images/temprory/images/avatar/04.jpg'%}" alt="avatar">
 									</div>
 									<!-- Text -->
 									<div>
 										<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
-											<h5 class="me-3 mb-0">لیلا جلیلی</h5>
+											<h5 class="me-3 mb-0">{{review.name}}</h5>
 											<!-- Review star -->
+											 {% if review.rate.value == 0 %}
 											<ul class="list-inline mb-0">
 												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
@@ -491,10 +303,51 @@ Page content START -->
 												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
 											</ul>
+											{% elif review.rate.value == 1 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 2 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 3 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 4 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 5 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star-alt text-warning"></i></li>
+											</ul>
+											{%endif%}
 										</div>
 										<!-- Info -->
-										<p class="small mb-2">2 روز پیش</p>
-										<p class="mb-2">کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد.</p>
+										<p class="small mb-2">{{review.updated_date|intcomma}}</p>
+										<p class="mb-2">{{review.description| safe }}</p>
 										
 										<!-- Reply button -->
 										<a href="#" class="text-body mb-0"><i class="fas fa-reply me-2"></i>پاسخ</a>
@@ -503,68 +356,42 @@ Page content START -->
 								<!-- Divider -->
 								<hr>
 								<!-- Review item END -->
-
-								<!-- Review item START -->
-								<div class="d-md-flex my-4">
-									<!-- Avatar -->
-									<div class="avatar avatar-xl me-4 flex-shrink-0">
-										<img class="avatar-img rounded-circle" src="assets/images/avatar/07.jpg" alt="avatar">
-									</div>
-									<!-- Text -->
-									<div>
-										<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
-											<h5 class="me-3 mb-0">حامد علیزاده</h5>
-											<!-- Review star -->
-											<ul class="list-inline mb-0">
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
-												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
-											</ul>
-										</div>
-										<!-- Info -->
-										<p class="small mb-2">2 روز پیش</p>
-										<p class="mb-2">زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
-										<!-- Reply button -->
-										<a href="#" class="text-body mb-0"><i class="fas fa-reply me-2"></i>پاسخ</a>
-									</div>	
-								</div> {% endcomment %}
-								<!-- Review item END -->
-								<!-- Divider -->
-								<hr>
+                				{% endfor %}
 							</div>
-							<!-- Student review END -->
+							<!-- User review END -->
 
 							<!-- Leave Review START -->
 							<div class="mt-2">
 								<h5 class="mb-4">ثبت دیدگاه</h5>
-								<form class="row g-3">
+								<form class="row g-3" action="{% url 'review:submit-review' %}" method="post" id="review_form">
+									{% csrf_token %} 
+									<!-- Name -->
+									<input hidden name="product" value={{product.id}}>
 									<!-- Name -->
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="inputtext" placeholder="نام" aria-label="First name">
+										<input type="text" class="form-control" id="inputtext" placeholder="نام" aria-label="First name" name="name">
 									</div>
 									<!-- Email -->
 									<div class="col-md-6">
-										<input type="email" class="form-control" placeholder="ایمیل" id="inputEmail4">
+										<input type="email" class="form-control" placeholder="ایمیل" id="inputEmail4" name="email">
 									</div>
 									<!-- Rating -->
 									<div class="col-12">
-										<select id="inputState2" class="form-select  js-choice">
-											<option selected="">★★★★★ (5/5)</option>
-											<option>★★★★☆ (4/5)</option>
-											<option>★★★☆☆ (3/5)</option>
-											<option>★★☆☆☆ (2/5)</option>
-											<option>★☆☆☆☆ (1/5)</option>
+										<select id="inputState2" class="form-select  " name="rate">
+											<option value="5" selected="">★★★★★ (5/5)</option>
+											<option value="4">★★★★☆ (4/5)</option>
+											<option value="3">★★★☆☆ (3/5)</option>
+											<option value="2">★★☆☆☆ (2/5)</option>
+											<option value="1">★☆☆☆☆ (1/5)</option>
 										</select>
 									</div>
 									<!-- Message -->
 									<div class="col-12">
-										<textarea class="form-control" id="exampleFormControlTextarea1" placeholder="دیدگاه خود را بنویسید" rows="3"></textarea>
+										<textarea name="description" class="form-control" id="exampleFormControlTextarea1" placeholder="دیدگاه خود را بنویسید" rows="3"></textarea>
 									</div>
 									<!-- Button -->
 									<div class="col-12">
-										<button type="submit" class="btn btn-primary mb-0">ثبت دیدگاه</button>
+										<button type="submit" class="btn btn-primary mb-0" form="review_form">ثبت دیدگاه</button>
 									</div>
 								</form>
 							</div>
@@ -574,7 +401,7 @@ Page content START -->
 						<!-- Content END -->
 
 						<!-- Content START -->
-						<div class="tab-pane fade" id="book-pills-3" role="tabpanel" aria-labelledby="book-pills-tab-3">
+						<div class="tab-pane fade" id="product-pills-3" role="tabpanel" aria-labelledby="product-pills-tab-3">
 							
               <p>یکی از مشکلات اصلی خریداران کالاهای صنعتی موجود نبودن کالا در بازار و صرف زمان بالای انتظار برای تولید محصولات است، که این مساله زمان راه اندازی آزمایشگاه و هزینه سرمایه گذاری و نگهداری پول نقد را افزایش می دهد، گروه صنعتی پی خاک سنگ همه تلاش خود را در جهت رفع این مشکل و آماده سازی محصولات در انبار و ارسال فوری محصولات کرده است. در نظر داشته باشید که هزینه تولید کالاهای تخصصی بالا و تعداد به نسبت تبدیل مشتری پایین است و همچنین این مهم به هزینه انبار زیاد و سرمایه گذاری زیاد نیاز دارد گروه صنعتی پی خاک سنگ برای حل این مشکل این کار سخت و پر ریسک در بازار را انجام داده است  به این امید که مشتریان از این شرکت حمایت های لازم را انجام داده و سرمایه شرکت در گردش قرار گیرد</p>
 
@@ -630,36 +457,77 @@ Page content START -->
 					</div>
 					<!-- Tab contents END -->
 				</div>
-				<!-- Book detail END -->
+				<!-- product detail END -->
 			</div>
 			<!-- Main content END -->
 
 
 			<!-- Right sidebar START -->
 			<div class="col-xl-4">
-				<div data-sticky data-margin-top="80" data-sticky-for="992">
+				<div data-margin-top="80" data-sticky-for="992">
 					<div class="row justify-content-center">
 						<div class="col-md-8 col-xl-12">
+              <!-- Swiper Main Slider -->
+
+              <div class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden">
+                <div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="false" data-dots="true" data-items="1">
+                    <!-- Slide -->
+                      <div class="card card-bordered shadow-none">
+                          <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+                      </div>
+					  {% for media in object.media.all %}
+                      <div class="card card-bordered shadow-none">
+                          {% comment %} {% if media.media_type == 'image' %} {% endcomment %}
+                          <img class="card-img" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+                          {% comment %} {% else %}
+                          عکس موجود نیست
+                          {% endif %} {% endcomment %}
+                      </div>
+                    {% endfor %}
+                    <!-- End Slide -->
+                </div>
+              </div>
+              <!-- End Swiper Main Slider -->
+
+              <!-- Swiper Thumb Slider -->
+              <div class=" bottom-0 end-0 start-0 zi-1 p-4" >
+                <div class="tiny-slider overflow-hidden" style="max-width: 15rem;">
+                  <div class="tiny-slider-inner"  data-gutter="10" data-arrow="false" data-dots="false" data-items="3">
+                    <!-- Slide -->
+                      <a class=" " href="javascript:;">
+                          <img class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
+                      </a>
+					{% for media in object.media.all %}
+                        <a class="" href="javascript:;">
+                            <img class="rounded-5" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+                        </a>
+                    {% endfor %}
+                    <!-- End Slide -->
+                  </div>
+                </div>
+              </div>
+              <!-- End Swiper Thumb Slider -->
+              <!-- Image -->
 
 							<!-- Card START -->
-							<div class="card shadow">
+							<div class="card shadow align-items-center">
                 <!-- Price Item START -->
-                <ul class="list-inline m-4">
+                <ul class="list-inline m-4 ">
                   <!-- Price -->
-                  <li class="list-inline-item">
+                  <li class="list-inline-item ">
                     <input type="radio" class="btn-check" name="options" id="option1" checked>
                     <label class="btn btn-success-soft-check" for="option1">
-                      <span class="mb-2 h6 fw-light">قیمت محصول</span>
+                      <span class="mb-2 h5 fw-light">قیمت محصول</span>
                       <!-- Price and discount -->
                       <span class="d-flex align-items-center">
-                        {% if product.offer_price %}
+                        {% if product.offer_price < product.price %}
 
 
-                        <span class="mb-0 h5 me-2 text-success">{{product.offer_price| intcomma}}  تومان</span>
+                        <span class="mb-0 h3 me-2 text-success ">{{product.offer_price| intcomma}}  تومان</span>
                         <span class="text-decoration-line-through fs-6 mb-0 me-2">{{product.price | intcomma}}</span>
                         {% comment %} <span class="badge text-bg-dark mb-0">60% تخفیف</span> {% endcomment %}
                         {%else%}
-                        <span class="mb-0 h5 me-2 text-success">{{product.price | intcomma}} تومان</span>
+                        <span class="mb-0 h3 me-2 text-success">{{product.price | intcomma}} تومان</span>
                         {% endif %}
                       </span>
                     </label>
@@ -684,11 +552,11 @@ Page content START -->
 								<!-- Card body -->
 								<div class="card-body pb-3">
 									<!-- Buttons and price -->
-									<div class="text-center">
+									{% comment %} <div class="text-center">
 										<!-- Buttons -->
 										<a href="#" class="btn btn-success-soft mb-2 mb-sm-0 me-00 me-sm-3"><i class="bi bi-cart3 me-2"></i>افزودن به سبد</a>
-										<a href="#" class="btn btn-light mb-0"><i class="bi bi-bookmark me-2"></i>افزودن به علاقه مندی</a>
-									</div>
+										<a href="#" class="btn btn-light mb-0"><i class="bi bi-productmark me-2"></i>افزودن به علاقه مندی</a>
+									</div> {% endcomment %}
 								</div>
 							</div>
 							<!-- Card END -->

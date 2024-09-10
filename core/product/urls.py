@@ -15,10 +15,11 @@ urlpatterns = [
     path("grid/",views.ShopProductGridView.as_view(),name="product-grid"),
     path("add-or-remove-wishlist/",views.AddOrRemoveWishlistView.as_view(),name="add-or-remove-wishlist"),
 
-    path('p/<slug:slug>/', views.ProductDetail.as_view(), name='product-detail'),
+    # path('p/<slug:slug>/', views.ProductDetail.as_view(), name='product-detail'),
+    path('<slug:slug>/' ,views.ShopProductDetailView.as_view(),name="productdetails"),
 
-    re_path(r"product/(?P<slug>[-\w]+)/detail/",views.ShopProductDetailView.as_view(),name="product-detail"),
+    re_path( r"/(?P<slug>[-\w]+)/detail/",views.ShopProductDetailView.as_view(),name="productdetails"),
 
-    path('<slug:slug>/', views.products_detail, name='productdetails'),
+    # path('<slug:slug>/', views.products_detail, name='productdetails'),
 
 ]
