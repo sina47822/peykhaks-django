@@ -4,5 +4,13 @@ img.card-img-top {
     max-height: 350px;
     min-height: 290px ;
     height: 300px;
-    object-fit: cover;
+    object-fit: contain;
+}
+
+img.product-image-show {
+    width: 100px;
+}
+
+html[dir=rtl] .choices, html[dir=rtl] select option, html[dir=rtl] .choices__input {
+    direction: rtl;
 }

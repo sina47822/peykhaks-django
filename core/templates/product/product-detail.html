@@ -431,12 +431,12 @@ Page content START -->
                 <div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="false" data-dots="true" data-items="1">
                     <!-- Slide -->
                       <div class="card card-bordered shadow-none">
-                          <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+                          <img target="_blank" class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
                       </div>
                     {% for media in other_photo %}
                       <div class="card card-bordered shadow-none">
                           {% comment %} {% if media.media_type == 'image' %} {% endcomment %}
-                          <img class="card-img" src="{{media.media_file.url}}" alt="Image Description">
+                          <img target="_blank" class="card-img" src="{{media.media_file.url}}" alt="Image Description">
                           {% comment %} {% else %}
                           عکس موجود نیست
                           {% endif %} {% endcomment %}
@@ -453,11 +453,11 @@ Page content START -->
                   <div class="tiny-slider-inner"  data-gutter="10" data-arrow="false" data-dots="false" data-items="3">
                     <!-- Slide -->
                       <a class=" " href="javascript:;">
-                          <img class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
+                          <img target="_blank" class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
                       </a>
                     {% for media in other_photo %}
                         <a class="" href="javascript:;">
-                            <img class="rounded-5" src="{{media.media_file.url}}" alt="Image Description">
+                            <img target="_blank" class="rounded-5" src="{{media.media_file.url}}" alt="Image Description">
                         </a>
                     {% endfor %}
                     <!-- End Slide -->

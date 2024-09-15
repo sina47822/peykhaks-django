@@ -49,29 +49,29 @@ Page content START -->
 						<!-- List START -->
 						<ul class="list-group list-group-borderless">
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="bi fa-fw bi-calendar-fill text-primary me-2"></i>تاریخ انتشار:</span>
+								<span class="h6 fw-light"><i class="fa-light fa-calendar text-primary me-2"></i>تاریخ انتشار:</span>
 								<span class="h6">{{product.publish_date}}</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fas fa-fw fa-book text-primary me-2"></i>استاندارد</span>
+								<span class="h6 fw-light"><i class="fa-light fa-book text-primary me-2"></i>استاندارد</span>
 								<span class="h6">
 									<a href="{{product.Standard.slug}}">{{product.Standard.title.value}}</a>
 								</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fas fa-fw fa-font text-primary me-2"></i>سایز محصول</span>
+								<span class="h6 fw-light"><i class="fa-light fa-font text-primary me-2"></i>سایز محصول</span>
+								{% if product.size == 'Medium' %}
+									<span class="h6">متوسط</span>
+								{% elif product.size == 'light' %}
+									<span class="h6">سبک</span>
+								{% elif product.size == 'Heavy' %}
+									<span class="h6">سنگین</span>
+								{% else %}
+									<span class="h6">نامشخص</span>
+								{% endif %}
 								<span class="h6">{{product.size}}</span>
 							</li>
-							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-translate text-primary me-2"></i>گارانتی</span>
-								<span class="h6">
-									{% if product.guarantee %}
-									دارد
-									{% else %}
-									ندارد
-									{% endif %}  
-								</span>
-							</li>
+
 						</ul>
 						<!-- List END -->
 					</div>
@@ -80,21 +80,31 @@ Page content START -->
 						<!-- List START -->
 						<ul class="list-group list-group-borderless">
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="bi fa-fw bi-person-circle text-primary me-2"></i>زمان تحویل</span>
+								<span class="h6 fw-light"><i class="fa-light fa-clock text-primary me-2"></i>زمان تحویل</span>
 								<span class="h6">{{product.time_to_bring}}</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="bi fa-fw bi-eye-fill text-primary me-2"></i>تعداد بازدید:</span>
+								<span class="h6 fw-light"><i class="fa-light fa-eye text-primary me-2"></i>تعداد بازدید:</span>
 								<span class="h6">{{product.total_views}}</span>
 							</li>
 							{% comment %} <li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="bi fa-fw bi-bag-fill text-primary me-2"></i>تعداد خرید:</span>
+								<span class="h6 fw-light"><i class="fal fa-shopping-bag text-primary me-2"></i>تعداد خرید:</span>
 								<span class="h6">8245</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="bi fa-fw bi-star-fill text-primary me-2"></i>امتیاز/دیدگاه:</span>
+								<span class="h6 fw-light"><i class="fa-light fa-star text-primary me-2"></i>امتیاز/دیدگاه:</span>
 								<span class="h6">4.5 (568)</span>
 							</li> {% endcomment %}
+							<li class="list-group-item px-0">
+								<span class="h6 fw-light"><i class="fa-light fa-certificate text-primary me-2"></i>گارانتی</span>
+								<span class="h6">
+									{% if product.guarantee %}
+									دارد
+									{% else %}
+									ندارد
+									{% endif %}  
+								</span>
+							</li>
 						</ul>
 						<!-- List END -->
 					</div>
@@ -473,12 +483,12 @@ Page content START -->
                 <div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="false" data-dots="true" data-items="1">
                     <!-- Slide -->
                       <div class="card card-bordered shadow-none">
-                          <img class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+                          <img target="_blank" class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
                       </div>
 					  {% for media in object.media.all %}
                       <div class="card card-bordered shadow-none">
                           {% comment %} {% if media.media_type == 'image' %} {% endcomment %}
-                          <img class="card-img" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+                          <img target="_blank" class="card-img" src="{{media.media_file.url}}" alt="{{product.title}}-img">
                           {% comment %} {% else %}
                           عکس موجود نیست
                           {% endif %} {% endcomment %}
@@ -495,11 +505,11 @@ Page content START -->
                   <div class="tiny-slider-inner"  data-gutter="10" data-arrow="false" data-dots="false" data-items="3">
                     <!-- Slide -->
                       <a class=" " href="javascript:;">
-                          <img class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
+                          <img target="_blank" class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
                       </a>
 					{% for media in object.media.all %}
                         <a class="" href="javascript:;">
-                            <img class="rounded-5" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+                            <img target="_blank" class="rounded-5" src="{{media.media_file.url}}" alt="{{product.title}}-img">
                         </a>
                     {% endfor %}
                     <!-- End Slide -->
