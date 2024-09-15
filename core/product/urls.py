@@ -18,7 +18,7 @@ urlpatterns = [
     # path('p/<slug:slug>/', views.ProductDetail.as_view(), name='product-detail'),
     path('<slug:slug>/' ,views.ShopProductDetailView.as_view(),name="productdetails"),
 
-    re_path( r"/(?P<slug>[-\w]+)/detail/",views.ShopProductDetailView.as_view(),name="productdetails"),
+    re_path( r"(?P<slug>[-\w]+)",views.ShopProductDetailView.as_view(),name="productdetails"),
 
     # path('<slug:slug>/', views.products_detail, name='productdetails'),
 
