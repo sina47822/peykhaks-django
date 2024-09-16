@@ -50,7 +50,7 @@ Page content START -->
 						<ul class="list-group list-group-borderless">
 							<li class="list-group-item px-0">
 								<span class="h6 fw-light"><i class="fa-light fa-calendar text-primary me-2"></i>تاریخ انتشار:</span>
-								<span class="h6">{{product.publish_date}}</span>
+								<span class="h6" id="publish-date">{{product.publish_date}}</span>
 							</li>
 							<li class="list-group-item px-0">
 								<span class="h6 fw-light"><i class="fa-light fa-book text-primary me-2"></i>استاندارد</span>
@@ -584,3 +584,16 @@ Page content START -->
 <!-- =======================
 Page content END -->
 {% endblock content%}
+{% block extra_js %}
+<script>
+	document.addEventListener('DOMContentLoaded', function() {
+		let options = { year: 'numeric', month: 'long', day: 'numeric' };
+
+		// Parse the product publish date from Django into a JS Date object
+		let publish_date = new Date("{{ product.publish_date|date:'Y-m-d' }}").toLocaleDateString('fa-IR', options);
+
+		// Replace the HTML content of the element with the ID 'publish-date'
+		document.getElementById('publish-date').textContent = publish_date;
+	});
+</script>
+{% endblock extra_js %}

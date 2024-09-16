@@ -1,10 +1,13 @@
 {% load static %}
 {% block extra_css %}
 <style>
+    a {
+    color: rgb(108 108 108);
+    text-decoration: none;
+    }
 /* price list */
   .price-list-beton{
     margin: 20px auto;
-    width: 80%;
     box-sizing: border-box;
     display: block;
   }
@@ -12,7 +15,6 @@
         display: flex;
     }
      .price-list-beton .price-list-columns {
-        width: 33.3%;
         padding: 8px;
       }
       
@@ -77,9 +79,6 @@
 }
       
 @media only screen and (max-width: 700px) {
-  .price-list-beton .columns {
-    width: 100%;
-  }
   .price-list-beton .buttonbeton {
     background-color: #5CA6FF;
     border: none;
@@ -95,14 +94,12 @@
 }
 .price-list-khak{
   margin: 20px auto;
-  width: 80%;
   box-sizing: border-box;
   display: none;}
   .price-list-khak .columns{
       display: flex;
   }
   .price-list-khak .price-list-columns {
-    width: 33.3%;
     padding: 8px;
   }
       
@@ -166,11 +163,6 @@
           color: #318CE8 !important;
       }
       
-      @media only screen and (max-width: 600px) {
-        .price-list-khak .price-list-columns .columns {
-          width: 100%;
-        }
-      }
   .form-switch .form-check-input{
     width: 3.5em;
     transition: all 0.4s ease-in-out;
@@ -192,104 +184,107 @@
 <section class="price-list-beton">  
     <h2 style="text-align:center">{{pricelist.title}}</h2>        
     <p style="text-align:center">{{pricelist.upload_date}}</p>
-    <div class="columns">
-        <div class="price-list-columns">
+    <div class="columns row mx-5">
+        <div class="price-list-columns col-md-4">
             <ul class="pricebeton">
                 <li class="header">
                     
                     پایه سه بتن
                     
-                    </li>
+                </li>
+                <li class="grey">      
+                     لیست تجهیزات بتن پایه سه        
+                </li>
+                <li>
+                    
+                    <a href="
+                    
+                    
+                    
+                    
+                    " target="_blank" class="list-hover">
+                    مشاهده لیست تجهیزات آزمایشگاه بتن  
+                        </a>           
+                </li>
+                <li>
+                    
+                    <a href="#" class="list-hover">
+                    دانلود شیوه نامه نظام مهندسی    </a>         
+                            
+                </li>
+                <li>
+                    
+                    <a href="#" class="list-hover">
+                    لیست نیروی انسانی آزمایشگاه بتن    </a>         
+                </li>
+                <li>
+                    
+                    <a href="#" class="list-hover">
+                    فرمهای کاربردی    </a>         
+                </li>
                 <li class="grey">
-                    
-            لیست تجهیزات بتن پایه سه        
-                    </li>
-                <li>
-                    
-            <a href="
-            
-            
-            
-            
-            " target="_blank" class="list-hover">
-            مشاهده لیست تجهیزات آزمایشگاه بتن  
-                </a>           
-                    </li>
-                <li>
-                    
-            <a href="#" class="list-hover">
-            دانلود شیوه نامه نظام مهندسی    </a>         
-                    
-                    </li>
-                <li>
-                    
-            <a href="#" class="list-hover">
-            لیست نیروی انسانی آزمایشگاه بتن    </a>         
-                    </li>
-                <li>
-                    
-            <a href="#" class="list-hover">
-            فرمهای کاربردی    </a>         
-                    </li>
-                <li class="grey"><a href="{{pricelist.beton_3_document.url}}" class="buttonbeton">
+                    <a href="{{pricelist.beton_3_document.url}}" class="buttonbeton">
                     
             
-                دریافت پیش فاکتور پایه سه بتن
+                        دریافت پیش فاکتور پایه سه بتن
             
             
-                    </a></li>
+                    </a>
+                </li>
             </ul>
-            </div>
+        </div>
             
-            <div class="price-list-columns">
+        <div class="price-list-columns col-md-4">
             <ul class="pricebeton">
                 <li class="header">
                     
                     پایه دو بتن
                     
-                    </li>
+                </li>
                 <li class="grey">
                     
-            لیست تجهیزات بتن پایه دو
+                    لیست تجهیزات بتن پایه دو
             
-                    </li>
+                </li>
                 <li>
                     
-            <a href="
-            
-            
-            
-            
-            " target="_blank" class="list-hover">
-            مشاهده لیست تجهیزات آزمایشگاه بتن  
-                </a>           
-                    </li>
+                    <a href="
+                    
+                    
+                    
+                    
+                    " target="_blank" class="list-hover">
+                    مشاهده لیست تجهیزات آزمایشگاه بتن  
+                        </a>           
+                </li>
                 <li>
                     
-            <a href="#" class="list-hover">
-            دانلود شیوه نامه نظام مهندسی    </a>         
-                    
-                    </li>
+                    <a href="#" class="list-hover">
+                    دانلود شیوه نامه نظام مهندسی    </a>         
+                            
+                </li>
                 <li>
                     
-            <a href="#" class="list-hover">
-            لیست نیروی انسانی آزمایشگاه بتن    </a>         
-                    </li>
+                    <a href="#" class="list-hover">
+                    لیست نیروی انسانی آزمایشگاه بتن    </a>         
+                </li>
                 <li>
                     
-            <a href="#" class="list-hover">
-            فرمهای کاربردی    </a>         
-                    </li>
-                    <li class="grey"><a href="{{pricelist.beton_2_document.url}}" class="buttonbeton">
+                    <a href="#" class="list-hover">
+                    فرمهای کاربردی    </a>         
+                </li>
+                <li class="grey">
+                        <a href="{{pricelist.beton_2_document.url}}" class="buttonbeton">
 
                     
-                دریافت پیش فاکتور پایه دو بتن
+                    دریافت پیش فاکتور پایه دو بتن
             
-                    </a></li>
+                    </a>
+                </li>
             </ul>
-            </div>
-            
-            <div class="price-list-columns">
+        </div>
+        
+        <div class="price-list-columns col-md-4">
             <ul class="pricebeton">
                 <li class="header">
                     
@@ -298,43 +293,45 @@
                     </li>
                 <li class="grey">
                     
-            لیست تجهیزات بتن پایه یک
-                    </li>
+                    لیست تجهیزات بتن پایه یک
+                </li>
                 <li>
                     
-            <a href="
-            
-            
-            
-            
-            " target="_blank" class="list-hover">
-            مشاهده لیست تجهیزات آزمایشگاه بتن  
-                </a>           
-                    </li>
+                    <a href="
+                    
+                    
+                    
+                    
+                    " target="_blank" class="list-hover">
+                    مشاهده لیست تجهیزات آزمایشگاه بتن  
+                        </a>           
+                </li>
                 <li>
                     
-            <a href="#" class="list-hover">
-            دانلود شیوه نامه نظام مهندسی    </a>         
-                    
-                    </li>
+                    <a href="#" class="list-hover">
+                    دانلود شیوه نامه نظام مهندسی    </a>         
+                            
+                </li>
                 <li>
                     
-            <a href="#" class="list-hover">
-            لیست نیروی انسانی آزمایشگاه بتن    </a>         
-                    </li>
+                    <a href="#" class="list-hover">
+                    لیست نیروی انسانی آزمایشگاه بتن    </a>         
+                </li>
                 <li>
                     
-            <a href="#" class="list-hover">
-            فرمهای کاربردی    </a>         
-                    </li>
-                    <li class="grey"><a href="{{pricelist.beton_1_document.url}}" class="buttonbeton">
+                    <a href="#" class="list-hover">
+                    فرمهای کاربردی    </a>         
+                </li>
+                <li class="grey">
+                    <a href="{{pricelist.beton_1_document.url}}" class="buttonbeton">
 
                     
-            دریافت پیش فاکتور پایه یک بتن
+                    دریافت پیش فاکتور پایه یک بتن
             
-                    </a></li>
+                    </a>
+                </li>
             </ul>
-            </div>
+        </div>
     </div>
 </section>  
 
@@ -342,8 +339,8 @@
 
     <h2 style="text-align:center">{{pricelist.title}}</h2>        
     <p style="text-align:center">{{pricelist.upload_date}}</p>
-    <div class="columns">
-        <div class="price-list-columns ">
+    <div class="columns row mx-5">
+        <div class="price-list-columns col-md-4">
         <ul class="price">
             <li class="header">
                 
@@ -395,7 +392,7 @@
         </ul>
         </div>
 
-        <div class="price-list-columns ">
+        <div class="price-list-columns col-md-4">
         <ul class="price">
             <li class="header">
                 
@@ -447,7 +444,7 @@
         </ul>
         </div>
 
-        <div class="price-list-columns ">
+        <div class="price-list-columns col-md-4">
         <ul class="price">
             <li class="header">
                 
