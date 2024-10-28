@@ -1,5 +1,5 @@
 {% load static %}
-
+{% load i18n %}
 
 	<!-- Nav START -->
 	<nav class="navbar navbar-expand-xl">
@@ -10,7 +10,6 @@
 				<img class="dark-mode-item navbar-brand-item" src="{% static 'logo/logo.svg' %}" alt="peykhaksang logo">
 			</a>
 			<!-- Logo END -->
-
 			<!-- Responsive navbar toggler -->
 			<button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-animation">
@@ -27,108 +26,108 @@
 				<ul class="navbar-nav navbar-nav-scroll me-auto">
 					<!-- Nav item 1 Demos -->
 					<li class="nav-item dropdown dropdown-menu-shadow-stacked">
-						<a class="nav-link bg-primary bg-opacity-10 rounded-3 text-primary px-3 py-3 py-xl-0" href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-light fa-list-radio me-2"></i><span>دسته بندی محصولات</span></a>
+						<a class="nav-link bg-primary bg-opacity-10 rounded-3 text-primary px-3 py-3 py-xl-0" href="#" id="categoryMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa-light fa-list-radio me-2"></i><span>{% translate 'دسته بندی محصولات' %}</span></a>
 						<ul class="dropdown-menu" aria-labelledby="categoryMenu">
 
 							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">تجهیزات آزمایشگاه بتن</a>
+								<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تجهیزات آزمایشگاه بتن' %}</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">مقاومت فشاری بتن</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'مقاومت فشاری بتن' %}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">مقالات بتن</a></li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن' %}</a></li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن' %}</a> </li>
 										</ul>
 									</li>
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">آزمایش بتن تازه</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'آزمایش بتن تازه'%}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">مقالات بتن</a></li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات بتن</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن'%}</a></li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات بتن'%}</a> </li>
 										</ul>
 									</li>
                                     <!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">تجهیزات آزمایش التراسونیک</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تجهیزات آزمایش التراسونیک'%}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
 										</ul>
 									</li>
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">آزمایشهای خمش بتن</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'آزمایشهای خمش بتن'%}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
 										</ul>
 									</li>
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">تعیین مدول الاستیسیته بتن</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تعیین مدول الاستیسیته بتن'%}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات بتن</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
 										</ul>
 									</li>
 								</ul>
 							</li>
 							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">تجهیزات آزمایشگاه خاک</a>
+								<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تجهیزات آزمایشگاه خاک'%}</a>
 								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">تعیین حدود روانی</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تعیین حدود روانی'%}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">مفالات خاک</a></li>
-											<li> <a class="dropdown-item" href="#">مفالات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">مفالات خاک</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات خاک'%}</a></li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات خاک'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات خاک'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات خاک'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات خاک'%}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'مقالات خاک'%}</a> </li>
 										</ul>
 									</li>
                                     <!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
-										<a class="dropdown-item dropdown-toggle" href="#">مقاومت برشی خاک</a>
+										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'مقاومت برشی خاک'%}</a>
 										<ul class="dropdown-menu" data-bs-popper="none">
-											<li> <a class="dropdown-item" href="#">محصولات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات خاک</a> </li>
-											<li> <a class="dropdown-item" href="#">محصولات خاک</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
+											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
 										</ul>
 									</li>
 								</ul>
 							</li>
-							<li> <a class="dropdown-item" href="#">خرید لیست تجهیزات پایه آزمایشگاه</a> </li>
-							<li> <a class="dropdown-item" href="#">راه اندازی آزمایشگاه</a> </li>
-							<li> <a class="dropdown-item" href="#">کتابخانه</a> </li>
-							<li> <a class="dropdown-item" href="#">نرم افزار</a> </li>
+							<li> <a class="dropdown-item" href="#">{% translate 'خرید لیست تجهیزات پایه آزمایشگاه' %}</a> </li>
+							<li> <a class="dropdown-item" href="#">{% translate 'راه اندازی آزمایشگاه' %}</a> </li>
+							<li> <a class="dropdown-item" href="#">{% translate 'کتابخانه' %}</a> </li>
+							<li> <a class="dropdown-item" href="#">{% translate 'نرم افزار' %}</a> </li>
 						</ul>
 					</li>
 				</ul>
@@ -138,20 +137,20 @@
 				<ul class="navbar-nav navbar-nav-scroll me-auto">
 					<!-- Nav item 1 Demos -->
 					<li class="nav-item dropdown">
-						<a class="nav-link" href="{% url 'website:home' %}" >صفحه اصلی</a>
+						<a class="nav-link" href="{% url 'website:home' %}" >{% translate 'صفحه اصلی' %}</a>
 					</li>
-					<li> <a class="nav-link" href="{% url 'website:about' %}">درباره ما</a></li>
-					<li> <a class="nav-link" href="{% url 'website:contact' %}">ارتباط با ما</a></li>
-					<li> <a class="nav-link" href="{% url 'website:blog-list' %}">وبلاگ</a></li>
-					<li> <a class="nav-link" href="{% url 'website:shop' %}">محصولات</a></li>
+					<li class="nav-item"> <a class="nav-link" href="{% url 'website:about' %}">{% translate 'درباره ما' %}</a></li>
+					<li class="nav-item"> <a class="nav-link" href="{% url 'website:contact' %}">{% translate 'ارتباط با ما' %}</a></li>
+					<li class="nav-item"> <a class="nav-link" href="{% url 'website:blog-list' %}">{% translate 'وبلاگ' %}</a></li>
+					<li class="nav-item"> <a class="nav-link" href="{% url 'website:shop' %}">{% translate 'محصولات' %}</a></li>
 					<!-- Nav item 2 Pages -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">صفحات</a>
+						<a class="nav-link dropdown-toggle" href="#" id="pagesMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% translate 'صفحات' %}</a>
 						<ul class="dropdown-menu" aria-labelledby="pagesMenu">
-                            <li> <a class="dropdown-item" href="{% url 'website:about' %}">درباره ما</a></li>
-                            <li> <a class="dropdown-item" href="{% url 'website:contact' %}">ارتباط با ما</a></li>
-                            <li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">وبلاگ</a></li>
-                            <li> <a class="dropdown-item" href="{% url 'website:shop' %}">محصولات</a></li>
+                            <li> <a class="dropdown-item" href="{% url 'website:about' %}">{% translate 'درباره ما' %}</a></li>
+                            <li> <a class="dropdown-item" href="{% url 'website:contact' %}">{% translate 'ارتباط با ما' %}</a></li>
+                            <li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">{% translate 'وبلاگ' %}</a></li>
+                            <li> <a class="dropdown-item" href="{% url 'website:shop' %}">{% translate 'محصولات' %}</a></li>
                             {% comment %} <li> <a class="dropdown-item" href="#">لیست قیمت تجهیزات</a></li>
                             <li> <a class="dropdown-item" href="#">سوالات متداول</a></li>
                             <li> <a class="dropdown-item" href="#">صفحه 404</a></li>
@@ -161,68 +160,68 @@
 
 					<!-- Nav item 4 Megamenu-->
 					<li class="nav-item dropdown dropdown-fullwidth">
-						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">دانشنامه</a>
+						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% translate 'دانشنامه'%}</a>
 						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
 							<div class="row p-4 g-4">
 								<!-- Dropdown column item -->
 								<div class="col-xl-6 col-xxl-4">
-									<h6 class="mb-0">مقالات آزمایشگاه خاک</h6>
+									<h6 class="mb-0">{% translate 'مقالات آزمایشگاه خاک'%}</h6>
 									<hr>
 									<ul class="list-unstyled">
-                                        <li> <a class="dropdown-item" href="/the-stages-of-establishing-a-soil-laboratory/">مراحل تاسیس آزمایشگاه خاک</a> </li>
-										<li> <a class="dropdown-item" href="/conditions-for-establishing-a-concrete-laboratory/">شرایط تاسیس آزمایشگاه بتن</a> </li>
-										<li> <a class="dropdown-item" href="/cbr-in-place/">آزﻣﺎﻳﺶ CBR (ﺗﻌﻴﻴﻦ ﻧﺴﺒﺖ ﺑﺎرﺑﺮی ﻛﺎﻟﻴﻔﺮﻧﻴﺎ)</a> </li>
-										<li> <a class="dropdown-item" href="/triaxial-test/">آزمایش سه محوری خاک</a> </li>
-										<li> <a class="dropdown-item" href="/unconfined-compression-test/">آزمایش تک‌ محوری محصورنشده</a> </li>
-                                        <li> <a class="dropdown-item" href="/consolidation-test/">آزمایش تحکیم خاک</a> </li>
-										<li> <a class="dropdown-item" href="/atterberg-limits/">آزمایش حدود اتربرگ</a> </li>
-										<li> <a class="dropdown-item" href="/lugeon-permeability-test-method/">آزمایش لوژان</a> </li>
-										<li> <a class="dropdown-item" href="/direct-shear-test/">آزمایش برش مستقیم</a> </li>
-										<li> <a class="dropdown-item" href="/types-of-soil/">انواع تیپ خاک</a> </li>
-                                        <li> <a class="dropdown-item" href="/plate-load-test/">آزمایش بارگذاری صفحه</a> </li>
+                                        <li> <a class="dropdown-item" href="/the-stages-of-establishing-a-soil-laboratory/">{% translate 'مراحل تاسیس آزمایشگاه خاک'%}</a> </li>
+										<li> <a class="dropdown-item" href="/conditions-for-establishing-a-concrete-laboratory/">{% translate 'شرایط تاسیس آزمایشگاه بتن'%}</a> </li>
+										<li> <a class="dropdown-item" href="/cbr-in-place/">{% translate 'آزﻣﺎﻳﺶ CBR (ﺗﻌﻴﻴﻦ ﻧﺴﺒﺖ ﺑﺎرﺑﺮی ﻛﺎﻟﻴﻔﺮﻧﻴﺎ)'%}</a> </li>
+										<li> <a class="dropdown-item" href="/triaxial-test/">{% translate 'آزمایش سه محوری خاک'%}</a> </li>
+										<li> <a class="dropdown-item" href="/unconfined-compression-test/">{% translate 'آزمایش تک‌ محوری محصورنشده'%}</a> </li>
+                                        <li> <a class="dropdown-item" href="/consolidation-test/">{% translate 'آزمایش تحکیم خاک'%}</a> </li>
+										<li> <a class="dropdown-item" href="/atterberg-limits/">{% translate 'آزمایش حدود اتربرگ'%}</a> </li>
+										<li> <a class="dropdown-item" href="/lugeon-permeability-test-method/">{% translate 'آزمایش لوژان'%}</a> </li>
+										<li> <a class="dropdown-item" href="/direct-shear-test/">{% translate 'آزمایش برش مستقیم'%}</a> </li>
+										<li> <a class="dropdown-item" href="/types-of-soil/">{% translate 'انواع تیپ خاک'%}</a> </li>
+                                        <li> <a class="dropdown-item" href="/plate-load-test/">{% translate 'آزمایش بارگذاری صفحه'%}</a> </li>
 
                                         <hr>
-										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">مشاهده همه</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">{% translate 'مشاهده همه'%}</a> </li>
 									</ul>
 								</div>
 
                                 <div class="col-xl-6 col-xxl-4">
-									<h6 class="mb-0">مقالات آزمایشگاه بتن</h6>
+									<h6 class="mb-0">{% translate 'مقالات آزمایشگاه بتن'%}</h6>
 									<hr>
 									<ul class="list-unstyled">
-										<li> <a class="dropdown-item" href="/what-is-the-modulus-of-elasticity-of-concrete-and-what-are-its-uses/">مدول الاستیسیته بتن چیست و چه کاربردهایی دارد؟</a> </li>
-                                        <li> <a class="dropdown-item" href="/concrete-slump-test/">آزمایش اسلامپ بتن + گزارش نویسی</a> </li>
-										<li> <a class="dropdown-item" href="/how-long-does-it-take-for-concrete-to-dry/">مدت زمان خشک شدن بتن</a> </li>
-										<li> <a class="dropdown-item" href="/ultrasonic-testing/">آزمایش التراسونیک بتن</a> </li>
-										<li> <a class="dropdown-item" href="/compressive-strength-of-concrete/">آزمایش مقاومت فشاری بتن</a> </li>
-										<li> <a class="dropdown-item" href="/abrasion-test-of-concrete-aggregates-in-19-mm-los-angeles-device/">آزمایش سایش سنگدانه‌ (لس‌آنجلس ۱۹ میلی‌متر)</a> </li>
-										<li> <a class="dropdown-item" href="/abrasion-test-of-concrete-aggregates-in-los-angeles-machine-37-5-mm/">آزمایش سایش سنگدانه‌ (لس‌آنجلس ۳۷.۵ میلی‌متر)</a> </li>
-										<li> <a class="dropdown-item" href="/schmidt-hammer-test/">آزمایش چكش اشمیت</a> </li>
-										<li> <a class="dropdown-item" href="/air-content-of-freshly-mixed-concrete/">آزمایش تعیین مقدار هوای مخلوط بتن تازه</a> </li>
-										<li> <a class="dropdown-item" href="/testing-the-tensile-strength-of-concrete-by-splitting-method/">آزمایش مقاومت کششی بتن به روش دو نیم شدن</a> </li>
-										<li> <a class="dropdown-item" href="/conditions-for-establishing-a-concrete-laboratory/">شرایط تاسیس آزمایشگاه بتن</a> </li>
+										<li> <a class="dropdown-item" href="/what-is-the-modulus-of-elasticity-of-concrete-and-what-are-its-uses/">{% translate 'مدول الاستیسیته بتن چیست و چه کاربردهایی دارد؟'%}</a> </li>
+                                        <li> <a class="dropdown-item" href="/concrete-slump-test/">{% translate 'آزمایش اسلامپ بتن + گزارش نویسی'%}</a> </li>
+										<li> <a class="dropdown-item" href="/how-long-does-it-take-for-concrete-to-dry/">{% translate 'مدت زمان خشک شدن بتن'%}</a> </li>
+										<li> <a class="dropdown-item" href="/ultrasonic-testing/">{% translate 'آزمایش التراسونیک بتن'%}</a> </li>
+										<li> <a class="dropdown-item" href="/compressive-strength-of-concrete/">{% translate 'آزمایش مقاومت فشاری بتن'%}</a> </li>
+										<li> <a class="dropdown-item" href="/abrasion-test-of-concrete-aggregates-in-19-mm-los-angeles-device/">{% translate 'آزمایش سایش سنگدانه‌ (لس‌آنجلس ۱۹ میلی‌متر)'%}</a> </li>
+										<li> <a class="dropdown-item" href="/abrasion-test-of-concrete-aggregates-in-los-angeles-machine-37-5-mm/">{% translate 'آزمایش سایش سنگدانه‌ (لس‌آنجلس ۳۷.۵ میلی‌متر)'%}</a> </li>
+										<li> <a class="dropdown-item" href="/schmidt-hammer-test/">{% translate 'آزمایش چكش اشمیت'%}</a> </li>
+										<li> <a class="dropdown-item" href="/air-content-of-freshly-mixed-concrete/">{% translate 'آزمایش تعیین مقدار هوای مخلوط بتن تازه'%}</a> </li>
+										<li> <a class="dropdown-item" href="/testing-the-tensile-strength-of-concrete-by-splitting-method/">{% translate 'آزمایش مقاومت کششی بتن به روش دو نیم شدن'%}</a> </li>
+										<li> <a class="dropdown-item" href="/conditions-for-establishing-a-concrete-laboratory/">{% translate 'شرایط تاسیس آزمایشگاه بتن'%}</a> </li>
                                         <hr>
-										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">مشاهده همه</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">{% translate 'مشاهده همه'%}</a> </li>
 									</ul>
 								</div>
                                 <div class="col-xl-6 col-xxl-4">
-									<h6 class="mb-0">مقالات آزمایشگاه سیمان و سنگدانه</h6>
+									<h6 class="mb-0">{% translate 'مقالات آزمایشگاه سیمان و سنگدانه'%}</h6>
 									<hr>
 									<ul class="list-unstyled">
-										<li> <a class="dropdown-item" href="/portland-cement-softness-test/">آزمایش نرمی سیمان پرتلند</a> </li>
-										<li> <a class="dropdown-item" href="/test-to-determine-the-amount-of-expansion-in-portland-cement/">آزمایش تعیین مقدار انبساط در سیمان پرتلند                                        </a> </li>
-										<li> <a class="dropdown-item" href="/test-to-determine-the-density-of-hydraulic-cement/">آزمایش تعیین دانسیته سیمان هیدرولیک</a> </li>
-										<li> <a class="dropdown-item" href="/time-of-setting-hydraulic-cement-by-vicat-needle/">آزمایش گیرش سیمان با سوزن ویکات</a> </li>
-										<li> <a class="dropdown-item" href="/test-to-determine-the-compressive-strength-of-hydraulic-cement-mortars/">آزمایش مقاومت فشاری سیمان هیدرولیکی</a> </li>
-										<li> <a class="dropdown-item" href="/test-for-determination-of-specific-gravity-and-water-absorption-of-fine-aggregates/">آزمایش تعیین وزن مخصوص و جذب آب سنگدانه‌های ریز                                        </a> </li>
-										<li> <a class="dropdown-item" href="/experiment-to-determine-the-amount-of-light-grains-in-granular-materials/">آزمایش تعیین مقدار دانه های سبک در مصالح دانه ای                                        </a> </li>
-										<li> <a class="dropdown-item" href="/particle-size-analysis/">آزمایش دانه بندی به روش هیدرومتری</a> </li>
-										<li> <a class="dropdown-item" href="/experiment-to-determine-the-coefficient-of-elongation-of-coarse-grained-materials/">آزمایش تعیین ضریب تطویل مصالح درشت دانه</a> </li>
-										<li> <a class="dropdown-item" href="/testing-to-determine-the-coefficient-of-shrinkage-of-coarse-grained-materials/">آزمایش تعیین ضریب تورق (پولکی بودن) مصالح درشت دانه</a> </li>
+										<li> <a class="dropdown-item" href="/portland-cement-softness-test/">{% translate 'آزمایش نرمی سیمان پرتلند'%}</a> </li>
+										<li> <a class="dropdown-item" href="/test-to-determine-the-amount-of-expansion-in-portland-cement/">{% translate 'آزمایش تعیین مقدار انبساط در سیمان پرتلند'%}</a> </li>
+										<li> <a class="dropdown-item" href="/test-to-determine-the-density-of-hydraulic-cement/">{% translate 'آزمایش تعیین دانسیته سیمان هیدرولیک'%}</a> </li>
+										<li> <a class="dropdown-item" href="/time-of-setting-hydraulic-cement-by-vicat-needle/">{% translate 'آزمایش گیرش سیمان با سوزن ویکات'%}</a> </li>
+										<li> <a class="dropdown-item" href="/test-to-determine-the-compressive-strength-of-hydraulic-cement-mortars/">{% translate 'آزمایش مقاومت فشاری سیمان هیدرولیکی'%}</a> </li>
+										<li> <a class="dropdown-item" href="/test-for-determination-of-specific-gravity-and-water-absorption-of-fine-aggregates/">{% translate 'آزمایش تعیین وزن مخصوص و جذب آب سنگدانه‌های ریز'%}</a> </li>
+										<li> <a class="dropdown-item" href="/experiment-to-determine-the-amount-of-light-grains-in-granular-materials/">{% translate 'آزمایش تعیین مقدار دانه های سبک در مصالح دانه ای'%}</a> </li>
+										<li> <a class="dropdown-item" href="/particle-size-analysis/">{% translate 'آزمایش دانه بندی به روش هیدرومتری'%}</a> </li>
+										<li> <a class="dropdown-item" href="/experiment-to-determine-the-coefficient-of-elongation-of-coarse-grained-materials/">{% translate 'آزمایش تعیین ضریب تطویل مصالح درشت دانه'%}</a> </li>
+										<li> <a class="dropdown-item" href="/testing-to-determine-the-coefficient-of-shrinkage-of-coarse-grained-materials/">{% translate 'آزمایش تعیین ضریب تورق (پولکی بودن) مصالح درشت دانه'%}</a> </li>
 										<li> <a class="dropdown-item" href="">.</a> </li>
 
                                         <hr>
-										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">مشاهده همه</a> </li>
+										<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">{% translate 'مشاهده همه'%}</a> </li>
 									</ul>
 								</div>
 
@@ -230,21 +229,51 @@
 								<!-- Action box -->
 								<div class="col-12">
 									<div class="alert alert-success alert-dismissible fade show mt-2 mb-0 rounded-3" role="alert">
-                                         برای خرید لیست تجهیزات پایه آزمایشگاه خاک و بتن 
-                                        <a href="#" class="alert-link">ثبت نام</a>
-                                        را انتخاب کنید
+                                         {% translate 'برای خرید لیست تجهیزات پایه آزمایشگاه خاک و بتن '%}
+                                        <a href="#" class="alert-link">{% translate 'ثبت نام'%}</a>
+                                        {% translate 'را انتخاب کنید'%}
 									</div>
 								</div>
 							</div>
 						</div>
 					</li>
-				</ul>
+					<!-- changeLanguage-->
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="languageMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							{% translate 'تغییر زبان' %}
+							{% get_current_language as LANGUAGE_CODE %}
+							{% get_available_languages as LANGUAGES %}
+							{% get_language_info_list for LANGUAGES as languages %}
+						</a>
+						<ul class="dropdown-menu" aria-labelledby="languageMenu">
+							{% get_available_languages as LANGUAGES %}
+							{% get_language_info_list for LANGUAGES as languages %}
+							<form action="{% url 'set_language' %}" method="post" id="language-form">
+								{% csrf_token %}
+
+								<input name="next" type="hidden" value="{{ redirect_to }}">
+								<input name="language" type="hidden" id="language-input">
+				
+
+
+									{% for language in languages %}
+										<li>
+											<a class="dropdown-item" href="#" onclick="changeLanguage('{{ language.code }}')">
+												{{ language.name_local }}
+											</a>
+										</li>
+									{% endfor %}
+							</form>
+						</ul>
+
+					</li>
+
 				<!-- Nav Main menu END -->
 				<!-- Nav download START -->
 				<div class="nav my-3 my-xl-0 px-4 flex-nowrap align-items-center">
 					<div class="nav-item w-100">
 						<form class="position-relative" action="{% url 'product:product-grid' %}">
-							<input class="form-control pe-5 bg-transparent" type="search" placeholder="جستجو..." aria-label="Search" name="q">
+							<input class="form-control pe-5 bg-transparent" type="search" placeholder="{% translate 'جستجو...'%}" aria-label="Search" name="q">
 							<button class="bg-transparent p-2 position-absolute top-50 end-0 translate-middle-y border-0 text-primary-hover text-reset" type="submit">
 								<i class="fas fa-search fs-6 "></i>
 							</button>
@@ -255,13 +284,15 @@
 				<!-- Catalog START -->
 				<div class=" ms-1 ms-lg-0">
 					<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
-						دانلود کاتالوگ
+						{% translate 'دانلود کاتالوگ' %}
 					</a>
 				</div>
 				<!-- Catalog START -->
 			</div>
+
 			<!-- Main navbar END -->
 			<!-- Responsive navbar toggler -->
 		</div>
 	</nav>
 	<!-- Nav END -->
+

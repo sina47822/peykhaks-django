@@ -1346,3 +1346,10 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
 
   },
 })
+
+function changeLanguage(languageCode) {
+  // Set the selected language code in the hidden input
+  document.getElementById('language-input').value = languageCode;
+  // Submit the form
+  document.getElementById('language-form').submit();
+}

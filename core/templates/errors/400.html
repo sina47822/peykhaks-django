@@ -1,7 +1,7 @@
 {% extends '../core/base.html' %}
 {% load humanize %}
 {% load static %}
-
+{% load i18n %}
 
 
 {% block content %}
@@ -15,14 +15,14 @@
                     <img src="{% static 'images/temprory/images/element/error404-01.svg' %}" class="h-200px h-md-400px mb-4" alt="">
                     <!-- Title -->
                     <h1 class="display-1 text-danger mb-0">
-                        ارور 400 
+                        {% translate ' ارور 400 '%}
                     </h1>
                     <!-- Subtitle -->
-                    <h2>اوه نه، مشکلی پیش آمد!</h2>
+                    <h2>{% translate 'اوه نه، مشکلی پیش آمد!' %}</h2>
                     <!-- info -->
-                    <p class="mb-4">شما ارور 400 دریافت کرده اید به این معنی که در باز کردن این صفحه از سایت مشکلی پیش آمده. با پشتیبان سایت تماس بگیرید</p>
+                    <p class="mb-4">{% blocktrans %}شما ارور 400 دریافت کرده اید به این معنی که در باز کردن این صفحه از سایت مشکلی پیش آمده. با پشتیبان سایت تماس بگیرید{% endblocktrans %}</p>
                     <!-- Button -->
-                    <a href="{% url 'website:home' %}" class="btn btn-primary mb-0">برگشت به صفحه اصلی</a>
+                    <a href="{% url 'website:home' %}" class="btn btn-primary mb-0">{% translate 'برگشت به صفحه اصلی' %}</a>
                 </div>
             </div>
         </div>

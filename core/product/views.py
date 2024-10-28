@@ -13,6 +13,7 @@ from product.forms import ProductForm
 from django.core.exceptions import FieldError
 from django.core.exceptions import PermissionDenied
 # from django.http import JsonResponse
+from django.utils.translation import gettext_lazy as _
 
 def productcategory(request, slug):
     category = get_object_or_404(Category, slug=slug)  # Retrieve the category object based on the slug

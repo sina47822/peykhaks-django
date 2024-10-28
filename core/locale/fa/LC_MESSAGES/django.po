@@ -1,0 +1,742 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-27 16:32+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: .\core\settings.py:142
+msgid "Farsi"
+msgstr ""
+
+#: .\core\settings.py:143
+msgid "English"
+msgstr ""
+
+#: .\core\settings.py:144
+msgid "Arabic"
+msgstr ""
+
+#: .\product\models.py:16
+msgid "استاندارد ASTM"
+msgstr ""
+
+#: .\product\models.py:25
+msgid "استاندارد آشو"
+msgstr ""
+
+#: .\product\models.py:34
+msgid "استاندارد ایران"
+msgstr ""
+
+#: .\product\models.py:47
+msgid "استانداردها"
+msgstr ""
+
+#: .\product\models.py:63 .\product\models.py:76
+#: .\templates\partials\navs\center-nav.html:29
+msgid "دسته بندی محصولات"
+msgstr ""
+
+#: .\product\models.py:104 .\website\models.py:45
+msgid "تگ ها"
+msgstr ""
+
+#: .\product\models.py:119
+msgid "عنوان محصول"
+msgstr ""
+
+#: .\product\models.py:120
+msgid "اسلاگ محصول"
+msgstr ""
+
+#: .\product\models.py:121
+msgid "کد محصول"
+msgstr ""
+
+#: .\product\models.py:122
+msgid "متن محصول"
+msgstr ""
+
+#: .\product\models.py:123
+msgid "خلاصه متن"
+msgstr ""
+
+#: .\product\models.py:124
+msgid "قیمت محصول"
+msgstr ""
+
+#: .\product\models.py:125
+msgid "قیمت با تخفیف"
+msgstr ""
+
+#: .\product\models.py:126
+msgid "تصویر عکس"
+msgstr ""
+
+#: .\product\models.py:129
+msgid "وضعیت محصول"
+msgstr ""
+
+#: .\product\models.py:131
+msgid "نمره محصول"
+msgstr ""
+
+#: .\product\models.py:135
+msgid "زمان به روز رسانی"
+msgstr ""
+
+#: .\product\models.py:136
+msgid "زمان تولید"
+msgstr ""
+
+#: .\product\models.py:137 .\website\models.py:76
+msgid "زمان انتشار"
+msgstr ""
+
+#: .\product\models.py:139
+msgid "مجموع بازدید"
+msgstr ""
+
+#: .\product\models.py:140
+msgid "فعال بودن"
+msgstr ""
+
+#: .\product\models.py:142
+msgid "تعداد"
+msgstr ""
+
+#: .\product\models.py:143
+msgid "استاندارد"
+msgstr ""
+
+#: .\product\models.py:144
+msgid "اندازه"
+msgstr ""
+
+#: .\product\models.py:145
+msgid "گارانتی"
+msgstr ""
+
+#: .\product\models.py:146
+msgid "زمان ارسال"
+msgstr ""
+
+#: .\product\models.py:159 .\templates\partials\navs\center-nav.html:145
+#: .\templates\partials\navs\center-nav.html:153
+msgid "محصولات"
+msgstr ""
+
+#: .\product\models.py:164
+msgid "نوع رسانه"
+msgstr ""
+
+#: .\product\models.py:165
+msgid "فایل مدیا"
+msgstr ""
+
+#: .\product\models.py:170
+msgid "تصاویر محصولات"
+msgstr ""
+
+#: .\product\models.py:175
+msgid "نام مشخصه محصول"
+msgstr ""
+
+#: .\product\models.py:176
+msgid "مقدار مشخصه محصول"
+msgstr ""
+
+#: .\product\models.py:178
+msgid "مشخصات محصولات"
+msgstr ""
+
+#: .\product\models.py:185
+msgid "عنوان سئو محصول"
+msgstr ""
+
+#: .\product\models.py:186
+msgid "توضیحات سئو محصول"
+msgstr ""
+
+#: .\product\models.py:187
+msgid "عکس سئو محصول"
+msgstr ""
+
+#: .\product\models.py:192
+msgid "سئو محصولات"
+msgstr ""
+
+#: .\product\models.py:196
+msgid "عنوان سئو تگ"
+msgstr ""
+
+#: .\product\models.py:197
+msgid "توضیحات سئو تگ"
+msgstr ""
+
+#: .\product\models.py:198
+msgid "تصویر سئو تگ"
+msgstr ""
+
+#: .\product\models.py:203
+msgid "سئو تگ"
+msgstr ""
+
+#: .\product\models.py:207
+msgid "عنوان سئو دسته بندی"
+msgstr ""
+
+#: .\product\models.py:208
+msgid "توضیحات سئو دسته بندی"
+msgstr ""
+
+#: .\product\models.py:209
+msgid "تصویر سئو دسته بندی"
+msgstr ""
+
+#: .\product\models.py:214
+msgid "سئو دسته بندی"
+msgstr ""
+
+#: .\product\models.py:218
+msgid "عنوان لیست قیمت"
+msgstr ""
+
+#: .\product\models.py:219
+msgid "تاریخ به روز رسانی لیست قیمت"
+msgstr ""
+
+#: .\product\models.py:220
+msgid "فایل بتن پایه یک"
+msgstr ""
+
+#: .\product\models.py:221
+msgid "فایل بتن پایه دو"
+msgstr ""
+
+#: .\product\models.py:222
+msgid "فایل بتن پایه سه"
+msgstr ""
+
+#: .\product\models.py:223
+msgid "فایل خاک پایه یک"
+msgstr ""
+
+#: .\product\models.py:224
+msgid "فایل خاک پایه دو"
+msgstr ""
+
+#: .\product\models.py:225
+msgid "فایل خاک پایه سه"
+msgstr ""
+
+#: .\product\models.py:227
+msgid "لیست قیمت محصولات"
+msgstr ""
+
+#: .\product\models.py:237
+msgid "محصولات مورد علاقه"
+msgstr ""
+
+#: .\templates\errors\400.html:18
+msgid " ارور 400 "
+msgstr ""
+
+#: .\templates\errors\400.html:21 .\templates\errors\403.html:22
+#: .\templates\errors\404.html:22 .\templates\errors\500.html:22
+msgid "اوه نه، مشکلی پیش آمد!"
+msgstr ""
+
+#: .\templates\errors\400.html:23
+msgid ""
+"شما ارور 400 دریافت کرده اید به این معنی که در باز کردن این صفحه از سایت "
+"مشکلی پیش آمده. با پشتیبان سایت تماس بگیرید"
+msgstr ""
+
+#: .\templates\errors\400.html:25 .\templates\errors\403.html:26
+#: .\templates\errors\404.html:26 .\templates\errors\500.html:26
+msgid "برگشت به صفحه اصلی"
+msgstr ""
+
+#: .\templates\errors\403.html:19
+msgid " ارور 403 "
+msgstr ""
+
+#: .\templates\errors\403.html:24
+msgid ""
+"شما ارور 403 دریافت کرده اید به این معنی که مجاز به ورود به این صفحه نمیباشید"
+msgstr ""
+
+#: .\templates\errors\404.html:19
+msgid " ارور 404 "
+msgstr ""
+
+#: .\templates\errors\404.html:24
+msgid "یا مشکلی پیش آمده یا این صفحه دیگر وجود ندارد."
+msgstr ""
+
+#: .\templates\errors\500.html:19
+msgid " ارور 500 "
+msgstr ""
+
+#: .\templates\errors\500.html:24
+msgid ""
+"شما ارور 500 دریافت کرده اید به این معنی که سرور دچار مشکل شده است. سریعا با "
+"پشتیبان سایت تماس بگیرید"
+msgstr ""
+
+#: .\templates\partials\alert.html:13
+msgid ""
+"فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور  ، "
+msgstr ""
+
+#: .\templates\partials\alert.html:13 .\templates\partials\pop-up.html:14
+msgid "دریافت پیش فاکتور"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:34
+msgid "تجهیزات آزمایشگاه بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:38
+msgid "مقاومت فشاری بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:40
+#: .\templates\partials\navs\center-nav.html:41
+#: .\templates\partials\navs\center-nav.html:42
+#: .\templates\partials\navs\center-nav.html:43
+#: .\templates\partials\navs\center-nav.html:44
+#: .\templates\partials\navs\center-nav.html:45
+#: .\templates\partials\navs\center-nav.html:52
+#: .\templates\partials\navs\center-nav.html:53
+#: .\templates\partials\navs\center-nav.html:54
+#: .\templates\partials\navs\center-nav.html:55
+#: .\templates\partials\navs\center-nav.html:56
+#: .\templates\partials\navs\center-nav.html:57
+msgid "مقالات بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:50
+msgid "آزمایش بتن تازه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:62
+msgid "تجهیزات آزمایش التراسونیک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:64
+#: .\templates\partials\navs\center-nav.html:65
+#: .\templates\partials\navs\center-nav.html:66
+#: .\templates\partials\navs\center-nav.html:67
+#: .\templates\partials\navs\center-nav.html:68
+#: .\templates\partials\navs\center-nav.html:69
+#: .\templates\partials\navs\center-nav.html:76
+#: .\templates\partials\navs\center-nav.html:77
+#: .\templates\partials\navs\center-nav.html:78
+#: .\templates\partials\navs\center-nav.html:79
+#: .\templates\partials\navs\center-nav.html:80
+#: .\templates\partials\navs\center-nav.html:81
+#: .\templates\partials\navs\center-nav.html:88
+#: .\templates\partials\navs\center-nav.html:89
+#: .\templates\partials\navs\center-nav.html:90
+#: .\templates\partials\navs\center-nav.html:91
+#: .\templates\partials\navs\center-nav.html:92
+#: .\templates\partials\navs\center-nav.html:93
+msgid "محصولات بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:74
+msgid "آزمایشهای خمش بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:86
+msgid "تعیین مدول الاستیسیته بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:99
+msgid "تجهیزات آزمایشگاه خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:103
+msgid "تعیین حدود روانی"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:105
+#: .\templates\partials\navs\center-nav.html:106
+#: .\templates\partials\navs\center-nav.html:107
+#: .\templates\partials\navs\center-nav.html:108
+#: .\templates\partials\navs\center-nav.html:109
+#: .\templates\partials\navs\center-nav.html:110
+msgid "مقالات خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:115
+msgid "مقاومت برشی خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:117
+#: .\templates\partials\navs\center-nav.html:118
+#: .\templates\partials\navs\center-nav.html:119
+#: .\templates\partials\navs\center-nav.html:120
+#: .\templates\partials\navs\center-nav.html:121
+#: .\templates\partials\navs\center-nav.html:122
+msgid "محصولات خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:127
+msgid "خرید لیست تجهیزات پایه آزمایشگاه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:128
+msgid "راه اندازی آزمایشگاه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:129
+msgid "کتابخانه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:130
+msgid "نرم افزار"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:140
+msgid "صفحه اصلی"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:142
+#: .\templates\partials\navs\center-nav.html:150
+msgid "درباره ما"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:143
+#: .\templates\partials\navs\center-nav.html:151
+msgid "ارتباط با ما"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:144
+#: .\templates\partials\navs\center-nav.html:152
+msgid "وبلاگ"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:148
+msgid "صفحات"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:164
+msgid "دانشنامه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:169
+msgid "مقالات آزمایشگاه خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:172
+msgid "مراحل تاسیس آزمایشگاه خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:173
+#: .\templates\partials\navs\center-nav.html:203
+msgid "شرایط تاسیس آزمایشگاه بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:174
+msgid "آزﻣﺎﻳﺶ CBR (ﺗﻌﻴﻴﻦ ﻧﺴﺒﺖ ﺑﺎرﺑﺮی ﻛﺎﻟﻴﻔﺮﻧﻴﺎ)"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:175
+msgid "آزمایش سه محوری خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:176
+msgid "آزمایش تک‌ محوری محصورنشده"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:177
+msgid "آزمایش تحکیم خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:178
+msgid "آزمایش حدود اتربرگ"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:179
+msgid "آزمایش لوژان"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:180
+msgid "آزمایش برش مستقیم"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:181
+msgid "انواع تیپ خاک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:182
+msgid "آزمایش بارگذاری صفحه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:185
+#: .\templates\partials\navs\center-nav.html:205
+#: .\templates\partials\navs\center-nav.html:225
+msgid "مشاهده همه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:190
+msgid "مقالات آزمایشگاه بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:193
+msgid "مدول الاستیسیته بتن چیست و چه کاربردهایی دارد؟"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:194
+msgid "آزمایش اسلامپ بتن + گزارش نویسی"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:195
+msgid "مدت زمان خشک شدن بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:196
+msgid "آزمایش التراسونیک بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:197
+msgid "آزمایش مقاومت فشاری بتن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:198
+msgid "آزمایش سایش سنگدانه‌ (لس‌آنجلس ۱۹ میلی‌متر)"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:199
+msgid "آزمایش سایش سنگدانه‌ (لس‌آنجلس ۳۷.۵ میلی‌متر)"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:200
+msgid "آزمایش چكش اشمیت"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:201
+msgid "آزمایش تعیین مقدار هوای مخلوط بتن تازه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:202
+msgid "آزمایش مقاومت کششی بتن به روش دو نیم شدن"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:209
+msgid "مقالات آزمایشگاه سیمان و سنگدانه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:212
+msgid "آزمایش نرمی سیمان پرتلند"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:213
+msgid "آزمایش تعیین مقدار انبساط در سیمان پرتلند"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:214
+msgid "آزمایش تعیین دانسیته سیمان هیدرولیک"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:215
+msgid "آزمایش گیرش سیمان با سوزن ویکات"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:216
+msgid "آزمایش مقاومت فشاری سیمان هیدرولیکی"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:217
+msgid "آزمایش تعیین وزن مخصوص و جذب آب سنگدانه‌های ریز"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:218
+msgid "آزمایش تعیین مقدار دانه های سبک در مصالح دانه ای"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:219
+msgid "آزمایش دانه بندی به روش هیدرومتری"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:220
+msgid "آزمایش تعیین ضریب تطویل مصالح درشت دانه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:221
+msgid "آزمایش تعیین ضریب تورق (پولکی بودن) مصالح درشت دانه"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:233
+msgid "برای خرید لیست تجهیزات پایه آزمایشگاه خاک و بتن "
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:234
+msgid "ثبت نام"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:235
+msgid "را انتخاب کنید"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:244
+msgid "تغییر زبان"
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:277
+msgid "جستجو..."
+msgstr ""
+
+#: .\templates\partials\navs\center-nav.html:288
+msgid "دانلود کاتالوگ"
+msgstr ""
+
+#: .\templates\partials\pop-up.html:10
+msgid ""
+"فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور "
+msgstr ""
+
+#: .\templates\partials\pop-up.html:18
+msgid "رد کردن"
+msgstr ""
+
+#: .\website\models.py:20
+msgid "نام دسته بندی"
+msgstr ""
+
+#: .\website\models.py:21
+msgid "اسلاگ دسته بندی"
+msgstr ""
+
+#: .\website\models.py:26
+msgid "دسته بندی مقالات"
+msgstr ""
+
+#: .\website\models.py:41
+msgid "عنوان تگ"
+msgstr ""
+
+#: .\website\models.py:42
+msgid "اسلاگ تگ"
+msgstr ""
+
+#: .\website\models.py:65
+msgid "عنوان"
+msgstr ""
+
+#: .\website\models.py:66
+msgid "اسلاگ"
+msgstr ""
+
+#: .\website\models.py:68
+msgid "متن اول"
+msgstr ""
+
+#: .\website\models.py:69
+msgid "متن دوم"
+msgstr ""
+
+#: .\website\models.py:70
+msgid "خلاصه مقاله"
+msgstr ""
+
+#: .\website\models.py:73
+msgid "تصویر اصلی"
+msgstr ""
+
+#: .\website\models.py:74
+msgid "تاریخ آپدیت"
+msgstr ""
+
+#: .\website\models.py:75
+msgid "تاریخ ساخت "
+msgstr ""
+
+#: .\website\models.py:78
+msgid "تعداد بازدید"
+msgstr ""
+
+#: .\website\models.py:79
+msgid "وضعیت انتشار"
+msgstr ""
+
+#: .\website\models.py:83
+msgid "مقالات"
+msgstr ""
+
+#: .\website\models.py:94 .\website\models.py:105 .\website\models.py:116
+msgid "عنوان سئو"
+msgstr ""
+
+#: .\website\models.py:95 .\website\models.py:106 .\website\models.py:117
+msgid "توضیحات سئو"
+msgstr ""
+
+#: .\website\models.py:96 .\website\models.py:107 .\website\models.py:118
+msgid "تصویر سئو"
+msgstr ""
+
+#: .\website\models.py:101
+msgid "سئو مقالات"
+msgstr ""
+
+#: .\website\models.py:112
+msgid "سئو تگ ها"
+msgstr ""
+
+#: .\website\models.py:123
+msgid "سئو دسته بندی ها"
+msgstr ""
+
+#: .\website\models.py:127
+msgid "نام تصویر"
+msgstr ""
+
+#: .\website\models.py:128
+msgid "متن جایگزین"
+msgstr ""
+
+#: .\website\models.py:137
+msgid "نام و نام خانوادگی"
+msgstr ""
+
+#: .\website\models.py:138
+msgid "ایمیل"
+msgstr ""
+
+#: .\website\models.py:139
+msgid "متن پیام"
+msgstr ""
+
+#: .\website\models.py:140
+msgid "تاریخ ساخت"
+msgstr ""
+
+#: .\website\models.py:141
+msgid "تاریخ به روزرسانی"
+msgstr ""
+
+#: .\website\models.py:142
+msgid " فعال"
+msgstr ""
+
+#: .\website\models.py:144
+msgid "کامنت ها"
+msgstr ""

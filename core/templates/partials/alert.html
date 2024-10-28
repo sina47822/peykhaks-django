@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 
 <!-- Top alert START -->
 <div class="container">
@@ -9,7 +10,7 @@
 				<img class="avatar-img" src="{% static 'images/icon/alert.png'%}" alt="pks-logo">
 			</div>
 			<!-- Info -->
-			 فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور  ، <a href="{% url 'website:offer-landing' %}" class="alert-link">دریافت پیش فاکتور </a> </div>
+			{% blocktrans %}فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور  ، {% endblocktrans %}<a href="{% url 'website:offer-landing' %}" class="alert-link">{% translate 'دریافت پیش فاکتور'%} </a> </div>
 		<button type="button" class="btn btn-link text-primary-hover mb-0 text-end" data-bs-dismiss="alert" aria-label="Close"><i class="fal fa-x"></i></button>
 	</div>
 </div>

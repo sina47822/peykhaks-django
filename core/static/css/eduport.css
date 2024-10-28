@@ -22050,8 +22050,7 @@ a.text-primary-hover:hover, button.text-primary-hover:hover {
 html[dir=rtl] .choices,
 html[dir=rtl] select option,
 html[dir=rtl] .choices__input {
-  direction: ltr;
-  unicode-bidi: bidi-override;
+  direction: rtl;
   text-align: right;
 }
 

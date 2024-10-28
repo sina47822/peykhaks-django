@@ -22,6 +22,8 @@ from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap,BlogSitemap,BlogTagSitemap,BlogCategorySitemap
 from product.sitemaps import ProductTagsSitemap,ProductCategorySitemap,ProductSitemap
 from django.conf.urls import handler400, handler403, handler404, handler500
+from django.conf.urls.i18n import i18n_patterns
+from django.conf.urls.i18n import set_language
 
 sitemaps = {
     'static': StaticViewSitemap,
@@ -44,6 +46,7 @@ urlpatterns = [
     path('sitemap.xml', sitemap, {'sitemaps':sitemaps},
         name='django.contrib.sitemaps.views.sitemap'),
     path('robots.txt', include('robots.urls')),
+    path("i18n/", include("django.conf.urls.i18n")),
 ] 
 
 # Custom error handlers
