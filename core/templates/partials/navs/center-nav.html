@@ -241,30 +241,19 @@
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="languageMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							{% translate 'تغییر زبان' %}
-							{% get_current_language as LANGUAGE_CODE %}
-							{% get_available_languages as LANGUAGES %}
-							{% get_language_info_list for LANGUAGES as languages %}
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="languageMenu">
 							{% get_available_languages as LANGUAGES %}
 							{% get_language_info_list for LANGUAGES as languages %}
-							<form action="{% url 'set_language' %}" method="post" id="language-form">
-								{% csrf_token %}
-
-								<input name="next" type="hidden" value="{{ redirect_to }}">
-								<input name="language" type="hidden" id="language-input">
-				
-
-
-									{% for language in languages %}
-										<li>
-											<a class="dropdown-item" href="#" onclick="changeLanguage('{{ language.code }}')">
-												{{ language.name_local }}
-											</a>
-										</li>
-									{% endfor %}
-							</form>
-						</ul>
+							{% csrf_token %}
+							{% for language in languages %}
+								<li>
+									<a class="dropdown-item language-option" data-lang="{{ language.code }}" href="#">
+										{{ language.name_local }}
+									</a>
+								</li>
+							{% endfor %}
+					</ul>
 
 					</li>
 

@@ -16,6 +16,8 @@ from .forms import EmailPostForm, CommentForm, SearchForm
 # search fields
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import activate
+from django.http import JsonResponse
 
 def handler_404(request, exception=None, template_name="errors/404.html"):
     context = {}  # You can pass context variables to the template if needed
@@ -29,6 +31,16 @@ def handler_403(request, exception=None, template_name="errors/403.html"):
 def handler_400(request, exception=None, template_name="errors/400.html"):
     context = {}  # You can pass context variables to the template if needed
     return render(request, template_name, context, status=400)
+
+def set_language(request):
+    lang_code = request.GET.get('language')
+    print("Selected Language Code:", lang_code)  # Debug print
+    if lang_code:
+        activate(lang_code)
+        request.session['django_language'] = lang_code  # Store language in session
+        return JsonResponse({'status': 'success', 'language': lang_code})
+    
+    return JsonResponse({'status': 'error', 'message': 'Language not provided'})
 
 def index(request):
     posts = Post.objects.all().order_by('-id')

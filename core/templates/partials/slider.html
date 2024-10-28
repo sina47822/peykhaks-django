@@ -1,6 +1,17 @@
 {% load static %}
 {% load i18n %}
 
+<h1>{% trans "Welcome" %}</h1>
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+<p>{% trans "Current Language:" %} {{ LANGUAGE_CODE }}</p>
+<ul>
+	{% for language in LANGUAGES %}
+		<li>
+			<a href="#" onclick="changeLanguage('{{ language.0 }}')">{{ language.1 }}</a>
+		</li>
+	{% endfor %}
+</ul>
 <!-- =======================
 Main Banner START -->
 <section class="pt-0">

@@ -1347,9 +1347,36 @@ let swiperTestimonial = new Swiper(".testimonial__container", {
   },
 })
 
+document.addEventListener("DOMContentLoaded", function() {
+    const languageOptions = document.querySelectorAll(".language-option");
+    
+    languageOptions.forEach(option => {
+        option.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const languageCode = option.getAttribute("data-lang");
+            changeLanguage(languageCode);
+        });
+    });
+});
+
 function changeLanguage(languageCode) {
-  // Set the selected language code in the hidden input
-  document.getElementById('language-input').value = languageCode;
-  // Submit the form
-  document.getElementById('language-form').submit();
+    // Get the CSRF token from your template or JavaScript variable
+    const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    fetch('/i18n/setlang/', {
+        method: 'POST',
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `csrfmiddlewaretoken=${csrfToken}&language=${languageCode}&next=/` // Redirect to home page after switching
+    })
+    .then(response => {
+        if (response.ok) {
+            window.location.reload(); // Reload page to apply the new language setting
+        } else {
+            console.error('Failed to change language');
+        }
+    })
+    .catch(error => console.error('Error changing language:', error));
 }

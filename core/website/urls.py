@@ -1,5 +1,5 @@
 from django.urls import path
-from website.views import aboutus,contactus,index,blog,blogposts,ProductShop,TermsAndCondition, test, postcategory,posttags,comingsoon,page404,offerland,post_search, SoilListView,WeldListView,RockListView,AsphaltListView,ConcreteListView
+from website.views import aboutus,contactus,index,blog,blogposts,ProductShop,TermsAndCondition, test, postcategory,posttags,comingsoon,page404,offerland,post_search, SoilListView,WeldListView,RockListView,AsphaltListView,ConcreteListView,set_language
 from product.views import price_list
 from django.utils.translation import gettext_lazy as _
 
@@ -7,6 +7,7 @@ app_name = 'website'
 
 urlpatterns = [
     path('', index , name='home'),
+    path('set_language/', set_language, name='set_language'),
     path('about-us/', aboutus, name='about'),
     path('404/', page404 , name='404'),
     path('coming-soon/', comingsoon, name='coming-soon'),
