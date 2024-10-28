@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Peykhaksang 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-27 16:32+0330\n"
+"POT-Creation-Date: 2024-10-28 14:05+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sina Afshar <sinaa.afshar@gmail.com>\n"
 "Language-Team: English <LL@li.org>\n"
@@ -134,8 +134,12 @@ msgstr "garantee"
 msgid "زمان ارسال"
 msgstr "time to send"
 
-#: .\product\models.py:159 .\templates\partials\navs\center-nav.html:145
+#: .\product\models.py:159 .\templates\partials\footer.html:42
+#: .\templates\partials\navs\center-nav.html:145
 #: .\templates\partials\navs\center-nav.html:153
+#: .\templates\productcat\asphalt.html:38
+#: .\templates\productcat\concrete.html:38 .\templates\productcat\rock.html:38
+#: .\templates\productcat\soil.html:38 .\templates\productcat\weld.html:38
 msgid "محصولات"
 msgstr "product"
 
@@ -270,7 +274,6 @@ msgstr ""
 
 #: .\templates\errors\400.html:25 .\templates\errors\403.html:26
 #: .\templates\errors\404.html:26 .\templates\errors\500.html:26
-#| msgid "تصویر اصلی"
 msgid "برگشت به صفحه اصلی"
 msgstr "Back to Home Page"
 
@@ -285,7 +288,6 @@ msgstr ""
 "You received a 403 error, meaning you are not authorized to access this page."
 
 #: .\templates\errors\404.html:19
-#| msgid " ارور 400 "
 msgid " ارور 404 "
 msgstr "Error 400"
 
@@ -294,14 +296,10 @@ msgid "یا مشکلی پیش آمده یا این صفحه دیگر وجود ن
 msgstr "Either there is a problem, or this page no longer exists."
 
 #: .\templates\errors\500.html:19
-#| msgid " ارور 400 "
 msgid " ارور 500 "
 msgstr "Error 400"
 
 #: .\templates\errors\500.html:24
-#| msgid ""
-#| "شما ارور 400 دریافت کرده اید به این معنی که در باز کردن این صفحه از سایت "
-#| "مشکلی پیش آمده. با پشتیبان سایت تماس بگیرید"
 msgid ""
 "شما ارور 500 دریافت کرده اید به این معنی که سرور دچار مشکل شده است. سریعا با "
 "پشتیبان سایت تماس بگیرید"
@@ -310,8 +308,6 @@ msgstr ""
 "the site. Please contact the site support."
 
 #: .\templates\partials\alert.html:13
-#| msgid ""
-#| "فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور "
 msgid ""
 "فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور  ، "
 msgstr ""
@@ -321,13 +317,122 @@ msgstr ""
 msgid "دریافت پیش فاکتور"
 msgstr "Receive Proforma Invoice"
 
+#: .\templates\partials\footer.html:19
+msgid ""
+"وبسایت پی خاک سنگ برای این به وجود آمده که به دوستان خود کمک کند آزمایشگاه "
+"خود را راه اندازی کنند این کمک از طریق بوجود آوردن مقالات مناسب انجام "
+"آزمایش، محصولات تخصصی آزمایشگاه، فراهم آوردن لیست کامل هر سه پایه خاک و بتن "
+"و امکان خرید قسطی و انواع فرم ها و کتاب های مورد نیاز شما است"
+msgstr ""
+"The Pey Khak Sang website was created to help our friends set up their own "
+"labs. This support includes providing relevant articles on conducting "
+"experiments, specialized lab products, a complete list of soil and concrete "
+"lab essentials, installment purchase options, and a variety of forms and "
+"books needed."
+
+#: .\templates\partials\footer.html:37
+msgid "لینک های مفید"
+msgstr "Useful Links"
+
+#: .\templates\partials\footer.html:39
+#: .\templates\partials\navs\center-nav.html:142
+#: .\templates\partials\navs\center-nav.html:150
+#: .\templates\partials\slider.html:155
+msgid "درباره ما"
+msgstr "About Us"
+
+#: .\templates\partials\footer.html:40
+#: .\templates\partials\navs\center-nav.html:143
+#: .\templates\partials\navs\center-nav.html:151
+msgid "ارتباط با ما"
+msgstr "Contact Form"
+
+#: .\templates\partials\footer.html:41 .\website\models.py:83
+msgid "مقالات"
+msgstr "articles"
+
+#: .\templates\partials\footer.html:43
+msgid "سوالات متداول"
+msgstr "Frequently Asked Questions"
+
+#: .\templates\partials\footer.html:49
+msgid "راهنما و پشتیبانی"
+msgstr "Help & Support"
+
+#: .\templates\partials\footer.html:51
+msgid "داکیومنت"
+msgstr "Documentation"
+
+#: .\templates\partials\footer.html:52
+msgid "ارسال تیکت"
+msgstr "Submit Ticket"
+
+#: .\templates\partials\footer.html:53
+msgid "نقشه سایت"
+msgstr "Sitemap"
+
+#: .\templates\partials\footer.html:54
+msgid "مشاوره رایگان"
+msgstr "Free Consultation"
+
+#: .\templates\partials\footer.html:55
+msgid "شرایط و قوانین"
+msgstr "Terms & Conditions"
+
+#: .\templates\partials\footer.html:61
+msgid "لینک های سریع"
+msgstr "Quick Links"
+
+#: .\templates\partials\footer.html:67
+msgid "کاتالوگ"
+msgstr "Catalog"
+
+#: .\templates\partials\footer.html:69
+#: .\templates\partials\navs\center-nav.html:288
+msgid "دانلود کاتالوگ"
+msgstr "Catalog"
+
+#: .\templates\partials\footer.html:82
+msgid "تماس با ما"
+msgstr "Contact Us"
+
+#: .\templates\partials\footer.html:87
+msgid "(همه روزه از ساعت ۷ صبح الی ۵ عصر به جز روزهای تعطیل)"
+msgstr "(Every day from 7 AM to 5 PM, except holidays)"
+
+#: .\templates\partials\footer.html:91
+msgid ""
+"تهران، خیابان پیروزی، ضلع جنوب خیابان، بلوار ابوذر شمالی، نرسیده به پل اول، "
+"کوچه ششم شرقی، پلاک ۹، شرکت پی خاک سنگ"
+msgstr ""
+"Tehran, Piroozi Street, South side of the street, Abu Zar North Blvd, before "
+"the first bridge, East 6th Alley, No. 9, Pey Khak Sang Company"
+
+#: .\templates\partials\footer.html:117
+msgid "کلیه حقوق این وبسایت به گروه صنعتی پی خاک سنگ تعلق دارد"
+msgstr "All rights reserved to Pey Khak Sang Industrial Group"
+
+#: .\templates\partials\footer.html:123
+msgid "شرایط استفاده"
+msgstr "Terms of Use"
+
+#: .\templates\partials\footer.html:124
+msgid "قوانین سایت"
+msgstr "Website Policies"
+
+#: .\templates\partials\footer.html:139
+msgid "ارائه شده توسط"
+msgstr "Presented by"
+
+#: .\templates\partials\footer.html:139
+msgid "دئودار"
+msgstr "Deodar"
+
 #: .\templates\partials\navs\center-nav.html:34
-#| msgid "تجهیزات آزمایشگاه خاک"
 msgid "تجهیزات آزمایشگاه بتن"
 msgstr "Soil Laboratory Equipment"
 
 #: .\templates\partials\navs\center-nav.html:38
-#| msgid "آزمایش مقاومت فشاری بتن"
 msgid "مقاومت فشاری بتن"
 msgstr "Concrete Compressive Strength Test"
 
@@ -372,7 +477,7 @@ msgstr "Ultrasonic Testing Equipment"
 #: .\templates\partials\navs\center-nav.html:91
 #: .\templates\partials\navs\center-nav.html:92
 #: .\templates\partials\navs\center-nav.html:93
-#| msgid "محصولات"
+#: .\templates\productcat\concrete.html:55
 msgid "محصولات بتن"
 msgstr "Concrete Products"
 
@@ -398,7 +503,6 @@ msgstr "Determining Liquid Limits"
 #: .\templates\partials\navs\center-nav.html:108
 #: .\templates\partials\navs\center-nav.html:109
 #: .\templates\partials\navs\center-nav.html:110
-#| msgid "مقالات"
 msgid "مقالات خاک"
 msgstr "Soil Articles"
 
@@ -412,7 +516,7 @@ msgstr "Soil Shear Strength"
 #: .\templates\partials\navs\center-nav.html:120
 #: .\templates\partials\navs\center-nav.html:121
 #: .\templates\partials\navs\center-nav.html:122
-#| msgid "محصولات"
+#: .\templates\productcat\soil.html:55
 msgid "محصولات خاک"
 msgstr "Soil Products"
 
@@ -433,18 +537,11 @@ msgid "نرم افزار"
 msgstr "Software"
 
 #: .\templates\partials\navs\center-nav.html:140
+#: .\templates\productcat\asphalt.html:37
+#: .\templates\productcat\concrete.html:37 .\templates\productcat\rock.html:37
+#: .\templates\productcat\soil.html:37 .\templates\productcat\weld.html:37
 msgid "صفحه اصلی"
 msgstr "Home Page"
-
-#: .\templates\partials\navs\center-nav.html:142
-#: .\templates\partials\navs\center-nav.html:150
-msgid "درباره ما"
-msgstr "About Us"
-
-#: .\templates\partials\navs\center-nav.html:143
-#: .\templates\partials\navs\center-nav.html:151
-msgid "ارتباط با ما"
-msgstr "Contact Us"
 
 #: .\templates\partials\navs\center-nav.html:144
 #: .\templates\partials\navs\center-nav.html:152
@@ -622,10 +719,6 @@ msgstr "Change Language"
 msgid "جستجو..."
 msgstr "Search..."
 
-#: .\templates\partials\navs\center-nav.html:288
-msgid "دانلود کاتالوگ"
-msgstr "Download Catalog"
-
 #: .\templates\partials\pop-up.html:10
 msgid ""
 "فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور "
@@ -635,6 +728,431 @@ msgstr ""
 #: .\templates\partials\pop-up.html:18
 msgid "رد کردن"
 msgstr "Reject"
+
+#: .\templates\partials\price-list.html:180
+msgid "برای تغییر لیست از بتن به خاک روی سوییچ کلیک کنید"
+msgstr "Click on the switch to change the list from concrete to soil."
+
+#: .\templates\partials\price-list.html:193
+msgid "پایه سه بتن"
+msgstr "Level 3 Concrete"
+
+#: .\templates\partials\price-list.html:197
+msgid "لیست تجهیزات بتن پایه سه"
+msgstr "Level 3 Concrete Equipment List"
+
+#: .\templates\partials\price-list.html:207
+#: .\templates\partials\price-list.html:258
+#: .\templates\partials\price-list.html:307
+msgid "مشاهده لیست تجهیزات آزمایشگاه بتن"
+msgstr "View Concrete Laboratory Equipment List"
+
+#: .\templates\partials\price-list.html:213
+#: .\templates\partials\price-list.html:264
+#: .\templates\partials\price-list.html:313
+#: .\templates\partials\price-list.html:369
+#: .\templates\partials\price-list.html:421
+#: .\templates\partials\price-list.html:473
+msgid "دانلود شیوه نامه نظام مهندسی"
+msgstr "Download Engineering System Guidelines"
+
+#: .\templates\partials\price-list.html:219
+#: .\templates\partials\price-list.html:270
+#: .\templates\partials\price-list.html:319
+msgid "لیست نیروی انسانی آزمایشگاه بتن"
+msgstr "Concrete Laboratory Personnel List"
+
+#: .\templates\partials\price-list.html:224
+#: .\templates\partials\price-list.html:275
+#: .\templates\partials\price-list.html:324
+#: .\templates\partials\price-list.html:384
+#: .\templates\partials\price-list.html:436
+#: .\templates\partials\price-list.html:488
+msgid "فرمهای کاربردی"
+msgstr "Useful Forms"
+
+#: .\templates\partials\price-list.html:230
+msgid "دریافت پیش فاکتور پایه سه بتن"
+msgstr "Get Proforma Invoice for Level 3 Concrete"
+
+#: .\templates\partials\price-list.html:242
+msgid "پایه دو بتن"
+msgstr "Level 2 Concrete"
+
+#: .\templates\partials\price-list.html:247
+msgid "لیست تجهیزات بتن پایه دو"
+msgstr "Level 2 Concrete Equipment List"
+
+#: .\templates\partials\price-list.html:281
+msgid "دریافت پیش فاکتور پایه دو بتن"
+msgstr "Get Proforma Invoice for Level 2 Concrete"
+
+#: .\templates\partials\price-list.html:292
+msgid "پایه یک بتن"
+msgstr "Level 1 Concrete"
+
+#: .\templates\partials\price-list.html:297
+msgid "لیست تجهیزات بتن پایه یک"
+msgstr "Level 1 Concrete Equipment List"
+
+#: .\templates\partials\price-list.html:330
+msgid "دریافت پیش فاکتور پایه یک بتن"
+msgstr "Get Proforma Invoice for Level 1 Concrete"
+
+#: .\templates\partials\price-list.html:348
+msgid "پایه سه خاک"
+msgstr "Level 3 Soil"
+
+#: .\templates\partials\price-list.html:353
+msgid "لیست تجهیزات پایه سه خاک"
+msgstr "Level 3 Soil Equipment List"
+
+#: .\templates\partials\price-list.html:363
+#: .\templates\partials\price-list.html:415
+msgid "مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک"
+msgstr "View Soil Mechanics Laboratory Equipment List"
+
+#: .\templates\partials\price-list.html:376
+#: .\templates\partials\price-list.html:429
+#: .\templates\partials\price-list.html:480
+msgid "لیست نیروی انسانی آزمایشگاه خاک"
+msgstr "Soil Laboratory Personnel List"
+
+#: .\templates\partials\price-list.html:390
+msgid "دریافت پیش فاکتور پایه سه خاک"
+msgstr "Get Proforma Invoice for Level 3 Soil"
+
+#: .\templates\partials\price-list.html:400
+msgid "پایه دو خاک"
+msgstr "Level 2 Soil"
+
+#: .\templates\partials\price-list.html:404
+msgid "لیست تجهیزات پایه دو خاک"
+msgstr "Level 2 Soil Equipment List"
+
+#: .\templates\partials\price-list.html:442
+msgid "دریافت پیش فاکتور پایه دو خاک"
+msgstr "Get Proforma Invoice for Level 2 Soil"
+
+#: .\templates\partials\price-list.html:452
+msgid "پایه یک خاک"
+msgstr "Level 1 Soil"
+
+#: .\templates\partials\price-list.html:457
+msgid "لیست تجهیزات پایه یک خاک"
+msgstr "Level 1 Soil Equipment List"
+
+#: .\templates\partials\price-list.html:467
+msgid "مشاهده لیست تجهیزات آزمایشگاه خاک"
+msgstr "View Soil Laboratory Equipment List"
+
+#: .\templates\partials\price-list.html:493
+msgid "دریافت پیش فاکتور پایه یک خاک"
+msgstr "Get Proforma Invoice for Level 1 Soil"
+
+#: .\templates\partials\slider.html:133
+msgid "به پی خاک سنگ"
+msgstr " to PeyKhakSang"
+
+#: .\templates\partials\slider.html:134
+msgid "خوش آمدید"
+msgstr "Welcome"
+
+#: .\templates\partials\slider.html:147
+msgid ""
+"سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و "
+"مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب "
+"آنها را به راحتی نمی توانستیم پیدا کنیم، سوالهایی مانند اینکه چطور آزمایشگاه "
+"خود را تاسیس کنیم؟ چه دستگاه هایی واقعاً لازم داریم؟ چطور درآمد خود را افزایش "
+"دهیم؟ چطور کار کنیم که بتوانیم شرکت خود را رشد دهیم؟ این سوالها و مساله ها، "
+"کمک می کرد کوشش کنیم برای مشکلات و مسائل، راه حل هایی پیدا کنیم. "
+msgstr ""
+"In 2005, we entered the industry with the establishment of Pey Khak Sang "
+"Consulting Engineers as a geotechnical and materials resistance consultant. "
+"We had countless questions back then that we couldn’t easily find answers to—"
+"questions like how to set up a lab, which equipment is truly essential, how "
+"to increase revenue, and how to grow our company. These questions and "
+"challenges helped us strive to find solutions."
+
+#: .\templates\partials\slider.html:152
+msgid "مهندسین مجرب"
+msgstr "Experienced Engineers"
+
+#: .\templates\partials\slider.html:153
+msgid "لیست خرید لوازم پایه آزمایشگاه"
+msgstr "Basic Laboratory Equipment Purchase List"
+
+#: .\templates\partials\slider.html:154
+msgid "مقالات کاربردی آزمایشگاه"
+msgstr "Practical Laboratory Articles"
+
+#: .\templates\partials\slider.html:162
+msgid "دریافت لیست قیمت تجهیزات پایه خاک و بتن"
+msgstr "Download Price List for Basic Soil and Concrete Equipment"
+
+#: .\templates\partials\slider.html:168
+msgid "شرایط خرید نقدی و اقساطی از پی خاک سنگ"
+msgstr "Conditions for Cash and Installment Purchase from Pey Khak Sang"
+
+#: .\templates\productcat\asphalt.html:39
+msgid "آسفالت"
+msgstr "Asphalt"
+
+#: .\templates\productcat\asphalt.html:55
+msgid "محصولات آسفالت"
+msgstr "Asphalt Products"
+
+#: .\templates\productcat\asphalt.html:103
+#: .\templates\productcat\concrete.html:103
+#: .\templates\productcat\rock.html:104 .\templates\productcat\soil.html:103
+#: .\templates\productcat\weld.html:103
+msgid "محصولی موجود نیست"
+msgstr "No products available"
+
+#: .\templates\productcat\concrete.html:32
+msgid "بخش بتن"
+msgstr "Concrete Section"
+
+#: .\templates\productcat\concrete.html:39
+msgid "بتن"
+msgstr "Concrete"
+
+#: .\templates\productcat\rock.html:39
+msgid "سنگ"
+msgstr "Rock"
+
+#: .\templates\productcat\rock.html:55
+msgid "محصولات سنگ"
+msgstr "Rock Products"
+
+#: .\templates\productcat\soil.html:39
+msgid "خاک"
+msgstr "Soil"
+
+#: .\templates\productcat\weld.html:39
+msgid "جوش"
+msgstr "Welding"
+
+#: .\templates\productcat\weld.html:55
+msgid "محصولات جوش"
+msgstr "Welding Products"
+
+#: .\templates\website\about.html:16
+msgid "داستان ما"
+msgstr "Our Story"
+
+#: .\templates\website\about.html:19
+msgid ""
+"                    سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ\n"
+"\n"
+"سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و "
+"مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب "
+"آنها را به راحتی نمی توانستیم پیدا کنیم، سوالهایی مانند اینکه چطور آزمایشگاه "
+"خود را تاسیس کنیم؟ چه دستگاه هایی واقعاً لازم داریم؟ چطور درآمد خود را افزایش "
+"دهیم؟ چطور کار کنیم که بتوانیم شرکت خود را رشد دهیم؟ این سوالها و مساله ها، "
+"کمک می کرد کوشش کنیم برای مشکلات و مسائل، راه حل هایی پیدا کنیم.\n"
+"\n"
+"کم کم مهندس های جوانی به شرکت ما آمدند و در انجام پروژه های شرکت، همکار ما "
+"شدند. خیلی از آنها دلشان می خواست بعد از چند سال تجربه و کسب مهارت، شرکت "
+"خودشان را تاسیس کنند. ما هم همیشه سعی کردیم کنار آنها باشیم، چه وقتی که "
+"همکار ما بودند و دلشان می خواست این کار را بهتر یاد بگیرند و چه وقتی که می "
+"خواستند از شرکت ما بروند و کسب و کار خود را راه اندازی کنند.\n"
+"\n"
+"به همین دلیل، ما نیز درگیر یک تجربه جدید شدیم و آن اینکه کمک کنیم، همکاران "
+"ما مستقل شوند و صاحب آزمایشگاه های خود و کار و حرفه شخصی خودشان بشوند.  "
+"همراه با این مهندسان جوان، ما هم دوباره به سوالهایی روزهای اول کار خود\n"
+"ب\n"
+"ر خود بر می خوردیم که حالا از نگاهی دیگر آنها را می دیدیم و برای آنها جواب "
+"هایی داشتیم:\n"
+"\n"
+"روش تاسیس شرکت چگونه است؟ چطور می شود مجور گرفت؟ چه دستگاه هایی واقعا لازم "
+"است خریداری کنم؟ چطور از خریدم مطمئن باشم؟ از کجا تهیه کنم؟ کار با دستگاه ها "
+"را چگونه به صورت حرفه ای بیاموزم؟ آیا همه دستگاه ها بر اساس استانداردها "
+"ساخته شده است؟ آیا امکان خرید ارزان دستگاه های استاندارد وجود دارد؟ نرم "
+"افزارهای مرتبط با آزمایشها و گزارش نویسی را چگونه می توان آموخت؟ اصلا با چه "
+"کسی در سرتاسر این راه مشورت کنم؟\n"
+"\n"
+"شروع کار گروه صنعتی پی خاک سنگ\n"
+"\n"
+"درست از همینجا بود که ما در شرکت پی خاک سنگ به فکر افتادیم، برای نسل جدید "
+"مهندسان ژئوتکنیک راه هایی پیدا کنیم که کار را برای آنها ساده تر کند. برای "
+"این کار، سعی کردیم در همین آغاز به کار این همکاران جدید، تجربه هایمان را در "
+"اختیار آنها بگذاریم و کمک کنیم کسب و کارشان راه بیفتد و در آن موفق تر عمل "
+"کرده و بهتر به نتیجه دلخواه خود برسند.\n"
+"\n"
+"همان وقت بود که بیشتر متوجه یک مشکل قدیمی شدیم: اینکه تجهیزات دقیق و با "
+"کیفیت، بسیار گران است و برای تازه واردان این عرصه چه بسا تهیه آنها به سادگی "
+"ممکن نیست، از آن گذشته، غالباٌ وقتی دستگاهی خریداری می شود، روش نصب، راه "
+"اندازی و نهایتا کار با دستگاه ها غالبا همراه خرید، آموزش داده نمی شود.\n"
+"\n"
+"به همین دلیل، بر اساس تجربه چندین ساله خود در کار با دستگاه های این حوزه، "
+"دست به کار شدیم و خودمان، بر اساس تجربه ای که در استفاده از این تجهیزات و "
+"دستگاه ها داشتیم، شروع به تولید دستگاه ها کردیم. دستگاه هایی که هم دقیق و "
+"استاندارد باشد و هم قیمت مناسبی داشته باشد به گونه ای که یک مهندس جوان "
+"بتواند با قیمتی مناسب، تجهیزاتی کاملا استاندارد و با کیفیت، تهیه و کسب و کار "
+"خود را بی دغدغه تر شروع کند.\n"
+"\n"
+"چنین بود که خود را از آغاز متعهد کردیم دستگاه هایی طراحی و تولید کنیم که "
+"اولا صد در صد استاندارد باشد، دوم آنکه به ارزان ترین شکل ممکن تهیه و تولید "
+"شود و سوم آنکه دقیق ترین نتیجه ها را برای کاربرانش داشته باشد.\n"
+"\n"
+"به این ترتیب، سعی کرده ایم به شکلی کار کنیم که مهندسان جوان، ببینند همه "
+"نگرانی ها و دغدغه های آنها در این شرکت دیده شده و برای همه آنها فکر شده و "
+"راه حل هایی متناسب برای آنها طراحی شده است. به همین دلیل است که ما بیش از "
+"آنکه تولیدکننده دستگاه هایی مورد نیاز مهندسان جوان باشیم، مشاور آنها هستیم و "
+"با اشتیاق، هر چه در این سالها تجربه کرده ایم، آماده ایم با همکاران جوان در "
+"میان بگذاریم و کمک کنیم، مسیر فعالیت آنها ساده، علمی و مقرون به صرفه تر "
+"باشد.\n"
+"\n"
+"در عین حال، همیشه بهترین مشورت ها را نیز از مهندسان جوانی گرفته ایم که با "
+"این شرکت در تماس بوده و نظرها و پیشنهادهایشان را با ما در میان گذاشته و کمک "
+"کرده اند، این شرکت همیشه در حال تکاپو و کوشش برای یادگیری و بهبود مسیرها و "
+"روشها و تولیداتش باشد و برای مشتریانش همیشه جایی مطمئن بماند."
+msgstr ""
+"Founded in 2005, PeyKhakSang Consulting Engineers entered the industry as a geotechnical and materials consulting firm. Back then, we had countless questions without easy answers: How do we start our own lab? Which equipment is essential? How do we increase revenue? And how can we grow our company? These challenges drove us to seek solutions.\n"
+"Over time, young engineers joined us, working alongside us on various projects. Many aspired to establish their own firms after gaining experience and skills. We supported them throughout their journey, whether they worked with us or ventured out to start their businesses.\n"
+"\n"
+"This commitment led us to help our colleagues become independent, establishing their own labs and careers. Working with these young engineers brought back memories of our early questions, but this time we had answers:\n"
+"\n"
+"How do you start a company? How do you obtain permits? What equipment is essential? Where to source reliable devices? How to learn professional equipment operation? Are all devices manufactured to standard? Is affordable, standard-compliant equipment available? How do you master lab software for testing and reporting? Whom to consult throughout this journey?\n"
+"\n"
+"This realization sparked the inception of the PeyKhakSang Industrial Group. Our mission became supporting the new generation of geotechnical engineers by sharing our experiences, helping them establish and succeed in their businesses.\n"
+"\n"
+"We also recognized an ongoing issue: high-quality equipment was often too expensive for newcomers, and purchases rarely included installation, setup, or operational training.\n"
+"\n"
+"So, we began designing and manufacturing our own equipment, based on our extensive experience. We aimed to create precise, affordable, standard-compliant devices, enabling young engineers to start their businesses confidently with high-quality equipment.\n"
+"\n"
+"From the outset, we committed to producing fully standard-compliant equipment, affordably manufactured, and accurate in its results.\n"
+"\n"
+"Today, we strive to show young engineers that all their concerns are understood, with solutions tailored to their needs. More than just a manufacturer, we’re their advisors, eager to share our experience and simplify their journey.\n"
+"\n"
+"We also value the advice and suggestions from young engineers in contact with us, helping us continually improve our processes and products. With their input, we remain a reliable partner, always learning and enhancing our offerings for our clients."
+
+#: .\templates\website\about.html:56
+msgid "سؤالات متداول"
+msgstr "Frequently Asked Questions"
+
+#: .\templates\website\about.html:61
+msgid "شیوه ارسال تجهیزات"
+msgstr "Equipment Shipping Method"
+
+#: .\templates\website\about.html:68
+msgid "از کجا مطمئن باشم کالاهایی که به دستم می رسد سالم تحویل می شود؟"
+msgstr "How can I be sure that the items I receive are delivered safely?"
+
+#: .\templates\website\about.html:73
+msgid ""
+"کالاهای خریداری شده به طور مناسب بسته‌بندی شده و با پلاستیک‌های حباب دار و "
+"کارتن، بسته‌بندی شده و ارسال می‌گردند و نکات ایمنی جهت حمل برای تجهیزات اعمال "
+"می‌گردد"
+msgstr ""
+"Purchased items are packaged securely with bubble wrap and cartons, ensuring "
+"safety guidelines are followed during equipment transportation."
+
+#: .\templates\website\contact.html:54
+msgid "آدرس شرکت پی خاک سنگ"
+msgstr "PeyKhakSang Company Address"
+
+#: .\templates\website\contact.html:59
+msgid ""
+"تهران، خیابان پیروزی، ضلع جنوب خیابان، بلوار ابوذر شمالی، نرسیده به پل اول، "
+"کوچه ششم شرقی، پلاک ۹،"
+msgstr ""
+"Tehran, Pirouzi Street, South Side of the Street, North Abuzar Boulevard, "
+"Before the First Bridge, Sixth East Alley, No. 9,"
+
+#: .\templates\website\contact.html:64
+msgid "ساعت‌های کاری"
+msgstr "Working Hours"
+
+#: .\templates\website\contact.html:69
+msgid "همه روزه از ساعت ۷ صبح الی ۵ عصر (به جز روزهای تعطیل)"
+msgstr "Every day from 7 AM to 5 PM (except holidays)"
+
+#: .\templates\website\contact.html:82
+msgid "راه‌های ارتباطی با پی خاک سنگ"
+msgstr "Contact Methods with PeyKhakSang"
+
+#: .\templates\website\contact.html:99
+msgid "خطوط تماس مخصوص شرایط پرداخت"
+msgstr "Dedicated Payment Support Lines"
+
+#: .\templates\website\contact.html:114
+msgid "دریافت لیست قیمت از طریق تلگرام"
+msgstr "Receive Price List via Telegram"
+
+#: .\templates\website\contact.html:135
+msgid "فرم ارتباط با ما"
+msgstr "Contact Form"
+
+#: .\templates\website\contact.html:144
+msgid "نام*"
+msgstr "First Name*"
+
+#: .\templates\website\contact.html:149
+msgid "نام خانوادگی*"
+msgstr "Last Name*"
+
+#: .\templates\website\contact.html:158
+msgid "آدرس ایمیل*"
+msgstr "Email Address*"
+
+#: .\templates\website\contact.html:163
+msgid "آدرس سایت یا شبکه اجتماعی"
+msgstr "Website or Social Media Link"
+
+#: .\templates\website\contact.html:173
+msgid "نام شرکت*"
+msgstr "Company Name*"
+
+#: .\templates\website\contact.html:178
+msgid "نام شهر*"
+msgstr "City*"
+
+#: .\templates\website\contact.html:188
+msgid "سمت شغلی*"
+msgstr "Job Title*"
+
+#: .\templates\website\contact.html:198
+msgid "متن پیام*"
+msgstr "messages"
+
+#: .\templates\website\contact.html:206
+msgid ""
+"من شرایط و ضوابط ارسال پیام در وبسایت پی خاک سنگ را خوانده ام و با آن موافق "
+"هستم"
+msgstr ""
+"I have read and agree to the terms and conditions of message submission on "
+"the PeyKhakSang website."
+
+#: .\templates\website\contact.html:214
+msgid ""
+"من موافقت خودم را بابت در اختیار گذاشتن اطلاعات شخصی اختیار شرکت پی خاک سنگ "
+"با آگاهی به آنکه اطلاعات در این شرکت محفوظ می ماند و برای اهداف مارکتینگ "
+"استفاده نمی شود، اعلام می کنم"
+msgstr ""
+"I consent to providing my personal information to PeyKhakSang, knowing that "
+"it will be kept confidential and not used for marketing purposes."
+
+#: .\templates\website\contact.html:224
+msgid "ارسال پیام"
+msgstr "messages"
+
+#: .\templates\website\contact.html:234
+msgid "ارتباط با پی خاک سنگ"
+msgstr "Contact PeyKhakSang"
+
+#: .\templates\website\contact.html:241
+msgid "مکان یابی از روی نقشه"
+msgstr "Find Location on Map"
+
+#: .\templates\website\index.html:36
+msgid "محصولات پر فروش"
+msgstr "Best-Selling Products"
+
+#: .\templates\website\index.html:48
+msgid "مقالات پر طرفدار"
+msgstr "Popular Articles"
 
 #: .\website\models.py:20
 msgid "نام دسته بندی"
@@ -695,10 +1213,6 @@ msgstr "views"
 #: .\website\models.py:79
 msgid "وضعیت انتشار"
 msgstr "pulish status"
-
-#: .\website\models.py:83
-msgid "مقالات"
-msgstr "articles"
 
 #: .\website\models.py:94 .\website\models.py:105 .\website\models.py:116
 msgid "عنوان سئو"

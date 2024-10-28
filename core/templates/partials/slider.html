@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+
 <!-- =======================
 Main Banner START -->
 <section class="pt-0">
@@ -128,8 +130,8 @@ Main Banner START -->
 			<div class="col-lg-5 col-xl-6 position-relative z-index-1 text-center text-lg-start mb-5 mb-sm-0">
 
 				<!-- Title -->
-				<h1 class="mb-0 display-6">به پی خاک سنگ <br>
-					<span class="position-relative">خوش آمدید
+				<h1 class="mb-0 display-6">{% translate 'به پی خاک سنگ' %} <br>
+					<span class="position-relative">{% translate 'خوش آمدید' %}
 						<!-- SVG START -->
 						<span class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
 							<svg width="300px" height="62.1px" enable-background="new 0 0 366 62.1" viewBox="0 0 366 62.1" xmlns="http://www.w3.org/2000/svg">
@@ -142,28 +144,28 @@ Main Banner START -->
 				
 				<!-- Content -->
 				<p class="my-4">
-				سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب آنها را به راحتی نمی توانستیم پیدا کنیم، سوالهایی مانند اینکه چطور آزمایشگاه خود را تاسیس کنیم؟ چه دستگاه هایی واقعاً لازم داریم؟ چطور درآمد خود را افزایش دهیم؟ چطور کار کنیم که بتوانیم شرکت خود را رشد دهیم؟ این سوالها و مساله ها، کمک می کرد کوشش کنیم برای مشکلات و مسائل، راه حل هایی پیدا کنیم. 
+					{%blocktrans%}سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب آنها را به راحتی نمی توانستیم پیدا کنیم، سوالهایی مانند اینکه چطور آزمایشگاه خود را تاسیس کنیم؟ چه دستگاه هایی واقعاً لازم داریم؟ چطور درآمد خود را افزایش دهیم؟ چطور کار کنیم که بتوانیم شرکت خود را رشد دهیم؟ این سوالها و مساله ها، کمک می کرد کوشش کنیم برای مشکلات و مسائل، راه حل هایی پیدا کنیم. {% endblocktrans%}
 				</p>
 				
 				<!-- Info -->
 				<ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
-					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>مهندسین مجرب</li>
-					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>لیست خرید لوازم پایه آزمایشگاه</li>
-					<li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>مقالات کاربردی آزمایشگاه</li>
-					<li class="btn  btn-sm btn-danger-soft me-2 mb-4 mb-sm-0"> <a href="{% url 'website:about' %}">درباره ما</a></li>
+					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>{% translate 'مهندسین مجرب' %}</li>
+					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>{% translate 'لیست خرید لوازم پایه آزمایشگاه' %}</li>
+					<li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>{% translate 'مقالات کاربردی آزمایشگاه' %}</li>
+					<li class="btn  btn-sm btn-danger-soft me-2 mb-4 mb-sm-0"> <a href="{% url 'website:about' %}">{% translate 'درباره ما' %}</a></li>
 
 				</ul>
 
 				<div class="d-lg-flex align-items-center justify-content-center justify-content-sm-start">
 					<div class="d-flex align-items-center justify-content-start justify-content-sm-start py-2 ms-0 ms-sm-4">
 						<!-- Button -->
-						<a href="#listgheymat" class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0">دریافت لیست قیمت تجهیزات پایه خاک و بتن</a>
+						<a href="#listgheymat" class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0">{% translate 'دریافت لیست قیمت تجهیزات پایه خاک و بتن' %}</a>
 						<!-- Video button -->
 					</div>
 					<div class="d-flex align-items-center justify-content-start justify-content-sm-start py-2 ms-0 ms-sm-4 " >
 						<a  href="https://www.aparat.com/v/f3906b7" class="btn btn-round btn-primary-shadow mb-0 overflow-visible me-7"> 
 							<i class="fas fa-play"></i>
-							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">شرایط خرید نقدی و اقساطی از پی خاک سنگ</h6>
+							<h6 class="mb-0 ms-3 fw-normal position-absolute start-100 top-50 translate-middle-y">{% translate 'شرایط خرید نقدی و اقساطی از پی خاک سنگ' %}</h6>
 						</a>
 					</div>
 				</div>

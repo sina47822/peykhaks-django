@@ -1,6 +1,7 @@
 {% extends '../core/base.html' %}
 {% load humanize %}
 {% load static %}
+{% load i18n %}
 
 
 
@@ -33,9 +34,9 @@
                     <div class="d-flex justify-content-center position-relative">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item"><a href="{% url 'website:home' %}" style="color:rgba(0,0,0,.5)">صفحه اصلی</a></li>
-                                <li class="breadcrumb-item"><a href="{% url 'website:shop' %}" style="color:rgba(0,0,0,.5)">محصولات</a></li>
-                                <li class="breadcrumb-item active" aria-current="page" style="color:black">خاک</li>
+                                <li class="breadcrumb-item"><a href="{% url 'website:home' %}">{% translate 'صفحه اصلی' %}</a></li>
+                                <li class="breadcrumb-item"><a href="{% url 'website:shop' %}">{% translate 'محصولات' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page" style="color:black">{% translate 'خاک' %}</li>
                             </ol>
                         </nav>
                     </div>
@@ -51,7 +52,7 @@ Page content START -->
     <!-- Title and breadcrumb -->
     <div class="col-lg-10 mx-auto text-center position-relative">
         <!-- Title -->
-        <h2 class="fs-2">محصولات خاک</h2>
+        <h2 class="fs-2">{% translate 'محصولات خاک' %}</h2>
         <hr class="mb-4">
     </div>
 	<div class="container">
@@ -99,7 +100,7 @@ Page content START -->
             </div>
             {% empty %}
             <div>
-                <h2>محصولی موجود نیست</h2>
+                <h2>{% translate 'محصولی موجود نیست' %}</h2>
             </div>
             {% endfor %}
 		</div> <!-- Row end -->

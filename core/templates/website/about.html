@@ -1,6 +1,6 @@
 {% extends '../core/base.html' %}
 {% load static %}
-
+{% load i18n %}
 
 
 {% block title %}About Us{% endblock title%}
@@ -13,10 +13,10 @@
     <div class="about-us-holder bg-light p-5 my-5">
         <div class="container">
             <head class="col-12 text-center">
-                <h1>داستان ما</h1>
+                <h1>{% translate 'داستان ما' %}</h1>
             </head>
             <div class="text-justify">
-                <p class="d-flex flex-start">
+                <p class="d-flex flex-start">{% blocktrans%}
                     سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ
 
 سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب آنها را به راحتی نمی توانستیم پیدا کنیم، سوالهایی مانند اینکه چطور آزمایشگاه خود را تاسیس کنیم؟ چه دستگاه هایی واقعاً لازم داریم؟ چطور درآمد خود را افزایش دهیم؟ چطور کار کنیم که بتوانیم شرکت خود را رشد دهیم؟ این سوالها و مساله ها، کمک می کرد کوشش کنیم برای مشکلات و مسائل، راه حل هایی پیدا کنیم.
@@ -41,7 +41,7 @@
 
 به این ترتیب، سعی کرده ایم به شکلی کار کنیم که مهندسان جوان، ببینند همه نگرانی ها و دغدغه های آنها در این شرکت دیده شده و برای همه آنها فکر شده و راه حل هایی متناسب برای آنها طراحی شده است. به همین دلیل است که ما بیش از آنکه تولیدکننده دستگاه هایی مورد نیاز مهندسان جوان باشیم، مشاور آنها هستیم و با اشتیاق، هر چه در این سالها تجربه کرده ایم، آماده ایم با همکاران جوان در میان بگذاریم و کمک کنیم، مسیر فعالیت آنها ساده، علمی و مقرون به صرفه تر باشد.
 
-در عین حال، همیشه بهترین مشورت ها را نیز از مهندسان جوانی گرفته ایم که با این شرکت در تماس بوده و نظرها و پیشنهادهایشان را با ما در میان گذاشته و کمک کرده اند، این شرکت همیشه در حال تکاپو و کوشش برای یادگیری و بهبود مسیرها و روشها و تولیداتش باشد و برای مشتریانش همیشه جایی مطمئن بماند.
+در عین حال، همیشه بهترین مشورت ها را نیز از مهندسان جوانی گرفته ایم که با این شرکت در تماس بوده و نظرها و پیشنهادهایشان را با ما در میان گذاشته و کمک کرده اند، این شرکت همیشه در حال تکاپو و کوشش برای یادگیری و بهبود مسیرها و روشها و تولیداتش باشد و برای مشتریانش همیشه جایی مطمئن بماند.{% endblocktrans%}
                 </p>
             </div>
         </div>
@@ -53,24 +53,24 @@
         <div class="">
             <div class="header" >
                 <div class="">
-                    <h2 class="elementor-heading-title elementor-size-xl">سؤالات متداول</h2>
+                    <h2 class="elementor-heading-title elementor-size-xl">{% translate 'سؤالات متداول' %}</h2>
                 </div>
             </div>
             <div class="header">
                 <div class="elementor-widget-container">
-                    <h3 class="elementor-heading-title elementor-size-default">شیوه ارسال تجهیزات</h3>
+                    <h3 class="elementor-heading-title elementor-size-default">{% translate 'شیوه ارسال تجهیزات' %}</h3>
                 </div>
             </div>
             <div class="accordion" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
-                        از کجا مطمئن باشم کالاهایی که به دستم می رسد سالم تحویل می شود؟
+                        {% translate 'از کجا مطمئن باشم کالاهایی که به دستم می رسد سالم تحویل می شود؟' %}
                     </button>
                   </h2>
                   <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                     <div class="accordion-body">
-                      <strong>کالاهای خریداری شده به طور مناسب بسته‌بندی شده و با پلاستیک‌های حباب دار و کارتن، بسته‌بندی شده و ارسال می‌گردند و نکات ایمنی جهت حمل برای تجهیزات اعمال می‌گردد.
+                      <strong>{% blocktrans %}کالاهای خریداری شده به طور مناسب بسته‌بندی شده و با پلاستیک‌های حباب دار و کارتن، بسته‌بندی شده و ارسال می‌گردند و نکات ایمنی جهت حمل برای تجهیزات اعمال می‌گردد{%endblocktrans%}.
 
                       </strong>
                     </div>
@@ -111,12 +111,12 @@
             <div class="accordion" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
                         آیا امکان خرید قسطی وجود دارد؟
                     
                     </button>
                   </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                  <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                       <strong>
                         پرداخت نقدی ایده آل هر شرکتی است، اما گاهی با شرایط مشتری هماهنگ نیست و کسی که تازه کسب و کاری راه می‌اندازد، شاید به هر دلیلی نتواند، کل هزینه دستگاه‌ها را به طور نقدی پرداخت کند. از این رو این امکانی پیش‌بینی شده است که مشتریان با پرداخت بخشی از مبلغ خرید به صورت نقدی، بقیه هزینه‌ها را در اقساط چندین ماهه پرداخت کنند.
@@ -126,12 +126,12 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="false" aria-controls="panelsStayOpen-collapseFive">
                         در چه شرایطی، امکان تخفیف وجود دارد؟
                     
                     </button>
                   </h2>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse">
                     <div class="accordion-body">
                       <strong>
                         با خرید نقدی، به میزان ۷ درصد به مشتریان تخفیف داده می‌شود.
@@ -142,12 +142,12 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSix" aria-expanded="false" aria-controls="panelsStayOpen-collapseSix">
                         آیا امکان پرداخت با چک، ممکن است؟
                     
                     </button>
                   </h2>
-                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         بله، این شرکت شرایط متنوع پرداخت را برای مشتریان خود فراهم نموده است از جمله پرداخت به صورت چک که با تنفس ۲ ماهه انجام می‌گردد. لذا با توجه به مشکلات شرکت های در حال تأسیس و عدم امکان درآمدزا بودن آنها در ۲ ماهه اول تأسیس، این شرکت چک‌های پرداختی را ۲ ماه پس از خرید تجهیزات، در نظر می‌گیرد.
 
@@ -156,12 +156,12 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="false" aria-controls="panelsStayOpen-collapseNine">
                         شرایط پرداخت با چک چگونه است؟
 
                       </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div id="panelsStayOpen-collapseNine" class="accordion-collapse collapse">
                       <div class="accordion-body">
                         پرداخت چک‌های ماهانه با تنفس ۲ ماهه و در ۳ فقره چک ۲، ۳ و ۴ ماهه می‌باشد.
 
@@ -180,11 +180,11 @@
             <div class="accordion" id="accordionPanelsStayOpenExample">
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="true" aria-controls="panelsStayOpen-collapseSeven">
                         در چه شرایطی امکان عودت کالا وجود دارد؟                        
                     </button>
                   </h2>
-                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                  <div id="panelsStayOpen-collapseSeven" class="accordion-collapse collapse show">
                     <div class="accordion-body">
                       <strong>
                         در صورتی که خریدار از دستگاه استفاده نکرده باشد و به شرط سلامت کامل دستگاه‌های خریداری شده، تجهیزات فوق به هر دلیلی امکان پس دادن را دارند و این شرکت تجهیزات فروخته شده را پس گرفته و مبلغ پرداخت شده را به حساب خریدار واریز می‌کند.
@@ -195,11 +195,11 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="false" aria-controls="panelsStayOpen-collapseEight">
                         آیا پس از عودت کالا، شرکت خسارتی را دریافت می‌کند؟                        
                     </button>
                   </h2>
-                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseEight" class="accordion-collapse collapse">
                     <div class="accordion-body">
                       <strong>
                         پس دادن کالا هیچ خسارتی برای خریدار ندارد، البته اگر دستگاه‌های بسته‌بندی شده، از حالت آکبند خارج گردند (مانند دستگاه آرماتوریاب)، که دارای
@@ -210,11 +210,11 @@
                 </div>
                 <div class="accordion-item">
                   <h2 class="accordion-header">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTen" aria-expanded="false" aria-controls="panelsStayOpen-collapseTen">
                         تا چه مدت امکان عودت کالا وجود دارد؟                        
                     </button>
                   </h2>
-                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                  <div id="panelsStayOpen-collapseTen" class="accordion-collapse collapse">
                     <div class="accordion-body">
                         در صورت سلامت تجهیزات و دستگاه‌ها تا ۲ ماه پس از ارسال، امکان بازپس‌گیری کالا وجود دارد.
                     </div>
@@ -222,11 +222,11 @@
                 </div>
                 <div class="accordion-item">
                     <h2 class="accordion-header">
-                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEleven" aria-expanded="false" aria-controls="panelsStayOpen-collapseEleven">
                         در صورت عودت کالا، هزینه پست به عهده چه کسی خواهد بود؟
                       </button>
                     </h2>
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div id="panelsStayOpen-collapseEleven" class="accordion-collapse collapse">
                       <div class="accordion-body">
                         به منظور عودت محصول، هزینه پست بر عهده مشتری خواهد بود.  
                       </div>

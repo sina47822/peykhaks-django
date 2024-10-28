@@ -1,5 +1,6 @@
 {% load static %}
 {% block extra_css %}
+{% load i18n%}
 <style>
     a {
     color: rgb(108 108 108);
@@ -176,7 +177,7 @@
     <div class="form-check form-switch d-flex flex-column align-items-center justify-content-center">
     <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
     <label class="form-check-label mt-2" for="flexSwitchCheckChecked" id="flexSwitchCheckCheckedLable">
-        برای تغییر لیست از بتن به خاک روی سوییچ کلیک کنید
+        {% translate 'برای تغییر لیست از بتن به خاک روی سوییچ کلیک کنید' %}
     </label>
     </div>
 </div>
@@ -189,11 +190,11 @@
             <ul class="pricebeton">
                 <li class="header">
                     
-                    پایه سه بتن
+                    {% translate 'پایه سه بتن' %}
                     
                 </li>
                 <li class="grey">      
-                     لیست تجهیزات بتن پایه سه        
+                      {% translate 'لیست تجهیزات بتن پایه سه' %}        
                 </li>
                 <li>
                     
@@ -203,30 +204,30 @@
                     
                     
                     " target="_blank" class="list-hover">
-                    مشاهده لیست تجهیزات آزمایشگاه بتن  
+                     {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}
                         </a>           
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    دانلود شیوه نامه نظام مهندسی    </a>         
+                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}   </a>         
                             
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    لیست نیروی انسانی آزمایشگاه بتن    </a>         
+                    {% translate 'لیست نیروی انسانی آزمایشگاه بتن' %}   </a>         
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    فرمهای کاربردی    </a>         
+                    {% translate 'فرمهای کاربردی' %}   </a>         
                 </li>
                 <li class="grey">
                     <a href="{{pricelist.beton_3_document.url}}" class="buttonbeton">
                     
             
-                        دریافت پیش فاکتور پایه سه بتن
+                        {% translate 'دریافت پیش فاکتور پایه سه بتن' %}
             
             
                     </a>
@@ -238,12 +239,12 @@
             <ul class="pricebeton">
                 <li class="header">
                     
-                    پایه دو بتن
+                    {% translate 'پایه دو بتن' %}
                     
                 </li>
                 <li class="grey">
                     
-                    لیست تجهیزات بتن پایه دو
+                    {% translate 'لیست تجهیزات بتن پایه دو' %}
             
                 </li>
                 <li>
@@ -254,30 +255,30 @@
                     
                     
                     " target="_blank" class="list-hover">
-                    مشاهده لیست تجهیزات آزمایشگاه بتن  
+                    {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}  
                         </a>           
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    دانلود شیوه نامه نظام مهندسی    </a>         
+                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
                             
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    لیست نیروی انسانی آزمایشگاه بتن    </a>         
+                    {% translate 'لیست نیروی انسانی آزمایشگاه بتن' %}    </a>         
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    فرمهای کاربردی    </a>         
+                    {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey">
                         <a href="{{pricelist.beton_2_document.url}}" class="buttonbeton">
 
                     
-                    دریافت پیش فاکتور پایه دو بتن
+                    {% translate 'دریافت پیش فاکتور پایه دو بتن' %}
             
                     </a>
                 </li>
@@ -288,12 +289,12 @@
             <ul class="pricebeton">
                 <li class="header">
                     
-                    پایه یک بتن
+                    {% translate 'پایه یک بتن' %}
                     
                     </li>
                 <li class="grey">
                     
-                    لیست تجهیزات بتن پایه یک
+                    {% translate 'لیست تجهیزات بتن پایه یک' %}
                 </li>
                 <li>
                     
@@ -303,30 +304,30 @@
                     
                     
                     " target="_blank" class="list-hover">
-                    مشاهده لیست تجهیزات آزمایشگاه بتن  
+                    {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}  
                         </a>           
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    دانلود شیوه نامه نظام مهندسی    </a>         
+                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
                             
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    لیست نیروی انسانی آزمایشگاه بتن    </a>         
+                    {% translate 'لیست نیروی انسانی آزمایشگاه بتن' %}    </a>         
                 </li>
                 <li>
                     
                     <a href="#" class="list-hover">
-                    فرمهای کاربردی    </a>         
+                    {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey">
                     <a href="{{pricelist.beton_1_document.url}}" class="buttonbeton">
 
                     
-                    دریافت پیش فاکتور پایه یک بتن
+                    {% translate 'دریافت پیش فاکتور پایه یک بتن' %}
             
                     </a>
                 </li>
@@ -344,12 +345,12 @@
         <ul class="price">
             <li class="header">
                 
-                پایه سه خاک
+                {% translate 'پایه سه خاک' %}
                 
                 </li>
             <li class="grey">
                 
-        لیست تجهیزات پایه سه خاک
+        {% translate 'لیست تجهیزات پایه سه خاک' %}
 
         </li>
             <li>
@@ -359,20 +360,20 @@
 
 
         " target="_blank" class="list-hover">
-        مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک  
+        {% translate 'مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک' %}  
             </a>           
                 </li>
             <li>
                 
         <a href="#" class="list-hover">
-        دانلود شیوه نامه نظام مهندسی    </a>         
+        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
                 
                 </li>
             <li>
                 
         <a href="#" class="list-hover">
 
-        لیست نیروی انسانی آزمایشگاه خاک   
+        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
 
 
         </a>
@@ -380,13 +381,13 @@
             <li>
                 
         <a href="#" class="list-hover">
-        فرمهای کاربردی    </a>         
+        {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey"><a href="{{pricelist.khak_3_document.url}}" class="buttonbeton">
 
                 
 
-            دریافت پیش فاکتور پایه سه خاک
+            {% translate 'دریافت پیش فاکتور پایه سه خاک' %}
 
                 </a></li>
         </ul>
@@ -396,11 +397,11 @@
         <ul class="price">
             <li class="header">
                 
-        پایه دو خاک        
+        {% translate 'پایه دو خاک' %}        
                 </li>
             <li class="grey">
                 
-        لیست تجهیزات پایه دو خاک
+        {% translate 'لیست تجهیزات پایه دو خاک' %}
                 </li>
             <li>
                 
@@ -411,13 +412,13 @@
 
 
         " target="_blank" class="list-hover">
-        مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک  
+        {% translate 'مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک' %}  
             </a>           
                 </li>
             <li>
                 
         <a href="#" class="list-hover">
-        دانلود شیوه نامه نظام مهندسی    </a>         
+        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
                 
                 </li>
             <li>
@@ -425,20 +426,20 @@
         <a href="#" class="list-hover">
             
 
-        لیست نیروی انسانی آزمایشگاه خاک   
+        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
 
         </a>         
                 </li>
             <li>
                 
         <a href="#" class="list-hover">
-        فرمهای کاربردی    </a>         
+        {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey"><a href="{{pricelist.khak_2_document.url}}" class="buttonbeton">
 
                 
 
-            دریافت پیش فاکتور پایه دو خاک
+            {% translate 'دریافت پیش فاکتور پایه دو خاک' %}
 
                 </a></li>
         </ul>
@@ -448,12 +449,12 @@
         <ul class="price">
             <li class="header">
                 
-        پایه یک خاک
+        {% translate 'پایه یک خاک' %}
 
                 </li>
             <li class="grey">
                 
-        لیست تجهیزات پایه یک خاک
+        {% translate 'لیست تجهیزات پایه یک خاک' %}
                 </li>
             <li>
                 
@@ -463,20 +464,20 @@
 
 
         " target="_blank" class="list-hover">
-        مشاهده لیست تجهیزات آزمایشگاه خاک
+        {% translate 'مشاهده لیست تجهیزات آزمایشگاه خاک' %}
         </a>           
                 </li>
             <li>
                 
         <a href="#" class="list-hover">
-        دانلود شیوه نامه نظام مهندسی    </a>         
+        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
                 
                 </li>
             <li>
                 
         <a href="#" class="list-hover">
 
-        لیست نیروی انسانی آزمایشگاه خاک   
+        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
 
 
         </a>         
@@ -484,12 +485,12 @@
             <li>
                 
         <a href="#" class="list-hover">
-        فرمهای کاربردی    </a>         
+        {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey"><a href="{{pricelist.khak_1_document.url}}" class="buttonbeton">
 
                 
-        دریافت پیش فاکتور پایه یک خاک
+        {% translate 'دریافت پیش فاکتور پایه یک خاک' %}
 
             </a></li>
         </ul>
