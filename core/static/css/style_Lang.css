@@ -1,0 +1,80 @@
+@font-face {
+	font-family: IRANSans;
+	src: url('../fonts/IRANSans/IRANSansWeb.eot');
+	src: url('../fonts/IRANSans/IRANSansWeb.eot') format('embedded-opentype'), url('../fonts/IRANSans/IRANSansWeb(FaNum).woff') format('woff'), url('../fonts/IRANSans/IRANSansWeb.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal
+}
+@font-face {
+	font-family: vazir;
+	src: url('../fonts/vazir/Vazir-Light-FD-WOL.eot');
+	src: url('../fonts/vazir/Vazir-Light-FD-WOL.eot') format('embedded-opentype'), url('../fonts/vazir/Vazir-Light-FD-WOL.woff') format('woff'), url('../fonts/vazir/Vazir-Light-FD-WOL.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal
+}
+@font-face {
+	font-family: vazir-bold;
+	src: url('../fonts/vazir/vazir-Bold.eot');
+	src: url('../fonts/vazir/vazir-Blod.eot') format('embedded-opentype'), url('../fonts/vazir/Vazir-Bold-FD.woff') format('woff'), url('../fonts/vazir/vazir-Bold.ttf') format('truetype');
+	font-weight: 400;
+	font-style: normal
+}
+
+@font-face {
+    font-family: 'Amiri';
+    src: url('../fonts/amiri/Amiri-Regular.woff2') format('woff2'), url('../fonts/amiri/Amiri-Regular.ttf') format('woff'), url('../fonts/amiri/Amiri-Bold.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* استایل مخصوص زبان عربی */
+.fa {
+    font-family: "IRANSans", sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* استایل مخصوص زبان عربی */
+.ar header {
+    font-family: 'Amiri', sans-serif;
+    direction: rtl;
+    text-align: right;
+}
+
+/* استایل مخصوص زبان ترکی */
+.tr header {
+    font-family: 'Arial', sans-serif;
+    direction: ltr;
+    text-align: left;
+}
+
+/* استایل مخصوص زبان انگلیسی */
+.en header {
+    font-family: 'Arial', sans-serif;
+    direction: ltr;
+    text-align: left;
+}
+
+/* Apply global text alignment for LTR languages */
+@media (min-width: 992px) {
+    body.en .text-lg-start {
+        text-align: left !important;
+    }
+}
+body.en .dropdown-menu {
+    text-align: left !important;
+}
+
+.start-30 {
+    right: 60% !important;
+}
+.top-30 {
+    top: 30% !important;
+}
+@media (min-width: 576px) {
+    body.en .justify-content-sm-start {
+        -webkit-box-pack: start !important;
+        -ms-flex-pack: start !important;
+        justify-content: flex-end !important;
+    }
+}

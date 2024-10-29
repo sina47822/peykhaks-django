@@ -1,7 +1,7 @@
 {% load static %}
 {% load i18n %}
 <!DOCTYPE html>
-<html lang="fa" dir="rtl">
+<html lang="fa" dir="{% if LANGUAGE_CODE == 'fa' %}rtl{% elif LANGUAGE_CODE == 'ar' %}rtl{% elif LANGUAGE_CODE == 'tr' %}rtl{% else %}ltr{% endif %}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" >
@@ -44,7 +44,7 @@
         })(window,document,'script','dataLayer','GTM-KK958LZT');</script>
     <!-- End Google Tag Manager -->
 </head>
-<body>
+<body class="{% if LANGUAGE_CODE == 'en' %}en{% elif LANGUAGE_CODE == 'ar' %}ar{% elif LANGUAGE_CODE == 'tr' %}tr{% endif %}">
     {% include "../partials/header.html"%}
 
     {% block content %}

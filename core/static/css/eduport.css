@@ -3,27 +3,7 @@
  * Copyright 2011-2023 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
- @font-face {
-	font-family: IRANSans;
-	src: url('../fonts/IRANSans/IRANSansWeb.eot');
-	src: url('../fonts/IRANSans/IRANSansWeb.eot') format('embedded-opentype'), url('../fonts/IRANSans/IRANSansWeb(FaNum).woff') format('woff'), url('../fonts/IRANSans/IRANSansWeb.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal
-}
-@font-face {
-	font-family: vazir;
-	src: url('../fonts/vazir/Vazir-Light-FD-WOL.eot');
-	src: url('../fonts/vazir/Vazir-Light-FD-WOL.eot') format('embedded-opentype'), url('../fonts/vazir/Vazir-Light-FD-WOL.woff') format('woff'), url('../fonts/vazir/Vazir-Light-FD-WOL.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal
-}
-@font-face {
-	font-family: vazir-bold;
-	src: url('../fonts/vazir/vazir-Bold.eot');
-	src: url('../fonts/vazir/vazir-Blod.eot') format('embedded-opentype'), url('../fonts/vazir/Vazir-Bold-FD.woff') format('woff'), url('../fonts/vazir/vazir-Bold.ttf') format('truetype');
-	font-weight: 400;
-	font-style: normal
-}
+
 :root,
 [data-bs-theme=light] {
   --bs-blue: #1d3b53;
