@@ -17,26 +17,16 @@
         <!-- Language-specific URLs (hreflang) for multi-language support -->
     {% if LANGUAGE_CODE == 'fa' %}
         <link rel="alternate" hreflang="fa" href="{{ request.build_absolute_uri }}">
-        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri|replace:"fa","en" }}">
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri}}">
     {% elif LANGUAGE_CODE == 'en' %}
         <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri }}">
-        <link rel="alternate" hreflang="fa" href="{{ request.build_absolute_uri|replace:"en","fa" }}">
+        <link rel="alternate" hreflang="fa" href="{{ request.build_absolute_uri}}">
     {% elif LANGUAGE_CODE == 'ar' %}
         <link rel="alternate" hreflang="ar" href="{{ request.build_absolute_uri }}">
-        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri|replace:"ar","en" }}">
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri}}">
     {% elif LANGUAGE_CODE == 'tr' %}
         <link rel="alternate" hreflang="tr" href="{{ request.build_absolute_uri }}">
-        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri|replace:"tr","en" }}">
-    {% endif %}
-
-    <!-- Open Graph Meta Tags for Social Media Optimization -->
-    <meta property="og:title" content="PeyKhakSang | {% block title %}{% endblock title %}">
-    <meta property="og:description" content="{% block seodescription %}{% endblock seodescription %}">
-    <meta property="og:url" content="{{ request.build_absolute_uri }}">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="{{ LANGUAGE_CODE }}">
-    {% if seo.image %}
-        <meta property="og:image" content="{% block seoimage %}{% endblock seoimage %}">
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri}}">
     {% endif %}
 
     <meta name="robots" content="index, follow">
