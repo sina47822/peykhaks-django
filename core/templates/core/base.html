@@ -14,16 +14,40 @@
 
     <!-- Additional SEO tags -->
     <link rel="canonical" href="{{ request.build_absolute_uri }}">
+        <!-- Language-specific URLs (hreflang) for multi-language support -->
+    {% if LANGUAGE_CODE == 'fa' %}
+        <link rel="alternate" hreflang="fa" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri|replace:"fa","en" }}">
+    {% elif LANGUAGE_CODE == 'en' %}
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="fa" href="{{ request.build_absolute_uri|replace:"en","fa" }}">
+    {% elif LANGUAGE_CODE == 'ar' %}
+        <link rel="alternate" hreflang="ar" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri|replace:"ar","en" }}">
+    {% elif LANGUAGE_CODE == 'tr' %}
+        <link rel="alternate" hreflang="tr" href="{{ request.build_absolute_uri }}">
+        <link rel="alternate" hreflang="en" href="{{ request.build_absolute_uri|replace:"tr","en" }}">
+    {% endif %}
+
+    <!-- Open Graph Meta Tags for Social Media Optimization -->
+    <meta property="og:title" content="PeyKhakSang | {% block title %}{% endblock title %}">
+    <meta property="og:description" content="{% block seodescription %}{% endblock seodescription %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="{{ LANGUAGE_CODE }}">
+    {% if seo.image %}
+        <meta property="og:image" content="{% block seoimage %}{% endblock seoimage %}">
+    {% endif %}
+
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="ZLktwF583UYaen4OdEUckuhnv7cGAimYXnvyYBD0nPM" />    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png'%}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicon/apple-touch-icon.png' %}">
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon-32x32.png'%}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon-16x16.png'%}">
     <link rel="manifest" href="{% static 'favicon/site.webmanifest'%}">
 
     {% include "./css-files.html" %}
-
     {% block extra_css %} {% endblock extra_css %}
-
     {% block extra_css_no_compress %} {% endblock extra_css_no_compress %}
 
     <!-- Google tag (gtag.js) -->
@@ -45,6 +69,9 @@
     <!-- End Google Tag Manager -->
 </head>
 <body class="{% if LANGUAGE_CODE == 'en' %}en{% elif LANGUAGE_CODE == 'ar' %}ar{% elif LANGUAGE_CODE == 'tr' %}tr{% endif %}">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KK958LZT" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     {% include "../partials/header.html"%}
 
     {% block content %}
