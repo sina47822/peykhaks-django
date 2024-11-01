@@ -74,7 +74,13 @@
 					</li>
 				{% endfor %}
 			</ul>
-
+			<!-- Catalog START -->
+			<div class=" ms-1 ms-lg-0">
+				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
+					{% translate 'دانلود کاتالوگ' %}
+				</a>
+			</div>
+			<!-- Catalog START -->
 		</div>
 	</nav>
 	<!-- Nav END -->
@@ -348,13 +354,6 @@
 					</div>
 				</div>
 				<!-- Nav Search END -->
-				<!-- Catalog START -->
-				<div class=" ms-1 ms-lg-0">
-					<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
-						{% translate 'دانلود کاتالوگ' %}
-					</a>
-				</div>
-				<!-- Catalog START -->
 			</div>
 
 			<!-- Main navbar END -->
