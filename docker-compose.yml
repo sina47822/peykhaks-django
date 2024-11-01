@@ -9,6 +9,7 @@ services:
     volumes:
       - ./core:/app
       - ./core/static:/app/static
+      - ./core/locale:/app/locale
       - ./core/media:/app/media
       - static_volume:/app/media
       - media_volume:/app/media

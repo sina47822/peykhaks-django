@@ -43,6 +43,10 @@ def set_language(request):
     return JsonResponse({'status': 'error', 'message': 'Language not provided'})
 
 def index(request):
+    # Check if the language is not already set in session
+    if 'django_language' not in request.session:
+        activate('fa')  # Set default language to Farsi
+        request.session['django_language'] = 'fa'  # Store language in session
     posts = Post.objects.all().order_by('-id')
     products = Product.objects.all().order_by('-publish_date')
     categories = Category.objects.all()

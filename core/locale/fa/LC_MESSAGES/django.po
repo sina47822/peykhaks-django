@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-29 18:39+0330\n"
+"POT-Creation-Date: 2024-10-29 15:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,301 +18,301 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: .\core\settings.py:144
+#: core/settings.py:152
 msgid "Farsi"
 msgstr ""
 
-#: .\core\settings.py:145
+#: core/settings.py:153
 msgid "English"
 msgstr ""
 
-#: .\core\settings.py:146
+#: core/settings.py:154
 msgid "Arabic"
 msgstr ""
 
-#: .\product\models.py:16
+#: product/models.py:16
 msgid "استاندارد ASTM"
 msgstr ""
 
-#: .\product\models.py:25
+#: product/models.py:25
 msgid "استاندارد آشو"
 msgstr ""
 
-#: .\product\models.py:34
+#: product/models.py:34
 msgid "استاندارد ایران"
 msgstr ""
 
-#: .\product\models.py:47
+#: product/models.py:47
 msgid "استانداردها"
 msgstr ""
 
-#: .\product\models.py:63 .\product\models.py:76
-#: .\templates\partials\navs\center-nav.html:29
+#: product/models.py:63 product/models.py:76
+#: templates/partials/navs/center-nav.html:29
 msgid "دسته بندی محصولات"
 msgstr ""
 
-#: .\product\models.py:104 .\website\models.py:45
+#: product/models.py:104 website/models.py:45
 msgid "تگ ها"
 msgstr ""
 
-#: .\product\models.py:119
+#: product/models.py:119
 msgid "عنوان محصول"
 msgstr ""
 
-#: .\product\models.py:120
+#: product/models.py:120
 msgid "اسلاگ محصول"
 msgstr ""
 
-#: .\product\models.py:121
+#: product/models.py:121
 msgid "کد محصول"
 msgstr ""
 
-#: .\product\models.py:122
+#: product/models.py:122
 msgid "متن محصول"
 msgstr ""
 
-#: .\product\models.py:123
+#: product/models.py:123
 msgid "خلاصه متن"
 msgstr ""
 
-#: .\product\models.py:124
+#: product/models.py:124
 msgid "قیمت محصول"
 msgstr ""
 
-#: .\product\models.py:125
+#: product/models.py:125
 msgid "قیمت با تخفیف"
 msgstr ""
 
-#: .\product\models.py:126
+#: product/models.py:126
 msgid "تصویر عکس"
 msgstr ""
 
-#: .\product\models.py:129
+#: product/models.py:129
 msgid "وضعیت محصول"
 msgstr ""
 
-#: .\product\models.py:131
+#: product/models.py:131
 msgid "نمره محصول"
 msgstr ""
 
-#: .\product\models.py:135
+#: product/models.py:135
 msgid "زمان به روز رسانی"
 msgstr ""
 
-#: .\product\models.py:136
+#: product/models.py:136
 msgid "زمان تولید"
 msgstr ""
 
-#: .\product\models.py:137 .\website\models.py:76
+#: product/models.py:137 website/models.py:76
 msgid "زمان انتشار"
 msgstr ""
 
-#: .\product\models.py:139
+#: product/models.py:139
 msgid "مجموع بازدید"
 msgstr ""
 
-#: .\product\models.py:140
+#: product/models.py:140
 msgid "فعال بودن"
 msgstr ""
 
-#: .\product\models.py:142
+#: product/models.py:142
 msgid "تعداد"
 msgstr ""
 
-#: .\product\models.py:143
+#: product/models.py:143
 msgid "استاندارد"
 msgstr ""
 
-#: .\product\models.py:144
+#: product/models.py:144
 msgid "اندازه"
 msgstr ""
 
-#: .\product\models.py:145
+#: product/models.py:145
 msgid "گارانتی"
 msgstr ""
 
-#: .\product\models.py:146
+#: product/models.py:146
 msgid "زمان ارسال"
 msgstr ""
 
-#: .\product\models.py:159 .\templates\partials\footer.html:42
-#: .\templates\partials\navs\center-nav.html:145
-#: .\templates\partials\navs\center-nav.html:153
-#: .\templates\productcat\asphalt.html:38
-#: .\templates\productcat\concrete.html:38 .\templates\productcat\rock.html:38
-#: .\templates\productcat\soil.html:38 .\templates\productcat\weld.html:38
+#: product/models.py:159 templates/partials/footer.html:42
+#: templates/partials/navs/center-nav.html:145
+#: templates/partials/navs/center-nav.html:153
+#: templates/productcat/asphalt.html:38 templates/productcat/concrete.html:38
+#: templates/productcat/rock.html:38 templates/productcat/soil.html:38
+#: templates/productcat/weld.html:38
 msgid "محصولات"
 msgstr ""
 
-#: .\product\models.py:164
+#: product/models.py:164
 msgid "نوع رسانه"
 msgstr ""
 
-#: .\product\models.py:165
+#: product/models.py:165
 msgid "فایل مدیا"
 msgstr ""
 
-#: .\product\models.py:170
+#: product/models.py:170
 msgid "تصاویر محصولات"
 msgstr ""
 
-#: .\product\models.py:175
+#: product/models.py:175
 msgid "نام مشخصه محصول"
 msgstr ""
 
-#: .\product\models.py:176
+#: product/models.py:176
 msgid "مقدار مشخصه محصول"
 msgstr ""
 
-#: .\product\models.py:178
+#: product/models.py:178
 msgid "مشخصات محصولات"
 msgstr ""
 
-#: .\product\models.py:185
+#: product/models.py:185
 msgid "عنوان سئو محصول"
 msgstr ""
 
-#: .\product\models.py:186
+#: product/models.py:186
 msgid "توضیحات سئو محصول"
 msgstr ""
 
-#: .\product\models.py:187
+#: product/models.py:187
 msgid "عکس سئو محصول"
 msgstr ""
 
-#: .\product\models.py:192
+#: product/models.py:192
 msgid "سئو محصولات"
 msgstr ""
 
-#: .\product\models.py:196
+#: product/models.py:196
 msgid "عنوان سئو تگ"
 msgstr ""
 
-#: .\product\models.py:197
+#: product/models.py:197
 msgid "توضیحات سئو تگ"
 msgstr ""
 
-#: .\product\models.py:198
+#: product/models.py:198
 msgid "تصویر سئو تگ"
 msgstr ""
 
-#: .\product\models.py:203
+#: product/models.py:203
 msgid "سئو تگ"
 msgstr ""
 
-#: .\product\models.py:207
+#: product/models.py:207
 msgid "عنوان سئو دسته بندی"
 msgstr ""
 
-#: .\product\models.py:208
+#: product/models.py:208
 msgid "توضیحات سئو دسته بندی"
 msgstr ""
 
-#: .\product\models.py:209
+#: product/models.py:209
 msgid "تصویر سئو دسته بندی"
 msgstr ""
 
-#: .\product\models.py:214
+#: product/models.py:214
 msgid "سئو دسته بندی"
 msgstr ""
 
-#: .\product\models.py:218
+#: product/models.py:218
 msgid "عنوان لیست قیمت"
 msgstr ""
 
-#: .\product\models.py:219
+#: product/models.py:219
 msgid "تاریخ به روز رسانی لیست قیمت"
 msgstr ""
 
-#: .\product\models.py:220
+#: product/models.py:220
 msgid "فایل بتن پایه یک"
 msgstr ""
 
-#: .\product\models.py:221
+#: product/models.py:221
 msgid "فایل بتن پایه دو"
 msgstr ""
 
-#: .\product\models.py:222
+#: product/models.py:222
 msgid "فایل بتن پایه سه"
 msgstr ""
 
-#: .\product\models.py:223
+#: product/models.py:223
 msgid "فایل خاک پایه یک"
 msgstr ""
 
-#: .\product\models.py:224
+#: product/models.py:224
 msgid "فایل خاک پایه دو"
 msgstr ""
 
-#: .\product\models.py:225
+#: product/models.py:225
 msgid "فایل خاک پایه سه"
 msgstr ""
 
-#: .\product\models.py:227
+#: product/models.py:227
 msgid "لیست قیمت محصولات"
 msgstr ""
 
-#: .\product\models.py:237
+#: product/models.py:237
 msgid "محصولات مورد علاقه"
 msgstr ""
 
-#: .\templates\errors\400.html:18
+#: templates/errors/400.html:18
 msgid " ارور 400 "
 msgstr ""
 
-#: .\templates\errors\400.html:21 .\templates\errors\403.html:22
-#: .\templates\errors\404.html:22 .\templates\errors\500.html:22
+#: templates/errors/400.html:21 templates/errors/403.html:22
+#: templates/errors/404.html:22 templates/errors/500.html:22
 msgid "اوه نه، مشکلی پیش آمد!"
 msgstr ""
 
-#: .\templates\errors\400.html:23
+#: templates/errors/400.html:23
 msgid ""
 "شما ارور 400 دریافت کرده اید به این معنی که در باز کردن این صفحه از سایت "
 "مشکلی پیش آمده. با پشتیبان سایت تماس بگیرید"
 msgstr ""
 
-#: .\templates\errors\400.html:25 .\templates\errors\403.html:26
-#: .\templates\errors\404.html:26 .\templates\errors\500.html:26
+#: templates/errors/400.html:25 templates/errors/403.html:26
+#: templates/errors/404.html:26 templates/errors/500.html:26
 msgid "برگشت به صفحه اصلی"
 msgstr ""
 
-#: .\templates\errors\403.html:19
+#: templates/errors/403.html:19
 msgid " ارور 403 "
 msgstr ""
 
-#: .\templates\errors\403.html:24
+#: templates/errors/403.html:24
 msgid ""
 "شما ارور 403 دریافت کرده اید به این معنی که مجاز به ورود به این صفحه نمیباشید"
 msgstr ""
 
-#: .\templates\errors\404.html:19
+#: templates/errors/404.html:19
 msgid " ارور 404 "
 msgstr ""
 
-#: .\templates\errors\404.html:24
+#: templates/errors/404.html:24
 msgid "یا مشکلی پیش آمده یا این صفحه دیگر وجود ندارد."
 msgstr ""
 
-#: .\templates\errors\500.html:19
+#: templates/errors/500.html:19
 msgid " ارور 500 "
 msgstr ""
 
-#: .\templates\errors\500.html:24
+#: templates/errors/500.html:24
 msgid ""
 "شما ارور 500 دریافت کرده اید به این معنی که سرور دچار مشکل شده است. سریعا با "
 "پشتیبان سایت تماس بگیرید"
 msgstr ""
 
-#: .\templates\partials\alert.html:13
+#: templates/partials/alert.html:13
 msgid ""
 "فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور  ، "
 msgstr ""
 
-#: .\templates\partials\alert.html:13 .\templates\partials\pop-up.html:14
+#: templates/partials/alert.html:13 templates/partials/pop-up.html:14
 msgid "دریافت پیش فاکتور"
 msgstr ""
 
-#: .\templates\partials\footer.html:19
+#: templates/partials/footer.html:19
 msgid ""
 "وبسایت پی خاک سنگ برای این به وجود آمده که به دوستان خود کمک کند آزمایشگاه "
 "خود را راه اندازی کنند این کمک از طریق بوجود آوردن مقالات مناسب انجام "
@@ -320,558 +320,557 @@ msgid ""
 "و امکان خرید قسطی و انواع فرم ها و کتاب های مورد نیاز شما است"
 msgstr ""
 
-#: .\templates\partials\footer.html:37
+#: templates/partials/footer.html:37
 msgid "لینک های مفید"
 msgstr ""
 
-#: .\templates\partials\footer.html:39
-#: .\templates\partials\navs\center-nav.html:142
-#: .\templates\partials\navs\center-nav.html:150
-#: .\templates\partials\slider.html:170
+#: templates/partials/footer.html:39
+#: templates/partials/navs/center-nav.html:142
+#: templates/partials/navs/center-nav.html:150
+#: templates/partials/slider.html:170
 msgid "درباره ما"
 msgstr ""
 
-#: .\templates\partials\footer.html:40
-#: .\templates\partials\navs\center-nav.html:143
-#: .\templates\partials\navs\center-nav.html:151
-#: .\templates\website\contact.html:28 .\templates\website\contact.html:34
+#: templates/partials/footer.html:40
+#: templates/partials/navs/center-nav.html:143
+#: templates/partials/navs/center-nav.html:151
+#: templates/website/contact.html:28 templates/website/contact.html:34
 msgid "ارتباط با ما"
 msgstr ""
 
-#: .\templates\partials\footer.html:41 .\website\models.py:83
+#: templates/partials/footer.html:41 website/models.py:83
 msgid "مقالات"
 msgstr ""
 
-#: .\templates\partials\footer.html:43
+#: templates/partials/footer.html:43
 msgid "سوالات متداول"
 msgstr ""
 
-#: .\templates\partials\footer.html:49
+#: templates/partials/footer.html:49
 msgid "راهنما و پشتیبانی"
 msgstr ""
 
-#: .\templates\partials\footer.html:51
+#: templates/partials/footer.html:51
 msgid "داکیومنت"
 msgstr ""
 
-#: .\templates\partials\footer.html:52
+#: templates/partials/footer.html:52
 msgid "ارسال تیکت"
 msgstr ""
 
-#: .\templates\partials\footer.html:53
+#: templates/partials/footer.html:53
 msgid "نقشه سایت"
 msgstr ""
 
-#: .\templates\partials\footer.html:54
+#: templates/partials/footer.html:54
 msgid "مشاوره رایگان"
 msgstr ""
 
-#: .\templates\partials\footer.html:55
+#: templates/partials/footer.html:55
 msgid "شرایط و قوانین"
 msgstr ""
 
-#: .\templates\partials\footer.html:61
+#: templates/partials/footer.html:61
 msgid "لینک های سریع"
 msgstr ""
 
-#: .\templates\partials\footer.html:67
+#: templates/partials/footer.html:67
 msgid "کاتالوگ"
 msgstr ""
 
-#: .\templates\partials\footer.html:69
-#: .\templates\partials\navs\center-nav.html:277
+#: templates/partials/footer.html:69
+#: templates/partials/navs/center-nav.html:277
 msgid "دانلود کاتالوگ"
 msgstr ""
 
-#: .\templates\partials\footer.html:82
+#: templates/partials/footer.html:82
 msgid "تماس با ما"
 msgstr ""
 
-#: .\templates\partials\footer.html:85
+#: templates/partials/footer.html:85
 msgid "تلفن:"
 msgstr ""
 
-#: .\templates\partials\footer.html:86
+#: templates/partials/footer.html:86
 msgid "33163222"
 msgstr ""
 
-#: .\templates\partials\footer.html:87
+#: templates/partials/footer.html:87
 msgid "33076061"
 msgstr ""
 
-#: .\templates\partials\footer.html:88
+#: templates/partials/footer.html:88
 msgid "(همه روزه از ساعت ۷ صبح الی ۵ عصر به جز روزهای تعطیل)"
 msgstr ""
 
-#: .\templates\partials\footer.html:91
+#: templates/partials/footer.html:91
 msgid "ایمیل:"
 msgstr ""
 
-#: .\templates\partials\footer.html:91
+#: templates/partials/footer.html:91
 msgid "peykhaksang@gmail.com"
 msgstr ""
 
-#: .\templates\partials\footer.html:92
+#: templates/partials/footer.html:92
 msgid "آدرس:"
 msgstr ""
 
-#: .\templates\partials\footer.html:92
+#: templates/partials/footer.html:92
 msgid ""
 "تهران، خیابان پیروزی، ضلع جنوب خیابان، بلوار ابوذر شمالی، نرسیده به پل اول، "
 "کوچه ششم شرقی، پلاک ۹، شرکت پی خاک سنگ"
 msgstr ""
 
-#: .\templates\partials\footer.html:118
+#: templates/partials/footer.html:118
 msgid "کلیه حقوق این وبسایت به گروه صنعتی پی خاک سنگ تعلق دارد"
 msgstr ""
 
-#: .\templates\partials\footer.html:124
+#: templates/partials/footer.html:124
 msgid "شرایط استفاده"
 msgstr ""
 
-#: .\templates\partials\footer.html:125
+#: templates/partials/footer.html:125
 msgid "قوانین سایت"
 msgstr ""
 
-#: .\templates\partials\footer.html:140
+#: templates/partials/footer.html:140
 msgid "ارائه شده توسط"
 msgstr ""
 
-#: .\templates\partials\footer.html:140
+#: templates/partials/footer.html:140
 msgid "دئودار"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:34
+#: templates/partials/navs/center-nav.html:34
 msgid "تجهیزات آزمایشگاه بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:38
+#: templates/partials/navs/center-nav.html:38
 msgid "مقاومت فشاری بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:40
-#: .\templates\partials\navs\center-nav.html:41
-#: .\templates\partials\navs\center-nav.html:42
-#: .\templates\partials\navs\center-nav.html:43
-#: .\templates\partials\navs\center-nav.html:44
-#: .\templates\partials\navs\center-nav.html:45
-#: .\templates\partials\navs\center-nav.html:52
-#: .\templates\partials\navs\center-nav.html:53
-#: .\templates\partials\navs\center-nav.html:54
-#: .\templates\partials\navs\center-nav.html:55
-#: .\templates\partials\navs\center-nav.html:56
-#: .\templates\partials\navs\center-nav.html:57
+#: templates/partials/navs/center-nav.html:40
+#: templates/partials/navs/center-nav.html:41
+#: templates/partials/navs/center-nav.html:42
+#: templates/partials/navs/center-nav.html:43
+#: templates/partials/navs/center-nav.html:44
+#: templates/partials/navs/center-nav.html:45
+#: templates/partials/navs/center-nav.html:52
+#: templates/partials/navs/center-nav.html:53
+#: templates/partials/navs/center-nav.html:54
+#: templates/partials/navs/center-nav.html:55
+#: templates/partials/navs/center-nav.html:56
+#: templates/partials/navs/center-nav.html:57
 msgid "مقالات بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:50
+#: templates/partials/navs/center-nav.html:50
 msgid "آزمایش بتن تازه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:62
+#: templates/partials/navs/center-nav.html:62
 msgid "تجهیزات آزمایش التراسونیک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:64
-#: .\templates\partials\navs\center-nav.html:65
-#: .\templates\partials\navs\center-nav.html:66
-#: .\templates\partials\navs\center-nav.html:67
-#: .\templates\partials\navs\center-nav.html:68
-#: .\templates\partials\navs\center-nav.html:69
-#: .\templates\partials\navs\center-nav.html:76
-#: .\templates\partials\navs\center-nav.html:77
-#: .\templates\partials\navs\center-nav.html:78
-#: .\templates\partials\navs\center-nav.html:79
-#: .\templates\partials\navs\center-nav.html:80
-#: .\templates\partials\navs\center-nav.html:81
-#: .\templates\partials\navs\center-nav.html:88
-#: .\templates\partials\navs\center-nav.html:89
-#: .\templates\partials\navs\center-nav.html:90
-#: .\templates\partials\navs\center-nav.html:91
-#: .\templates\partials\navs\center-nav.html:92
-#: .\templates\partials\navs\center-nav.html:93
-#: .\templates\productcat\concrete.html:55
+#: templates/partials/navs/center-nav.html:64
+#: templates/partials/navs/center-nav.html:65
+#: templates/partials/navs/center-nav.html:66
+#: templates/partials/navs/center-nav.html:67
+#: templates/partials/navs/center-nav.html:68
+#: templates/partials/navs/center-nav.html:69
+#: templates/partials/navs/center-nav.html:76
+#: templates/partials/navs/center-nav.html:77
+#: templates/partials/navs/center-nav.html:78
+#: templates/partials/navs/center-nav.html:79
+#: templates/partials/navs/center-nav.html:80
+#: templates/partials/navs/center-nav.html:81
+#: templates/partials/navs/center-nav.html:88
+#: templates/partials/navs/center-nav.html:89
+#: templates/partials/navs/center-nav.html:90
+#: templates/partials/navs/center-nav.html:91
+#: templates/partials/navs/center-nav.html:92
+#: templates/partials/navs/center-nav.html:93
+#: templates/productcat/concrete.html:55
 msgid "محصولات بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:74
+#: templates/partials/navs/center-nav.html:74
 msgid "آزمایشهای خمش بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:86
+#: templates/partials/navs/center-nav.html:86
 msgid "تعیین مدول الاستیسیته بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:99
+#: templates/partials/navs/center-nav.html:99
 msgid "تجهیزات آزمایشگاه خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:103
+#: templates/partials/navs/center-nav.html:103
 msgid "تعیین حدود روانی"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:105
-#: .\templates\partials\navs\center-nav.html:106
-#: .\templates\partials\navs\center-nav.html:107
-#: .\templates\partials\navs\center-nav.html:108
-#: .\templates\partials\navs\center-nav.html:109
-#: .\templates\partials\navs\center-nav.html:110
+#: templates/partials/navs/center-nav.html:105
+#: templates/partials/navs/center-nav.html:106
+#: templates/partials/navs/center-nav.html:107
+#: templates/partials/navs/center-nav.html:108
+#: templates/partials/navs/center-nav.html:109
+#: templates/partials/navs/center-nav.html:110
 msgid "مقالات خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:115
+#: templates/partials/navs/center-nav.html:115
 msgid "مقاومت برشی خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:117
-#: .\templates\partials\navs\center-nav.html:118
-#: .\templates\partials\navs\center-nav.html:119
-#: .\templates\partials\navs\center-nav.html:120
-#: .\templates\partials\navs\center-nav.html:121
-#: .\templates\partials\navs\center-nav.html:122
-#: .\templates\productcat\soil.html:55
+#: templates/partials/navs/center-nav.html:117
+#: templates/partials/navs/center-nav.html:118
+#: templates/partials/navs/center-nav.html:119
+#: templates/partials/navs/center-nav.html:120
+#: templates/partials/navs/center-nav.html:121
+#: templates/partials/navs/center-nav.html:122
+#: templates/productcat/soil.html:55
 msgid "محصولات خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:127
+#: templates/partials/navs/center-nav.html:127
 msgid "خرید لیست تجهیزات پایه آزمایشگاه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:128
+#: templates/partials/navs/center-nav.html:128
 msgid "راه اندازی آزمایشگاه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:129
+#: templates/partials/navs/center-nav.html:129
 msgid "کتابخانه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:130
+#: templates/partials/navs/center-nav.html:130
 msgid "نرم افزار"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:140
-#: .\templates\productcat\asphalt.html:37
-#: .\templates\productcat\concrete.html:37 .\templates\productcat\rock.html:37
-#: .\templates\productcat\soil.html:37 .\templates\productcat\weld.html:37
-#: .\templates\website\contact.html:33
+#: templates/partials/navs/center-nav.html:140
+#: templates/productcat/asphalt.html:37 templates/productcat/concrete.html:37
+#: templates/productcat/rock.html:37 templates/productcat/soil.html:37
+#: templates/productcat/weld.html:37 templates/website/contact.html:33
 msgid "صفحه اصلی"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:144
-#: .\templates\partials\navs\center-nav.html:152
+#: templates/partials/navs/center-nav.html:144
+#: templates/partials/navs/center-nav.html:152
 msgid "وبلاگ"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:148
+#: templates/partials/navs/center-nav.html:148
 msgid "صفحات"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:164
+#: templates/partials/navs/center-nav.html:164
 msgid "دانشنامه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:169
+#: templates/partials/navs/center-nav.html:169
 msgid "مقالات آزمایشگاه خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:172
+#: templates/partials/navs/center-nav.html:172
 msgid "مراحل تاسیس آزمایشگاه خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:173
-#: .\templates\partials\navs\center-nav.html:203
+#: templates/partials/navs/center-nav.html:173
+#: templates/partials/navs/center-nav.html:203
 msgid "شرایط تاسیس آزمایشگاه بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:174
+#: templates/partials/navs/center-nav.html:174
 msgid "آزﻣﺎﻳﺶ CBR (ﺗﻌﻴﻴﻦ ﻧﺴﺒﺖ ﺑﺎرﺑﺮی ﻛﺎﻟﻴﻔﺮﻧﻴﺎ)"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:175
+#: templates/partials/navs/center-nav.html:175
 msgid "آزمایش سه محوری خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:176
+#: templates/partials/navs/center-nav.html:176
 msgid "آزمایش تک‌ محوری محصورنشده"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:177
+#: templates/partials/navs/center-nav.html:177
 msgid "آزمایش تحکیم خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:178
+#: templates/partials/navs/center-nav.html:178
 msgid "آزمایش حدود اتربرگ"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:179
+#: templates/partials/navs/center-nav.html:179
 msgid "آزمایش لوژان"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:180
+#: templates/partials/navs/center-nav.html:180
 msgid "آزمایش برش مستقیم"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:181
+#: templates/partials/navs/center-nav.html:181
 msgid "انواع تیپ خاک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:182
+#: templates/partials/navs/center-nav.html:182
 msgid "آزمایش بارگذاری صفحه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:185
-#: .\templates\partials\navs\center-nav.html:205
-#: .\templates\partials\navs\center-nav.html:225
+#: templates/partials/navs/center-nav.html:185
+#: templates/partials/navs/center-nav.html:205
+#: templates/partials/navs/center-nav.html:225
 msgid "مشاهده همه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:190
+#: templates/partials/navs/center-nav.html:190
 msgid "مقالات آزمایشگاه بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:193
+#: templates/partials/navs/center-nav.html:193
 msgid "مدول الاستیسیته بتن چیست و چه کاربردهایی دارد؟"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:194
+#: templates/partials/navs/center-nav.html:194
 msgid "آزمایش اسلامپ بتن + گزارش نویسی"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:195
+#: templates/partials/navs/center-nav.html:195
 msgid "مدت زمان خشک شدن بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:196
+#: templates/partials/navs/center-nav.html:196
 msgid "آزمایش التراسونیک بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:197
+#: templates/partials/navs/center-nav.html:197
 msgid "آزمایش مقاومت فشاری بتن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:198
+#: templates/partials/navs/center-nav.html:198
 msgid "آزمایش سایش سنگدانه‌ (لس‌آنجلس ۱۹ میلی‌متر)"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:199
+#: templates/partials/navs/center-nav.html:199
 msgid "آزمایش سایش سنگدانه‌ (لس‌آنجلس ۳۷.۵ میلی‌متر)"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:200
+#: templates/partials/navs/center-nav.html:200
 msgid "آزمایش چكش اشمیت"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:201
+#: templates/partials/navs/center-nav.html:201
 msgid "آزمایش تعیین مقدار هوای مخلوط بتن تازه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:202
+#: templates/partials/navs/center-nav.html:202
 msgid "آزمایش مقاومت کششی بتن به روش دو نیم شدن"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:209
+#: templates/partials/navs/center-nav.html:209
 msgid "مقالات آزمایشگاه سیمان و سنگدانه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:212
+#: templates/partials/navs/center-nav.html:212
 msgid "آزمایش نرمی سیمان پرتلند"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:213
+#: templates/partials/navs/center-nav.html:213
 msgid "آزمایش تعیین مقدار انبساط در سیمان پرتلند"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:214
+#: templates/partials/navs/center-nav.html:214
 msgid "آزمایش تعیین دانسیته سیمان هیدرولیک"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:215
+#: templates/partials/navs/center-nav.html:215
 msgid "آزمایش گیرش سیمان با سوزن ویکات"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:216
+#: templates/partials/navs/center-nav.html:216
 msgid "آزمایش مقاومت فشاری سیمان هیدرولیکی"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:217
+#: templates/partials/navs/center-nav.html:217
 msgid "آزمایش تعیین وزن مخصوص و جذب آب سنگدانه‌های ریز"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:218
+#: templates/partials/navs/center-nav.html:218
 msgid "آزمایش تعیین مقدار دانه های سبک در مصالح دانه ای"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:219
+#: templates/partials/navs/center-nav.html:219
 msgid "آزمایش دانه بندی به روش هیدرومتری"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:220
+#: templates/partials/navs/center-nav.html:220
 msgid "آزمایش تعیین ضریب تطویل مصالح درشت دانه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:221
+#: templates/partials/navs/center-nav.html:221
 msgid "آزمایش تعیین ضریب تورق (پولکی بودن) مصالح درشت دانه"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:233
+#: templates/partials/navs/center-nav.html:233
 msgid "برای خرید لیست تجهیزات پایه آزمایشگاه خاک و بتن "
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:234
+#: templates/partials/navs/center-nav.html:234
 msgid "ثبت نام"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:235
+#: templates/partials/navs/center-nav.html:235
 msgid "را انتخاب کنید"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:244
+#: templates/partials/navs/center-nav.html:244
 msgid "تغییر زبان"
 msgstr ""
 
-#: .\templates\partials\navs\center-nav.html:266
+#: templates/partials/navs/center-nav.html:266
 msgid "جستجو..."
 msgstr ""
 
-#: .\templates\partials\pop-up.html:10
+#: templates/partials/pop-up.html:10
 msgid ""
 "فروش ویژه محصولات پی خاک سنگ از تاریخ پانزده شهریور ماه تا سی و یک شهریور "
 msgstr ""
 
-#: .\templates\partials\pop-up.html:18
+#: templates/partials/pop-up.html:18
 msgid "رد کردن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:180
+#: templates/partials/price-list.html:180
 msgid "برای تغییر لیست از بتن به خاک روی سوییچ کلیک کنید"
 msgstr ""
 
-#: .\templates\partials\price-list.html:193
+#: templates/partials/price-list.html:193
 msgid "پایه سه بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:197
+#: templates/partials/price-list.html:197
 msgid "لیست تجهیزات بتن پایه سه"
 msgstr ""
 
-#: .\templates\partials\price-list.html:207
-#: .\templates\partials\price-list.html:258
-#: .\templates\partials\price-list.html:307
+#: templates/partials/price-list.html:207
+#: templates/partials/price-list.html:258
+#: templates/partials/price-list.html:307
 msgid "مشاهده لیست تجهیزات آزمایشگاه بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:213
-#: .\templates\partials\price-list.html:264
-#: .\templates\partials\price-list.html:313
-#: .\templates\partials\price-list.html:369
-#: .\templates\partials\price-list.html:421
-#: .\templates\partials\price-list.html:473
+#: templates/partials/price-list.html:213
+#: templates/partials/price-list.html:264
+#: templates/partials/price-list.html:313
+#: templates/partials/price-list.html:369
+#: templates/partials/price-list.html:421
+#: templates/partials/price-list.html:473
 msgid "دانلود شیوه نامه نظام مهندسی"
 msgstr ""
 
-#: .\templates\partials\price-list.html:219
-#: .\templates\partials\price-list.html:270
-#: .\templates\partials\price-list.html:319
+#: templates/partials/price-list.html:219
+#: templates/partials/price-list.html:270
+#: templates/partials/price-list.html:319
 msgid "لیست نیروی انسانی آزمایشگاه بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:224
-#: .\templates\partials\price-list.html:275
-#: .\templates\partials\price-list.html:324
-#: .\templates\partials\price-list.html:384
-#: .\templates\partials\price-list.html:436
-#: .\templates\partials\price-list.html:488
+#: templates/partials/price-list.html:224
+#: templates/partials/price-list.html:275
+#: templates/partials/price-list.html:324
+#: templates/partials/price-list.html:384
+#: templates/partials/price-list.html:436
+#: templates/partials/price-list.html:488
 msgid "فرمهای کاربردی"
 msgstr ""
 
-#: .\templates\partials\price-list.html:230
+#: templates/partials/price-list.html:230
 msgid "دریافت پیش فاکتور پایه سه بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:242
+#: templates/partials/price-list.html:242
 msgid "پایه دو بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:247
+#: templates/partials/price-list.html:247
 msgid "لیست تجهیزات بتن پایه دو"
 msgstr ""
 
-#: .\templates\partials\price-list.html:281
+#: templates/partials/price-list.html:281
 msgid "دریافت پیش فاکتور پایه دو بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:292
+#: templates/partials/price-list.html:292
 msgid "پایه یک بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:297
+#: templates/partials/price-list.html:297
 msgid "لیست تجهیزات بتن پایه یک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:330
+#: templates/partials/price-list.html:330
 msgid "دریافت پیش فاکتور پایه یک بتن"
 msgstr ""
 
-#: .\templates\partials\price-list.html:348
+#: templates/partials/price-list.html:348
 msgid "پایه سه خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:353
+#: templates/partials/price-list.html:353
 msgid "لیست تجهیزات پایه سه خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:363
-#: .\templates\partials\price-list.html:415
+#: templates/partials/price-list.html:363
+#: templates/partials/price-list.html:415
 msgid "مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:376
-#: .\templates\partials\price-list.html:429
-#: .\templates\partials\price-list.html:480
+#: templates/partials/price-list.html:376
+#: templates/partials/price-list.html:429
+#: templates/partials/price-list.html:480
 msgid "لیست نیروی انسانی آزمایشگاه خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:390
+#: templates/partials/price-list.html:390
 msgid "دریافت پیش فاکتور پایه سه خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:400
+#: templates/partials/price-list.html:400
 msgid "پایه دو خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:404
+#: templates/partials/price-list.html:404
 msgid "لیست تجهیزات پایه دو خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:442
+#: templates/partials/price-list.html:442
 msgid "دریافت پیش فاکتور پایه دو خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:452
+#: templates/partials/price-list.html:452
 msgid "پایه یک خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:457
+#: templates/partials/price-list.html:457
 msgid "لیست تجهیزات پایه یک خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:467
+#: templates/partials/price-list.html:467
 msgid "مشاهده لیست تجهیزات آزمایشگاه خاک"
 msgstr ""
 
-#: .\templates\partials\price-list.html:493
+#: templates/partials/price-list.html:493
 msgid "دریافت پیش فاکتور پایه یک خاک"
 msgstr ""
 
-#: .\templates\partials\slider.html:147
+#: templates/partials/slider.html:147
 msgid "به پی خاک سنگ"
 msgstr ""
 
-#: .\templates\partials\slider.html:148
+#: templates/partials/slider.html:148
 msgid "خوش آمدید"
 msgstr ""
 
-#: .\templates\partials\slider.html:162
+#: templates/partials/slider.html:162
 msgid ""
 "سال 1384 و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و "
 "مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب "
@@ -881,78 +880,77 @@ msgid ""
 "کمک می کرد کوشش کنیم برای مشکلات و مسائل، راه حل هایی پیدا کنیم. "
 msgstr ""
 
-#: .\templates\partials\slider.html:167
+#: templates/partials/slider.html:167
 msgid "مهندسین مجرب"
 msgstr ""
 
-#: .\templates\partials\slider.html:168
+#: templates/partials/slider.html:168
 msgid "لیست خرید لوازم پایه آزمایشگاه"
 msgstr ""
 
-#: .\templates\partials\slider.html:169
+#: templates/partials/slider.html:169
 msgid "مقالات کاربردی آزمایشگاه"
 msgstr ""
 
-#: .\templates\partials\slider.html:181
+#: templates/partials/slider.html:181
 msgid "دریافت لیست قیمت تجهیزات پایه خاک و بتن"
 msgstr ""
 
-#: .\templates\partials\slider.html:194
+#: templates/partials/slider.html:194
 msgid "شرایط خرید نقدی و اقساطی از پی خاک سنگ"
 msgstr ""
 
-#: .\templates\productcat\asphalt.html:39
+#: templates/productcat/asphalt.html:39
 msgid "آسفالت"
 msgstr ""
 
-#: .\templates\productcat\asphalt.html:55
+#: templates/productcat/asphalt.html:55
 msgid "محصولات آسفالت"
 msgstr ""
 
-#: .\templates\productcat\asphalt.html:103
-#: .\templates\productcat\concrete.html:103
-#: .\templates\productcat\rock.html:104 .\templates\productcat\soil.html:103
-#: .\templates\productcat\weld.html:103
+#: templates/productcat/asphalt.html:103 templates/productcat/concrete.html:103
+#: templates/productcat/rock.html:104 templates/productcat/soil.html:103
+#: templates/productcat/weld.html:103
 msgid "محصولی موجود نیست"
 msgstr ""
 
-#: .\templates\productcat\concrete.html:32
+#: templates/productcat/concrete.html:32
 msgid "بخش بتن"
 msgstr ""
 
-#: .\templates\productcat\concrete.html:39
+#: templates/productcat/concrete.html:39
 msgid "بتن"
 msgstr ""
 
-#: .\templates\productcat\rock.html:39
+#: templates/productcat/rock.html:39
 msgid "سنگ"
 msgstr ""
 
-#: .\templates\productcat\rock.html:55
+#: templates/productcat/rock.html:55
 msgid "محصولات سنگ"
 msgstr ""
 
-#: .\templates\productcat\soil.html:39
+#: templates/productcat/soil.html:39
 msgid "خاک"
 msgstr ""
 
-#: .\templates\productcat\weld.html:39
+#: templates/productcat/weld.html:39
 msgid "جوش"
 msgstr ""
 
-#: .\templates\productcat\weld.html:55
+#: templates/productcat/weld.html:55
 msgid "محصولات جوش"
 msgstr ""
 
-#: .\templates\website\about.html:16
+#: templates/website/about.html:16
 msgid "داستان ما"
 msgstr ""
 
-#: .\templates\website\about.html:19
+#: templates/website/about.html:19
 msgid "سال ۱۳۸۴ و با تاسیس شرکت مهندسین مشاور پی خاک سنگ"
 msgstr ""
 
-#: .\templates\website\about.html:20
+#: templates/website/about.html:20
 msgid ""
 "سال ۱۳۸۴ و با تاسیس شرکت مهندسین مشاور پی خاک سنگ، به عنوان مشاور ژئوتکنیک و "
 "مقاومت مصالح، وارد دنیای کار شدیم. آن روزها هزار سوال و مساله داشتیم که جواب "
@@ -962,7 +960,7 @@ msgid ""
 "کمک می‌کرد کوشش کنیم برای مشکلات و مسائل، راه‌حل‌هایی پیدا کنیم."
 msgstr ""
 
-#: .\templates\website\about.html:23
+#: templates/website/about.html:23
 msgid ""
 "کم‌کم مهندس‌های جوانی به شرکت ما آمدند و در انجام پروژه‌های شرکت، همکار ما "
 "شدند. خیلی از آن‌ها دلشان می‌خواست بعد از چند سال تجربه و کسب مهارت، شرکت "
@@ -971,7 +969,7 @@ msgid ""
 "می‌خواستند از شرکت ما بروند و کسب‌وکار خود را راه‌اندازی کنند."
 msgstr ""
 
-#: .\templates\website\about.html:26
+#: templates/website/about.html:26
 msgid ""
 "به همین دلیل، ما نیز درگیر یک تجربه جدید شدیم و آن اینکه کمک کنیم، همکاران "
 "ما مستقل شوند و صاحب آزمایشگاه‌های خود و کار و حرفه شخصی خودشان بشوند. همراه "
@@ -979,51 +977,51 @@ msgid ""
 "که حالا از نگاهی دیگر آن‌ها را می‌دیدیم و برای آن‌ها جواب‌هایی داشتیم:"
 msgstr ""
 
-#: .\templates\website\about.html:30
+#: templates/website/about.html:30
 msgid "روش تاسیس شرکت چگونه است؟"
 msgstr ""
 
-#: .\templates\website\about.html:31
+#: templates/website/about.html:31
 msgid "چطور می‌شود مجوز گرفت؟"
 msgstr ""
 
-#: .\templates\website\about.html:32
+#: templates/website/about.html:32
 msgid "چه دستگاه‌هایی واقعا لازم است خریداری کنم؟"
 msgstr ""
 
-#: .\templates\website\about.html:33
+#: templates/website/about.html:33
 msgid "چطور از خریدم مطمئن باشم؟"
 msgstr ""
 
-#: .\templates\website\about.html:34
+#: templates/website/about.html:34
 msgid "از کجا تهیه کنم؟"
 msgstr ""
 
-#: .\templates\website\about.html:35
+#: templates/website/about.html:35
 msgid "کار با دستگاه‌ها را چگونه به صورت حرفه‌ای بیاموزم؟"
 msgstr ""
 
-#: .\templates\website\about.html:36
+#: templates/website/about.html:36
 msgid "آیا همه دستگاه‌ها بر اساس استانداردها ساخته شده است؟"
 msgstr ""
 
-#: .\templates\website\about.html:37
+#: templates/website/about.html:37
 msgid "آیا امکان خرید ارزان دستگاه‌های استاندارد وجود دارد؟"
 msgstr ""
 
-#: .\templates\website\about.html:38
+#: templates/website/about.html:38
 msgid "نرم‌افزارهای مرتبط با آزمایش‌ها و گزارش‌نویسی را چگونه می‌توان آموخت؟"
 msgstr ""
 
-#: .\templates\website\about.html:39
+#: templates/website/about.html:39
 msgid "اصلا با چه کسی در سرتاسر این راه مشورت کنم؟"
 msgstr ""
 
-#: .\templates\website\about.html:42
+#: templates/website/about.html:42
 msgid "شروع کار گروه صنعتی پی خاک سنگ"
 msgstr ""
 
-#: .\templates\website\about.html:43
+#: templates/website/about.html:43
 msgid ""
 "از همین‌جا بود که ما در شرکت پی خاک سنگ به فکر افتادیم، برای نسل جدید مهندسان "
 "ژئوتکنیک راه‌هایی پیدا کنیم که کار را برای آن‌ها ساده‌تر کند. برای این کار، سعی "
@@ -1032,7 +1030,7 @@ msgid ""
 "نتیجه دلخواه خود برسند."
 msgstr ""
 
-#: .\templates\website\about.html:46
+#: templates/website/about.html:46
 msgid ""
 "همان وقت بود که بیشتر متوجه یک مشکل قدیمی شدیم: اینکه تجهیزات دقیق و با "
 "کیفیت، بسیار گران است و برای تازه‌واردان این عرصه، چه بسا تهیه آن‌ها به سادگی "
@@ -1040,7 +1038,7 @@ msgid ""
 "و نهایتاً کار با دستگاه‌ها غالباً همراه خرید، آموزش داده نمی‌شود."
 msgstr ""
 
-#: .\templates\website\about.html:49
+#: templates/website/about.html:49
 msgid ""
 "به همین دلیل، بر اساس تجربه چندین ساله خود در کار با دستگاه‌های این حوزه، دست "
 "به کار شدیم و خودمان، بر اساس تجربه‌ای که در استفاده از این تجهیزات و "
@@ -1050,18 +1048,18 @@ msgid ""
 "بی‌دغدغه‌تر شروع کند."
 msgstr ""
 
-#: .\templates\website\about.html:53
+#: templates/website/about.html:53
 msgid "تعهدات ما در تولید دستگاه‌ها"
 msgstr ""
 
-#: .\templates\website\about.html:54
+#: templates/website/about.html:54
 msgid ""
 "چنین بود که خود را از آغاز متعهد کردیم دستگاه‌هایی طراحی و تولید کنیم که اولا "
 "صد در صد استاندارد باشد، دوم آنکه به ارزان‌ترین شکل ممکن تهیه و تولید شود و "
 "سوم آنکه دقیق‌ترین نتیجه‌ها را برای کاربرانش داشته باشد."
 msgstr ""
 
-#: .\templates\website\about.html:57
+#: templates/website/about.html:57
 msgid ""
 "به این ترتیب، سعی کرده‌ایم به شکلی کار کنیم که مهندسان جوان، ببینند همه "
 "نگرانی‌ها و دغدغه‌های آن‌ها در این شرکت دیده شده و برای همه آن‌ها فکر شده و "
@@ -1071,7 +1069,7 @@ msgid ""
 "بگذاریم و کمک کنیم، مسیر فعالیت آن‌ها ساده، علمی و مقرون به صرفه‌تر باشد."
 msgstr ""
 
-#: .\templates\website\about.html:60
+#: templates/website/about.html:60
 msgid ""
 "در عین حال، همیشه بهترین مشورت‌ها را نیز از مهندسان جوانی گرفته‌ایم که با این "
 "شرکت در تماس بوده و نظرها و پیشنهادهایشان را با ما در میان گذاشته و کمک "
@@ -1079,53 +1077,53 @@ msgid ""
 "روش‌ها و تولیداتش باشد و برای مشتریانش همیشه جایی مطمئن بماند."
 msgstr ""
 
-#: .\templates\website\about.html:73
+#: templates/website/about.html:73
 msgid "سؤالات متداول"
 msgstr ""
 
-#: .\templates\website\about.html:78
+#: templates/website/about.html:78
 msgid "شیوه ارسال تجهیزات"
 msgstr ""
 
-#: .\templates\website\about.html:85
+#: templates/website/about.html:85
 msgid "از کجا مطمئن باشم کالاهایی که به دستم می رسد سالم تحویل می شود؟"
 msgstr ""
 
-#: .\templates\website\about.html:90
+#: templates/website/about.html:90
 msgid ""
 "کالاهای خریداری شده به طور مناسب بسته‌بندی شده و با پلاستیک‌های حباب دار و "
 "کارتن، بسته‌بندی شده و ارسال می‌گردند و نکات ایمنی جهت حمل برای تجهیزات اعمال "
 "می‌گردد"
 msgstr ""
 
-#: .\templates\website\about.html:99
+#: templates/website/about.html:99
 msgid "چه زمانی ارسال کالاها انجام می‌شود؟"
 msgstr ""
 
-#: .\templates\website\about.html:105
+#: templates/website/about.html:105
 msgid ""
 "بالافاصله پس از بسته‌بندی و آماده نمودن تجهیزات، ارسال کالاها انجام می‌شود."
 msgstr ""
 
-#: .\templates\website\about.html:113
+#: templates/website/about.html:113
 msgid "آیا دستگاه‌ها جهت ارسال بیمه می‌شوند؟"
 msgstr ""
 
-#: .\templates\website\about.html:118
+#: templates/website/about.html:118
 msgid ""
 "کلیه تجهیزات ارسال شده نزد شرکت‌های معتبر بیمه بسته به مقدار ارزش کالا بیمه "
 "شده و سپس ارسال می‌گردند."
 msgstr ""
 
-#: .\templates\website\about.html:125
+#: templates/website/about.html:125
 msgid "شیوه پرداخت"
 msgstr ""
 
-#: .\templates\website\about.html:132
+#: templates/website/about.html:132
 msgid "آیا امکان خرید قسطی وجود دارد؟"
 msgstr ""
 
-#: .\templates\website\about.html:139
+#: templates/website/about.html:139
 msgid ""
 "پرداخت نقدی ایده آل هر شرکتی است، اما گاهی با شرایط مشتری هماهنگ نیست و کسی "
 "که تازه کسب و کاری راه می‌اندازد، شاید به هر دلیلی نتواند، کل هزینه دستگاه‌ها "
@@ -1134,19 +1132,19 @@ msgid ""
 "ماهه پرداخت کنند."
 msgstr ""
 
-#: .\templates\website\about.html:147
+#: templates/website/about.html:147
 msgid " در چه شرایطی، امکان تخفیف وجود دارد؟"
 msgstr ""
 
-#: .\templates\website\about.html:154
+#: templates/website/about.html:154
 msgid "با خرید نقدی، به میزان ۷ درصد به مشتریان تخفیف داده می‌شود."
 msgstr ""
 
-#: .\templates\website\about.html:163
+#: templates/website/about.html:163
 msgid " آیا امکان پرداخت با چک، ممکن است؟"
 msgstr ""
 
-#: .\templates\website\about.html:169
+#: templates/website/about.html:169
 msgid ""
 "بله، این شرکت شرایط متنوع پرداخت را برای مشتریان خود فراهم نموده است از جمله "
 "پرداخت به صورت چک که با تنفس ۲ ماهه انجام می‌گردد. لذا با توجه به مشکلات شرکت "
@@ -1154,23 +1152,23 @@ msgid ""
 "چک‌های پرداختی را ۲ ماه پس از خرید تجهیزات، در نظر می‌گیرد."
 msgstr ""
 
-#: .\templates\website\about.html:177
+#: templates/website/about.html:177
 msgid "شرایط پرداخت با چک چگونه است؟"
 msgstr ""
 
-#: .\templates\website\about.html:183
+#: templates/website/about.html:183
 msgid "پرداخت چک‌های ماهانه با تنفس ۲ ماهه و در ۳ فقره چک ۲، ۳ و ۴ ماهه می‌باشد."
 msgstr ""
 
-#: .\templates\website\about.html:193
+#: templates/website/about.html:193
 msgid "شرایط عودت کالا"
 msgstr ""
 
-#: .\templates\website\about.html:201
+#: templates/website/about.html:201
 msgid "در چه شرایطی امکان عودت کالا وجود دارد؟  "
 msgstr ""
 
-#: .\templates\website\about.html:207
+#: templates/website/about.html:207
 msgid ""
 "در صورتی که خریدار از دستگاه استفاده نکرده باشد و به شرط سلامت کامل "
 "دستگاه‌های خریداری شده، تجهیزات فوق به هر دلیلی امکان پس دادن را دارند و این "
@@ -1178,247 +1176,247 @@ msgid ""
 "واریز می‌کند."
 msgstr ""
 
-#: .\templates\website\about.html:216
+#: templates/website/about.html:216
 msgid "آیا پس از عودت کالا، شرکت خسارتی را دریافت می‌کند؟   "
 msgstr ""
 
-#: .\templates\website\about.html:233
+#: templates/website/about.html:233
 msgid "تا چه مدت امکان عودت کالا وجود دارد؟ "
 msgstr ""
 
-#: .\templates\website\about.html:238
+#: templates/website/about.html:238
 msgid ""
 "در صورت سلامت تجهیزات و دستگاه‌ها تا ۲ ماه پس از ارسال، امکان بازپس‌گیری کالا "
 "وجود دارد."
 msgstr ""
 
-#: .\templates\website\about.html:245
+#: templates/website/about.html:245
 msgid "در صورت عودت کالا، هزینه پست به عهده چه کسی خواهد بود؟"
 msgstr ""
 
-#: .\templates\website\about.html:250
+#: templates/website/about.html:250
 msgid "به منظور عودت محصول، هزینه پست بر عهده مشتری خواهد بود. "
 msgstr ""
 
-#: .\templates\website\contact.html:54
+#: templates/website/contact.html:54
 msgid "آدرس شرکت پی خاک سنگ"
 msgstr ""
 
-#: .\templates\website\contact.html:59
+#: templates/website/contact.html:59
 msgid ""
 "تهران، خیابان پیروزی، ضلع جنوب خیابان، بلوار ابوذر شمالی، نرسیده به پل اول، "
 "کوچه ششم شرقی، پلاک ۹،"
 msgstr ""
 
-#: .\templates\website\contact.html:64
+#: templates/website/contact.html:64
 msgid "ساعت‌های کاری"
 msgstr ""
 
-#: .\templates\website\contact.html:69
+#: templates/website/contact.html:69
 msgid "همه روزه از ساعت ۷ صبح الی ۵ عصر (به جز روزهای تعطیل)"
 msgstr ""
 
-#: .\templates\website\contact.html:82
+#: templates/website/contact.html:82
 msgid "راه‌های ارتباطی با پی خاک سنگ"
 msgstr ""
 
-#: .\templates\website\contact.html:87
+#: templates/website/contact.html:87
 msgid "خطوط تماس مخصوص استعلام قیمت"
 msgstr ""
 
-#: .\templates\website\contact.html:99
+#: templates/website/contact.html:99
 msgid "خطوط تماس مخصوص شرایط پرداخت"
 msgstr ""
 
-#: .\templates\website\contact.html:114
+#: templates/website/contact.html:114
 msgid "دریافت لیست قیمت از طریق تلگرام"
 msgstr ""
 
-#: .\templates\website\contact.html:135
+#: templates/website/contact.html:135
 msgid "فرم ارتباط با ما"
 msgstr ""
 
-#: .\templates\website\contact.html:144
+#: templates/website/contact.html:144
 msgid "نام*"
 msgstr ""
 
-#: .\templates\website\contact.html:149
+#: templates/website/contact.html:149
 msgid "نام خانوادگی*"
 msgstr ""
 
-#: .\templates\website\contact.html:158
+#: templates/website/contact.html:158
 msgid "آدرس ایمیل*"
 msgstr ""
 
-#: .\templates\website\contact.html:163
+#: templates/website/contact.html:163
 msgid "آدرس سایت یا شبکه اجتماعی"
 msgstr ""
 
-#: .\templates\website\contact.html:173
+#: templates/website/contact.html:173
 msgid "نام شرکت*"
 msgstr ""
 
-#: .\templates\website\contact.html:178
+#: templates/website/contact.html:178
 msgid "نام شهر*"
 msgstr ""
 
-#: .\templates\website\contact.html:188
+#: templates/website/contact.html:188
 msgid "سمت شغلی*"
 msgstr ""
 
-#: .\templates\website\contact.html:198
+#: templates/website/contact.html:198
 msgid "متن پیام*"
 msgstr ""
 
-#: .\templates\website\contact.html:206
+#: templates/website/contact.html:206
 msgid ""
 "من شرایط و ضوابط ارسال پیام در وبسایت پی خاک سنگ را خوانده ام و با آن موافق "
 "هستم"
 msgstr ""
 
-#: .\templates\website\contact.html:214
+#: templates/website/contact.html:214
 msgid ""
 "من موافقت خودم را بابت در اختیار گذاشتن اطلاعات شخصی اختیار شرکت پی خاک سنگ "
 "با آگاهی به آنکه اطلاعات در این شرکت محفوظ می ماند و برای اهداف مارکتینگ "
 "استفاده نمی شود، اعلام می کنم"
 msgstr ""
 
-#: .\templates\website\contact.html:224
+#: templates/website/contact.html:224
 msgid "ارسال پیام"
 msgstr ""
 
-#: .\templates\website\contact.html:234
+#: templates/website/contact.html:234
 msgid "ارتباط با پی خاک سنگ"
 msgstr ""
 
-#: .\templates\website\contact.html:241
+#: templates/website/contact.html:241
 msgid "مکان یابی از روی نقشه"
 msgstr ""
 
-#: .\templates\website\index.html:36
+#: templates/website/index.html:36
 msgid "محصولات پر فروش"
 msgstr ""
 
-#: .\templates\website\index.html:48
+#: templates/website/index.html:48
 msgid "مقالات پر طرفدار"
 msgstr ""
 
-#: .\website\models.py:20
+#: website/models.py:20
 msgid "نام دسته بندی"
 msgstr ""
 
-#: .\website\models.py:21
+#: website/models.py:21
 msgid "اسلاگ دسته بندی"
 msgstr ""
 
-#: .\website\models.py:26
+#: website/models.py:26
 msgid "دسته بندی مقالات"
 msgstr ""
 
-#: .\website\models.py:41
+#: website/models.py:41
 msgid "عنوان تگ"
 msgstr ""
 
-#: .\website\models.py:42
+#: website/models.py:42
 msgid "اسلاگ تگ"
 msgstr ""
 
-#: .\website\models.py:65
+#: website/models.py:65
 msgid "عنوان"
 msgstr ""
 
-#: .\website\models.py:66
+#: website/models.py:66
 msgid "اسلاگ"
 msgstr ""
 
-#: .\website\models.py:68
+#: website/models.py:68
 msgid "متن اول"
 msgstr ""
 
-#: .\website\models.py:69
+#: website/models.py:69
 msgid "متن دوم"
 msgstr ""
 
-#: .\website\models.py:70
+#: website/models.py:70
 msgid "خلاصه مقاله"
 msgstr ""
 
-#: .\website\models.py:73
+#: website/models.py:73
 msgid "تصویر اصلی"
 msgstr ""
 
-#: .\website\models.py:74
+#: website/models.py:74
 msgid "تاریخ آپدیت"
 msgstr ""
 
-#: .\website\models.py:75
+#: website/models.py:75
 msgid "تاریخ ساخت "
 msgstr ""
 
-#: .\website\models.py:78
+#: website/models.py:78
 msgid "تعداد بازدید"
 msgstr ""
 
-#: .\website\models.py:79
+#: website/models.py:79
 msgid "وضعیت انتشار"
 msgstr ""
 
-#: .\website\models.py:94 .\website\models.py:105 .\website\models.py:116
+#: website/models.py:94 website/models.py:105 website/models.py:116
 msgid "عنوان سئو"
 msgstr ""
 
-#: .\website\models.py:95 .\website\models.py:106 .\website\models.py:117
+#: website/models.py:95 website/models.py:106 website/models.py:117
 msgid "توضیحات سئو"
 msgstr ""
 
-#: .\website\models.py:96 .\website\models.py:107 .\website\models.py:118
+#: website/models.py:96 website/models.py:107 website/models.py:118
 msgid "تصویر سئو"
 msgstr ""
 
-#: .\website\models.py:101
+#: website/models.py:101
 msgid "سئو مقالات"
 msgstr ""
 
-#: .\website\models.py:112
+#: website/models.py:112
 msgid "سئو تگ ها"
 msgstr ""
 
-#: .\website\models.py:123
+#: website/models.py:123
 msgid "سئو دسته بندی ها"
 msgstr ""
 
-#: .\website\models.py:127
+#: website/models.py:127
 msgid "نام تصویر"
 msgstr ""
 
-#: .\website\models.py:128
+#: website/models.py:128
 msgid "متن جایگزین"
 msgstr ""
 
-#: .\website\models.py:137
+#: website/models.py:137
 msgid "نام و نام خانوادگی"
 msgstr ""
 
-#: .\website\models.py:138
+#: website/models.py:138
 msgid "ایمیل"
 msgstr ""
 
-#: .\website\models.py:139
+#: website/models.py:139
 msgid "متن پیام"
 msgstr ""
 
-#: .\website\models.py:140
+#: website/models.py:140
 msgid "تاریخ ساخت"
 msgstr ""
 
-#: .\website\models.py:141
+#: website/models.py:141
 msgid "تاریخ به روزرسانی"
 msgstr ""
 
-#: .\website\models.py:142
+#: website/models.py:142
 msgid " فعال"
 msgstr ""
 
-#: .\website\models.py:144
+#: website/models.py:144
 msgid "کامنت ها"
 msgstr ""
