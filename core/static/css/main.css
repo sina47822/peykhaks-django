@@ -14,3 +14,7 @@ img.product-image-show {
 html[dir=rtl] .choices, html[dir=rtl] select option, html[dir=rtl] .choices__input {
     direction: rtl;
 }
+
+html{
+    overflow-x:hidden ;
+}

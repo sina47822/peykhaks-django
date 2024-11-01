@@ -1,5 +1,83 @@
 {% load static %}
 {% load i18n %}
+{% get_available_languages as LANGUAGES %}
+{% get_language_info_list for LANGUAGES as languages %}
+{% csrf_token %}
+<style>
+	.language-list {
+		list-style-type: none;  /* Removes bullet points */
+		padding: 0;  /* Removes default padding */
+		margin: 0;   /* Removes default margin */
+	}
+
+	.language-list li {
+		display: inline-block;  /* Optional: display items inline if needed */
+		margin-right: 10px;     /* Adjust spacing if displaying inline */
+	}
+
+	.fa-language:before{
+		content: none;
+	}
+</style>
+
+	<!-- Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container-fluid pt-3 px-3 px-xl-5 d-flex flex-end" style="flex-direction: row-reverse;">
+			<ul class="language-list">
+				{% for language in languages %}
+					<li class="fa-language">
+						<a class="dropdown-item language-option" data-lang="{{ language.code }}" href="#">
+							<span class="language-icon">
+								{% if language.code == "fa" %}
+									<!-- Farsi Flag SVG Icon -->
+									<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24">
+										<rect width="24" height="24" fill="#da0000"/>
+										<rect width="24" height="16" fill="#fff"/>
+										<rect width="24" height="8" fill="#239f40"/>
+										<g transform="scale(0.05) translate(160, 120)">
+											<!-- Simplified Farsi flag emblem -->
+											<g id="emblem_half">
+												<path d="M-0.54815,0.83638A0.912046,0.912046 0 0,0 0.328544,-0.722384A1,1 0 0,1 -0.54815,0.83638" fill="#da0000"/>
+											</g>
+											<use xlink:href="#emblem_half" transform="scale(-1,1)"/>
+										</g>
+									</svg>
+								{% elif language.code == "en" %}
+									<!-- English Flag SVG Icon -->
+									<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+										<rect width="24" height="24" fill="#00247D"/>
+										<polygon points="0,9 24,9 24,15 0,15" fill="#FFFFFF"/>
+										<polygon points="9,0 15,0 15,24 9,24" fill="#FFFFFF"/>
+										<polygon points="0,10 24,10 24,14 0,14" fill="#CF142B"/>
+										<polygon points="10,0 14,0 14,24 10,24" fill="#CF142B"/>
+									</svg>
+								{% elif language.code == "ar" %}
+									<!-- Arabic Flag SVG Icon -->
+									<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+										<rect width="24" height="24" fill="#007A3D"/>
+										<rect width="24" height="8" fill="#FFFFFF"/>
+										<rect width="24" height="16" y="8" fill="#CE1126"/>
+										<polygon points="0,0 8,12 0,24" fill="#000000"/>
+									</svg>
+								{% elif language.code == "tr" %}
+									<!-- Turkish Flag SVG Icon -->
+									<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+										<rect width="24" height="24" fill="#E30A17"/>
+										<circle cx="10" cy="12" r="5" fill="#FFFFFF"/>
+										<circle cx="11.5" cy="12" r="3.5" fill="#E30A17"/>
+										<circle cx="14" cy="12" r="0.75" fill="#FFFFFF"/>
+									</svg>
+								{% endif %}
+							</span>
+							{{ language.name_local }}
+						</a>
+					</li>
+				{% endfor %}
+			</ul>
+
+		</div>
+	</nav>
+	<!-- Nav END -->
 
 	<!-- Nav START -->
 	<nav class="navbar navbar-expand-xl">
@@ -238,7 +316,7 @@
 						</div>
 					</li>
 					<!-- changeLanguage-->
-					<li class="nav-item dropdown">
+					{% comment %} <li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="languageMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							{% translate 'تغییر زبان' %}
 						</a>
@@ -253,9 +331,9 @@
 									</a>
 								</li>
 							{% endfor %}
-					</ul>
+						</ul>
 
-					</li>
+					</li> {% endcomment %}
 
 				<!-- Nav Main menu END -->
 				<!-- Nav download START -->
