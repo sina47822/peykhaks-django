@@ -6,17 +6,17 @@ from .models import (
 
 @register(Category)
 class CategoryTranslationOptions(TranslationOptions):
-    fields = ('name', 'slug',)
+    fields = ('name',)
 
 @register(Tags)
 class TagsTranslationOptions(TranslationOptions):
-    fields = ('name', 'slug',)
+    fields = ('name',)
 
 @register(Post)
 class PostTranslationOptions(TranslationOptions):
     fields = (
-        'title', 'slug', 'desc_1', 'desc_2', 
-        'post_summery', 'blog_status'
+        'title', 'desc_1', 'desc_2', 
+        'post_summery'
     )
 
 @register(PostSEO)

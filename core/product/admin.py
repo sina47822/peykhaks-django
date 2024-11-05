@@ -37,9 +37,10 @@ class SEOInline(admin.StackedInline):
 
 class ProductAdmin(admin.ModelAdmin):
     date_hierarchy = 'create_date'
-    list_display = ('id', 'title', 'price', 'offer_price', 'is_active', 'stock')
+    list_display = ('id','title','categories' ,'price', 'offer_price','is_active','stock' )
     list_filter = ('create_date',)
     search_fields = ['title', 'description']
+    list_editable = ('price', 'offer_price', 'is_active', 'stock' ,'categories')  # Fields editable directly from the list view
     prepopulated_fields = {'slug': ('title',)}
     inlines = [ProductImagesInline, ProductSpecificationInline, SEOInline]
 
