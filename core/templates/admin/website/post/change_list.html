@@ -3,7 +3,7 @@
 {% block object-tools %}
   {{ block.super }}
   <div class="custom-buttons">
-      <a href="{% url 'admin:import_excel' %}" class="button">Import Posts from Excel</a>
-      <a href="{% url 'admin:export_excel' %}" class="button">Export Posts to Excel</a>
+      <a href="{% url 'admin:post_import_excel' %}" class="button">Import Posts from Excel</a>
+      <a href="{% url 'admin:post_export_excel' %}" class="button">Export Posts to Excel</a>
   </div>
 {% endblock %}

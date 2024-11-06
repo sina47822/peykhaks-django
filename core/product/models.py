@@ -136,7 +136,7 @@ class Product(models.Model):
     create_date = models.DateTimeField(_('زمان تولید'),auto_now_add=True)
     publish_date = models.DateTimeField(_('زمان انتشار'),null=True)
     author = models.ForeignKey(User ,on_delete=models.CASCADE, blank=True, null=True)
-    total_views = models.IntegerField(_('مجموع بازدید'),default='1k' , )
+    total_views = models.IntegerField(_('مجموع بازدید'),default='14' , blank=True, null=True )
     is_active = models.CharField(_('فعال بودن'),max_length=100 , choices=STATUS_CHOICES, default='not_active',blank = True, null = True)
 
     stock = models.PositiveIntegerField(_('تعداد'),blank = True, null = True,)

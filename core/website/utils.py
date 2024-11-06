@@ -11,6 +11,9 @@ def export_posts_to_excel():
 
     # Loop through each product and add translations for specified languages
     for post in Post.objects.all():
+        # Get category IDs as a comma-separated string
+        category_ids = ",".join(str(cat.id) for cat in post.categories.all())
+        
         post_info = {
             'id': post.id,
             'title': post.title,
@@ -18,7 +21,7 @@ def export_posts_to_excel():
             'desc_1': post.desc_1,
             'desc_2': post.desc_2,
             'post_summery': post.post_summery,
-            'categories': post.categories,
+            'categories': post.category_ids,
             'blog_status': post.blog_status,
         }
         # Add translations for each language in settings.LANGUAGES
@@ -55,7 +58,6 @@ def import_posts_from_excel(file):
             'desc_1': row.get('desc_1'),
             'desc_2': row.get('desc_2'),
             'post_summery': row.get('post_summery'),
-            'categories': row.get('categories'),            
             'blog_status': row.get('blog_status')
         }
 
@@ -64,6 +66,13 @@ def import_posts_from_excel(file):
             id=row.get('id'),
             defaults=post_data
         )
+
+        # Get category ID from the row and assign it to the post
+        category_id = row.get('categories')
+        if category_id and Category.objects.filter(id=category_id).exists():
+            post.categories_id = category_id  # Assign directly if ForeignKey
+            post.save()
+            
         # Set translated fields for each language
         for lang_code, _ in settings.LANGUAGES:
             setattr(post, f'title_{lang_code}', row.get(f'title_{lang_code}', ''))

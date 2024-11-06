@@ -47,8 +47,8 @@ class ProductAdmin(admin.ModelAdmin):
     def get_urls(self):
         urls = super().get_urls()
         custom_urls = [
-            path('import-excel/', self.import_excel, name='import_excel'),
-            path('export-excel/', self.export_excel, name='export_excel'),
+            path('import-excel/', self.import_excel, name='product_import_excel'),
+            path('export-excel/', self.export_excel, name='product_export_excel'),
         ]
         return custom_urls + urls
 
