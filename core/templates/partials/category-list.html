@@ -1,5 +1,6 @@
 {% load static %}
 {% load humanize %}
+{% load i18n %}
 
 <!-- =======================
 IT courses START -->
@@ -8,8 +9,8 @@ IT courses START -->
 		<!-- Title -->
 		<div class="row mb-4">
 			<div class="col-lg-8 text-center mx-auto">
-				<h2 class="fs-3">دسته بندی</h2>
-				<p class="mb-0">از این قسمت می توانید دسته بندی اصلی آموزش ها و محصولات پی خاک سنگ را ملاحظه کنید</p>
+				<h2 class="fs-3">{% translate 'دسته بندی' %}</h2>
+				<p class="mb-0">{% translate 'از این قسمت می توانید دسته بندی اصلی آموزش ها و محصولات پی خاک سنگ را ملاحظه کنید' %}</p>
 			</div>
 		</div>
 
@@ -21,10 +22,10 @@ IT courses START -->
 					<img src="{% static 'images/temprory/images/courses/4by3/01.jpg'%}" alt="">
 					<!-- Image overlay -->
 					<div class="card-img-overlay d-flex  flex-column"> 
-						<h2 class="text-white h1 stretched-link">خاک </h2>
+						<h2 class="text-white h1 stretched-link">{% translate 'خاک ' %}</h2>
 						<!-- Info -->
 						<div class="mt-auto card-text">
-							<a href="{% url 'website:soil-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی خاک</a>
+							<a href="{% url 'website:soil-laboratory' %}" class="text-white mt-auto h5 stretched-link">{% translate 'دسته بندی خاک' %}</a>
 							{% comment %} <div class="text-white">23 دوره آموزشی</div> {% endcomment %}
 						</div>
 					</div>
@@ -38,11 +39,11 @@ IT courses START -->
 					<img src="{% static 'images/temprory/images/courses/4by3/03.jpg'%}" alt="">
 					<!-- Image overlay -->
 					<div class="card-img-overlay d-flex  flex-column"> 
-						<h2 class="text-white h1 stretched-link">بتن </h2>
+						<h2 class="text-white h1 stretched-link">{% translate 'بتن ' %}</h2>
 
 						<!-- Info -->
 						<div class="mt-auto card-text">
-							<a href="{% url 'website:concrete-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی بتن</a>
+							<a href="{% url 'website:concrete-laboratory' %}" class="text-white mt-auto h5 stretched-link">{% translate 'دسته بندی بتن' %}</a>
 							{% comment %} <div class="text-white">16 دوره آموزشی</div> {% endcomment %}
 						</div>
 					</div>
@@ -56,11 +57,11 @@ IT courses START -->
 					<img src="{% static 'images/temprory/images/courses/4by3/05.jpg'%}" alt="">
 					<!-- Image overlay -->
 					<div class="card-img-overlay d-flex  flex-column"> 
-						<h2 class="text-white h1 stretched-link">آسفالت </h2>
+						<h2 class="text-white h1 stretched-link">{% translate 'آسفالت ' %}</h2>
 
 						<!-- Info -->
 						<div class="mt-auto card-text">
-							<a href="{% url 'website:asphalt-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی آسفالت</a>
+							<a href="{% url 'website:asphalt-laboratory' %}" class="text-white mt-auto h5 stretched-link">{% translate 'دسته بندی آسفالت' %}</a>
 							{% comment %} <div class="text-white">32 دوره آموزشی</div> {% endcomment %}
 						</div>
 					</div>
@@ -74,11 +75,11 @@ IT courses START -->
 					<img src="{% static 'images/temprory/images/courses/4by3/06.jpg'%}" alt="">
 					<!-- Image overlay -->
 					<div class="card-img-overlay d-flex flex-column"> 
-						<h2 class="text-white h1 stretched-link">جوش </h2>
+						<h2 class="text-white h1 stretched-link">{% translate 'جوش ' %}</h2>
 
 						<!-- Info -->
 						<div class="mt-auto card-text">
-							<a href="{% url 'website:weld-laboratory' %}" class="text-white mt-auto h5 stretched-link">دسته بندی جوش</a>
+							<a href="{% url 'website:weld-laboratory' %}" class="text-white mt-auto h5 stretched-link">{% translate 'دسته بندی جوش' %}</a>
 							{% comment %} <div class="text-white">48 دوره آموزشی</div> {% endcomment %}
 						</div>
 					</div>
