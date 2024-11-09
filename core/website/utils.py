@@ -12,8 +12,7 @@ def export_posts_to_excel():
     # Loop through each product and add translations for specified languages
     for post in Post.objects.all():
         # Get category IDs as a comma-separated string
-        category_ids = ",".join(str(cat.id) for cat in post.categories.all())
-        
+        category_id = str(post.categories.id) if post.categories else ''        
         post_info = {
             'id': post.id,
             'title': post.title,
@@ -21,7 +20,7 @@ def export_posts_to_excel():
             'desc_1': post.desc_1,
             'desc_2': post.desc_2,
             'post_summery': post.post_summery,
-            'categories': post.category_ids,
+            'categories': category_id,
             'blog_status': post.blog_status,
         }
         # Add translations for each language in settings.LANGUAGES
@@ -52,15 +51,19 @@ def import_posts_from_excel(file):
 
     # Iterate through DataFrame and create or update Post objects
     for _, row in df.iterrows():
-        post_data = {
-            'title': row.get('title'),
-            'slug': row.get('slug'),
-            'desc_1': row.get('desc_1'),
-            'desc_2': row.get('desc_2'),
-            'post_summery': row.get('post_summery'),
-            'blog_status': row.get('blog_status')
-        }
-
+        post_data = {}
+        if pd.notna(row.get('title')):
+            post_data['title'] = row.get('title')
+        if pd.notna(row.get('slug')):
+            post_data['slug'] = row.get('slug')
+        if pd.notna(row.get('desc_1')):
+            post_data['desc_1'] = row.get('desc_1')
+        if pd.notna(row.get('desc_2')):
+            post_data['desc_2'] = row.get('desc_2')
+        if pd.notna(row.get('post_summery')):
+            post_data['post_summery'] = row.get('post_summery')
+        if pd.notna(row.get('blog_status')):
+            post_data['blog_status'] = row.get('blog_status')
         # Create or update the post
         post, created = Post.objects.update_or_create(
             id=row.get('id'),
