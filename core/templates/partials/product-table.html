@@ -1,30 +1,38 @@
-{% load static %}
+{% load static i18n %}
 
-<table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">نام محصول</th>
-        <th scope="col">قیمت</th>
-        <th scope="col">قیمت در تخفیف ویژه</th>
-        <th>صفحه محصول</th>
-        <th scope="col">تصویر محصول</th>
-      </tr>
-    </thead>
-    {% for product in products %}
-    <tbody>
-      <tr>
-        <th scope="row">{{ forloop.counter }}</th>
-        <td>{{product.title}}</td>
-        <td>{{product.price}}</td>
-        <td>{{product.offer_price}}</td>
-        {% if product.slug %}
-        <td><a href="{% url 'product:productdetails' slug=product.slug %}">صفحه محصول</a></td>
-        {% else %}
-        <td><a href="">no slug</a></td>
-        {% endif %}
-        <td><img class="product-image-show" src="{{product.image.url}}" alt="{{product.title}}"></td>
-      </tr>
-    </tbody>
-    {% endfor %}
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">{% translate 'نام محصول' %}</th>
+                <th scope="col">{% translate 'قیمت' %}</th>
+                <th scope="col">{% translate 'قیمت در تخفیف ویژه' %}</th>
+                <th>{% translate 'صفحه محصول' %}</th>
+                <th scope="col">{% translate 'تصویر محصول' %}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <th scope="row">{{ forloop.counter }}</th>
+                <td>{{ product.title }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.offer_price }}</td>
+                {% if product.slug %}
+                <td><a href="{% url 'product:productdetails' slug=product.slug %}">{% translate 'صفحه محصول' %}</a></td>
+                {% else %}
+                <td><a href="#">{% translate 'no slug' %}</a></td>
+                {% endif %}
+                <td>
+                    {% if product.image %}
+                        <img class="img-fluid product-image-show" src="{{ product.image.url }}" alt="{{ product.title }}">
+                    {% else %}
+                        <img class="img-fluid product-image-show" src="{% static 'default-image.jpg' %}" alt="{% translate 'Default image' %}">
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

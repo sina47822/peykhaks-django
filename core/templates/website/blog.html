@@ -1,7 +1,7 @@
 {% extends '../core/base.html' %}
 {% load humanize %}
 {% load static %}
-
+{% load i18n %}
 
 
 {% block title %}Blog{% endblock title%}
@@ -28,13 +28,13 @@
                 <!-- Title and breadcrumb -->
                 <div class="col-lg-10 mx-auto text-center position-relative">
                     <!-- Title -->
-                    <h1 class="fs-2">به بخش مقاله های پی خاک سنگ خوش آمدید</h1>
+                    <h1 class="fs-2">{% translate 'به بخش مقاله های پی خاک سنگ خوش آمدید' %}</h1>
                     <!-- Breadcrumb -->
                     <div class="d-flex justify-content-center position-relative">
                         <nav aria-label="breadcrumb">
                             <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item"><a href="{% url 'website:home' %}">صفحه اصلی</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">وبلاگ</li>
+                                <li class="breadcrumb-item"><a href="{% url 'website:home' %}">{% translate 'صفحه اصلی' %}</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">{% translate 'وبلاگ' %}</li>
                             </ol>
                         </nav>
                     </div>

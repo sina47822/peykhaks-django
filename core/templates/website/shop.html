@@ -17,15 +17,24 @@
             <div class="product-list-holder card mb-4">
                 {% if product.slug %}
                 <a href="{% url 'product:productdetails' slug=product.slug %}">
-                    <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                    {% if product.image %}
+                        <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
+                    {% else %}
+                        <img class="card-img-top" src="/static/default-image.jpg" alt="Default image" />
+                    {% endif %}
                 </a>
                 {% else %}
                 <img class="card-img-top" src="{{ product.image.url }}" alt="..." />
                 {% endif %}
                 <div class="card-body">
                     <div class="small text-muted">
-                        {% comment %} <span class="publish-date"> تاریخ انتشار : {{ product.publish_date }}</span> {% endcomment %}
-                        <a href="{% url 'product:productcategory' slug=product.categories.slug %}"> <span class="category"> دسته بندی : {{ product.categories }}</span></a>
+                        {% if product.categories and product.categories.slug %}
+                            <a href="{% url 'product:productcategory' slug=product.categories.slug %}">
+                                <span class="category">دسته بندی : {{ product.categories }}</span>
+                            </a>
+                        {% else %}
+                            <span class="category">دسته بندی : نامشخص</span>
+                        {% endif %}
                     </div>
                     
                     <a href="{% url 'product:productdetails' slug=product.slug %}"><h2 class="card-title h4">{{product.title}}</h2></a>

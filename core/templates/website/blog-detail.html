@@ -1,5 +1,6 @@
 {% extends '../core/base.html' %}
 {% load static %}
+{% load i18n %}
 
     {% block title %}{{ seo.title }}{% endblock title%}
     {% block seodescription %} {{ seo.description }}{% endblock seodescription%}
@@ -34,7 +35,7 @@
                                 <!-- Info -->
                                 <ul class="list-inline list-unstyled">
                                     <li class="list-inline-item d-lg-block my-lg-2">{{ post.publish_date }}</li>
-                                    <li class="list-inline-item d-lg-block my-lg-2">5دقیقه زمان مطالعه</li>
+                                    <li class="list-inline-item d-lg-block my-lg-2">{% translate '5دقیقه زمان مطالعه' %}</li>
                                     <li class="list-inline-item badge text-bg-orange"><i class="far text-white fa-heart me-1"></i>{{ post.total_views }}</li>
                                     <li class="list-inline-item badge text-bg-info"><i class="far fa-eye me-1"></i>{{ post.total_views }}</li>
                                 </ul>
@@ -46,7 +47,7 @@
                             <!-- Pre title -->
                             <span>{{ post.publish_date }}</span><span class="mx-2">|</span><div class="badge text-bg-success"> {{ post.categories }} </div>
                             <!-- Title -->
-                            <h1 class="mt-2 mb-0 fs-4"> خلاصه مطلب :{{post.title}}</h1>
+                            <h1 class="mt-2 mb-0 fs-4">{% translate ' خلاصه مطلب :' %}{{post.title}}</h1>
                             <!-- Info -->
                             <p class="mt-2">{{post.post_summery | safe}}</p>
                         </div>
@@ -94,7 +95,7 @@
                         </div> {% endcomment %}
                         <!-- Popular tags -->
                         <div class="align-items-center">
-                            <h6 class="mb-2 me-4 d-inline-block">برچسب:</h6>
+                            <h6 class="mb-2 me-4 d-inline-block">{% translate 'برچسب:' %}</h6>
                             <ul class="list-inline mb-0 social-media-btn">
                                 {% for tag in tags %}
                                 <li class="list-inline-item"> <a class="btn btn-outline-light btn-sm mb-lg-0" href="">{{tag.name}}</a> </li>

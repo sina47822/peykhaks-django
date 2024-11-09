@@ -1,7 +1,7 @@
 {% extends '../core/base.html' %}
 {% load static %}
 {% load humanize %}
-
+{% load i18n %}
 
 {% block title %}{{ seo.title }}{% endblock title%}
 {% block seodescription %} {{ seo.description }}{% endblock seodescription%}
@@ -39,7 +39,7 @@ Page content START -->
 
 				<!-- Content -->
         		{% if product.summery %}
-				<h4 class="fs-5">خلاصه توضیحات</h4>
+				<h4 class="fs-5">{% translate 'خلاصه توضیحات' %}</h4>
 				<p>{{product.summery | safe}}</p>
         		{% endif %}
 
@@ -49,25 +49,25 @@ Page content START -->
 						<!-- List START -->
 						<ul class="list-group list-group-borderless">
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-calendar text-primary me-2"></i>تاریخ انتشار:</span>
+								<span class="h6 fw-light"><i class="fa-light fa-calendar text-primary me-2"></i>{% translate 'تاریخ انتشار:' %}</span>
 								<span class="h6" >{{product.publish_date}}</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-book text-primary me-2"></i>استاندارد</span>
+								<span class="h6 fw-light"><i class="fa-light fa-book text-primary me-2"></i>{% translate 'استاندارد' %}</span>
 								<span class="h6">
 									<a href="{{product.Standard.slug}}">{{product.Standard.title.value}}</a>
 								</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-font text-primary me-2"></i>سایز محصول</span>
+								<span class="h6 fw-light"><i class="fa-light fa-font text-primary me-2"></i>{% translate 'سایز محصول' %}</span>
 								{% if product.size == 'Medium' %}
-									<span class="h6">متوسط</span>
+									<span class="h6">{% translate 'متوسط' %}</span>
 								{% elif product.size == 'light' %}
-									<span class="h6">سبک</span>
+									<span class="h6">{% translate 'سبک' %}</span>
 								{% elif product.size == 'Heavy' %}
-									<span class="h6">سنگین</span>
+									<span class="h6">{% translate 'سنگین' %}</span>
 								{% else %}
-									<span class="h6">نامشخص</span>
+									<span class="h6">{% translate 'نامشخص' %}</span>
 								{% endif %}
 								<span class="h6">{{product.size}}</span>
 							</li>
@@ -80,28 +80,28 @@ Page content START -->
 						<!-- List START -->
 						<ul class="list-group list-group-borderless">
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-clock text-primary me-2"></i>زمان تحویل</span>
+								<span class="h6 fw-light"><i class="fa-light fa-clock text-primary me-2"></i>{% translate 'زمان تحویل' %}</span>
 								<span class="h6">{{product.time_to_bring}}</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-eye text-primary me-2"></i>تعداد بازدید:</span>
+								<span class="h6 fw-light"><i class="fa-light fa-eye text-primary me-2"></i>{% translate 'تعداد بازدید:' %}</span>
 								<span class="h6">{{product.total_views}}</span>
 							</li>
 							{% comment %} <li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fal fa-shopping-bag text-primary me-2"></i>تعداد خرید:</span>
+								<span class="h6 fw-light"><i class="fal fa-shopping-bag text-primary me-2"></i>{% translate 'تعداد خرید:' %}</span>
 								<span class="h6">8245</span>
 							</li>
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-star text-primary me-2"></i>امتیاز/دیدگاه:</span>
+								<span class="h6 fw-light"><i class="fa-light fa-star text-primary me-2"></i>{% translate 'امتیاز/دیدگاه:' %}</span>
 								<span class="h6">4.5 (568)</span>
 							</li> {% endcomment %}
 							<li class="list-group-item px-0">
-								<span class="h6 fw-light"><i class="fa-light fa-certificate text-primary me-2"></i>گارانتی</span>
+								<span class="h6 fw-light"><i class="fa-light fa-certificate text-primary me-2"></i>{% translate 'گارانتی' %}</span>
 								<span class="h6">
 									{% if product.guarantee %}
-									دارد
+									{% translate 'دارد' %}
 									{% else %}
-									ندارد
+									{% translate 'ندارد' %}
 									{% endif %}  
 								</span>
 							</li>
@@ -118,15 +118,15 @@ Page content START -->
 					<ul class="nav nav-pills nav-pills-bg-soft px-3" id="product-pills-tab" role="tablist">
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0 active" id="product-pills-tab-1" data-bs-toggle="pill" data-bs-target="#product-pills-1" type="button" role="tab" aria-controls="product-pills-1" aria-selected="true">مشخصات تخصصی محصول</button>
+							<button class="nav-link mb-0 active" id="product-pills-tab-1" data-bs-toggle="pill" data-bs-target="#product-pills-1" type="button" role="tab" aria-controls="product-pills-1" aria-selected="true">{% translate 'مشخصات تخصصی محصول' %}</button>
 						</li>
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0" id="product-pills-tab-2" data-bs-toggle="pill" data-bs-target="#product-pills-2" type="button" role="tab" aria-controls="product-pills-2" aria-selected="false">دیدگاه</button>
+							<button class="nav-link mb-0" id="product-pills-tab-2" data-bs-toggle="pill" data-bs-target="#product-pills-2" type="button" role="tab" aria-controls="product-pills-2" aria-selected="false">{% translate 'دیدگاه' %}</button>
 						</li>
 						<!-- Tab item -->
 						<li class="nav-item me-2 me-sm-4" role="presentation">
-							<button class="nav-link mb-0" id="product-pills-tab-3" data-bs-toggle="pill" data-bs-target="#product-pills-3" type="button" role="tab" aria-controls="product-pills-3" aria-selected="false">نحوه ارسال </button>
+							<button class="nav-link mb-0" id="product-pills-tab-3" data-bs-toggle="pill" data-bs-target="#product-pills-3" type="button" role="tab" aria-controls="product-pills-3" aria-selected="false">{% translate 'نحوه ارسال ' %}</button>
 						</li>
 					</ul>
 					<!-- Tabs END -->
@@ -165,7 +165,7 @@ Page content START -->
 						<div class="tab-pane fade" id="product-pills-2" role="tabpanel" aria-labelledby="product-pills-tab-2">
 							<!-- Review START -->
 							<div class="row mb-4">
-								<h4 class="mb-4 fs-5">نظرات شما</h4>
+								<h4 class="mb-4 fs-5">{% translate 'نظرات شما' %}</h4>
 
 								<!-- Rating info -->
 							  <div class="col-md-4 mb-3 mb-md-0">
@@ -180,7 +180,7 @@ Page content START -->
 											<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 											<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
 										</ul>
-										<p class="mb-0">(بر اساس 0 دیدگاه)</p>
+										<p class="mb-0">{% translate '(بر اساس 0 دیدگاه)' %}</p>
 									</div>
 								</div>
 
@@ -360,7 +360,7 @@ Page content START -->
 										<p class="mb-2">{{review.description| safe }}</p>
 										
 										<!-- Reply button -->
-										<a href="#" class="text-body mb-0"><i class="fas fa-reply me-2"></i>پاسخ</a>
+										<a href="#" class="text-body mb-0"><i class="fas fa-reply me-2"></i>{% translate 'پاسخ' %}</a>
 									</div>
 								</div>
 								<!-- Divider -->
@@ -372,18 +372,18 @@ Page content START -->
 
 							<!-- Leave Review START -->
 							<div class="mt-2">
-								<h5 class="mb-4">ثبت دیدگاه</h5>
+								<h5 class="mb-4">{% translate 'ثبت دیدگاه' %}</h5>
 								<form class="row g-3" action="{% url 'review:submit-review' %}" method="post" id="review_form">
 									{% csrf_token %} 
 									<!-- Name -->
 									<input hidden name="product" value={{product.id}}>
 									<!-- Name -->
 									<div class="col-md-6">
-										<input type="text" class="form-control" id="inputtext" placeholder="نام" aria-label="First name" name="name">
+										<input type="text" class="form-control" id="inputtext" placeholder="{% translate 'نام' %}" aria-label="First name" name="name">
 									</div>
 									<!-- Email -->
 									<div class="col-md-6">
-										<input type="email" class="form-control" placeholder="ایمیل" id="inputEmail4" name="email">
+										<input type="email" class="form-control" placeholder="{% translate 'ایمیل' %}" id="inputEmail4" name="email">
 									</div>
 									<!-- Rating -->
 									<div class="col-12">
@@ -397,11 +397,11 @@ Page content START -->
 									</div>
 									<!-- Message -->
 									<div class="col-12">
-										<textarea name="description" class="form-control" id="exampleFormControlTextarea1" placeholder="دیدگاه خود را بنویسید" rows="3"></textarea>
+										<textarea name="description" class="form-control" id="exampleFormControlTextarea1" placeholder="{% translate 'دیدگاه خود را بنویسید' %}" rows="3"></textarea>
 									</div>
 									<!-- Button -->
 									<div class="col-12">
-										<button type="submit" class="btn btn-primary mb-0" form="review_form">ثبت دیدگاه</button>
+										<button type="submit" class="btn btn-primary mb-0" form="review_form">{% translate 'ثبت دیدگاه' %}</button>
 									</div>
 								</form>
 							</div>
@@ -413,7 +413,7 @@ Page content START -->
 						<!-- Content START -->
 						<div class="tab-pane fade" id="product-pills-3" role="tabpanel" aria-labelledby="product-pills-tab-3">
 							
-              <p>یکی از مشکلات اصلی خریداران کالاهای صنعتی موجود نبودن کالا در بازار و صرف زمان بالای انتظار برای تولید محصولات است، که این مساله زمان راه اندازی آزمایشگاه و هزینه سرمایه گذاری و نگهداری پول نقد را افزایش می دهد، گروه صنعتی پی خاک سنگ همه تلاش خود را در جهت رفع این مشکل و آماده سازی محصولات در انبار و ارسال فوری محصولات کرده است. در نظر داشته باشید که هزینه تولید کالاهای تخصصی بالا و تعداد به نسبت تبدیل مشتری پایین است و همچنین این مهم به هزینه انبار زیاد و سرمایه گذاری زیاد نیاز دارد گروه صنعتی پی خاک سنگ برای حل این مشکل این کار سخت و پر ریسک در بازار را انجام داده است  به این امید که مشتریان از این شرکت حمایت های لازم را انجام داده و سرمایه شرکت در گردش قرار گیرد</p>
+              			<p>{% blocktranslate trimmed %}یکی از مشکلات اصلی خریداران کالاهای صنعتی موجود نبودن کالا در بازار و صرف زمان بالای انتظار برای تولید محصولات است، که این مساله زمان راه اندازی آزمایشگاه و هزینه سرمایه گذاری و نگهداری پول نقد را افزایش می دهد، گروه صنعتی پی خاک سنگ همه تلاش خود را در جهت رفع این مشکل و آماده سازی محصولات در انبار و ارسال فوری محصولات کرده است. در نظر داشته باشید که هزینه تولید کالاهای تخصصی بالا و تعداد به نسبت تبدیل مشتری پایین است و همچنین این مهم به هزینه انبار زیاد و سرمایه گذاری زیاد نیاز دارد گروه صنعتی پی خاک سنگ برای حل این مشکل این کار سخت و پر ریسک در بازار را انجام داده است  به این امید که مشتریان از این شرکت حمایت های لازم را انجام داده و سرمایه شرکت در گردش قرار گیرد{% endblocktranslate %}</p>
 
 							<!-- Process START -->
 							<div class="row mb-4">
@@ -427,7 +427,7 @@ Page content START -->
 												<div class="icon-xl bg-dark bg-opacity-10 mx-auto rounded-circle mb-3">
 													<i class="far fa-fw fa-file-alt"></i>
 												</div>
-												<h6>ثبت سفارش</h6>
+												<h6>{% translate 'ثبت سفارش' %}</h6>
 											</div>
 
 											<!-- Process item -->
@@ -437,7 +437,7 @@ Page content START -->
 													<i class="fas fa-fw fa-truck-moving"></i>
 												</div>
 												<!-- Title -->
-												<h6>ارسال کالا</h6>
+												<h6>{% translate 'ارسال کالا' %}</h6>
 											</div>
 
 											<!-- Process item -->
@@ -447,7 +447,7 @@ Page content START -->
 													<i class="fas fa-fw fa-people-carry"></i>
 												</div>
 												<!-- Title -->
-												<h6>تحویل به مشتری</h6>
+												<h6>{% translate 'تحویل به مشتری' %}</h6>
 											</div>
 										</div>
 									</div>
@@ -457,10 +457,10 @@ Page content START -->
 							<!-- Process END -->
 
 							<!-- Content -->
-							<p>در صورت موجود بودن کالا با هماهنگی های صورت گرفته از سمت شرکت پی خاک سنگ کالا به سرعت و در همان روز ارسال می شود و در غیر این صورت زمان آماده سازی و ارسال کالا توسط بخش آماده سازی و انبار شرکت هماهنگ می شود</p>
-							<p><b>زمان پردازش:</b> زمانی که طول می کشد تا کالا(های) شما برای ارسال از انبار ما آماده شود. این شامل آماده سازی اقلام شما، انجام بررسی های کیفیت و بسته بندی برای حمل و نقل است.</p>
-							<p><b>زمان ارسال:</b> زمان ارسال کالا در توضیحات محصول نوشته شده است شما می توانید پس از ثبت سفارش با همکاران ما جهت ارسال فوری محصولات هماهنگ شوید</p>
-							<p> محصولات زیادی از انبار پی خاک سنگ به صورت سالم به دست مشتریان رسیده است اما خرابی ناشی از حمل از مشکلات موجود زمان ارسال است و  تعداد بسیار پایینی از محصولات به دلیل مشکلات حمل و از سمت شرکت های حامل با مشکل روبرو بوده است. گروه صنعتی پی خاک سنگ این نوید را به مشتریان خود می دهد که در صورت بروز این مشکلات و ارسال تصویر کالا و مشخص شدن خرابی آن شکت پی خاک سنگ هزینه مشتریان را به صورت کامل برگردانده و با هزینه خود کالاهای خراب را مرجوع می کند</p>
+							<p>{% blocktranslate trimmed %}در صورت موجود بودن کالا با هماهنگی های صورت گرفته از سمت شرکت پی خاک سنگ کالا به سرعت و در همان روز ارسال می شود و در غیر این صورت زمان آماده سازی و ارسال کالا توسط بخش آماده سازی و انبار شرکت هماهنگ می شود{% endblocktranslate %}</p>
+							<p><b>{% translate 'زمان پردازش:' %}</b>{% blocktranslate trimmed %} زمانی که طول می کشد تا کالا(های) شما برای ارسال از انبار ما آماده شود. این شامل آماده سازی اقلام شما، انجام بررسی های کیفیت و بسته بندی برای حمل و نقل است.{% endblocktranslate %}</p>
+							<p><b>{% translate 'زمان ارسال:' %}</b>{% blocktranslate trimmed %} زمان ارسال کالا در توضیحات محصول نوشته شده است شما می توانید پس از ثبت سفارش با همکاران ما جهت ارسال فوری محصولات هماهنگ شوید{% endblocktranslate %}</p>
+							<p>{% blocktranslate trimmed %} محصولات زیادی از انبار پی خاک سنگ به صورت سالم به دست مشتریان رسیده است اما خرابی ناشی از حمل از مشکلات موجود زمان ارسال است و  تعداد بسیار پایینی از محصولات به دلیل مشکلات حمل و از سمت شرکت های حامل با مشکل روبرو بوده است. گروه صنعتی پی خاک سنگ این نوید را به مشتریان خود می دهد که در صورت بروز این مشکلات و ارسال تصویر کالا و مشخص شدن خرابی آن شکت پی خاک سنگ هزینه مشتریان را به صورت کامل برگردانده و با هزینه خود کالاهای خراب را مرجوع می کند{% endblocktranslate %}</p>
 							
 						</div>
 						<!-- Content END -->
@@ -527,17 +527,17 @@ Page content START -->
                   <li class="list-inline-item ">
                     <input type="radio" class="btn-check" name="options" id="option1" checked>
                     <label class="btn btn-success-soft-check" for="option1">
-                      <span class="mb-2 h5 fw-light">قیمت محصول</span>
+                      <span class="mb-2 h5 fw-light">{% translate 'قیمت محصول' %}</span>
                       <!-- Price and discount -->
                       <span class="d-flex align-items-center">
                         {% if product.offer_price < product.price %}
 
 
-                        <span class="mb-0 h3 me-2 text-success ">{{product.offer_price| intcomma}}  تومان</span>
+                        <span class="mb-0 h3 me-2 text-success ">{{product.offer_price| intcomma}}  {% translate 'تومان' %}</span>
                         <span class="text-decoration-line-through fs-6 mb-0 me-2">{{product.price | intcomma}}</span>
                         {% comment %} <span class="badge text-bg-dark mb-0">60% تخفیف</span> {% endcomment %}
                         {%else%}
-                        <span class="mb-0 h3 me-2 text-success">{{product.price | intcomma}} تومان</span>
+                        <span class="mb-0 h3 me-2 text-success">{{product.price | intcomma}} {% translate 'تومان' %}</span>
                         {% endif %}
                       </span>
                     </label>

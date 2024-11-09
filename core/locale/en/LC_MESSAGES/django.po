@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Peykhaksang 1.0.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-06 18:16+0330\n"
+"POT-Creation-Date: 2024-11-06 21:24+0330\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Sina Afshar <sinaa.afshar@gmail.com>\n"
 "Language-Team: English <LL@li.org>\n"
@@ -74,11 +74,12 @@ msgstr "description"
 msgid "خلاصه متن"
 msgstr "summary"
 
-#: .\product\models.py:124
+#: .\product\models.py:124 .\templates\product\product-detail.html:483
+#: .\templates\product\product-details.html:534
 msgid "قیمت محصول"
 msgstr "product price"
 
-#: .\product\models.py:125
+#: .\product\models.py:125 .\templates\product\product_list.html:18
 msgid "قیمت با تخفیف"
 msgstr "price with discount"
 
@@ -118,7 +119,8 @@ msgstr "active"
 msgid "تعداد"
 msgstr "amount"
 
-#: .\product\models.py:143
+#: .\product\models.py:143 .\templates\product\product-detail.html:58
+#: .\templates\product\product-details.html:57
 msgid "استاندارد"
 msgstr "Standard"
 
@@ -126,7 +128,9 @@ msgstr "Standard"
 msgid "اندازه"
 msgstr "size"
 
-#: .\product\models.py:145
+#: .\product\models.py:145 .\templates\product\product-detail.html:68
+#: .\templates\product\product-details.html:101
+#: .\templates\product\product_detail.html:90
 msgid "گارانتی"
 msgstr "garantee"
 
@@ -325,7 +329,9 @@ msgstr "category"
 msgid ""
 "از این قسمت می توانید دسته بندی اصلی آموزش ها و محصولات پی خاک سنگ را ملاحظه "
 "کنید"
-msgstr "You can select the categories from here. the categories is all about articles and products"
+msgstr ""
+"You can select the categories from here. the categories is all about "
+"articles and products"
 
 #: .\templates\partials\category-list.html:25
 msgid "خاک "
@@ -607,12 +613,13 @@ msgstr "Software"
 #: .\templates\productcat\asphalt.html:37
 #: .\templates\productcat\concrete.html:37 .\templates\productcat\rock.html:37
 #: .\templates\productcat\soil.html:37 .\templates\productcat\weld.html:37
-#: .\templates\website\contact.html:33
+#: .\templates\website\blog.html:36 .\templates\website\contact.html:33
 msgid "صفحه اصلی"
 msgstr "Home Page"
 
 #: .\templates\partials\navs\center-nav.html:228
 #: .\templates\partials\navs\center-nav.html:236
+#: .\templates\website\blog.html:37
 msgid "وبلاگ"
 msgstr "Blog"
 
@@ -957,6 +964,310 @@ msgstr "Download Price List for Basic Soil and Concrete Equipment"
 #: .\templates\partials\slider.html:194
 msgid "شرایط خرید نقدی و اقساطی از پی خاک سنگ"
 msgstr "Conditions for Cash and Installment Purchase from Pey Khak Sang"
+
+#: .\templates\product\product-detail.html:44
+#: .\templates\product\product-details.html:43
+msgid "خلاصه توضیحات"
+msgstr "summary"
+
+#: .\templates\product\product-detail.html:54
+#: .\templates\product\product-details.html:53
+msgid "تاریخ انتشار:"
+msgstr "pulish date"
+
+#: .\templates\product\product-detail.html:64
+#: .\templates\product\product-details.html:63
+msgid "سایز محصول"
+msgstr "product status"
+
+#: .\templates\product\product-detail.html:85
+#: .\templates\product\product-details.html:84
+msgid "زمان تحویل"
+msgstr "created Date"
+
+#: .\templates\product\product-detail.html:89
+#: .\templates\product\product-details.html:88
+msgid "تعداد بازدید:"
+msgstr "views"
+
+#: .\templates\product\product-detail.html:114
+#: .\templates\product\product-details.html:123
+#: .\templates\product\product_detail.html:118
+msgid "مشخصات تخصصی محصول"
+msgstr "product specifications"
+
+#: .\templates\product\product-detail.html:118
+#: .\templates\product\product-details.html:127
+msgid "دیدگاه"
+msgstr "comments"
+
+#: .\templates\product\product-detail.html:122
+#: .\templates\product\product-details.html:131
+msgid "نحوه ارسال "
+msgstr "time to send"
+
+#: .\templates\product\product-detail.html:161
+msgid "نظرات شما "
+msgstr "comments"
+
+#: .\templates\product\product-detail.html:176
+msgid "(بر اساس 155 دیدگاه) "
+msgstr "(155 comments)"
+
+#: .\templates\product\product-detail.html:310
+msgid "2 روز پیش"
+msgstr "2 days ago"
+
+#: .\templates\product\product-detail.html:311
+msgid ""
+"کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و "
+"متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای "
+"علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد."
+msgstr ""
+"Many books in the past sixty-three percent, both in the past, present, and "
+"future, require significant understanding from the community and experts to "
+"create more recognition for software designers, particularly creative "
+"designers, and to foster a progressive culture in the Persian language."
+
+#: .\templates\product\product-detail.html:314
+#: .\templates\product\product-details.html:365
+msgid "پاسخ"
+msgstr "reply"
+
+#: .\templates\product\product-detail.html:326
+#: .\templates\product\product-detail.html:355
+#: .\templates\product\product-details.html:377
+#: .\templates\product\product-details.html:406
+msgid "ثبت دیدگاه"
+msgstr "Submit"
+
+#: .\templates\product\product-detail.html:333
+#: .\templates\product\product-details.html:384
+msgid "نام"
+msgstr "First Name*"
+
+#: .\templates\product\product-detail.html:337
+#: .\templates\product\product-details.html:388 .\website\models.py:138
+msgid "ایمیل"
+msgstr "email"
+
+#: .\templates\product\product-detail.html:351
+#: .\templates\product\product-details.html:402
+msgid "دیدگاه خود را بنویسید"
+msgstr "type ypur comment"
+
+#: .\templates\product\product-detail.html:367
+#: .\templates\product\product-details.html:418
+msgid ""
+"یکی از مشکلات اصلی خریداران کالاهای صنعتی موجود نبودن کالا در بازار و صرف "
+"زمان بالای انتظار برای تولید محصولات است، که این مساله زمان راه اندازی "
+"آزمایشگاه و هزینه سرمایه گذاری و نگهداری پول نقد را افزایش می دهد، گروه "
+"صنعتی پی خاک سنگ همه تلاش خود را در جهت رفع این مشکل و آماده سازی محصولات در "
+"انبار و ارسال فوری محصولات کرده است. در نظر داشته باشید که هزینه تولید "
+"کالاهای تخصصی بالا و تعداد به نسبت تبدیل مشتری پایین است و همچنین این مهم به "
+"هزینه انبار زیاد و سرمایه گذاری زیاد نیاز دارد گروه صنعتی پی خاک سنگ برای حل "
+"این مشکل این کار سخت و پر ریسک در بازار را انجام داده است  به این امید که "
+"مشتریان از این شرکت حمایت های لازم را انجام داده و سرمایه شرکت در گردش قرار "
+"گیرد"
+msgstr ""
+"One of the main issues for buyers of industrial goods is the lack of "
+"available products in the market and the high waiting time for production, "
+"which increases both the time needed to set up a laboratory and the costs "
+"associated with investment and cash management. Pey Khak Sang Industrial "
+"Group has made every effort to address this issue by preparing products in "
+"stock and enabling immediate shipment. Keep in mind that the production "
+"costs for specialized goods are high, customer conversion rates are "
+"relatively low, and this endeavor requires significant warehouse costs and "
+"investment. Pey Khak Sang Industrial Group has undertaken this challenging "
+"and risky task in the hope that customers will provide the necessary support "
+"to keep the company’s capital circulating."
+
+#: .\templates\product\product-detail.html:381
+#: .\templates\product\product-details.html:432
+msgid "ثبت سفارش"
+msgstr "Order"
+
+#: .\templates\product\product-detail.html:391
+#: .\templates\product\product-details.html:442
+msgid "ارسال کالا"
+msgstr "Send product"
+
+#: .\templates\product\product-detail.html:401
+#: .\templates\product\product-details.html:452
+msgid "تحویل به مشتری"
+msgstr "bring to cumstomer"
+
+#: .\templates\product\product-detail.html:412
+#: .\templates\product\product-details.html:463
+msgid "زمان پردازش:"
+msgstr "date:"
+
+#: .\templates\product\product-detail.html:413
+#: .\templates\product\product-details.html:464
+msgid "زمان ارسال:"
+msgstr "time to send:"
+
+#: .\templates\product\product-detail.html:489
+#: .\templates\product\product-detail.html:494
+#: .\templates\product\product-details.html:540
+#: .\templates\product\product-details.html:545
+msgid "تومان"
+msgstr "dollar"
+
+#: .\templates\product\product-details.html:65
+msgid "متوسط"
+msgstr "medium"
+
+#: .\templates\product\product-details.html:67
+msgid "سبک"
+msgstr "Soil"
+
+#: .\templates\product\product-details.html:69
+msgid "سنگین"
+msgstr "heavy"
+
+#: .\templates\product\product-details.html:71
+msgid "نامشخص"
+msgstr "product specifications"
+
+#: .\templates\product\product-details.html:104
+msgid "دارد"
+msgstr "Standard"
+
+#: .\templates\product\product-details.html:106
+msgid "ندارد"
+msgstr "Standard"
+
+#: .\templates\product\product-details.html:170
+msgid "نظرات شما"
+msgstr "comments"
+
+#: .\templates\product\product-details.html:185
+msgid "(بر اساس 0 دیدگاه)"
+msgstr "(155 comments)"
+
+#: .\templates\product\product-details.html:462
+msgid ""
+"در صورت موجود بودن کالا با هماهنگی های صورت گرفته از سمت شرکت پی خاک سنگ "
+"کالا به سرعت و در همان روز ارسال می شود و در غیر این صورت زمان آماده سازی و "
+"ارسال کالا توسط بخش آماده سازی و انبار شرکت هماهنگ می شود"
+msgstr "If the product is available, it will be quickly shipped on the same day with coordination from Pey Khak Sang company. Otherwise, the preparation and shipping time will be coordinated by the company's preparation and warehouse department."
+
+#: .\templates\product\product-details.html:463
+msgid ""
+"زمانی که طول می کشد تا کالا(های) شما برای ارسال از انبار ما آماده شود. این "
+"شامل آماده سازی اقلام شما، انجام بررسی های کیفیت و بسته بندی برای حمل و نقل "
+"است."
+msgstr "The time it takes for your product(s) to be ready for shipment from our warehouse. This includes preparing your items, performing quality checks, and packaging for shipping."
+
+#: .\templates\product\product-details.html:464
+msgid ""
+"زمان ارسال کالا در توضیحات محصول نوشته شده است شما می توانید پس از ثبت سفارش "
+"با همکاران ما جهت ارسال فوری محصولات هماهنگ شوید"
+msgstr "The shipping time is provided in the product description. After placing an order, you can coordinate with our team for expedited shipping."
+
+#: .\templates\product\product-details.html:465
+msgid ""
+"محصولات زیادی از انبار پی خاک سنگ به صورت سالم به دست مشتریان رسیده است اما "
+"خرابی ناشی از حمل از مشکلات موجود زمان ارسال است و  تعداد بسیار پایینی از "
+"محصولات به دلیل مشکلات حمل و از سمت شرکت های حامل با مشکل روبرو بوده است. "
+"گروه صنعتی پی خاک سنگ این نوید را به مشتریان خود می دهد که در صورت بروز این "
+"مشکلات و ارسال تصویر کالا و مشخص شدن خرابی آن شکت پی خاک سنگ هزینه مشتریان "
+"را به صورت کامل برگردانده و با هزینه خود کالاهای خراب را مرجوع می کند"
+msgstr "Many products from Pey Khak Sang's warehouse have arrived in good condition to customers, but occasionally, damages during transportation may occur. A very small number of products have faced issues due to carrier-related transport problems. Pey Khak Sang Industrial Group assures its customers that, in the event of such issues, with the submission of a product image and verification of the damage, the company will fully reimburse the customer and return the damaged items at its own expense."
+
+#: .\templates\product\product_detail.html:24
+msgid " دسته بندی:"
+msgstr "category:"
+
+#: .\templates\product\product_detail.html:29
+msgid "تگ ها:"
+msgstr "tags:"
+
+#: .\templates\product\product_detail.html:39
+msgid "خلاصه محصول:"
+msgstr "summary:"
+
+#: .\templates\product\product_detail.html:42
+#: .\templates\product\product_detail.html:46
+msgid "قیمت محصول :"
+msgstr "product price:"
+
+#: .\templates\product\product_detail.html:50
+msgid "اضافه کردن به لیست سفارش"
+msgstr "Add to Order List"
+
+#: .\templates\product\product_detail.html:52
+msgid "موجود شد خبرم کن!"
+msgstr "Notify me when available!"
+
+#: .\templates\product\product_detail.html:64
+msgid "توضیحات محصول"
+msgstr "product description seo"
+
+#: .\templates\product\product_detail.html:76
+msgid "مشخصات محصول"
+msgstr "product specifications"
+
+#: .\templates\product\product_detail.html:84
+msgid "عناوین"
+msgstr "title"
+
+#: .\templates\product\product_detail.html:85
+msgid "مشخصات"
+msgstr "product specifications"
+
+#: .\templates\product\product_detail.html:98
+msgid " استاندارد"
+msgstr "Standard"
+
+#: .\templates\product\product_detail.html:102
+msgid "سایز محصول "
+msgstr "product status"
+
+#: .\templates\product\product_detail.html:106
+msgid "زمان تحویل "
+msgstr "created Date"
+
+#: .\templates\product\product_list.html:7
+msgid "لیست همه محصولات پی خاک سنگ"
+msgstr "price list"
+
+#: .\templates\product\product_list.html:9
+msgid "ساخت محصول جدید"
+msgstr "product specifications"
+
+#: .\templates\product\product_list.html:14
+msgid "id"
+msgstr "id"
+
+#: .\templates\product\product_list.html:15
+msgid "code"
+msgstr "code"
+
+#: .\templates\product\product_list.html:16
+msgid "نام محصول"
+msgstr "title"
+
+#: .\templates\product\product_list.html:17
+msgid "قیمت"
+msgstr "price"
+
+#: .\templates\product\product_list.html:19
+msgid "ویرایش"
+msgstr "edit"
+
+#: .\templates\product\product_list.html:20
+msgid "پاک کردن"
+msgstr "Delete"
+
+#: .\templates\product\product_list.html:35
+msgid "edit"
+msgstr "edit"
+
+#: .\templates\product\product_list.html:38
+msgid "delete"
+msgstr "delete"
 
 #: .\templates\productcat\asphalt.html:39
 msgid "آسفالت"
@@ -1326,6 +1637,22 @@ msgstr "In the case of a return, who will bear the shipping cost?"
 msgid "به منظور عودت محصول، هزینه پست بر عهده مشتری خواهد بود. "
 msgstr "For product returns, the shipping cost will be borne by the customer."
 
+#: .\templates\website\blog-detail.html:39
+msgid "5دقیقه زمان مطالعه"
+msgstr "5 minutes reading time"
+
+#: .\templates\website\blog-detail.html:51
+msgid " خلاصه مطلب :"
+msgstr "Summary:"
+
+#: .\templates\website\blog-detail.html:100
+msgid "برچسب:"
+msgstr "Tag:"
+
+#: .\templates\website\blog.html:31
+msgid "به بخش مقاله های پی خاک سنگ خوش آمدید"
+msgstr "Welcome to Pey Khak Sang's article section"
+
 #: .\templates\website\contact.html:54
 msgid "آدرس شرکت پی خاک سنگ"
 msgstr "PeyKhakSang Company Address"
@@ -1530,10 +1857,6 @@ msgstr "alt text"
 #: .\website\models.py:137
 msgid "نام و نام خانوادگی"
 msgstr "name"
-
-#: .\website\models.py:138
-msgid "ایمیل"
-msgstr "email"
 
 #: .\website\models.py:139
 msgid "متن پیام"

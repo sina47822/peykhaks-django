@@ -1,22 +1,23 @@
 {% extends '../core/base.html' %}
 {% load static %}
+{% load i18n %}
 
 {% block content %}
   <div class="container">
-    <h1 class="mt-5">لیست همه محصولات پی خاک سنگ</h1>
+    <h1 class="mt-5">{% translate 'لیست همه محصولات پی خاک سنگ' %}</h1>
     <a href="{% url 'product:product-create' %}">
-      <h5>ساخت محصول جدید</h5>
+      <h5>{% translate 'ساخت محصول جدید' %}</h5>
     </a>
     <table class="table">
       <thead>
         <tr>
-          <th scope="col">id</th>
-          <th scope="col">code</th>
-          <th scope="col">نام محصول</th>
-          <th scope="col">قیمت</th>
-          <th scope="col">قیمت با تخفیف</th>
-          <th scope="col">ویرایش</th>
-          <th scope="col">پاک کردن</th>
+          <th scope="col">{% translate 'id' %}</th>
+          <th scope="col">{% translate 'code' %}</th>
+          <th scope="col">{% translate 'نام محصول' %}</th>
+          <th scope="col">{% translate 'قیمت' %}</th>
+          <th scope="col">{% translate 'قیمت با تخفیف' %}</th>
+          <th scope="col">{% translate 'ویرایش' %}</th>
+          <th scope="col">{% translate 'پاک کردن' %}</th>
 
         </tr>
       <thead>
@@ -31,10 +32,10 @@
           <td>{{product.price}}</td>
           <td>{{product.offer_price}}</td>
           <td><a href="{% url 'product:product-edit' slug=product.slug %}">
-            <h5>edit</h5>
+            <h5>{% translate 'edit' %}</h5>
           </a></td>
           <td><a href="{% url 'product:product-delete' slug=product.slug %}">
-            <h5>delete</h5>
+            <h5>{% translate 'delete' %}</h5>
           </a></td>
 
         </tr>

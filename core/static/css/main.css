@@ -18,3 +18,37 @@ html[dir=rtl] .choices, html[dir=rtl] select option, html[dir=rtl] .choices__inp
 html{
     overflow-x:hidden ;
 }
+
+/* Styling for product table images */
+.product-image-show {
+    max-width: 100%; /* Ensure images are not larger than their container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure image content fills the space */
+}
+
+/* Optional: Add some padding and border for a cleaner look */
+.product-image-show {
+    padding: 5px;
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .table {
+        font-size: 14px; /* Smaller font for better fit on mobile */
+    }
+    .table th, .table td {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+/* Custom styling for table */
+.table {
+    border-collapse: collapse;
+}
+
+/* Add hover effect on rows */
+.table-hover tbody tr:hover {
+    background-color: #f5f5f5; /* Light gray background on hover */
+}
