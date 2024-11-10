@@ -16,9 +16,9 @@ COPY ./core /app/
 # 	&& rm -rf /var/lib/apt/lists/*
 
 # Install gettext and compile translations
-RUN apt-get update \
-    && apt-get install -y gettext \
-    && python manage.py compilemessages \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
-COPY ./core /app/
+# RUN apt-get update \
+#     && apt-get install -y gettext \
+#     && python manage.py compilemessages \
+#     && apt-get clean \
+#     && rm -rf /var/lib/apt/lists/*
+# COPY ./core /app/
