@@ -74,32 +74,25 @@
 					</li>
 				{% endfor %}
 			</ul>
+
 			<!-- Catalog START -->
-			{% if language.code == "fa" %}
-			<div class=" ms-1 ms-lg-0">
-				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
-					{% translate 'دانلود کاتالوگ' %}
+			
+			<div class="ms-1 ms-lg-0">
+				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" 
+				   role="button"
+				   {% if language.code == "fa" or LANGUAGE_CODE == "fa" %}
+					   href="{% static 'catalog/pks-catalog.pdf' %}"
+				   {% elif language.code == "en" or LANGUAGE_CODE == "en" %}
+					   href="{% static 'catalog/pks-en-catalog.pdf' %}"
+				   {% elif language.code == "ar" or LANGUAGE_CODE == "ar" %}
+					   href="{% static 'catalog/pks-ar-catalog.pdf' %}"
+				   {% else %}
+					   href="{% static 'catalog/pks-catalog.pdf' %}"
+				   {% endif %}>
+				   {% translate 'دانلود کاتالوگ' %}
 				</a>
 			</div>
-			{% elif language.code == "en" %}
-			<div class=" ms-1 ms-lg-0">
-				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-en-catalog.pdf' %}" role="button">
-					{% translate 'دانلود کاتالوگ' %}
-				</a>
-			</div>
-			{% elif language.code == "ar" %}
-			<div class=" ms-1 ms-lg-0">
-				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-en-catalog.pdf' %}" role="button">
-					{% translate 'دانلود کاتالوگ' %}
-				</a>
-			</div>
-			{% else %}
-			<div class=" ms-1 ms-lg-0">
-				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
-					{% translate 'دانلود کاتالوگ' %}
-				</a>
-			</div>
-			{% endif %}
+			
 
 		</div>
 	</nav>
