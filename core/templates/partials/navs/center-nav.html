@@ -75,12 +75,32 @@
 				{% endfor %}
 			</ul>
 			<!-- Catalog START -->
+			{% if language.code == "fa" %}
 			<div class=" ms-1 ms-lg-0">
 				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
 					{% translate 'دانلود کاتالوگ' %}
 				</a>
 			</div>
-			<!-- Catalog START -->
+			{% elif language.code == "en" %}
+			<div class=" ms-1 ms-lg-0">
+				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-en-catalog.pdf' %}" role="button">
+					{% translate 'دانلود کاتالوگ' %}
+				</a>
+			</div>
+			{% elif language.code == "ar" %}
+			<div class=" ms-1 ms-lg-0">
+				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-en-catalog.pdf' %}" role="button">
+					{% translate 'دانلود کاتالوگ' %}
+				</a>
+			</div>
+			{% else %}
+			<div class=" ms-1 ms-lg-0">
+				<a class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0" href="{% static 'catalog/pks-catalog.pdf' %}" role="button">
+					{% translate 'دانلود کاتالوگ' %}
+				</a>
+			</div>
+			{% endif %}
+
 		</div>
 	</nav>
 	<!-- Nav END -->
