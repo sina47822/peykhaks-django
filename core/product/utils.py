@@ -97,12 +97,12 @@ def import_products_from_excel(file):
             defaults=product_data
         )
 
-        # Handle the category many-to-many relationship only if it's not NaN
+        # Handle category IDs from the Excel row
         category_ids = row.get('category')
         if pd.notna(category_ids):
-            category_ids_list = [int(cat_id) for cat_id in str(category_ids).split(',') if cat_id.strip().isdigit()]
-            product.category.set(Category.objects.filter(id__in=category_ids_list))
-
+            category_ids_list = [int(cat_id.strip()) for cat_id in str(category_ids).split(',') if cat_id.strip().isdigit()]
+            product.category.set(category_ids_list)
+            
         # Set translated fields for each language, only if they are not NaN
         for lang_code, _ in settings.LANGUAGES:
             title_column = f'title_{lang_code}'
