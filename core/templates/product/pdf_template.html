@@ -117,11 +117,9 @@
             </thead>
             <tbody>
                 {% for product in products %}
-                    <tr data-product-id="{{ forloop.counter }}" 
-                        data-price="{{ product.product.price }}" 
-                        data-offer-price="{{ product.product.offer_price }}">
+                    <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ product.title }}</td>
+                        <td><a href="{% url 'product:productdetails' slug=product.slug %}">{{ product.title }}</a></td>
                         <td class="quantity">{{ product.quantity }}</td>
                         <td class="product-price">{{ product.price }} تومان</td>
                         <td class="discount-percentage">{{ product.discount_percentage }}</td>

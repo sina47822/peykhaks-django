@@ -224,6 +224,7 @@ def generate_pdf(request, slug):
         quantity = page_product.quantity
         discount_percentage = 0
         total_price = price * quantity
+        product_slug = page_product.product.slug
 
         if offer_price: 
             if offer_price > 0:
@@ -234,6 +235,7 @@ def generate_pdf(request, slug):
             'title': page_product.product.title,
             'quantity': quantity,
             'price': price,
+            'slug':product_slug,
             'discount_percentage': f"{discount_percentage:.0f}%" if discount_percentage > 0 else "تخفیف ندارد",
             'total_price': f"{total_price:.0f} تومان"
         })
