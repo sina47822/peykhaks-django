@@ -216,16 +216,34 @@ def generate_pdf(request, slug):
     if not page_config:
         return HttpResponse("No page configuration found.", status=404)
 
-    # Get the selected products for this page
-    products = page_config.page_config_products.all()
-    last_update = page_config.last_update
+    # Prepare data for products
+    products = []
+    for page_product in page_config.page_config_products.all():
+        price = page_product.product.price
+        offer_price = page_product.product.offer_price
+        quantity = page_product.quantity
+        discount_percentage = 0
+        total_price = price * quantity
+
+        if offer_price: 
+            if offer_price > 0:
+                discount_percentage = ((price - offer_price) / price) * 100
+                total_price = offer_price * quantity
+
+        products.append({
+            'title': page_product.product.title,
+            'quantity': quantity,
+            'price': price,
+            'discount_percentage': f"{discount_percentage:.0f}%" if discount_percentage > 0 else "تخفیف ندارد",
+            'total_price': f"{total_price:.0f} تومان"
+        })
 
     # Render HTML template with context
     html_content = render_to_string('product/pdf_template.html', {
+        'page_config': page_config,
         'products': products,
-        'last_update': last_update,
-        'page_name': page_config.page_name,
-        'logo': page_config.logo,
+        'slug': slug,
+        'is_pdf': True,  # Flag to customize template for PDF
     })
 
     # Generate PDF

@@ -1,16 +1,24 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
     <head>
         <meta charset="UTF-8">
         <title>{{ page_name }}</title>
         <style>
-            @font-face {
-                font-family: 'iransans';
-                src: url('static/fonts/IRANSans/IRANSansWeb.ttf');
+            @page {
+                size: A4 landscape; /* تنظیم سایز صفحه و جهت */
+                margin: 1cm; /* تنظیم حاشیه صفحه */
             }
-
+            
+            body ,h1,h2{
+                font-family: Arial, sans-serif;
+                font-size: 12px;
+            }
+            h1{
+                font-size:20px;
+            }
+            h2{
+                font-size:16px;
+            }
             /* استایل هدر */
             .header {
                 text-align: center;
@@ -28,12 +36,30 @@
                 width: 100%;
                 border-collapse: collapse;
             }
-            table, th, td {
-                border: 1px solid black;
-            }
-            th, td {
+            .table-striped th, .table-striped td {
+                border: 1px solid #ddd;
+                text-align: center;
                 padding: 8px;
-                text-align: right;
+            }
+            .title_table th, .title_table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f4f4f4;
+            }
+            .center{
+                text-align: center;
+            }
+
+            .header{
+                display:flex;
+                justify-content: space-between;
+            }
+            .header-title{
+            }
+            header-logo{
+
             }
         </style>
         
@@ -41,19 +67,22 @@
     <body>
 
         <div class="header">
-            <h1>{{ page_name }}</h1>
-            <p>تاریخ: {{ last_update }}</p>
-            {% if logo %}
-                <img src="{{ logo.url }}" alt="Logo">
-            {% endif %}
+            <div class="header-title">
+                <h1>{{ page_config.page_name }}</h1>
+                <h2>تاریخ: {{ page_config.last_update }}</h2>
+            </div>
+            <div class="header-logo">
+                <img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo">
+            </div>
+
         </div>
 
-        <table>
+        <table class="title_table">
             <tbody>
                 <tr>
-                    <td rowspan="3">فروشنده</td>
+                    <td rowspan="3" class="center">فروشنده</td>
                     <td>پی خاک سنگ</td>
-                    <td><img src="{{ logo.url }}" alt="Logo" style="max-height: 100px;"></td>
+                    <td><img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo" style="max-height: 20px;"></td>
                 </tr>
                 <tr>
                     <td colspan="2">نشانی : تهران - خیابان پیروزی - بلوار ابوذر شمالی - کوچه ششم شرقی - پلاک 9</td>
@@ -62,7 +91,7 @@
                     <td colspan="2">تلفن: 021_33163222 _ 33076061</td>
                 </tr>
                 <tr>
-                    <td rowspan="3">خریدار</td>
+                    <td rowspan="3" class="center">خریدار</td>
                     <td colspan="2">آقای/خانم/شرکت:</td>
                 </tr>
                 <tr>
@@ -88,15 +117,15 @@
             </thead>
             <tbody>
                 {% for product in products %}
-                    <tr data-product-id="{{ product.product.id }}" 
+                    <tr data-product-id="{{ forloop.counter }}" 
                         data-price="{{ product.product.price }}" 
                         data-offer-price="{{ product.product.offer_price }}">
                         <td>{{ forloop.counter }}</td>
-                        <td>{{ product.product.title }}</td>
+                        <td>{{ product.title }}</td>
                         <td class="quantity">{{ product.quantity }}</td>
-                        <td class="product-price">{{ product.product.price }} تومان</td>
-                        <td class="discount-percentage">---</td>
-                        <td class="total-price">---</td>
+                        <td class="product-price">{{ product.price }} تومان</td>
+                        <td class="discount-percentage">{{ product.discount_percentage }}</td>
+                        <td class="total-price">{{ product.total_price }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -107,46 +136,7 @@
             <p>Thank you for choosing us!</p>
         </div>
     </div>
-    <script type="text/javascript">
-        // تابعی برای محاسبه درصد تخفیف و قیمت کل
-        function calculateDiscountAndTotal() {
-            // پیدا کردن تمام ردیف‌های جدول
-            const rows = document.querySelectorAll('table tbody tr');
-            console.log('rows: ', rows);
 
-            rows.forEach(row => {
-                const priceElement = row.querySelector('.product-price');
-                const discountElement = row.querySelector('.discount-percentage');
-                const totalElement = row.querySelector('.total-price');
-                
-                // استخراج قیمت و تخفیف از دیتابیس
-                const price = parseFloat(row.getAttribute('data-price'));
-                const offerPrice = parseFloat(row.getAttribute('data-offer-price'));
-                const quantity = parseInt(row.querySelector('.quantity').textContent);
-                // اگر قیمت تخفیف خورده وجود داشته باشد
-                if (offerPrice > 0) {
-                    // محاسبه درصد تخفیف
-                    const discountPercentage = ((price - offerPrice) / price) * 100;
-
-                    // محاسبه قیمت کل با فرمول جدید
-                    const totalPrice = price * (1 - discountPercentage / 100) * quantity;
-
-                    // نمایش درصد تخفیف و قیمت کل
-                    discountElement.textContent = discountPercentage.toFixed(0) + '%';
-                    totalElement.textContent = totalPrice.toFixed(0) + ' تومان';
-                } else {
-                    // اگر تخفیف نداشتیم
-                    discountElement.textContent = 'تخفیف ندارد';
-                    totalElement.textContent = (price * quantity).toFixed(0) + ' تومان';
-                }
-            });
-        }
-
-        // زمانی که صفحه بارگذاری شد، محاسبات را انجام بده
-        document.addEventListener('DOMContentLoaded', function() {
-            calculateDiscountAndTotal();
-        });
-    </script>
 </body>
 </html>
 
