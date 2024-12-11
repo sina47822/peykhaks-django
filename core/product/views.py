@@ -1,7 +1,7 @@
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404, render
 from review.models import ProductReviewModel, ReviewStatusType
-from product.models import Product , Category, Tags ,PriceList,ProductSEO,TagsSEO,CategorySEO,ProductStatusType,ProductCategoryModel,WishlistProductModel,ProductSpecification
+from product.models import Product , Category, Tags ,PriceList,ProductSEO,TagsSEO,CategorySEO,ProductStatusType,ProductCategoryModel,WishlistProductModel,ProductSpecification,PageConfig
 from .forms import PriceUpdateFormset
 from django.core.paginator import Paginator
 
@@ -14,6 +14,11 @@ from django.core.exceptions import FieldError
 from django.core.exceptions import PermissionDenied
 # from django.http import JsonResponse
 from django.utils.translation import gettext_lazy as _
+
+#generate pdf
+from django.http import HttpResponse
+from django.template.loader import render_to_string
+from weasyprint import HTML
 
 def productcategory(request, slug):
     category = get_object_or_404(Category, slug=slug)  # Retrieve the category object based on the slug
@@ -180,7 +185,6 @@ class ShopProductDetailView(DetailView):
         obj.media.prefetch_related()
         return obj
 
-
 class AddOrRemoveWishlistView(LoginRequiredMixin, View):
 
     def post(self, request, *args, **kwargs):
@@ -198,3 +202,37 @@ class AddOrRemoveWishlistView(LoginRequiredMixin, View):
                 message = "محصول به لیست علایق اضافه شد"
 
         return JsonResponse({"message": message})
+    
+def display_page(request, slug):
+    page_config = get_object_or_404(PageConfig, slug=slug)  # فرض بر این است که یک صفحه مشخص دارید
+    return render(request, 'product/display_page.html', {
+        'page_config': page_config,
+        'products': page_config.page_config_products.all(),
+        'slug': slug,
+    })
+def generate_pdf(request, slug):
+    # Fetch data
+    page_config = get_object_or_404(PageConfig, slug=slug)  # فرض بر این است که یک صفحه مشخص دارید
+    if not page_config:
+        return HttpResponse("No page configuration found.", status=404)
+
+    # Get the selected products for this page
+    products = page_config.page_config_products.all()
+    last_update = page_config.last_update
+
+    # Render HTML template with context
+    html_content = render_to_string('product/pdf_template.html', {
+        'products': products,
+        'last_update': last_update,
+        'page_name': page_config.page_name,
+        'logo': page_config.logo,
+    })
+
+    # Generate PDF
+
+    pdf_file = HTML(string=html_content).write_pdf()
+    
+    # Return PDF as response
+    response = HttpResponse(pdf_file, content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="{page_config.page_name}.pdf"'
+    return response

@@ -5,7 +5,7 @@ from django.urls import path
 from django.http import HttpResponseRedirect
 from product.forms import ProductAdminForm
 from product.models import Product, Category, StandardAASHTO, StandardASTM, StandardISIRI, Standards, Tags , ProductMedia ,ProductSpecification, ProductSEO,TagsSEO,CategorySEO,PriceList
-from product.models import ProductCategoryModel, WishlistProductModel
+from product.models import ProductCategoryModel, WishlistProductModel, PageConfig, PageConfigProduct
 from .utils import export_products_to_excel, import_products_from_excel
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources, fields
@@ -120,3 +120,14 @@ class ProductCategoryModelAdmin(admin.ModelAdmin):
 @admin.register(WishlistProductModel)
 class WishlistProductModelAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "product")
+
+class PageConfigProductInline(admin.TabularInline):
+    model = PageConfigProduct
+    extra = 1  # تعداد فیلدهای اضافی برای هر محصول جدید که به صورت پیش‌فرض نمایش داده می‌شود
+    fields = ('product', 'quantity')  # فیلدهای نمایش داده شده در این بخش
+
+class PageConfigAdmin(admin.ModelAdmin):
+    list_display = ('page_name', 'slug', 'last_update')  # فیلدهایی که در لیست نمایش داده می‌شوند
+    inlines = [PageConfigProductInline]  # نمایش محصولات و تعداد آنها در بخش PageConfig
+
+admin.site.register(PageConfig, PageConfigAdmin)

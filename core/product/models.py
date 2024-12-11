@@ -239,3 +239,26 @@ class WishlistProductModel(models.Model):
 
     def __str__(self):
         return self.product.title
+
+class PageConfig(models.Model):
+    page_name = models.CharField(max_length=255)
+    slug = models.SlugField(unique=True, blank=True)  # Add slug field
+    logo = models.ImageField(upload_to='logos/')
+    last_update = models.CharField(max_length=255)
+    last_changes = models.DateTimeField(auto_now=True)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.page_name)  # Automatically generate slug
+        super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.page_name
+    
+class PageConfigProduct(models.Model):
+    page_config = models.ForeignKey('PageConfig', on_delete=models.CASCADE, related_name='page_config_products')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)  # تعداد محصول
+
+    def __str__(self):
+        return f'{self.product.title} - {self.quantity}'
