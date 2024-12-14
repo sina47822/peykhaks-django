@@ -61,6 +61,32 @@
             header-logo{
 
             }
+            .footer-sign{
+                display:flex;
+                justify-content:space-around;
+                margin-top:30px;
+                margin-bottom:20px;
+                font-size:14px;
+            }
+            ul {
+                list-style: none; /* حذف بولت پیش‌فرض */
+                padding: 0; /* حذف فضای اضافی */
+            }
+        
+            ul li {
+                margin-bottom: 15px; /* فاصله بین آیتم‌ها */
+                padding-right: 30px; /* فضای کافی برای فلش */
+                position: relative; /* برای موقعیت‌دهی فلش */
+                direction: rtl; /* تنظیم جهت راست‌چین */
+                text-align: right; /* راست‌چین کردن متن */
+            }
+        
+            ul li::before {
+                content: '\2190'; /* کد یونیکد برای فلش به سمت چپ */
+                margin-right: 10px; /* فاصله دادن از متن */
+                font-size: 20px; /* تغییر اندازه */
+                padding-left: 10px;
+            }
         </style>
         
     </head>
@@ -127,11 +153,27 @@
                     </tr>
                 {% endfor %}
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="text-align: right;"><strong>جمع کل:</strong></td>
+                    <td><strong>{{ grand_total }}</strong></td>
+                </tr>
+            </tfoot>
         </table>
 
         <!-- Footer Section -->
         <div class="footer">
-            <p>Thank you for choosing us!</p>
+            <div class="footer-sign">
+                <div>مهر و امضای فروشنده : </div>
+                <div>مهر و امضای خریدار : </div>
+            </div>
+            <ul>
+                <li>قیمت های این پیش فاکتور تا 7 روز اعتبار دارد</li>
+                <li>تجهیزات فوق دارای 12 ماه گارانتی و 36 ماه خدمات پس از فروش می باشد</li>
+                <li>هزینه نصب و راه اندازی در صورت اعزام کارشناس بر عهده خریدار می باشد</li>
+                <li>در صورت خرید بیش از 200 میلیون تومان تجهیزات خاک، پک نرم افزار که بسیار کاربردی می باشد به خریدار ارائه می گردد</li>
+                <li>خرید تجهیزات به صورت شرایطی امکان پذیر می باشد</li>
+            </ul>
         </div>
     </div>
 

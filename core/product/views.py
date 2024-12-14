@@ -218,6 +218,8 @@ def generate_pdf(request, slug):
 
     # Prepare data for products
     products = []
+    grand_total = 0  # Initialize the grand total
+    
     for page_product in page_config.page_config_products.all():
         price = page_product.product.price
         offer_price = page_product.product.offer_price
@@ -230,6 +232,9 @@ def generate_pdf(request, slug):
             if offer_price > 0:
                 discount_percentage = ((price - offer_price) / price) * 100
                 total_price = offer_price * quantity
+        
+        # Add the total price to the grand total
+        grand_total += total_price
 
         products.append({
             'title': page_product.product.title,
@@ -244,6 +249,7 @@ def generate_pdf(request, slug):
     html_content = render_to_string('product/pdf_template.html', {
         'page_config': page_config,
         'products': products,
+        'grand_total': f"{grand_total:.0f} تومان",
         'slug': slug,
         'is_pdf': True,  # Flag to customize template for PDF
     })

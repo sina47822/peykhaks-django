@@ -6,77 +6,97 @@
 {% block seoimage %}{{ seo.image }}{% endblock seoimage %}
 
 {% block content %}
-    <img src="{{ page_config.logo.url }}" alt="Logo" style="max-height: 100px;">
-    <h1>{{ page_config.page_name }}</h1>
-    <p>Last Update: {{ page_config.last_update }}</p>
-    
-    <table class="table table-striped table-bordered">
-        <thead class="table-dark">
-            <tr>
-                <th>#</th>
-                <th>نام محصول</th>
-                <th>تعداد</th>
-                <th>قیمت واحد</th>
-                <th>درصد تخفیف</th>
-                <th>قیمت کل</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for page_product in page_config.page_config_products.all %}
-                <tr data-product-id="{{ page_product.product.id }}" data-price="{{ page_product.product.price }}" data-offer-price="{{ page_product.product.offer_price }}">
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ page_product.product.title }}</td>
-                    <td class="quantity">{{ page_product.quantity }}</td>
-                    <td class="product-price">{{ page_product.product.price }} تومان</td>
-                    <td class="discount-percentage">---</td>
-                    <td class="total-price">---</td>
+<div class="container my-4">
+    <div class="d-flex justify-content-between mb-3 align-items-center p-4 rounded">
+        <div><h1 class="">{{ page_config.page_name }}</h1></div>
+        <div>
+            <p class="text-dark">Last Update: {{ page_config.last_update }}</p>
+            <img src="{{ page_config.logo.url }}" alt="Logo" style="max-height: 100px;">        
+        </div>
+    </div>
+
+
+
+    <!-- Responsive Table Wrapper -->
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>نام محصول</th>
+                    <th>تعداد</th>
+                    <th>قیمت واحد</th>
+                    <th>درصد تخفیف</th>
+                    <th>قیمت کل</th>
                 </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                {% for page_product in page_config.page_config_products.all %}
+                    <tr data-product-id="{{ page_product.product.id }}" data-price="{{ page_product.product.price }}" data-offer-price="{{ page_product.product.offer_price }}">
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ page_product.product.title }}</td>
+                        <td class="quantity">{{ page_product.quantity }}</td>
+                        <td class="product-price">{{ page_product.product.price }} تومان</td>
+                        <td class="discount-percentage">---</td>
+                        <td class="total-price">---</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot class="table-dark">
+                <tr>
+                    <td colspan="5" class="text-end"><strong>جمع کل:</strong></td>
+                    <td id="grand_total">---</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
 
     <!-- PDF Button -->
     <div class="text-end">
         <a href="{% url 'product:generate_pdf' slug=page_config.slug %}" class="btn btn-primary">Download PDF</a>
     </div>
-
+</div>
     <script type="text/javascript">
         // تابعی برای محاسبه درصد تخفیف و قیمت کل
         function calculateDiscountAndTotal() {
             // پیدا کردن تمام ردیف‌های جدول
             const rows = document.querySelectorAll('table tbody tr');
-            console.log('rows: ', rows);
+            const grandTotalElement = document.querySelector('#grand_total');
+            
+            let grandTotal = 0;
 
             rows.forEach(row => {
                 const priceElement = row.querySelector('.product-price');
                 const discountElement = row.querySelector('.discount-percentage');
                 const totalElement = row.querySelector('.total-price');
-                
+
                 // استخراج قیمت و تخفیف از دیتابیس
                 const price = parseFloat(row.getAttribute('data-price'));
                 const offerPrice = parseFloat(row.getAttribute('data-offer-price'));
                 const quantity = parseInt(row.querySelector('.quantity').textContent);
                 // چاپ قیمت کل در کنسول برای خطایابی
-                console.log('quantity: ', quantity);
+
                 if (offerPrice > 0) {
                     // محاسبه درصد تخفیف
                     const discountPercentage = ((price - offerPrice) / price) * 100;
-
-                    // محاسبه قیمت کل با فرمول جدید
                     const totalPrice = price * (1 - discountPercentage / 100) * quantity;
 
-                    // نمایش درصد تخفیف و قیمت کل
                     discountElement.textContent = discountPercentage.toFixed(0) + '%';
                     totalElement.textContent = totalPrice.toFixed(0) + ' تومان';
+                    grandTotal += totalPrice;
 
 
                 } else {
                     discountElement.textContent = 'تخفیف ندارد';
+                    const totalPrice = price * quantity;
                     totalElement.textContent = (price * quantity).toFixed(0) + ' تومان';
-
+                    grandTotal += totalPrice;
                 }
             });
+            // Update the grand total in the footer
+            grandTotalElement.textContent = grandTotal.toFixed(0) + ' تومان';
         }
+
 
         // زمانی که صفحه بارگذاری شد، محاسبات را انجام بده
         document.addEventListener('DOMContentLoaded', function() {
