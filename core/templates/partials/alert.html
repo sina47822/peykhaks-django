@@ -10,7 +10,9 @@
 				<img class="avatar-img" src="{% static 'images/icon/alert.png'%}" alt="pks-logo">
 			</div>
 			<!-- Info -->
-			{% blocktrans %}فروش ویژه محصولات پی خاک سنگ از تاریخ سوم آذر ماه تا ششم آذر ماه  ، {% endblocktrans %}<a href="{% url 'website:offer-landing' %}" class="alert-link">{% translate 'دریافت پیش فاکتور'%} </a> </div>
+			{% if popupalert.alert_title %}{{popupalert.alert_title}}{% endif %}
+
+			<a href="{% url 'website:offer-landing' %}" class="alert-link">{% translate 'دریافت پیش فاکتور'%} </a> </div>
 		<button type="button" class="btn btn-link text-primary-hover mb-0 text-end" data-bs-dismiss="alert" aria-label="Close"><i class="fal fa-x"></i></button>
 	</div>
 </div>

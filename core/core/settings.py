@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'..
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,23 +22,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("SECRET_KEY", default="test")
+SECRET_KEY = 'test'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config("DEBUG", cast=bool, default=True)
+DEBUG = True
 
-ALLOWED_HOSTS = [
-    "localhost",  # Local development
-    "127.0.0.1",  # Local development
-    "peykhaksang.com",  # Production site
-    "www.peykhaksang.com",  # Production site
+ALLOWED_HOSTS = ['*']
 
-]
-
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8000",  # Local development
-    "https://peykhaksang.com",  # Production site
-]
+CSRF_TRUSTED_ORIGINS = []
 
 SITE_ID = 2
 
@@ -45,6 +37,7 @@ SITE_ID = 2
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -59,23 +52,25 @@ INSTALLED_APPS = [
     # myapp
     'product.apps.ProductConfig',
     'website.apps.WebsiteConfig',
+    'review.apps.ReviewConfig',
 
     #other app
     'import_export',
     'tinymce',
+    'rosetta',
     #SEO
     'django.contrib.sitemaps',
     'robots'
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -91,6 +86,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
@@ -102,22 +98,22 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     "default": {
-#         "ENGINE": "django.db.backends.sqlite3",
-#         "NAME": BASE_DIR / "db.sqlite3",
-#     }
-# }
 DATABASES = {
     "default": {
-        "ENGINE":"django.db.backends.sqlite3",
-        "NAME":"peykhaks_db",
-        "USER":"peykhaks_user1" ,
-        "PASSWORD":"peykhaks_pass1" ,
-        "HOST":"localhost",
-        "PORT":"5432",
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": BASE_DIR / "db.sqlite3",
     }
 }
+# DATABASES = {
+#     "default": {
+#         "ENGINE":"django.db.backends.sqlite3",
+#         "NAME":"peykhaks_db",
+#         "USER":"peykhaks_user1" ,
+#         "PASSWORD":"peykhaks_pass1" ,
+#         "HOST":"localhost",
+#         "PORT":"5432",
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -137,25 +133,35 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
-# https://docs.djangoproject.com/en/4.2/topics/i18n/
+# https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
 
+LANGUAGES = (
+    ('fa', _('Farsi')),
+    ('en', _('English')),
+    ('ar', _('Arabic')),
+)
+LANGUAGE_CODE = 'fa'
+
+LOCALE_PATHS = [ BASE_DIR / 'locale/' ]
 TIME_ZONE = 'UTC'
-
 USE_I18N = True
-
+USE_L10N = True
 USE_TZ = True
 
+LANGUAGE_COOKIE_NAME = 'django_language'
+
+ROSETTA_REQUIRES_AUTH = True  # Set to True if you want authentication
+ROSETTA_REQUIRES_SUPERUSER = False  # Set to False if staff access is okay
 
 STATIC_URL = "/static/"
-STATIC_ROOT = "/app/static"
+STATIC_ROOT = "/staticfiles"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = "/app/media"
-
+MEDIA_ROOT = "/media"
+STATICFILES_DIRS = [ BASE_DIR/ 'static/' ,
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -203,5 +209,5 @@ TINYMCE_DEFAULT_CONFIG = {
     }""",
 }
 
-SECURE_SSL_REDIRECT = True
-SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+# SECURE_SSL_REDIRECT = False
+# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

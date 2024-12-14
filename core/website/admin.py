@@ -2,7 +2,7 @@ from django.contrib import admin
 from django import forms
 from django.urls import path
 from django.shortcuts import render, redirect
-from website.models import Post, Category, SliderModel, Tags, PostSEO,TagsSEO,CategorySEO
+from website.models import Post, Category, SliderModel, Tags, PostSEO,TagsSEO,CategorySEO,PopupAlert
 from import_export.admin import ImportExportModelAdmin
 from import_export import resources
 from django.utils.html import format_html
@@ -108,3 +108,9 @@ class SliderModelAdmin(admin.ModelAdmin):
     search_fields = ['title']
 admin.site.register(SliderModel,SliderModelAdmin)
 
+class PopupAlertAdmin(admin.ModelAdmin):
+    list_display = ('alert_title', 'alert_control', 'popup_title', 'popup_control')
+    list_editable = ('alert_control', 'popup_control')  # Allow toggling directly in the admin list
+    fields = ('alert_title', 'alert_control', 'popup_title', 'popup_image', 'popup_control')
+
+admin.site.register(PopupAlert, PopupAlertAdmin)

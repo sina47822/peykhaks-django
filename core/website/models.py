@@ -150,3 +150,19 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'comment by {self.name} on {self.post}'
+
+class PopupAlert(models.Model):
+    alert_title = models.TextField(_('عنوان آلرت'),null=True,blank=True)
+    alert_control = models.BooleanField(_('نمایش آلرت'), default=False)
+    popup_title = models.TextField(_('عنوان پاپ آپ'),null=True,blank=True)
+    popup_image = models.ImageField(
+        _('تصویر پاپ آپ'),
+        upload_to='popup_images/',
+        null=True,
+        blank=True
+    )
+    popup_control = models.BooleanField(_('نمایش پاپ آپ'), default=False)
+
+    class Meta:
+        verbose_name = _('پاپ آپ و آلرت')
+        verbose_name_plural = verbose_name

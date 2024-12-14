@@ -7,11 +7,14 @@
 		<!-- Image -->
 		<img src="{% static 'logo/logo.svg' %}" class="h-50px mb-3" alt="cookie">
 		<a href="https://peykhaksang.com/offer-landing/">
-			<img src="{% static 'images\popup\blackfriday.jpg' %}" class="mb-3" alt="cookie">
+			{% if popupalert.popup_image %}
+				<img src="{{ popupalert.popup_image.url }}" class="mb-3" alt="popup" width="80%" height="auto">
+			{% endif %}
+			{% comment %} <img src="{% static 'images\popup\blackfriday.jpg' %}" class="mb-3" alt="cookie"> {% endcomment %}
 		</a>
 
 		<!-- Content -->
-		<p class="mb-0">{% blocktrans %}فروش ویژه محصولات پی خاک سنگ از تاریخ سوم آذر ماه تا ششم آذر ماه {% endblocktrans %}</p>
+		<p class="mb-0">{% if popupalert.popup_title %}{{popupalert.popup_title}}{% endif %}</p>
 		<!-- Buttons -->
 		<div class="mt-3">
 			<button type="button" class="btn btn-success-soft btn-sm mb-0" data-bs-dismiss="alert" aria-label="Close">

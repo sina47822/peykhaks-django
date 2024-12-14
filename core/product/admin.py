@@ -125,6 +125,7 @@ class PageConfigProductInline(admin.TabularInline):
     model = PageConfigProduct
     extra = 1  # تعداد فیلدهای اضافی برای هر محصول جدید که به صورت پیش‌فرض نمایش داده می‌شود
     fields = ('product', 'quantity')  # فیلدهای نمایش داده شده در این بخش
+    autocomplete_fields = ('product',)  # اضافه کردن قابلیت جستجوی محصول
 
 class PageConfigAdmin(admin.ModelAdmin):
     list_display = ('page_name', 'slug', 'last_update')  # فیلدهایی که در لیست نمایش داده می‌شوند

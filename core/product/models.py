@@ -255,6 +255,10 @@ class PageConfig(models.Model):
     def __str__(self):
         return self.page_name
     
+    class Meta:
+        verbose_name = _('لیست قیمتها')
+        verbose_name_plural = verbose_name
+    
 class PageConfigProduct(models.Model):
     page_config = models.ForeignKey('PageConfig', on_delete=models.CASCADE, related_name='page_config_products')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)

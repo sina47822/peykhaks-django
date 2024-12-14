@@ -148,5 +148,7 @@ Footer END -->
 <!-- Back to top -->
 <div class="back-top"><i class="fal fa-arrow-up position-absolute top-50 start-50 translate-middle"></i></div>
 
-{% include "./pop-up.html"%}
+{% if popupalert.popup_control %}
+    {% include "./pop-up.html"%}
+{% endif %}
 

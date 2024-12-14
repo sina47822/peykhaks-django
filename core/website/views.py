@@ -9,7 +9,7 @@ from django.core.paginator import Paginator
 # class base view
 from django.views.generic.list import ListView
 # models.fields
-from website.models import SliderModel,CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO
+from website.models import SliderModel,CategorySEO, Post, Category , Tags ,PostSEO, TagsSEO, PopupAlert
 from product.models import Product ,PriceList
 # forms.fields
 from .forms import EmailPostForm, CommentForm, SearchForm   
@@ -53,6 +53,7 @@ def index(request):
     tags = Tags.objects.all()
     pricelist = PriceList.objects.filter().first()
     images = SliderModel.objects.all()
+    popupalert = PopupAlert.objects.first()
 
     context = {'posts': posts,
                 'products':products,
@@ -60,6 +61,7 @@ def index(request):
                 'tags':tags,
                 'pricelist':pricelist,
                 'images':images,
+                'popupalert':popupalert,
                 }
 
     return render (request,'website/index.html', context)
