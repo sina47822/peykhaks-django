@@ -22,14 +22,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'test'
+SECRET_KEY = config("SECRET_KEY", default="test")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", cast=bool, default=True)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    "localhost",  # Local development
+    "127.0.0.1",  # Local development
+    "peykhaksang.com",  # Production site
+    "www.peykhaksang.com",  # Production site
+]
 
-CSRF_TRUSTED_ORIGINS = []
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",  # Local development
+    "https://peykhaksang.com",  # Production site
+]
 
 SITE_ID = 2
 
@@ -64,13 +72,14 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -87,6 +96,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
+
             ],
         },
     },
@@ -98,22 +108,22 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
-}
 # DATABASES = {
 #     "default": {
-#         "ENGINE":"django.db.backends.sqlite3",
-#         "NAME":"peykhaks_db",
-#         "USER":"peykhaks_user1" ,
-#         "PASSWORD":"peykhaks_pass1" ,
-#         "HOST":"localhost",
-#         "PORT":"5432",
+#         "ENGINE": "django.db.backends.sqlite3",
+#         "NAME": BASE_DIR / "db.sqlite3",
 #     }
 # }
+DATABASES = {
+    "default": {
+        "ENGINE":"django.db.backends.sqlite3",
+        "NAME":"peykhaks_db",
+        "USER":"peykhaks_user1" ,
+        "PASSWORD":"peykhaks_pass1" ,
+        "HOST":"localhost",
+        "PORT":"5432",
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -133,16 +143,17 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/5.1/topics/i18n/
 
+# Internationalization
+# https://docs.djangoproject.com/en/4.2/topics/i18n/
+
+LANGUAGE_CODE = 'fa'
 
 LANGUAGES = (
     ('fa', _('Farsi')),
     ('en', _('English')),
     ('ar', _('Arabic')),
 )
-LANGUAGE_CODE = 'fa'
 
 LOCALE_PATHS = [ BASE_DIR / 'locale/' ]
 TIME_ZONE = 'UTC'
@@ -156,12 +167,15 @@ ROSETTA_REQUIRES_AUTH = True  # Set to True if you want authentication
 ROSETTA_REQUIRES_SUPERUSER = False  # Set to False if staff access is okay
 
 STATIC_URL = "/static/"
-STATIC_ROOT = "/staticfiles"
+STATIC_ROOT = "/app/staticfiles"
 
 MEDIA_URL = "/media/"
-MEDIA_ROOT = "/media"
-STATICFILES_DIRS = [ BASE_DIR/ 'static/' ,
+MEDIA_ROOT = "media/"
+
+STATICFILES_DIRS = [ BASE_DIR/ '/app/static/' ,
 ]
+
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -209,5 +223,5 @@ TINYMCE_DEFAULT_CONFIG = {
     }""",
 }
 
-# SECURE_SSL_REDIRECT = False
-# SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
