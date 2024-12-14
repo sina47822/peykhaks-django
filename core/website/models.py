@@ -144,7 +144,6 @@ class Comment(models.Model):
         verbose_name = _('کامنت ها')
         verbose_name_plural = verbose_name
 
-
     class Meta:
         ordering = ('created',)
 
@@ -152,6 +151,7 @@ class Comment(models.Model):
         return f'comment by {self.name} on {self.post}'
 
 class PopupAlert(models.Model):
+    title = models.CharField(_('عنوان'),max_length=255,null=True,blank=True)
     alert_title = models.TextField(_('عنوان آلرت'),null=True,blank=True)
     alert_control = models.BooleanField(_('نمایش آلرت'), default=False)
     popup_title = models.TextField(_('عنوان پاپ آپ'),null=True,blank=True)
@@ -162,7 +162,10 @@ class PopupAlert(models.Model):
         blank=True
     )
     popup_control = models.BooleanField(_('نمایش پاپ آپ'), default=False)
-
+    
+    def __str__(self):
+        return self.title
+    
     class Meta:
         verbose_name = _('پاپ آپ و آلرت')
         verbose_name_plural = verbose_name

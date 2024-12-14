@@ -109,8 +109,8 @@ class SliderModelAdmin(admin.ModelAdmin):
 admin.site.register(SliderModel,SliderModelAdmin)
 
 class PopupAlertAdmin(admin.ModelAdmin):
-    list_display = ('alert_title', 'alert_control', 'popup_title', 'popup_control')
+    list_display = ('title','alert_title', 'alert_control', 'popup_title', 'popup_control')
     list_editable = ('alert_control', 'popup_control')  # Allow toggling directly in the admin list
-    fields = ('alert_title', 'alert_control', 'popup_title', 'popup_image', 'popup_control')
+    fields = ('title','alert_title', 'alert_control', 'popup_title', 'popup_image', 'popup_control')
 
 admin.site.register(PopupAlert, PopupAlertAdmin)

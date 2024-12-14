@@ -62,7 +62,7 @@ def index(request):
                 'pricelist':pricelist,
                 'images':images,
                 'popupalert':popupalert,
-                }
+            }
 
     return render (request,'website/index.html', context)
 
