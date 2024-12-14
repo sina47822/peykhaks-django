@@ -174,7 +174,10 @@ def comingsoon (request):
     return render (request , 'website/comming-soon.html')
 
 def offerland(request):
-    return render (request , 'website/offer-landing.html')
+    pricelist = PriceList.objects.filter().first()
+    context = {'pricelist': pricelist,}
+
+    return render (request , 'website/offer-landing.html' , context)
 
 def page404 (request):
     return render (request , 'website/404.html')

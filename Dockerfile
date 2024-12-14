@@ -5,9 +5,22 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
+
+RUN apt-get update
+# نصب بسته‌های لازم
+RUN apt-get install -y \
+    libglib2.0-0 \
+    libglib2.0-dev \
+    libcairo2 \
+    libcairo2-dev \
+    libpango-1.0-0 \
+    libpangocairo-1.0-0 \
+    && apt-get clean
+
+# نصب وابستگی‌های Python
 COPY requirements.txt /app/
-RUN python3 -m pip install --trusted-host https://mirror-pypi.runflare.com -i https://mirror-pypi.runflare.com/simple/ --upgrade pip
-RUN pip install --trusted-host https://mirror-pypi.runflare.com -i https://mirror-pypi.runflare.com/simple/ -r requirements.txt
+RUN python3 -m pip install --upgrade pip
+RUN pip install -r requirements.txt
 COPY ./core /app/
 
 # RUN apt-get update \

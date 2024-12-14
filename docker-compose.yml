@@ -5,13 +5,11 @@ services:
   backend:
     build: .
     container_name: backend
-    command: gunicorn core.wsgi --bind 0.0.0.0:8000
+    command: gunicorn core.wsgi --bind 0.0.0.0:8000 --timeout 300
     volumes:
       - ./core:/app
       - ./core/static:/app/static
-      - ./core/locale:/app/locale
       - ./core/media:/app/media
-      - static_volume:/app/media
       - media_volume:/app/media
 
     expose:
@@ -40,15 +38,10 @@ services:
       - ./default.conf:/etc/nginx/conf.d/default.conf
       - ./core/static:/home/app/static
       - media_volume:/home/app/media
-      - ./core/static:/home/app/static
-      - ./core/media:/home/app/media
-      - static_volume:/home/app/media
-      - media_volume:/home/app/media
     depends_on:
       - backend
     ports:
       - "9000:80"
 volumes:
   postgres_data:
-  media_volume:
-  
+  media_volume:  
