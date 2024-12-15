@@ -28,27 +28,34 @@ class OrderItemInline(admin.TabularInline):
     # نمایش قیمت اصلی محصول
     def price(self, instance):
         if instance.product:
-            return int(instance.product.price)  # قیمت اصلی محصول
+            price = int(instance.product.price)
+            formatted_price = f"{price:,.0f}"  # Add comma as thousand separator
+            return f"{formatted_price} تومان" 
         return 0
     price.short_description = 'Price'
 
     # نمایش قیمت تخفیف خورده محصول
     def offer_price(self, instance):
         if instance.product:
-            return int(instance.product.offer_price) if instance.product.offer_price else 0  # قیمت تخفیف خورده
+            offer_price =  int(instance.product.offer_price) if instance.product.offer_price else 0  # قیمت تخفیف خورده
+            formatted_price = f"{offer_price:,.0f}"  # Add comma as thousand separator
+            return f"{formatted_price} تومان"   
         return 0
     offer_price.short_description = 'Offer Price'
 
     def total_price(self, instance):
         if instance.product:
             price = instance.product.offer_price if instance.product.offer_price and instance.product.offer_price < instance.product.price else instance.product.price
-            return int(price * instance.quantity)
+            total_price = int(price * instance.quantity)
+            # Format the number with commas for better readability
+            formatted_price = f"{total_price:,.0f}"  # Add comma as thousand separator
+            return f"{formatted_price} تومان"    
         return 0
     total_price.short_description = 'Total Price'
     
 class OrderAdmin(admin.ModelAdmin):
     inlines = [OrderItemInline]
-    list_display = ('factor_number', 'customer', 'created_at_p','update_at_p', 'generate_pdf_button')
+    list_display = ('factor_number', 'customer', 'created_at_p','update_at_p','total_price_display', 'generate_pdf_button')
     search_fields = ['customer__name']
     change_form_template = 'admin/order/order/change_form.html'
     
@@ -60,15 +67,17 @@ class OrderAdmin(admin.ModelAdmin):
     generate_pdf_button.short_description = 'Invoice (PDF)'  # Column header
     generate_pdf_button.allow_tags = True  # Not necessary in Django 2.0+, mark_safe handles it
 
-    def generate_pdf_link(self, obj):
-        """Generate a link to download the PDF of the order"""
-        try:
-            url = reverse('order:order_generate_pdf', args=[obj.id])  # Reverse the URL for the PDF generation
-            return mark_safe(f'<a href="{url}" target="_blank">Download PDF</a>')
-        except Exception as e:
-            return f"Error generating link: {str(e)}"
+    # Custom method to calculate total price
+    def total_price_display(self, obj):
+        total_price = sum(
+            item.quantity * (item.product.offer_price or item.product.price)
+            for item in obj.orderitem_set.all()
+        )
+        # Format the number with commas for better readability
+        formatted_price = f"{total_price:,.0f}"  # Add comma as thousand separator
+        return f"{formatted_price} تومان"    
+    total_price_display.short_description = 'قیمت کل (تومان)'  # Set column name in admin interface
 
-    generate_pdf_link.short_description = 'Download Invoice (PDF)'
 
     def created_at_p(self, obj):
         return date2jalali(obj.created_at).strftime('%Y/%m/%d')    
@@ -85,7 +94,7 @@ class OrderAdmin(admin.ModelAdmin):
         # Get the total price for the current object and pass it to the template
         order = self.model.objects.get(id=object_id)
         extra_context = extra_context or {}
-        extra_context['total_price'] = order.calculate_total_price
+        extra_context['total_price'] = f"{order.calculate_total_price:,}".replace(",", "٬")
         return super().change_view(request, object_id, form_url, extra_context)
 
 admin.site.register(Order, OrderAdmin)
