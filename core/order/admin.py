@@ -2,12 +2,12 @@ from django.contrib import admin
 from django import forms
 from .forms import OrderForm
 from .models import Order, OrderItem, Customer
-from django.utils.safestring import mark_safe
 from jalali_date.fields import JalaliDateField, SplitJalaliDateTimeField
 from jalali_date.widgets import AdminJalaliDateWidget, AdminSplitJalaliDateTime
 from jalali_date import date2jalali
 from product.models import Product
 from django.urls import reverse
+from django.utils.safestring import mark_safe
 
 class OrderAdminForm(forms.ModelForm):
     class Meta:
@@ -48,10 +48,18 @@ class OrderItemInline(admin.TabularInline):
     
 class OrderAdmin(admin.ModelAdmin):
     inlines = [OrderItemInline]
-    list_display = ('factor_number', 'customer', 'created_at_p','update_at_p')
+    list_display = ('factor_number', 'customer', 'created_at_p','update_at_p', 'generate_pdf_button')
     search_fields = ['customer__name']
     change_form_template = 'admin/order/order/change_form.html'
     
+    def generate_pdf_button(self, obj):
+        """Add a button to the list display for generating PDFs."""
+        url = reverse('order:order_generate_pdf', args=[obj.id])  # Adjust the namespace and view name as needed
+        return mark_safe(f'<a class="button" href="{url}" target="_blank">Download PDF</a>')
+
+    generate_pdf_button.short_description = 'Invoice (PDF)'  # Column header
+    generate_pdf_button.allow_tags = True  # Not necessary in Django 2.0+, mark_safe handles it
+
     def generate_pdf_link(self, obj):
         """Generate a link to download the PDF of the order"""
         try:

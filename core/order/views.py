@@ -4,11 +4,15 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from .models import Order, OrderItem  # Make sure Order is correctly imported
 from weasyprint import HTML  # Assuming you're using WeasyPrint to generate the PDF
+import jdatetime  # Import the jdatetime library
 
 def generate_pdf(request, order_id):
     # Fetch Order
     order = get_object_or_404(Order, id=order_id)
     
+    # Convert created_at to Jalali
+    created_at_jalali = jdatetime.date.fromgregorian(date=order.created_at)
+
     # Initialize products and grand total calculation
     products = []
     grand_total = 0
@@ -40,6 +44,7 @@ def generate_pdf(request, order_id):
         'order': order,
         'products': products,
         'grand_total': f"{grand_total:.0f} تومان",
+        'created_at_jalali': created_at_jalali.strftime('%Y/%m/%d'),  # Format the Jalali date
         'is_pdf': True,  # Optional flag for template customization
     })
 
@@ -48,5 +53,5 @@ def generate_pdf(request, order_id):
 
     # Return the PDF response
     response = HttpResponse(pdf_file, content_type='application/pdf')
-    response['Content-Disposition'] = f'inline; filename="{order.page_name}.pdf"'
+    response['Content-Disposition'] = f'inline; filename="فاکتور شماره {order.factor_number} آقای {order.customer.name}.pdf"'
     return response

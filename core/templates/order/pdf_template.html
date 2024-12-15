@@ -96,7 +96,7 @@
             <div class="header-title">
                 <h1>پیش فاکتور سفارش</h1>
                 <p>شماره فاکتور: {{ order.factor_number }}</p>
-                <p>تاریخ سفارش: {{ order.created_at }}</p>
+                <p>تاریخ سفارش: {{ created_at_jalali }}</p>
             </div>
             <div class="header-logo">
                 <img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo">
@@ -146,7 +146,7 @@
                 {% for product in products %}
                     <tr>
                         <td>{{ forloop.counter }}</td>
-                        <td><a href="{% url 'product:productdetails' slug=product.slug %}">{{ product.title }}</a></td>
+                        <td>{{ product.title }}</td>
                         <td class="quantity">{{ product.quantity }}</td>
                         <td class="product-price">{{ product.price }} تومان</td>
                         <td class="discount-percentage">{{ product.discount_percentage }}</td>
