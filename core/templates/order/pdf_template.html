@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+    <head>
+        <meta charset="UTF-8">
+        <title>{{ page_name }}</title>
+        <style>
+            @page {
+                size: A4 landscape; /* تنظیم سایز صفحه و جهت */
+                margin: 1cm; /* تنظیم حاشیه صفحه */
+            }
+            
+            body ,h1,h2{
+                font-family: Arial, sans-serif;
+                font-size: 12px;
+            }
+            h1{
+                font-size:20px;
+            }
+            h2{
+                font-size:16px;
+            }
+            /* استایل هدر */
+            .header {
+                text-align: center;
+                padding: 10px;
+                background-color: #f2f2f2;
+                border-bottom: 2px solid #000;
+            }
+
+            .header img {
+                max-height: 50px;
+            }
+
+            /* استایل جدول */
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+            .table-striped th, .table-striped td {
+                border: 1px solid #ddd;
+                text-align: center;
+                padding: 8px;
+            }
+            .title_table th, .title_table td {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+            th {
+                background-color: #f4f4f4;
+            }
+            .center{
+                text-align: center;
+            }
+
+            .header{
+                display:flex;
+                justify-content: space-between;
+            }
+            .header-title{
+            }
+            header-logo{
+
+            }
+            .footer-sign{
+                display:flex;
+                justify-content:space-around;
+                margin-top:30px;
+                margin-bottom:20px;
+                font-size:14px;
+            }
+            ul {
+                list-style: none; /* حذف بولت پیش‌فرض */
+                padding: 0; /* حذف فضای اضافی */
+            }
+        
+            ul li {
+                margin-bottom: 15px; /* فاصله بین آیتم‌ها */
+                padding-right: 30px; /* فضای کافی برای فلش */
+                position: relative; /* برای موقعیت‌دهی فلش */
+                direction: rtl; /* تنظیم جهت راست‌چین */
+                text-align: right; /* راست‌چین کردن متن */
+            }
+        
+            ul li::before {
+                content: '\2190'; /* کد یونیکد برای فلش به سمت چپ */
+                margin-right: 10px; /* فاصله دادن از متن */
+                font-size: 20px; /* تغییر اندازه */
+                padding-left: 10px;
+            }
+        </style>
+        
+    </head>
+    <body>
+
+        <div class="header">
+            <div class="header-title">
+                <h1>پیش فاکتور سفارش</h1>
+                <p>شماره فاکتور: {{ order.factor_number }}</p>
+                <p>تاریخ سفارش: {{ order.created_at }}</p>
+            </div>
+            <div class="header-logo">
+                <img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo">
+            </div>
+
+        </div>
+
+        <table class="title_table">
+            <tbody>
+                <tr>
+                    <td rowspan="3" class="center">فروشنده</td>
+                    <td>پی خاک سنگ</td>
+                    <td><img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo" style="max-height: 20px;"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">نشانی : تهران - خیابان پیروزی - بلوار ابوذر شمالی - کوچه ششم شرقی - پلاک 9</td>
+                </tr>
+                <tr>    
+                    <td colspan="2">تلفن: 021_33163222 _ 33076061</td>
+                </tr>
+                <tr>
+                    <td rowspan="3" class="center">خریدار</td>
+                    <td colspan="2">آقای/خانم/شرکت: {{order.customer.name}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">نشانی: {{order.customer.address}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2">تلفن: {{order.customer.number}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Products Table -->
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>نام محصول</th>
+                    <th>تعداد</th>
+                    <th>قیمت واحد</th>
+                    <th>درصد تخفیف</th>
+                    <th>قیمت کل</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td><a href="{% url 'product:productdetails' slug=product.slug %}">{{ product.title }}</a></td>
+                        <td class="quantity">{{ product.quantity }}</td>
+                        <td class="product-price">{{ product.price }} تومان</td>
+                        <td class="discount-percentage">{{ product.discount_percentage }}</td>
+                        <td class="total-price">{{ product.total_price }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="5" style="text-align: right;"><strong>جمع کل:</strong></td>
+                    <td><strong>{{ grand_total }}</strong></td>
+                </tr>
+            </tfoot>
+        </table>
+
+        <!-- Footer Section -->
+        <div class="footer">
+            <div class="footer-sign">
+                <div>مهر و امضای فروشنده : </div>
+                <div>مهر و امضای خریدار : </div>
+            </div>
+            <ul>
+                <li>قیمت های این پیش فاکتور تا 7 روز اعتبار دارد</li>
+                <li>تجهیزات فوق دارای 12 ماه گارانتی و 36 ماه خدمات پس از فروش می باشد</li>
+                <li>هزینه نصب و راه اندازی در صورت اعزام کارشناس بر عهده خریدار می باشد</li>
+                <li>در صورت خرید بیش از 200 میلیون تومان تجهیزات خاک، پک نرم افزار که بسیار کاربردی می باشد به خریدار ارائه می گردد</li>
+                <li>خرید تجهیزات به صورت شرایطی امکان پذیر می باشد</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>
+
+
+

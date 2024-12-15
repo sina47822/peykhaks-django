@@ -1,0 +1,18 @@
+{% extends "admin/change_form.html" %}
+
+{% block after_related_objects %}
+    {{ block.super }}
+    <div class="d-flex justify-content-center" style="justify-items: center;">
+        <div id="order-total-price" style="font-weight: bold; margin: 20px 0;">
+            قیمت کل: {{ total_price }} تومان
+        </div>
+        <div id="order-download" style="margin-top: 20px;">
+            <!-- Check that 'order.id' exists -->
+            {% if order.id %}
+                <a href="{% url 'order:order_generate_pdf' order_id=order.id %}" class="btn btn-primary">دانلود فاکتور</a>
+            {% else %}
+                <p>Order ID is missing!</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
