@@ -11,6 +11,7 @@ from import_export.admin import ImportExportModelAdmin
 from import_export import resources, fields
 
 from product.resources import CombinedStandardsResource
+from jalali_date.widgets import AdminJalaliDateWidget, AdminSplitJalaliDateTime
 
 class ImportExcelForm(forms.Form):
     excel_file = forms.FileField()
@@ -121,12 +122,50 @@ class ProductCategoryModelAdmin(admin.ModelAdmin):
 class WishlistProductModelAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "product")
 
+class PageConfigAdminForm(forms.ModelForm):
+    class Meta:
+        model = PageConfig
+        fields = '__all__'
+        widgets = {
+            'created_at': AdminJalaliDateWidget,  # ویجت جلالی برای انتخاب تاریخ
+        }
+
+    
 class PageConfigProductInline(admin.TabularInline):
+    form = PageConfigAdminForm
     model = PageConfigProduct
     extra = 1  # تعداد فیلدهای اضافی برای هر محصول جدید که به صورت پیش‌فرض نمایش داده می‌شود
-    fields = ('product', 'quantity')  # فیلدهای نمایش داده شده در این بخش
     autocomplete_fields = ('product',)  # اضافه کردن قابلیت جستجوی محصول
+    readonly_fields = ('price','offer_price','total_price',)
 
+    # نمایش قیمت اصلی محصول
+    def price(self, instance):
+        if instance.product:
+            price = int(instance.product.price)
+            formatted_price = f"{price:,.0f}"  # Add comma as thousand separator
+            return f"{formatted_price} تومان" 
+        return 0
+    price.short_description = 'Price'
+
+    # نمایش قیمت تخفیف خورده محصول
+    def offer_price(self, instance):
+        if instance.product:
+            offer_price =  int(instance.product.offer_price) if instance.product.offer_price else 0  # قیمت تخفیف خورده
+            formatted_price = f"{offer_price:,.0f}"  # Add comma as thousand separator
+            return f"{formatted_price} تومان"   
+        return 0
+    offer_price.short_description = 'Offer Price'
+
+    def total_price(self, instance):
+        if instance.product:
+            price = instance.product.offer_price if instance.product.offer_price and instance.product.offer_price < instance.product.price else instance.product.price
+            total_price = int(price * instance.quantity)
+            # Format the number with commas for better readability
+            formatted_price = f"{total_price:,.0f}"  # Add comma as thousand separator
+            return f"{formatted_price} تومان"    
+        return 0
+    total_price.short_description = 'Total Price'
+    
 @admin.action(description="copy items")
 def duplicate_items(modeladmin, request, queryset):
     for obj in queryset:
