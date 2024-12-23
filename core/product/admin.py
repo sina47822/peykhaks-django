@@ -127,8 +127,30 @@ class PageConfigProductInline(admin.TabularInline):
     fields = ('product', 'quantity')  # فیلدهای نمایش داده شده در این بخش
     autocomplete_fields = ('product',)  # اضافه کردن قابلیت جستجوی محصول
 
+@admin.action(description="copy items")
+def duplicate_items(modeladmin, request, queryset):
+    for obj in queryset:
+        # Retrieve all related PageConfigProduct objects
+        original_items = PageConfigProduct.objects.all()  # Use related_name to fetch related products
+
+        # Create a new PageConfig object
+        obj.pk = None  # Reset primary key to create a new instance
+        obj.slug = None  # Ensure a unique slug
+        obj.page_name = f"{obj.page_name} (Copy)"  # Rename for clarity
+        obj.save()  # Save the new PageConfig object
+
+        for item in original_items:
+            # Create a new PageConfigProduct instance for the copied PageConfig
+            new_item = PageConfigProduct(
+                product=item.product,  # Copy the product
+                quantity=item.quantity,  # Copy the quantity
+                page_config=obj  # Link to the new PageConfig
+            )
+            new_item.save()  
+
 class PageConfigAdmin(admin.ModelAdmin):
     list_display = ('page_name', 'slug', 'last_update')  # فیلدهایی که در لیست نمایش داده می‌شوند
     inlines = [PageConfigProductInline]  # نمایش محصولات و تعداد آنها در بخش PageConfig
+    actions = [duplicate_items]
 
 admin.site.register(PageConfig, PageConfigAdmin)
