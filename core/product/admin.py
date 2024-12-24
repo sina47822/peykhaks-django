@@ -170,7 +170,7 @@ class PageConfigProductInline(admin.TabularInline):
 def duplicate_items(modeladmin, request, queryset):
     for obj in queryset:
         # Retrieve all related PageConfigProduct objects
-        original_items = PageConfigProduct.objects.all()  # Use related_name to fetch related products
+        original_items = PageConfigProduct.objects.filter(page_config=obj)  # Use related_name to fetch related products
 
         # Create a new PageConfig object
         obj.pk = None  # Reset primary key to create a new instance
