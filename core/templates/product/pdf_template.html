@@ -19,6 +19,15 @@
             h2{
                 font-size:16px;
             }
+            a {
+                color: #007BFF; /* Blue link */
+                text-decoration: none; /* Remove underline */
+            }
+
+            a:hover {
+                color: #043f7e; /* Darker blue on hover */
+                text-decoration: underline; /* Add underline on hover */
+            }
             /* استایل هدر */
             .header {
                 text-align: center;
@@ -136,7 +145,7 @@
                     <th>#</th>
                     <th>نام محصول</th>
                     <th>تعداد</th>
-                    <th>قیمت واحد</th>
+                    <th>قیمت واحد(تومان)</th>
                     <th>درصد تخفیف</th>
                     <th>قیمت کل(تومان)</th>
                 </tr>
@@ -147,7 +156,7 @@
                         <td>{{ forloop.counter }}</td>
                         <td><a href="{% url 'product:productdetails' slug=product.slug %}">{{ product.title }}</a></td>
                         <td class="quantity">{{ product.quantity }}</td>
-                        <td class="product-price">{{ product.price }} تومان</td>
+                        <td class="product-price">{{ product.price }}</td>
                         <td class="discount-percentage">{{ product.discount_percentage }}</td>
                         <td class="total-price">{{ product.total_price }}</td>
                     </tr>
