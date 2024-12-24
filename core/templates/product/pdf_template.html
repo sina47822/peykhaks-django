@@ -9,9 +9,12 @@
                 margin: 1cm; /* تنظیم حاشیه صفحه */
             }
             
-            body ,h1,h2{
-                font-family: Arial, sans-serif;
+            body {
+                font-family: Helvetica, Arial, sans-serif; /* Universal fonts */
                 font-size: 12px;
+            }
+            h1, h2, h3 {
+                font-family: Times, "Times New Roman", serif; /* Universal serif fonts */
             }
             h1{
                 font-size:20px;
@@ -20,7 +23,7 @@
                 font-size:16px;
             }
             a {
-                color: #007BFF; /* Blue link */
+                color: #4621eb; /* Blue link */
                 text-decoration: none; /* Remove underline */
             }
 
@@ -108,7 +111,7 @@
                 <h2>تاریخ: {{ page_config.last_update }}</h2>
             </div>
             <div class="header-logo">
-                <img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo"  style="max-height: 30px;">
+                <img src="https://peykhaksang.com/static/logo/logo.svg" alt="Logo"  style="max-height: 30px;">
             </div>
 
         </div>
@@ -166,8 +169,8 @@
                 <tr>
                     <td colspan="2" style="text-align: left;"><strong>تعداد کل : </strong></td>
                     <td><strong>{{ quantity_total }}</strong></td>
-                    <td colspan="2" style="text-align: left;"><strong>جمع کل : </strong></td>
-                    <td><strong>{{ grand_total }} تومان</strong></td>
+                    <td style="text-align: left;"><strong>جمع کل : </strong></td>
+                    <td colspan="2" ><strong>{{ grand_total }} تومان</strong></td>
                 </tr>
             </tfoot>
         </table>

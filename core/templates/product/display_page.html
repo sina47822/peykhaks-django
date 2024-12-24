@@ -1,9 +1,9 @@
 {% extends '../core/base.html' %}
 {% load static %}
 
-{% block title %}{{ seo.title }}{% endblock title %}
-{% block seodescription %}{{ seo.description }}{% endblock seodescription %}
-{% block seoimage %}{{ seo.image }}{% endblock seoimage %}
+{% block title %}{{ page_config.page_name }}{% endblock title %}
+{% block seodescription %}{{ page_config.page_name }} آخرین آپدیت : {{ page_config.last_update }}{% endblock seodescription %}
+{% block seoimage %}{{ page_config.logo.url }}{% endblock seoimage %}
 
 {% block content %}
 <div class="container my-4">
@@ -25,9 +25,9 @@
                     <th>#</th>
                     <th>نام محصول</th>
                     <th>تعداد</th>
-                    <th>قیمت واحد</th>
+                    <th>قیمت واحد(تومان)</th>
                     <th>درصد تخفیف</th>
-                    <th>قیمت کل</th>
+                    <th>قیمت کل(تومان)</th>
                 </tr>
             </thead>
             <tbody>
@@ -36,7 +36,7 @@
                         <td>{{ forloop.counter }}</td>
                         <td>{{ page_product.product.title }}</td>
                         <td class="quantity">{{ page_product.quantity }}</td>
-                        <td class="product-price">{{ page_product.product.price }} تومان</td>
+                        <td class="product-price">{{ page_product.product.price }}</td>
                         <td class="discount-percentage">---</td>
                         <td class="total-price">---</td>
                     </tr>
@@ -46,8 +46,8 @@
                 <tr>
                     <td colspan="2" class="text-end"><strong>تعداد کل:</strong></td>
                     <td id="quantity_total">---</td>
-                    <td colspan="2" class="text-end"><strong>جمع کل:</strong></td>
-                    <td id="grand_total">---</td>
+                    <td class="text-end"><strong>جمع کل:</strong></td>
+                    <td colspan="2" id="grand_total">---</td>
                 </tr>
             </tfoot>
         </table>
@@ -55,10 +55,13 @@
 
     <!-- PDF Button -->
     <div class="text-end">
-        <a href="{% url 'product:generate_pdf' slug=page_config.slug %}" class="btn btn-primary">Download PDF</a>
+        <a href="{% url 'product:generate_pdf' slug=page_config.slug %}" class="btn btn-primary">دانلود PDF</a>
     </div>
 </div>
     <script type="text/javascript">
+        function formatNumber(num) {
+            return num.toLocaleString('fa-IR'); // فرمت برای فارسی
+        }
         // تابعی برای محاسبه درصد تخفیف و قیمت کل
         function calculateDiscountAndTotal() {
             // پیدا کردن تمام ردیف‌های جدول
@@ -85,21 +88,20 @@
                     const totalPrice = price * (1 - discountPercentage / 100) * quantity;
 
                     discountElement.textContent = discountPercentage.toFixed(0) + '%';
-                    totalElement.textContent = totalPrice.toFixed(0) + ' تومان';
+                    totalElement.textContent = formatNumber(totalPrice); // فرمت کردن قیمت کل
                     grandTotal += totalPrice;
-
 
                 } else {
                     discountElement.textContent = 'تخفیف ندارد';
                     const totalPrice = price * quantity;
-                    totalElement.textContent = (price * quantity).toFixed(0) + ' تومان';
+                    totalElement.textContent = formatNumber(totalPrice); // فرمت کردن قیمت کل
                     grandTotal += totalPrice;
                 }
+
             });
             // Update the grand total in the footer
-            grandTotalElement.textContent = grandTotal.toFixed(0) + ' تومان';
-            quanttityTotalElement.textContent = quanttityTotal.toFixed(0);
-
+            grandTotalElement.textContent = formatNumber(grandTotal) + ' تومان'; // فرمت کردن جمع کل
+            quanttityTotalElement.textContent = quanttityTotal; // فرمت کردن تعداد کل
         }
 
 

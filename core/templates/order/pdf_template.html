@@ -5,7 +5,7 @@
         <title>{{ page_name }}</title>
         <style>
             @page {
-                size: A4 landscape; /* تنظیم سایز صفحه و جهت */
+                size: A4 portrait; /* تنظیم سایز صفحه و جهت */
                 margin: 1cm; /* تنظیم حاشیه صفحه */
             }
             
@@ -18,6 +18,14 @@
             }
             h2{
                 font-size:16px;
+            }
+            a {
+                color: #007BFF; /* Blue link */
+                text-decoration: none; /* Remove underline */
+            }
+            a:hover {
+                color: #043f7e; /* Darker blue on hover */
+                text-decoration: underline; /* Add underline on hover */
             }
             /* استایل هدر */
             .header {
@@ -135,9 +143,9 @@
                     <th>#</th>
                     <th>نام محصول</th>
                     <th>تعداد</th>
-                    <th>قیمت واحد</th>
+                    <th>قیمت واحد(تومان)</th>
                     <th>درصد تخفیف</th>
-                    <th>قیمت کل</th>
+                    <th>قیمت کل(تومان)</th>
                 </tr>
             </thead>
             <tbody>
@@ -146,7 +154,7 @@
                         <td>{{ forloop.counter }}</td>
                         <td>{{ product.title }}</td>
                         <td class="quantity">{{ product.quantity }}</td>
-                        <td class="product-price">{{ product.price }} تومان</td>
+                        <td class="product-price">{{ product.price }}</td>
                         <td class="discount-percentage">{{ product.discount_percentage }}</td>
                         <td class="total-price">{{ product.total_price }}</td>
                     </tr>
@@ -154,8 +162,10 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5" style="text-align: right;"><strong>جمع کل:</strong></td>
-                    <td><strong>{{ grand_total }}</strong></td>
+                    <td colspan="2" style="text-align: left;"><strong>تعداد کل : </strong></td>
+                    <td><strong>{{ quantity_total }}</strong></td>
+                    <td colspan="2" style="text-align: left;"><strong>جمع کل : </strong></td>
+                    <td><strong>{{ grand_total }} تومان</strong></td>
                 </tr>
             </tfoot>
         </table>
