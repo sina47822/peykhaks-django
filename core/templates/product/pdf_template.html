@@ -5,7 +5,7 @@
         <title>{{ page_name }}</title>
         <style>
             @page {
-                size: A4 landscape; /* تنظیم سایز صفحه و جهت */
+                size: A4 portrait; /* تنظیم سایز صفحه و جهت */
                 margin: 1cm; /* تنظیم حاشیه صفحه */
             }
             
@@ -39,7 +39,7 @@
             .table-striped th, .table-striped td {
                 border: 1px solid #ddd;
                 text-align: center;
-                padding: 8px;
+                padding: 8px 2px;
             }
             .title_table th, .title_table td {
                 border: 1px solid #ddd;
@@ -55,6 +55,7 @@
             .header{
                 display:flex;
                 justify-content: space-between;
+                align-items: center;
             }
             .header-title{
             }
@@ -98,7 +99,7 @@
                 <h2>تاریخ: {{ page_config.last_update }}</h2>
             </div>
             <div class="header-logo">
-                <img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo">
+                <img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo"  style="max-height: 30px;">
             </div>
 
         </div>
@@ -108,7 +109,6 @@
                 <tr>
                     <td rowspan="3" class="center">فروشنده</td>
                     <td>پی خاک سنگ</td>
-                    <td><img src="http://127.0.0.1:8000/static/logo/logo.svg" alt="Logo" style="max-height: 20px;"></td>
                 </tr>
                 <tr>
                     <td colspan="2">نشانی : تهران - خیابان پیروزی - بلوار ابوذر شمالی - کوچه ششم شرقی - پلاک 9</td>
@@ -138,7 +138,7 @@
                     <th>تعداد</th>
                     <th>قیمت واحد</th>
                     <th>درصد تخفیف</th>
-                    <th>قیمت کل</th>
+                    <th>قیمت کل(تومان)</th>
                 </tr>
             </thead>
             <tbody>
@@ -155,8 +155,10 @@
             </tbody>
             <tfoot>
                 <tr>
-                    <td colspan="5" style="text-align: right;"><strong>جمع کل:</strong></td>
-                    <td><strong>{{ grand_total }}</strong></td>
+                    <td colspan="2" style="text-align: left;"><strong>تعداد کل : </strong></td>
+                    <td><strong>{{ quantity_total }}</strong></td>
+                    <td colspan="2" style="text-align: left;"><strong>جمع کل : </strong></td>
+                    <td><strong>{{ grand_total }} تومان</strong></td>
                 </tr>
             </tfoot>
         </table>

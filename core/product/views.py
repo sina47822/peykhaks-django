@@ -203,6 +203,13 @@ class AddOrRemoveWishlistView(LoginRequiredMixin, View):
 
         return JsonResponse({"message": message})
     
+def format_number(number):
+    """فرمت کردن اعداد با جداکننده فارسی"""
+    try:
+        return f"{int(number):,}".replace(",", "٬")
+    except (ValueError, TypeError):
+        return number
+
 def display_page(request, slug):
     page_config = get_object_or_404(PageConfig, slug=slug)  # فرض بر این است که یک صفحه مشخص دارید
     return render(request, 'product/display_page.html', {
@@ -210,16 +217,17 @@ def display_page(request, slug):
         'products': page_config.page_config_products.all(),
         'slug': slug,
     })
+
 def generate_pdf(request, slug):
     # Fetch data
-    page_config = get_object_or_404(PageConfig, slug=slug)  # فرض بر این است که یک صفحه مشخص دارید
+    page_config = get_object_or_404(PageConfig, slug=slug)
     if not page_config:
         return HttpResponse("No page configuration found.", status=404)
 
     # Prepare data for products
     products = []
     grand_total = 0  # Initialize the grand total
-    
+    quantity_total = 0
     for page_product in page_config.page_config_products.all():
         price = page_product.product.price
         offer_price = page_product.product.offer_price
@@ -227,37 +235,38 @@ def generate_pdf(request, slug):
         discount_percentage = 0
         total_price = price * quantity
         product_slug = page_product.product.slug
+        quantity_total += quantity
 
-        if offer_price: 
+        if offer_price:
             if offer_price > 0:
                 discount_percentage = ((price - offer_price) / price) * 100
                 total_price = offer_price * quantity
-        
+
         # Add the total price to the grand total
         grand_total += total_price
 
         products.append({
             'title': page_product.product.title,
-            'quantity': quantity,
-            'price': price,
-            'slug':product_slug,
+            'quantity': format_number(quantity),  # فرمت تعداد
+            'price': f"{format_number(price)}",  # فرمت قیمت واحد
+            'slug': product_slug,
             'discount_percentage': f"{discount_percentage:.0f}%" if discount_percentage > 0 else "تخفیف ندارد",
-            'total_price': f"{total_price:.0f} تومان"
+            'total_price': f"{format_number(total_price)}",  # فرمت قیمت کل
         })
 
     # Render HTML template with context
     html_content = render_to_string('product/pdf_template.html', {
         'page_config': page_config,
         'products': products,
-        'grand_total': f"{grand_total:.0f} تومان",
+        'grand_total': f"{format_number(grand_total)}",  # فرمت جمع کل
+        'quantity_total': format_number(quantity_total),  # فرمت تعداد کل
         'slug': slug,
         'is_pdf': True,  # Flag to customize template for PDF
     })
 
     # Generate PDF
-
     pdf_file = HTML(string=html_content).write_pdf()
-    
+
     # Return PDF as response
     response = HttpResponse(pdf_file, content_type='application/pdf')
     response['Content-Disposition'] = f'inline; filename="{page_config.page_name}.pdf"'

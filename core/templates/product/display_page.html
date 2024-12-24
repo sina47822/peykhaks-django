@@ -44,7 +44,9 @@
             </tbody>
             <tfoot class="table-dark">
                 <tr>
-                    <td colspan="5" class="text-end"><strong>جمع کل:</strong></td>
+                    <td colspan="2" class="text-end"><strong>تعداد کل:</strong></td>
+                    <td id="quantity_total">---</td>
+                    <td colspan="2" class="text-end"><strong>جمع کل:</strong></td>
                     <td id="grand_total">---</td>
                 </tr>
             </tfoot>
@@ -62,9 +64,10 @@
             // پیدا کردن تمام ردیف‌های جدول
             const rows = document.querySelectorAll('table tbody tr');
             const grandTotalElement = document.querySelector('#grand_total');
-            
-            let grandTotal = 0;
+            const quanttityTotalElement = document.querySelector('#quantity_total');
 
+            let grandTotal = 0;
+            let quanttityTotal = 0;
             rows.forEach(row => {
                 const priceElement = row.querySelector('.product-price');
                 const discountElement = row.querySelector('.discount-percentage');
@@ -75,7 +78,7 @@
                 const offerPrice = parseFloat(row.getAttribute('data-offer-price'));
                 const quantity = parseInt(row.querySelector('.quantity').textContent);
                 // چاپ قیمت کل در کنسول برای خطایابی
-
+                quanttityTotal += quantity;
                 if (offerPrice > 0) {
                     // محاسبه درصد تخفیف
                     const discountPercentage = ((price - offerPrice) / price) * 100;
@@ -95,6 +98,8 @@
             });
             // Update the grand total in the footer
             grandTotalElement.textContent = grandTotal.toFixed(0) + ' تومان';
+            quanttityTotalElement.textContent = quanttityTotal.toFixed(0);
+
         }
 
 
