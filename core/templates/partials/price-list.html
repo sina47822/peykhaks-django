@@ -79,12 +79,40 @@
     color: #318CE8 !important;
 }
       
-@media only screen and (max-width: 700px) {
+@media (max-width: 1200px) {
+  .price-list-beton .buttonbeton {
+    background-color: #5CA6FF;
+    border: none;
+    color: rgb(255, 255, 255) !important;
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 15px;
+    font-weight: bold;
+      transition: 0.3s;
+  }
+}
+@media (max-width: 700px) {
   .price-list-beton .buttonbeton {
     background-color: #5CA6FF;
     border: none;
     color: white !important;
     padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 15px;
+    font-weight: bold;
+      transition: 0.3s;
+  }
+}
+@media (max-width: 400px) {
+  .price-list-beton .buttonbeton {
+    background-color: #5CA6FF;
+    border: none;
+    color: white !important;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 14px;
@@ -185,8 +213,8 @@
 <section class="price-list-beton">  
     <h2 style="text-align:center">{{pricelist.title}}</h2>        
     <p style="text-align:center">{{pricelist.upload_date}}</p>
-    <div class="columns row mx-5">
-        <div class="price-list-columns col-md-4">
+    <div class="columns row mx-1 mx-md-3 mx-lg-3">
+        <div class="price-list-columns col-md-6 col-lg-4">
             <ul class="pricebeton">
                 <li class="header">
                     
@@ -198,12 +226,7 @@
                 </li>
                 <li>
                     
-                    <a href="
-                    
-                    
-                    
-                    
-                    " target="_blank" class="list-hover">
+                    <a href="#" target="_blank" class="list-hover">
                      {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}
                         </a>           
                 </li>
@@ -225,22 +248,16 @@
                 </li>
                 <li class="grey">
                     <a href="{{pricelist.beton_3_document.url}}" class="buttonbeton">
-                    
-            
                         {% translate 'دریافت پیش فاکتور پایه سه بتن' %}
-            
-            
                     </a>
                 </li>
             </ul>
         </div>
             
-        <div class="price-list-columns col-md-4">
+        <div class="price-list-columns col-md-6 col-lg-4">
             <ul class="pricebeton">
                 <li class="header">
-                    
                     {% translate 'پایه دو بتن' %}
-                    
                 </li>
                 <li class="grey">
                     
@@ -249,12 +266,7 @@
                 </li>
                 <li>
                     
-                    <a href="
-                    
-                    
-                    
-                    
-                    " target="_blank" class="list-hover">
+                    <a href="#" target="_blank" class="list-hover">
                     {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}  
                         </a>           
                 </li>
@@ -285,7 +297,7 @@
             </ul>
         </div>
         
-        <div class="price-list-columns col-md-4">
+        <div class="price-list-columns col-md-6 col-lg-4">
             <ul class="pricebeton">
                 <li class="header">
                     

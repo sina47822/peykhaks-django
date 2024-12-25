@@ -14,11 +14,11 @@ Event START -->
 					<!-- Card item START -->
 					<div class="card bg-transparent">
 						<div class="position-relative">
-                            {% if product.image %}
-                            <img src="{{product.image.url}}" alt="" class="card-img">
-                            {% else %}
-                                <img src="{% static 'images/default/image.jpg' %}" alt="" class="card-img">
-                            {% endif %}
+								{% if product.image %}
+								<img src="{{product.image.url}}" alt="" class="card-img">
+								{% else %}
+								<img src="{% static 'logo/logo.svg' %}" alt="" class="card-img">
+								{% endif %}
 							<!-- Overlay -->
 							<div class="card-img-overlay d-flex align-items-start flex-column p-3">
 								<!-- Card overlay Top -->
@@ -26,9 +26,9 @@ Event START -->
 									<!-- Favorite icon -->
 									{% comment %} <a href="#" class="icon-sm bg-white rounded-2"><i class="fas fa-heart text-danger"></i></a> {% endcomment %}
                                     {% if product.slug %}
-                                    <a href="{% url 'product:productdetails' product.slug %}" class="icon-sm bg-white rounded-2"><i class="fa fa-link"></i></a>
+                                    <a href="{% url 'product:productdetails' product.slug %}" class="icon-sm bg-white rounded-2"><i class="fal fa-link"  style="font-size: large;"></i></a>
                                     {% else %}
-                                        <a href="#" class="icon-sm bg-white rounded-2"><i class="fa fa-link"></i></a>
+                                        <a href="#" class="icon-sm bg-white rounded-2"><i class="fal fa-link" style="font-size: large;"></i></a>
                                     {% endif %}
         
 								</div>

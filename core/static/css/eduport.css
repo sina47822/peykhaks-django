@@ -22150,12 +22150,12 @@ html[dir=rtl] .choices__input {
 .arrow-blur [data-controls] {
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-  background: rgba(0, 0, 0, 0.4) !important;
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 .arrow-blur [data-controls]:hover {
   -webkit-backdrop-filter: blur(0px);
           backdrop-filter: blur(0px);
-  background: rgba(0, 0, 0, 0.4) !important;
+  background: rgba(0, 0, 0, 0.8) !important;
 }
 .arrow-blur.arrow-white [data-controls] {
   background-color: rgba(255, 255, 255, 0.2) !important;
