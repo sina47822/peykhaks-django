@@ -51,10 +51,11 @@ Event START -->
                                     {{ post.title }}
                                 {% endif %}                           
                             </h5>
+							{% if post.post_summery %}
 							<p class="mb-0 text-truncate-2">
                                 {{ post.post_summery|safe|truncatechars:100 }}
-                            
                             </p>
+							{% endif %}
 						</div>
 					</div>
 					<!-- Card item END -->
