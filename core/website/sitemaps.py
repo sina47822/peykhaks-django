@@ -9,20 +9,17 @@ class StaticViewSitemap(sitemaps.Sitemap):
     changefreq = "weekly"
     
     def items(self):
-        return ['website:home','website:about','website:contact','website:blog-list','website:shop','website:Terms-and-conditions']
+        return ['website:home','website:about','website:contact','website:blog-list','website:shop','website:Terms-and-conditions','website:weld-laboratory','website:rock-laboratory','website:asphalt-laboratory','website:concrete-laboratory','website:soil-laboratory','website:offer-landing']
         
     def location(self, item):
         return reverse(item)
-        
-
-
 
 class BlogSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.5
 
     def items(self):
-        return Post.objects.filter(blog_status='published')
+        return Post.objects.all()
 
     def lastmod(self, obj):
         return obj.update_date
