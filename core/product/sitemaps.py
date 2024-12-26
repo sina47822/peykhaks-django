@@ -19,7 +19,7 @@ class ProductSitemap(Sitemap):
         return obj.get_absolute_url()
         
 class ProductCategorySitemap(Sitemap):
-    changefreq = "monthly"
+    changefreq = "weekly"
     priority = 0.8
 
     def items(self):
@@ -29,7 +29,7 @@ class ProductCategorySitemap(Sitemap):
         return obj.get_absolute_url()
 
 class ProductTagsSitemap(Sitemap):
-    changefreq = "monthly"
+    changefreq = "weekly"
     priority = 0.6
 
     def items(self):

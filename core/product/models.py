@@ -259,6 +259,9 @@ class PageConfig(models.Model):
         verbose_name = _('لیست قیمتها')
         verbose_name_plural = verbose_name
     
+    def get_absolute_url(self):
+        return reverse('product:pricelists', kwargs={'slug': self.slug})
+
 class PageConfigProduct(models.Model):
     page_config = models.ForeignKey('PageConfig', on_delete=models.CASCADE, related_name='page_config_products')
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
