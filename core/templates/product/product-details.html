@@ -483,7 +483,11 @@ Page content START -->
                 <div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="false" data-dots="true" data-items="1">
                     <!-- Slide -->
                       <div class="card card-bordered shadow-none">
-                          <img target="_blank" class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+						{% if product.image %}
+						<img target="_blank" class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+						{% else %}
+						<img class="card-img-top" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}">
+						{% endif %}
                       </div>
 					  {% for media in object.media.all %}
                       <div class="card card-bordered shadow-none">
@@ -505,11 +509,19 @@ Page content START -->
                   <div class="tiny-slider-inner"  data-gutter="10" data-arrow="false" data-dots="false" data-items="3">
                     <!-- Slide -->
                       <a class=" " href="javascript:;">
-                          <img target="_blank" class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
+							{% if product.image %}
+							<img target="_blank" class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
+							{% else %}
+							<img class="card-img-top" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}">
+							{% endif %}
                       </a>
 					{% for media in object.media.all %}
                         <a class="" href="javascript:;">
+							{% if media.media_file %}
                             <img target="_blank" class="rounded-5" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+							{% else %}
+							<img target="_blank" class="rounded-5" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}-img">
+							{% endif %}
                         </a>
                     {% endfor %}
                     <!-- End Slide -->
