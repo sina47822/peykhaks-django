@@ -20,7 +20,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.sitemaps.views import sitemap
 from website.sitemaps import StaticViewSitemap,BlogSitemap,BlogTagSitemap,BlogCategorySitemap
-from product.sitemaps import ProductTagsSitemap,ProductCategorySitemap,ProductSitemap
+from product.sitemaps import ProductTagsSitemap,ProductCategorySitemap,ProductSitemap,ProductTagsSitemap
 from django.conf.urls import handler400, handler403, handler404, handler500
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.i18n import set_language
@@ -33,7 +33,8 @@ sitemaps = {
     'product': ProductSitemap,
     'productcategory': ProductCategorySitemap,
     'producttags': ProductTagsSitemap,
-}
+    'pricelist': ProductTagsSitemap,
+    }
 
 urlpatterns = [
     path('admin/', admin.site.urls),
