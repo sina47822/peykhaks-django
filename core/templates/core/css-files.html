@@ -1,12 +1,11 @@
 {% load static %}
-  
+{% load compress %}
+
+{% compress css %}
 <!-- css reset -->
 <link rel="stylesheet" href="{% static 'css/css-reset.css' %}">
 <!-- font awsome -->
 <link rel="stylesheet" href="{% static 'fontawsome/all.min.css' %}">
-<link rel="stylesheet" href="{% static 'fontawsome/fontawesome.min.css' %}">
-<link rel="stylesheet" href="{% static 'fontawsome/brands.min.css' %}">
-<link rel="stylesheet" href="{% static 'fontawsome/light.min.css' %}">
 <!-- animate -->
 <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
 <!-- bootstrap -->
@@ -26,3 +25,4 @@
 <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
 <link rel="stylesheet" href="{% static 'css/style_Lang.css' %}">
+{% endcompress %}

@@ -21,8 +21,9 @@ RUN apt-get install -y \
 COPY requirements.txt /app/
 RUN python3 -m pip install --upgrade pip
 RUN pip install -r requirements.txt
-COPY ./core /app/
-
+# COPY ./core /app/
+# RUN python manage.py compress
+# RUN python manage.py collectstatic
 # RUN apt-get update \
 # 	&& apt-get install -y --no-install-recommends \
 # 		postgresql-client \

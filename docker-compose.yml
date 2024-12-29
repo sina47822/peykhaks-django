@@ -8,8 +8,6 @@ services:
     command: gunicorn core.wsgi --bind 0.0.0.0:8000 --timeout 300
     volumes:
       - ./core:/app
-      - ./core/static:/app/static
-      - ./core/media:/app/media
       - media_volume:/app/media
 
     expose:
