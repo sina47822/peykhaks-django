@@ -8,7 +8,7 @@ Main Banner START -->
 		<div class="row">
 			<div class="col-12">
 				<!-- Slider START -->
-				<div class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden">
+				<div class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden d-none d-sm-block">
 					<div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="true" data-dots="true" data-items="1">
 						<!-- Card item START -->
 						<div class="card overflow-hidden text-center rounded-0" >
@@ -144,7 +144,7 @@ Main Banner START -->
 				</h1>
 				{% else %}
 				<!-- Title -->
-				<h1 class="mb-0 display-6">{% translate 'به پی خاک سنگ' %} <br>
+				<h1 class="mb-0 display-6 mb-xs-4">{% translate 'به پی خاک سنگ' %} <br>
 					<span class="position-relative">{% translate 'خوش آمدید' %}
 						<!-- SVG START -->
 						<span class="position-absolute top-50 start-50 translate-middle ms-3 z-index-n1">
@@ -163,20 +163,19 @@ Main Banner START -->
 				</p>
 				
 				<!-- Info -->
-				<ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4">
+				<ul class="list-inline position-relative justify-content-center justify-content-lg-start mb-4 mt-4">
 					<li class="list-inline-item me-2 d-none d-md-block"> <i class="bi bi-patch-check-fill h6 me-1"></i>{% translate 'مهندسین مجرب' %}</li>
 					<li class="list-inline-item me-2"> <i class="bi bi-patch-check-fill h6 me-1"></i>{% translate 'لیست خرید لوازم پایه آزمایشگاه' %}</li>
 					<li class="list-inline-item"> <i class="bi bi-patch-check-fill h6 me-1"></i>{% translate 'مقالات کاربردی آزمایشگاه' %}</li>
-					<li class=" list-inline-item btn btn-sm btn-danger-soft me-2 mb-4 mb-sm-0"> <a href="{% url 'website:about' %}">{% translate 'درباره ما' %}</a></li>
-
+					<li class="list-inline-item btn btn-sm btn-danger-soft me-2 mb-4 mb-sm-0 mt-2"> <a href="{% url 'website:about' %}">{% translate 'درباره ما' %}</a></li>
 				</ul>
 
 				{% if LANGUAGE_CODE == 'en' %}
-				<div class="d-lg-flex flex-column align-items-center justify-content-center justify-content-sm-start">
+				<div class="d-lg-flex flex-column align-items-center justify-content-center justify-content-sm-start text-center text-sm-start">
 				{% else %}
 				<div class="d-lg-flex align-items-center justify-content-center justify-content-sm-start">
 				{% endif %}
-					<div class="d-flex align-items-center justify-content-start justify-content-sm-start py-2 ms-0 ms-sm-4">
+					<div class="d-flex flex-wrap align-items-center justify-content-start justify-content-sm-start py-2 ms-0 ms-sm-4">
 						<!-- Button -->
 						<a href="#listgheymat" class="btn btn-lg btn-danger me-2 mb-4 mb-sm-0">{% translate 'دریافت لیست قیمت تجهیزات پایه خاک و بتن' %}</a>
 						<!-- Video button -->

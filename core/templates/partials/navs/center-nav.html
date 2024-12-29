@@ -258,9 +258,9 @@
 					</li>
 
 					<!-- Nav item 4 Megamenu-->
-					<li class="nav-item dropdown dropdown-fullwidth">
-						<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% translate 'دانشنامه'%}</a>
-						<div class="dropdown-menu dropdown-menu-end" data-bs-popper="none">
+					<li class="nav-item dropdown dropdown-fullwidth ">
+						<a class="nav-link dropdown-toggle " href="{% url 'website:blog-list' %}" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{% translate 'دانشنامه'%}</a>
+						<div class="dropdown-menu dropdown-menu-end d-none d-md-block" data-bs-popper="none">
 							<div class="row p-4 g-4">
 								<!-- Dropdown column item -->
 								<div class="col-xl-6 col-xxl-4">
@@ -326,7 +326,7 @@
 
 
 								<!-- Action box -->
-								<div class="col-12">
+								<div class="col-12 d-none d-md-block">
 									<div class="alert alert-success alert-dismissible fade show mt-2 mb-0 rounded-3" role="alert">
                                          {% translate 'برای خرید لیست تجهیزات پایه آزمایشگاه خاک و بتن '%}
                                         <a href="#" class="alert-link">{% translate 'ثبت نام'%}</a>
