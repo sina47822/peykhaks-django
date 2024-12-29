@@ -47,8 +47,8 @@ def index(request):
     if 'django_language' not in request.session:
         activate('fa')  # Set default language to Farsi
         request.session['django_language'] = 'fa'  # Store language in session
-    posts = Post.objects.all().order_by('-id')
-    products = Product.objects.all().order_by('-publish_date')
+    posts = Post.objects.all().order_by('-id')[:5]
+    products = Product.objects.all().order_by('-publish_date')[:5]
     categories = Category.objects.all()
     tags = Tags.objects.all()
     pricelist = PriceList.objects.filter().first()

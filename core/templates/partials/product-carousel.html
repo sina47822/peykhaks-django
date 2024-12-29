@@ -15,9 +15,9 @@ Event START -->
 					<div class="card bg-transparent">
 						<div class="position-relative">
 								{% if product.image %}
-								<img src="{{product.image.url}}" alt="" class="card-img">
+								<img src="{{product.image.url}}" alt="{{ product.title }}" class="card-img">
 								{% else %}
-								<img src="{% static 'logo/logo.svg' %}" alt="" class="card-img">
+								<img src="{% static 'logo/logo.svg' %}" alt="{{ product.title }}" class="card-img">
 								{% endif %}
 							<!-- Overlay -->
 							<div class="card-img-overlay d-flex align-items-start flex-column p-3">

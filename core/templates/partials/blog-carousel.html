@@ -5,18 +5,16 @@
 Event START -->
 <section class="pt-0">
 	<div class="container">
-
 		<div class="row">
 			<!-- Slider START -->
 			<div class="tiny-slider arrow-round arrow-creative arrow-blur">
 				<div class="tiny-slider-inner" data-autoplay="false" data-arrow="true" data-dots="false" data-items="4" data-items-lg="3" data-items-md="2" data-items-xs="1">
                     {% for post in posts %}
-
 					<!-- Card item START -->
 					<div class="card bg-transparent">
 						<div class="position-relative">
                             {% if post.image %}
-                            <img src="{{ post.image.url }}" alt="" class="card-img">
+                            	<img src="{{ post.image.url }}" alt="{{ post.title }}" class="card-img">
                             {% else %}
                                 <img src="{% static 'images/default/image.jpg' %}" alt="" class="card-img">
                             {% endif %}
@@ -27,11 +25,10 @@ Event START -->
 									<!-- Favorite icon -->
 									{% comment %} <a href="#" class="icon-sm bg-white rounded-2"><i class="fas fa-heart text-danger"></i></a> {% endcomment %}
                                     {% if post.slug %}
-                                    <a href="{% url 'website:blog-detail' post.slug %}" class="icon-sm bg-white rounded-2"><i class="fa fa-link"></i></a>
+                                    	<a href="{% url 'website:blog-detail' post.slug %}" class="icon-sm bg-white rounded-2"><i class="fal fa-link"  style="font-size: large;"></i></a>
                                     {% else %}
-                                        <a href="#" class="icon-sm bg-white rounded-2"><i class="fa fa-link"></i></a>
+                                        <a href="#" class="icon-sm bg-white rounded-2"><i class="fal fa-link"  style="font-size: large;"></i></a>
                                     {% endif %}
-        
 								</div>
 								<!-- Card overlay bottom -->
 								<div class="w-100 mt-auto">
@@ -40,7 +37,6 @@ Event START -->
 								</div>
 							</div>
 						</div>
-
 						<!-- Card body -->
 						<div class="card-body px-2">
 							<!-- Title -->
@@ -52,16 +48,16 @@ Event START -->
                                 {% endif %}                           
                             </h5>
 							{% if post.post_summery %}
-							<p class="mb-0 text-truncate-2">
+							<span class="mb-0 text-truncate-2">
                                 {{ post.post_summery|safe|truncatechars:100 }}
-                            </p>
+                            </span>
+							{% else %}
+							<span><span>
 							{% endif %}
 						</div>
 					</div>
 					<!-- Card item END -->
                     {% endfor %}
-
-
 				</div>
 			</div>
 			<!-- Slider END -->
