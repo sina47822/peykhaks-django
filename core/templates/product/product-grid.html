@@ -213,17 +213,17 @@
                             </div>
 
                             <h4 class="card-title">
-                                <a class="text-dark"
-                                    href="{% url 'product:productdetails' slug=object.slug %}">{{object.title}}</a>
+                                <a class="text-dark h5"
+                                    href="{% url 'product:productdetails' slug=object.slug %}">{{object.title|truncatechars:50}}</a>
                             </h4>
                             {% if object.is_discounted %}
                             <p class="card-text text-dark fs-4">
-                                <span class="formatted-price">{{object.get_price}}</span>
+                                <span class="formatted-price">{{object.formatted_offer_price|intcomma}}</span>
                                 <span
-                                    class="text-body me-1 fs-6 formatted-price text-decoration-line-through">{{object.price}}</span>
+                                    class="text-body me-1 fs-6 formatted-price text-decoration-line-through">{{object.formatted_price|intcomma}}</span>
                             </p>
                             {% else %}
-                            <p class="card-text text-dark fs-4 formatted-price"> {{object.price}}</p>
+                            <p class="card-text text-dark fs-4 formatted-price"> {{object.formatted_price|intcomma}}</p>
                             {% endif %}
                         </div>
 

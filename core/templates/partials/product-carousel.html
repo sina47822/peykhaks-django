@@ -45,9 +45,9 @@ Event START -->
 							<!-- Title -->
 							<h5 class="card-title">
                                 {% if product.slug %}
-                                    <a href="{% url 'product:productdetails' product.slug %}">{{product.title}}</a>
+                                    <a href="{% url 'product:productdetails' product.slug %}">{{product.title|truncatechars:50}}</a>
                                 {% else %}
-									{{product.title}}
+									{{product.title|truncatechars:50}}
                                 {% endif %}                           
                             </h5>
 							{% comment %} <p class="mb-0 text-truncate-2">

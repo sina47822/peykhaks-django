@@ -7,8 +7,6 @@ from django.utils.translation import gettext_lazy as _
 import os
 import locale
 
-locale.setlocale(locale.LC_ALL, 'fa_IR.UTF-8')  # تنظیم لوکال فارسی (یا هر لوکال دلخواه دیگر)
-
     
 class StandardASTM(models.Model):
     name = models.CharField(max_length=255,blank=True, null=True)
