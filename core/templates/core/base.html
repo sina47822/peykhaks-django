@@ -51,6 +51,15 @@
     </script>
 
 </head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-3303DTMLYQ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-3303DTMLYQ');
+</script>
 <body class="{% if LANGUAGE_CODE == 'en' %}en{% elif LANGUAGE_CODE == 'ar' %}ar{% elif LANGUAGE_CODE == 'tr' %}tr{% endif %}">
     {% include "../partials/header.html"%}
 
