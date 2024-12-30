@@ -157,7 +157,7 @@ def ProductShop(request):
     context = {'products': products,
                 'latests': latests,
                 'pricelist':pricelist,
-                'page_obj':page_obj
+                'page_obj':page_obj,
                 }
 
     return render (request,'website/shop.html', context)

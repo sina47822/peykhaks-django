@@ -28,26 +28,25 @@ Page content START -->
                             <img src="{% static 'logo/logo.svg' %}" class="card-img" alt="product image">
                             {% endif %}                            <!-- Overlay -->
                             <div class="bg-overlay bg-dark opacity-4"></div>
-                            <div class="card-img-overlay d-flex align-items-start p-3">
-                                <!-- badge -->
-                                <a href="" class="badge text-bg-danger">{{ product.categories.name }}</a>
-                            </div>
+
                         </div>
                     </a>
                     {% else %}
                     <div class="overflow-hidden rounded-3">
                         {% if product.image %}
-                        <img src="{{ product.image.url }}" class="card-img" alt="product image">
+                        <a href="#"><img src="{{ product.image.url }}" class="card-img" alt="product image"></a>
                         {% else %}
-                        <img src="{% static 'logo/logo.svg' %}" class="card-img" alt="product image">
+                        <a href="#"><img src="{% static 'logo/logo.svg' %}" class="card-img" alt="product image"></a>
                         {% endif %}
-                        <!-- Overlay -->
+                        <!-- Overlay 
                         <div class="bg-overlay bg-dark opacity-4"></div>
-                        <div class="card-img-overlay d-flex align-items-start p-3">
+                        <div class="card-img-overlay d-flex align-items-start p-3">-->
                             <!-- badge -->
-                            <a href="{% url 'product:productdetails' slug=product.slug %}" class="badge text-bg-danger">{{ product.categories.name }}</a>
+                            <!--<a href="{% url 'product:productdetails' slug=product.slug %}" class="badge text-bg-danger">{{ product.categories.name }}</a>
                         </div>
+                        -->
                     </div>
+                    
                     {% endif %}
 
                     <!-- Card body -->

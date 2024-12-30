@@ -20,6 +20,9 @@ from django.http import HttpResponse
 from django.template.loader import render_to_string
 from weasyprint import HTML
 
+from PIL import Image
+import os
+
 def productcategory(request, slug):
     category = get_object_or_404(Category, slug=slug)  # Retrieve the category object based on the slug
     products = Product.objects.filter(categories=category)  # Filter posts based on the category object

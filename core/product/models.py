@@ -4,7 +4,10 @@ from django.urls import reverse
 from tinymce.models import HTMLField
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
+import os
+import locale
 
+locale.setlocale(locale.LC_ALL, 'fa_IR.UTF-8')  # تنظیم لوکال فارسی (یا هر لوکال دلخواه دیگر)
 
     
 class StandardASTM(models.Model):
@@ -158,7 +161,20 @@ class Product(models.Model):
     class Meta:
         verbose_name = _('محصولات')
         verbose_name_plural = verbose_name
+    
+    def get_avif_url(self):
+        return os.path.splitext(self.image.url)[0] + '.avif'
 
+    def get_webp_url(self):
+        return os.path.splitext(self.image.url)[0] + '.webp'
+    
+    @property
+    def formatted_price(self):
+        return f"{int(self.price):,}"
+
+    @property
+    def formatted_offer_price(self):
+        return f"{int(self.offer_price):,}" if self.offer_price else None
 class ProductMedia(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='media')
     media_type = models.CharField(_('نوع رسانه'),max_length=10, choices=[('image', 'Image'), ('video', 'Video')])

@@ -15,10 +15,115 @@ Page content START -->
 <section class="pt-5">
 	<div class="container" data-sticky-container>
 		<div class="row g-4 g-sm-5">
+			<!-- Right sidebar START -->
+			<div class="col-xl-4">
+				<div data-margin-top="80" data-sticky-for="992">
+					<div class="row justify-content-center">
+						<!-- image and price -->
+						<h1 class="mb-4 fs-4">{{product.title}}</h1>
+
+						<div class="col-md-8 col-xl-12">
+							<!-- Image -->
+							<!-- Swiper Main Slider -->
+							<div class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden">
+								<div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="false" data-dots="true" data-items="1">
+									<!-- Slide -->
+									<div class="card card-bordered shadow-none">
+										{% if product.image %}
+										<img target="_blank" class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
+										{% else %}
+										<img class="card-img-top" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}">
+										{% endif %}
+									</div>
+									{% for media in object.media.all %}
+									<div class="card card-bordered shadow-none">
+										{% comment %} {% if media.media_type == 'image' %} {% endcomment %}
+										<img target="_blank" class="card-img" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+										{% comment %} {% else %}
+										عکس موجود نیست
+										{% endif %} {% endcomment %}
+									</div>
+									{% endfor %}
+									<!-- End Slide -->
+								</div>
+							</div>
+							<!-- End Swiper Main Slider -->
+							<!-- Swiper Thumb Slider -->
+							<div class=" bottom-0 end-0 start-0 zi-1 p-4" >
+								<div class="tiny-slider overflow-hidden" style="max-width: 15rem;">
+								<div class="tiny-slider-inner"  data-gutter="10" data-arrow="false" data-dots="false" data-items="3">
+									<!-- Slide -->
+									<a class=" " href="javascript:;">
+											{% if product.image %}
+											<img target="_blank" class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
+											{% else %}
+											<img class="card-img-top" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}">
+											{% endif %}
+									</a>
+									{% for media in object.media.all %}
+										<a class="" href="javascript:;">
+											{% if media.media_file %}
+											<img target="_blank" class="rounded-5" src="{{media.media_file.url}}" alt="{{product.title}}-img">
+											{% else %}
+											<img target="_blank" class="rounded-5" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}-img">
+											{% endif %}
+										</a>
+									{% endfor %}
+									<!-- End Slide -->
+								</div>
+								</div>
+							</div>
+							<!-- End Swiper Thumb Slider -->
+							<!-- Image -->
+							<!-- Card START -->
+							<div class="card shadow align-items-center">
+							<!-- Price Item START -->
+							<ul class="list-inline m-4 ">
+							<!-- Price -->
+							<li class="list-inline-item ">
+								<input type="radio" class="btn-check" name="options" id="option1" checked>
+								<label class="btn btn-success-soft-check" for="option1">
+								<span class="mb-2 h5 fw-light">{% translate 'قیمت محصول' %}</span>
+								<!-- Price and discount -->
+								<span class="d-flex align-items-center">
+									{% if product.offer_price < product.price %}
+
+
+									<span class="mb-0 h3 me-2 text-success ">{{product.formatted_offer_price|intcomma}}  {% translate 'تومان' %}</span>
+									<span class="text-decoration-line-through fs-6 mb-0 me-2">{{product.formatted_price|intcomma}}</span>
+									{% comment %} <span class="badge text-bg-dark mb-0">60% تخفیف</span> {% endcomment %}
+									{%else%}
+									<span class="mb-0 h3 me-2 text-success">{{product.formatted_price|intcomma}} {% translate 'تومان' %}</span>
+									{% endif %}
+								</span>
+								</label>
+							</li>
+
+							<!-- Price -->
+							{% comment %} <li class="list-inline-item">
+								<input type="radio" class="btn-check" name="options" id="option2">
+								<label class="btn btn-success-soft-check" for="option2">
+								<span class="mb-2 h6 fw-light">لوح فشرده</span>
+								<!-- Price and discount -->
+								<span class="d-flex align-items-center">
+								<span class="mb-0 h5 me-2 text-success">75,000 تومان</span>
+								<span class="text-decoration-line-through fs-6 mb-0 me-2">250,000 تومان</span>
+								<span class="badge text-bg-dark mb-0">40% تخفیف</span>
+								</span>
+								</label>
+							</li> {% endcomment %}
+							</ul>
+							<!-- Price Item END -->
+							</div>
+							<!-- Card END -->
+						</div>
+					</div> <!-- Row End -->
+				</div>
+			</div>
+			<!-- Right sidebar END -->
 			<!-- Main content START -->
 			<div class="col-xl-8">
 				<!-- Title -->
-				<h1 class="mb-4 fs-4">{{product.title}}</h1>
 
 				<!-- Rating -->
 				{% comment %} <div class="d-flex align-items-center mb-4">
@@ -472,122 +577,7 @@ Page content START -->
 			<!-- Main content END -->
 
 
-			<!-- Right sidebar START -->
-			<div class="col-xl-4">
-				<div data-margin-top="80" data-sticky-for="992">
-					<div class="row justify-content-center">
-						<div class="col-md-8 col-xl-12">
-              <!-- Swiper Main Slider -->
 
-              <div class="tiny-slider arrow-round arrow-blur arrow-hover rounded-3 overflow-hidden">
-                <div class="tiny-slider-inner" data-autoplay="true" data-gutter="0" data-arrow="false" data-dots="true" data-items="1">
-                    <!-- Slide -->
-                      <div class="card card-bordered shadow-none">
-						{% if product.image %}
-						<img target="_blank" class="card-img-top" src="{{product.image.url}}" alt="{{product.title}}">
-						{% else %}
-						<img class="card-img-top" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}">
-						{% endif %}
-                      </div>
-					  {% for media in object.media.all %}
-                      <div class="card card-bordered shadow-none">
-                          {% comment %} {% if media.media_type == 'image' %} {% endcomment %}
-                          <img target="_blank" class="card-img" src="{{media.media_file.url}}" alt="{{product.title}}-img">
-                          {% comment %} {% else %}
-                          عکس موجود نیست
-                          {% endif %} {% endcomment %}
-                      </div>
-                    {% endfor %}
-                    <!-- End Slide -->
-                </div>
-              </div>
-              <!-- End Swiper Main Slider -->
-
-              <!-- Swiper Thumb Slider -->
-              <div class=" bottom-0 end-0 start-0 zi-1 p-4" >
-                <div class="tiny-slider overflow-hidden" style="max-width: 15rem;">
-                  <div class="tiny-slider-inner"  data-gutter="10" data-arrow="false" data-dots="false" data-items="3">
-                    <!-- Slide -->
-                      <a class=" " href="javascript:;">
-							{% if product.image %}
-							<img target="_blank" class="rounded-5" src="{{product.image.url}}" alt="{{product.title}}-img">
-							{% else %}
-							<img class="card-img-top" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}">
-							{% endif %}
-                      </a>
-					{% for media in object.media.all %}
-                        <a class="" href="javascript:;">
-							{% if media.media_file %}
-                            <img target="_blank" class="rounded-5" src="{{media.media_file.url}}" alt="{{product.title}}-img">
-							{% else %}
-							<img target="_blank" class="rounded-5" src="{% static 'logo/logo.svg'%}" alt="{{product.title}}-img">
-							{% endif %}
-                        </a>
-                    {% endfor %}
-                    <!-- End Slide -->
-                  </div>
-                </div>
-              </div>
-              <!-- End Swiper Thumb Slider -->
-              <!-- Image -->
-
-							<!-- Card START -->
-							<div class="card shadow align-items-center">
-                <!-- Price Item START -->
-                <ul class="list-inline m-4 ">
-                  <!-- Price -->
-                  <li class="list-inline-item ">
-                    <input type="radio" class="btn-check" name="options" id="option1" checked>
-                    <label class="btn btn-success-soft-check" for="option1">
-                      <span class="mb-2 h5 fw-light">{% translate 'قیمت محصول' %}</span>
-                      <!-- Price and discount -->
-                      <span class="d-flex align-items-center">
-                        {% if product.offer_price < product.price %}
-
-
-                        <span class="mb-0 h3 me-2 text-success ">{{product.offer_price| intcomma}}  {% translate 'تومان' %}</span>
-                        <span class="text-decoration-line-through fs-6 mb-0 me-2">{{product.price | intcomma}}</span>
-                        {% comment %} <span class="badge text-bg-dark mb-0">60% تخفیف</span> {% endcomment %}
-                        {%else%}
-                        <span class="mb-0 h3 me-2 text-success">{{product.price | intcomma}} {% translate 'تومان' %}</span>
-                        {% endif %}
-                      </span>
-                    </label>
-                  </li>
-
-                  <!-- Price -->
-                  {% comment %} <li class="list-inline-item">
-                    <input type="radio" class="btn-check" name="options" id="option2">
-                    <label class="btn btn-success-soft-check" for="option2">
-                      <span class="mb-2 h6 fw-light">لوح فشرده</span>
-                    <!-- Price and discount -->
-                    <span class="d-flex align-items-center">
-                      <span class="mb-0 h5 me-2 text-success">75,000 تومان</span>
-                      <span class="text-decoration-line-through fs-6 mb-0 me-2">250,000 تومان</span>
-                      <span class="badge text-bg-dark mb-0">40% تخفیف</span>
-                    </span>
-                    </label>
-                  </li> {% endcomment %}
-                </ul>
-                <!-- Price Item END -->
-			
-								<!-- Card body -->
-								<div class="card-body pb-3">
-									<!-- Buttons and price -->
-									{% comment %} <div class="text-center">
-										<!-- Buttons -->
-										<a href="#" class="btn btn-success-soft mb-2 mb-sm-0 me-00 me-sm-3"><i class="bi bi-cart3 me-2"></i>افزودن به سبد</a>
-										<a href="#" class="btn btn-light mb-0"><i class="bi bi-productmark me-2"></i>افزودن به علاقه مندی</a>
-									</div> {% endcomment %}
-								</div>
-							</div>
-							<!-- Card END -->
-
-						</div>
-					</div> <!-- Row End -->
-				</div>
-			</div>
-			<!-- Right sidebar END -->
 				
 
 		</div> <!-- Row END -->
