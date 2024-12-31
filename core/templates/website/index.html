@@ -28,9 +28,9 @@
 <!--=============== Product Section ===============-->
 <section class="py-4" >
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
-            <h2 class="h4">{% translate 'آخرین محصولات ' %}</h2>
-            <a href="{% url 'website:shop' %}" class="btn btn-link">{% translate 'مشاهده همه محصولات' %}</a>
+        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2 row" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+            <h2 class="h4 col-12 col-sm-6" style="text-align:center;">{% translate 'آخرین محصولات ' %}</h2>
+            <a href="{% url 'website:shop' %}" class="btn btn-link col-12 col-sm-6">{% translate 'مشاهده همه محصولات' %}</a>
         </div>
         {% include 'partials/product-carousel.html' %}
     </div>
@@ -39,9 +39,9 @@
 <!--=============== Blog Section ===============-->
 <section class="py-4">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
-            <h2 class="h4">{% translate 'آخرین مقالات ' %}</h2>
-            <a href="{% url 'website:blog-list' %}" class="btn btn-link">{% translate 'مشاهده همه مقالات' %}</a>
+        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2 row" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+            <h2 class="h4 col-12 col-sm-6" style="text-align:center;">{% translate 'آخرین مقالات ' %}</h2>
+            <a href="{% url 'website:blog-list' %}" class="btn btn-link col-12 col-sm-6">{% translate 'مشاهده همه مقالات' %}</a>
         </div>
         {% include 'partials/blog-carousel.html' %}
     </div>
