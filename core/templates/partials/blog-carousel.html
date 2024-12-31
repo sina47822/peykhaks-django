@@ -25,7 +25,14 @@ Event START -->
 									<!-- Favorite icon -->
 									{% comment %} <a href="#" class="icon-sm bg-white rounded-2"><i class="fas fa-heart text-danger"></i></a> {% endcomment %}
                                     {% if post.slug %}
-                                    	<a href="{% url 'website:blog-detail' post.slug %}" class="icon-sm bg-white rounded-2"><i class="fal fa-link"  style="font-size: large;"></i></a>
+                                    	<a href="{% url 'website:blog-detail' post.slug %}" class="icon-sm bg-white rounded-2"
+										style="width: 18.5rem;
+										height: 14.5rem;
+										line-height: 1.5rem;
+										text-align: center;
+										font-size: 75%;
+										opacity: 0;
+									"><i class="fal fa-link"  style="font-size: large;"></i></a>
                                     {% else %}
                                         <a href="#" class="icon-sm bg-white rounded-2"><i class="fal fa-link"  style="font-size: large;"></i></a>
                                     {% endif %}
