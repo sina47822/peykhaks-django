@@ -13,11 +13,11 @@
 <!-- =======================
 Page content START -->
 <section class="position-relative pt-0 pt-lg-3 ">
-    <div class="container">
+    <div class="container" style="max-width: 1400px;">
         <div class="row" >
             {% for product in page_obj %}    
             <!-- Card item START -->
-            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2 bg-light">
+            <div class="col-sm-6 col-md-4 col-lg-3 col-xl-2">
                 <div class="card bg-transparent">
                     {% if product.slug %}
                     <a href="{% url 'product:productdetails' slug=product.slug %}">
@@ -55,15 +55,14 @@ Page content START -->
                         <!-- Title -->
                         <h5 class="card-title fw-normal"><a href="{% url 'product:productdetails' slug=product.slug %}">{{product.title}}</h5></a>
                         <div class="text-truncate-2 rounded-bottom">
-                            {% if product.is_discounted %}
-                            <p class="card-text text-dark h5"> 
-                                <span> قیمت : </span>
-                                <span class="formatted-price">قیمت : {{product.formatted_offer_price|intcomma}} تومان</span>
-                                <span
-                                    class="text-body me-1 formatted-price text-decoration-line-through">{{product.formatted_price|intcomma}}</span>
+                            {% if product.offer_price %}
+                            <p class="card-text text-dark h5">
+                                <span>قیمت : </span> 
+                                <span class="text-body me-1 formatted-price text-decoration-line-through h6"> {{product.formatted_price|intcomma}} تومان</span>
+                                <span class="formatted-price"> {{product.formatted_offer_price|intcomma}}  تومان</span>
                             </p>
                             {% else %}
-                            <p class="card-text text-dark formatted-price h5">قیمت :  {{product.formatted_price|intcomma}} تومان</p>
+                            <p class="card-text text-dark formatted-price h5">{{product.formatted_price|intcomma}} </p>
                             {% endif %}
                         </div>
                         <!-- Info -->

@@ -16,12 +16,16 @@
             {% for product in products %}
             <tr>
                 <th scope="row">{{ forloop.counter }}</th>
-                <td>{{ product.title }}</td>
+
+                {% if product.slug %}
+                <td><a href="{% url 'product:productdetails' slug=product.slug %}">{{ product.title|safe |truncatechars:30 }}</a></td>
                 <td>{{ product.price }}</td>
                 <td>{{ product.offer_price }}</td>
-                {% if product.slug %}
                 <td><a href="{% url 'product:productdetails' slug=product.slug %}">{% translate 'صفحه محصول' %}</a></td>
                 {% else %}
+                <td>{{ product.title|safe |truncatechars:30 }}</td>
+                <td>{{ product.price }}</td>
+                <td>{{ product.offer_price }}</td>
                 <td><a href="#">{% translate 'no slug' %}</a></td>
                 {% endif %}
                 <td>
