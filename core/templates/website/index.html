@@ -25,26 +25,27 @@
                 <h2 class="section__title">مقالات پر طرفدار</h2>
 		</div> {% endcomment %}
         {% comment %} {% include 'partials/blog-carousel.html' %} {% endcomment %}
-        <!--=============== product ===============-->
-        <section class="testimonial section">
-			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
-                <h2 class="section__title">{% translate 'محصولات پر فروش' %}</h2>
-		    </div>
+<!--=============== Product Section ===============-->
+<section class="py-4" >
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+            <h2 class="h4">{% translate 'آخرین محصولات ' %}</h2>
+            <a href="{% url 'website:shop' %}" class="btn btn-link">{% translate 'مشاهده همه محصولات' %}</a>
+        </div>
+        {% include 'partials/product-carousel.html' %}
+    </div>
+</section>
 
-            {% include 'partials/product-carousel.html' %}
-
-
-        </section>
-        <!--=============== blog ===============-->
-
-        <section class="testimonial section">
-			<div class="carousel-title-main-page d-flex aligns-item-center justify-content-center">
-                <h2 class="section__title">{% translate 'مقالات پر طرفدار' %}</h2>
-		    </div>
-            {% include 'partials/blog-carousel.html' %}
-
-        </section>
-
+<!--=============== Blog Section ===============-->
+<section class="py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+            <h2 class="h4">{% translate 'آخرین مقالات ' %}</h2>
+            <a href="{% url 'website:blog-list' %}" class="btn btn-link">{% translate 'مشاهده همه مقالات' %}</a>
+        </div>
+        {% include 'partials/blog-carousel.html' %}
+    </div>
+</section>
             {% comment %} <section>
                 <div class="container mt-5">
                     <div class="row">

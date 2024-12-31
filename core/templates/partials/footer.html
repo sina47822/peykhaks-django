@@ -39,7 +39,6 @@ Footer START -->
                         <li class="nav-item"><a class="nav-link" href="{% url 'website:contact' %}">{% translate 'ارتباط با ما' %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'website:blog-list' %}">{% translate 'مقالات' %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'website:shop' %}">{% translate 'محصولات' %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">{% translate 'سوالات متداول' %}</a></li>
                     </ul>
                 </div>
             
@@ -48,10 +47,8 @@ Footer START -->
                     <h5 class="mb-2 mb-md-4">{% translate 'راهنما و پشتیبانی' %}</h5>
                     <ul class="nav flex-column">
                         <li class="nav-item"><a class="nav-link" href="{% url 'website:blog-list' %}">{% translate 'داکیومنت' %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">{% translate 'ارسال تیکت' %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">{% translate 'نقشه سایت' %}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{% url 'website:contact' %}">{% translate 'مشاوره رایگان' %}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">{% translate 'شرایط و قوانین' %}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'website:about' %}">{% translate 'سوالات متداول' %}</a></li>
                     </ul>
                 </div>
 
@@ -143,13 +140,15 @@ Footer START -->
                     <!-- copyright text -->
                     <div class="text-primary">
                         {% translate 'ارائه شده توسط' %} <a href="https://www.deodar.ir/" target="_blank" class="text-body"> <strong>{% translate 'دئودار' %}</strong> </a>
-                    </div>
-
+                    </div>  
                 </div>
             </div>
-        </div>                
+        </div>                         
     </div>
 </footer>
+<a href="tel:+9120038055" class="mobile-call-btn">
+    برای مشاوره و خرید تماس بگیرید
+</a>      
 <!-- =======================
 Footer END -->
 <!-- Back to top -->

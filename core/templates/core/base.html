@@ -49,7 +49,36 @@
 
         gtag('config', 'G-3303DTMLYQ');
     </script>
+    <style>
+        /* در حالت عادی (سایز بزرگتر از ۴۵۰ پیکسل) نمایش غیرفعال */
+        .mobile-call-btn {
+            display: none;
+        }
 
+        /* وقتی اندازه‌ی صفحه کوچکتر یا مساوی ۴۵۰ پیکسل باشد */
+        @media (max-width: 450px) {
+            .mobile-call-btn {
+            display: block;
+            position: fixed;         /* ثابت‌شده در پایین صفحه */
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            background-color: #003366;  /* رنگ سرمه‌ای */
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            padding: 15px 0;
+            text-decoration: none;
+            }
+            footer{
+                padding-bottom: 50px;
+            }
+            .back-top{
+                bottom: 60px;
+            }
+        }
+    </style>
 </head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-3303DTMLYQ"></script>
