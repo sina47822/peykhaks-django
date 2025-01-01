@@ -4,7 +4,7 @@ import string, random
 from django.utils.text import slugify 
 # blog neede
 from django.utils import timezone
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, redirect
 from django.core.paginator import Paginator
 # class base view
 from django.views.generic.list import ListView
@@ -18,7 +18,8 @@ from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import activate
 from django.http import JsonResponse
-
+#review model
+from review.models import PostReviewModel, ReviewStatusType
 def handler_404(request, exception=None, template_name="errors/404.html"):
     context = {}  # You can pass context variables to the template if needed
     return render(request, template_name, context, status=404)
@@ -125,25 +126,79 @@ def blog(request):
     return render(request, 'website/blog.html', context)
 
 def blogposts(request, slug): 
-    post = get_object_or_404(Post, slug =slug )
-    seo = PostSEO.objects.filter(post=post).first()  # Retrieve the first PostSEO object associated with the post
+    post = get_object_or_404(Post, slug=slug )
+
+    # --- 1) Handle POST request (submitting a new review) ---
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        description = request.POST.get('description')
+        rate = request.POST.get('rate', 5)  # default to 5 if not provided
+
+        # You can validate input as needed before creating the review.
+        # Setting status to 'pending' by default (or immediately 'accepted' 
+        # if no moderation is needed).
+        PostReviewModel.objects.create(
+            name=name,
+            email=email,
+            description=description,
+            rate=rate,
+            post=post,
+            status=ReviewStatusType.pending.value  # or .accepted.value
+        )
+        # Redirect to the same page so the user sees their review (or a success message).
+        return redirect('website:blog-detail', slug=slug)
+
+    # --- 2) Retrieve existing accepted reviews ---
+    reviews = PostReviewModel.objects.filter(
+        post=post,
+        status=ReviewStatusType.accepted.value
+    )
+    total_reviews_count = reviews.count()
+
+    # Calculate distribution count for each rate
+    reviews_count = {
+        f"rate_{rate}": reviews.filter(rate=rate).count() 
+        for rate in range(1, 6)
+    }
+
+    # Calculate distribution percentage for each rate
+    if total_reviews_count > 0:
+        reviews_avg = {
+            f"rate_{rate}": round(
+                (reviews.filter(rate=rate).count() / total_reviews_count) * 100, 2
+            )
+            for rate in range(1, 6)
+        }
+    else:
+        reviews_avg = {f"rate_{rate}": 0 for rate in range(1, 6)}
+
+    # --- 3) Prepare your context ---
+    # You mentioned you have other objects: posts, products, categories, tags...
     posts = Post.objects.all().order_by('-id')[:4]
-    products = Product.objects.all().order_by('-id')[:4]
+    products = Product.objects.all().order_by('-id')[:4]  # if relevant
     categories = Category.objects.all()
     tags = Tags.objects.all()
-    related_posts = Post.objects.filter()
+    related_posts = Post.objects.filter()  # Adjust query as needed
+    seo = PostSEO.objects.filter(post=post).first()
 
-    context = {'slug': slug,
-               'post' : post,
-               'seo' : seo,
-               'posts': posts,
-               'products':products,
-               'categories':categories,
-               'tags' : tags,
-               'related_posts' : related_posts,
-               }
+    context = {
+        'slug': slug,
+        'post': post,
+        'seo': seo,
+        'posts': posts,
+        'products': products,
+        'categories': categories,
+        'tags': tags,
+        'related_posts': related_posts,
 
-    return render(request, 'website/blog-detail.html', context) 
+        'reviews': reviews,
+        'total_reviews_count': total_reviews_count,
+        'reviews_count': reviews_count,
+        'reviews_avg': reviews_avg
+    }
+
+    return render(request, 'website/blog-detail.html', context)
 
 def ProductShop(request):
     pricelist = PriceList.objects.filter().first()

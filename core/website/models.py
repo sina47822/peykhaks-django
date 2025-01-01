@@ -5,7 +5,7 @@ from tinymce.models import HTMLField
 from django.utils.text import slugify
 # Create your models here.
 from django.utils.translation import gettext_lazy as _
-
+from django.core.validators import MinValueValidator, MaxValueValidator
 # advertise-landscape-1
 # advertise-landscape-2
 # categories
@@ -78,6 +78,12 @@ class Post(models.Model):
     total_views = models.IntegerField(_('تعداد بازدید'),default=0)
     blog_status = models.CharField(_('وضعیت انتشار'),max_length=100 , choices=STATUS_CHOICES, default='Draft',blank = True, null = True)
 
+    avg_rate = models.FloatField(
+        _('امتیاز میانگین'),
+        default=0,
+        validators=[MinValueValidator(0), MaxValueValidator(5)]
+    )
+
     class Meta: 
         ordering = ('-publish_date', ) 
         verbose_name = _('مقالات')
@@ -85,7 +91,9 @@ class Post(models.Model):
 
     def __str__(self): 
         return "{} - {} " .format(self.title, self.id) 
+        # New field for storing average rating
     
+
     def get_absolute_url(self):
         return reverse('website:blog-detail',
                         kwargs={'slug': self.slug})

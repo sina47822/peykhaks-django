@@ -1,6 +1,7 @@
 {% extends '../core/base.html' %}
 {% load static %}
 {% load i18n %}
+{% load humanize %}
 
     {% block title %}{{ seo.title }}{% endblock title%}
     {% block seodescription %} {{ seo.description }}{% endblock seodescription%}
@@ -228,6 +229,121 @@
                         </div>
                         <!-- Form END -->
                     </div> {% endcomment %}
+                    		<!-- User review START -->
+							<div class="row">
+                				{% for review in reviews %}
+								<!-- Review item START -->
+								<div class="d-md-flex my-4">
+									<!-- Avatar -->
+									<div class="avatar avatar-xl me-4 flex-shrink-0">
+										<img class="avatar-img rounded-circle" src="{% static 'images/temprory/images/avatar/04.jpg'%}" alt="avatar">
+									</div>
+									<!-- Text -->
+									<div>
+										<div class="d-sm-flex mt-1 mt-md-0 align-items-center">
+											<h5 class="me-3 mb-0">{{review.name}}</h5>
+											<!-- Review star -->
+											 {% if review.rate.value == 0 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 1 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 2 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 3 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 4 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star text-warning"></i></li>
+											</ul>
+											{% elif review.rate.value == 5 %}
+											<ul class="list-inline mb-0">
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="fas fa-star-alt text-warning"></i></li>
+												<li class="list-inline-item me-0"><i class="far fa-star-alt text-warning"></i></li>
+											</ul>
+											{%endif%}
+										</div>
+										<!-- Info -->
+										<p class="small mb-2">{{review.updated_date}}</p>
+										<p class="mb-2">{{review.description| safe }}</p>
+										
+										<!-- Reply button -->
+										<a href="#" class="text-body mb-0"><i class="fas fa-reply me-2"></i>{% translate 'پاسخ' %}</a>
+									</div>
+								</div>
+								<!-- Divider -->
+								<hr>
+								<!-- Review item END -->
+                				{% endfor %}
+							</div>
+							<!-- User review END -->
+
+							<!-- Leave Review START -->
+							<div class="mt-2">
+								<h5 class="mb-4">{% translate 'ثبت دیدگاه' %}</h5>
+								<form class="row g-3" action="{% url 'review:submit-post-review' %}" method="post" id="review_form">
+									{% csrf_token %} 
+									<!-- Name -->
+									<input hidden name="post" value={{post.id}}>
+									<!-- Name -->
+									<div class="col-md-6">
+										<input type="text" class="form-control" id="inputtext" placeholder="{% translate 'نام' %}" aria-label="First name" name="name">
+									</div>
+									<!-- Email -->
+									<div class="col-md-6">
+										<input type="email" class="form-control" placeholder="{% translate 'ایمیل' %}" id="inputEmail4" name="email">
+									</div>
+									<!-- Rating -->
+									<div class="col-12">
+										<select id="inputState2" class="form-select  " name="rate">
+											<option value="5" selected="">★★★★★ (5/5)</option>
+											<option value="4">★★★★☆ (4/5)</option>
+											<option value="3">★★★☆☆ (3/5)</option>
+											<option value="2">★★☆☆☆ (2/5)</option>
+											<option value="1">★☆☆☆☆ (1/5)</option>
+										</select>
+									</div>
+									<!-- Message -->
+									<div class="col-12">
+										<textarea name="description" class="form-control" id="exampleFormControlTextarea1" placeholder="{% translate 'دیدگاه خود را بنویسید' %}" rows="3"></textarea>
+									</div>
+									<!-- Button -->
+									<div class="col-12">
+										<button type="submit" class="btn btn-primary mb-0" form="review_form">{% translate 'ثبت دیدگاه' %}</button>
+									</div>
+								</form>
+							</div>
+							<!-- Leave Review END -->
                     <!-- Comment review and form END -->
                 </div>
             </div> <!-- Row END -->
