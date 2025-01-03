@@ -9,27 +9,27 @@
 
 {% block content %}
 <main>
-        <!-- Responsive Table Wrapper -->
-        <div class="table-responsive container">
-            <table class="table table-striped table-bordered">
-                <thead class="table-success">
+    <!-- Responsive Table Wrapper -->
+    <div class="table-responsive container">
+        <table class="table table-striped table-bordered">
+            <thead class="table-success">
+                <tr>
+                    <th>#</th>
+                    <th>نام لیست قیمت</th>
+                    <th>صفحه لیست قیمت</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for pricelist in pricelists %}
                     <tr>
-                        <th>#</th>
-                        <th>نام لیست قیمت</th>
-                        <th>صفحه لیست قیمت</th>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ pricelist.page_name }}</td>
+                        <td class="quantity"><a href="{% url 'product:pricelist' slug=pricelist.slug %}">مشاهده لیست قیمت</a></td>
                     </tr>
-                </thead>
-                <tbody>
-                    {% for pricelist in pricelists %}
-                        <tr>
-                            <td>{{ forloop.counter }}</td>
-                            <td>{{ pricelist.page_name }}</td>
-                            <td class="quantity"><a href="{% url 'product:pricelist' slug=pricelist.slug %}">مشاهده لیست قیمت</a></td>
-                        </tr>
-                    {% endfor %}
-                </tbody>
-            </table>
-        </div>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <div class="index-page">
         {% include 'partials/category-list.html' %}
     <!--=============== Pricelist Section ===============-->

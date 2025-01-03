@@ -62,7 +62,8 @@ Page content START -->
                                 <span class="formatted-price"> {{product.formatted_offer_price|intcomma}}  تومان</span>
                             </p>
                             {% else %}
-                            <p class="card-text text-dark formatted-price h5">{{product.formatted_price|intcomma}} </p>
+                            <span>قیمت : </span> 
+                            <span class="card-text text-dark formatted-price h5">{{product.formatted_price|intcomma}} تومان</span>
                             {% endif %}
                         </div>
                         <!-- Info -->

@@ -1,0 +1,106 @@
+{% load static %}
+{% load humanize %}
+{% load i18n %}
+
+<!-- =======================
+IT courses START -->
+<section>
+	<div class="container">
+		<!-- Title -->
+		<div class="row mb-4">
+			<div class="col-lg-8 text-center mx-auto">
+				<h2 class="fs-3">{% translate 'دسته بندی ها' %}</h2>
+			</div>
+		</div>
+
+		<div class="row g-4">
+			<!-- Course item -->
+			<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/01.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex  flex-column"> 
+						<h2 class="text-white h4 stretched-link">{% translate 'خاک ' %}</h2>
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:soil-laboratory' %}" class="text-white mt-auto stretched-link">{% translate 'دسته بندی خاک' %}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/03.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex  flex-column"> 
+						<h2 class="text-white h4 stretched-link">{% translate 'بتن ' %}</h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:concrete-laboratory' %}" class="text-white mt-auto stretched-link">{% translate 'دسته بندی بتن' %}</a>
+							{% comment %} <div class="text-white">16 دوره آموزشی</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/05.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex  flex-column"> 
+						<h2 class="text-white h4 stretched-link">{% translate 'آسفالت ' %}</h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:asphalt-laboratory' %}" class="text-white mt-auto stretched-link">{% translate 'دسته بندی آسفالت' %}</a>
+							{% comment %} <div class="text-white">32 دوره آموزشی</div> {% endcomment %}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/06.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex flex-column"> 
+						<h2 class="text-white h4 stretched-link">{% translate 'جوش ' %}</h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:weld-laboratory' %}" class="text-white mt-auto stretched-link">{% translate 'دسته بندی جوش' %}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Course item -->
+			<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+				<!-- Image -->
+				<div class="card card-metro overflow-hidden rounded-3">
+					<img src="{% static 'images/temprory/images/courses/4by3/04.jpg'%}" alt="">
+					<!-- Image overlay -->
+					<div class="card-img-overlay d-flex flex-column"> 
+						<h2 class="text-white h4 stretched-link">{% translate 'سنگ ' %}</h2>
+
+						<!-- Info -->
+						<div class="mt-auto card-text">
+							<a href="{% url 'website:rock-laboratory' %}" class="text-white mt-auto stretched-link">{% translate 'دسته بندی سنگ' %}</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div> <!-- Row END -->
+	</div>
+</section>
+<!-- =======================
+IT courses END -->
