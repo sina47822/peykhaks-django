@@ -66,11 +66,14 @@ def products_detail(request, slug):
     return render(request, 'product/product-detail.html', context) 
 
 def price_list(request):
-    pricelist = PriceList.objects.filter().first()
-    templates = 'partials/price-list.html'
-    context = {'pricelist':pricelist}
+    products = Product.objects.all().order_by('-publish_date')[:5]
+    categories = Category.objects.all()
 
-    return render (request , templates, context)
+    context = { 'products':products,
+                'categories':categories,         
+            }
+
+    return render (request,'product/product-pricelists.html', context)
 
 
 class ProductList(ListView):

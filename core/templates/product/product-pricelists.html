@@ -1,0 +1,38 @@
+{% extends '../core/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}لیست قیمت محصولات آزمایشگاه خاک و بتن{% endblock title%}
+{% block seodescription %} در این صفحه می توانید {% endblock seodescription%}
+
+
+
+{% block content %}
+<main>
+    <div class="index-page">
+        {% include 'partials/category-list.html' %}
+    <!--=============== Pricelist Section ===============-->
+
+    <section class="py-4">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2 row" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+                <h2 class="h4 col-12 col-sm-6" style="text-align:center;">{% translate 'لیست قیمت و راهنمای خرید لوازم آزمایشگاه بتن و خاک' %}</h2>
+                <a href="{% url 'website:blog-list' %}" class="btn btn-link col-12 col-sm-6">{% translate 'راهنمای تاسیس آزمایشگاه' %}</a>
+            </div>
+        </div>
+
+        {% include 'partials/price-list.html' %}
+    </section>
+    <!--=============== Product Section ===============-->
+    <section class="py-4" >
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2 row" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+                <h2 class="h4 col-12 col-sm-6" style="text-align:center;">{% translate 'آخرین محصولات ' %}</h2>
+                <a href="{% url 'website:shop' %}" class="btn btn-link col-12 col-sm-6">{% translate 'مشاهده همه محصولات' %}</a>
+            </div>
+            {% include 'partials/product-carousel.html' %}
+        </div>
+    </section>
+</main>
+
+{% endblock content%}

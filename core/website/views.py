@@ -205,7 +205,7 @@ def ProductShop(request):
     products = Product.objects.all().order_by('publish_date')[1:]
     latests = Post.objects.all().order_by('publish_date')[:1]  # Example: fetching the 1 latest posts
 
-    paginator = Paginator(products, 8)  # Show 10 posts per page
+    paginator = Paginator(products, 12)  # Show 10 posts per page
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
