@@ -130,8 +130,8 @@
 
 							<!-- Dropdown submenu -->
 							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تجهیزات آزمایشگاه بتن' %}</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+								<a class="dropdown-item dropdown-toggle" href="{% url 'website:concrete-laboratory' %}">{% translate 'تجهیزات آزمایشگاه بتن' %}</a>
+								{% comment %} <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
 										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'مقاومت فشاری بتن' %}</a>
@@ -192,11 +192,11 @@
 											<li> <a class="dropdown-item" href="#">{% translate 'محصولات بتن'%}</a> </li>
 										</ul>
 									</li>
-								</ul>
+								</ul> {% endcomment %}
 							</li>
 							<li class="dropdown-submenu dropend">
-								<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تجهیزات آزمایشگاه خاک'%}</a>
-								<ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
+								<a class="dropdown-item dropdown-toggle" href="{% url 'website:soil-laboratory' %}">{% translate 'تجهیزات آزمایشگاه خاک'%}</a>
+								{% comment %} <ul class="dropdown-menu dropdown-menu-start" data-bs-popper="none">
 									<!-- dropdown submenu open right -->
 									<li class="dropdown-submenu dropend">
 										<a class="dropdown-item dropdown-toggle" href="#">{% translate 'تعیین حدود روانی'%}</a>
@@ -221,11 +221,20 @@
 											<li> <a class="dropdown-item" href="#">{% translate 'محصولات خاک' %}</a> </li>
 										</ul>
 									</li>
-								</ul>
+								</ul> {% endcomment %}
 							</li>
-							<li> <a class="dropdown-item" href="#">{% translate 'خرید لیست تجهیزات پایه آزمایشگاه' %}</a> </li>
-							<li> <a class="dropdown-item" href="#">{% translate 'راه اندازی آزمایشگاه' %}</a> </li>
-							<li> <a class="dropdown-item" href="#">{% translate 'کتابخانه' %}</a> </li>
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="{% url 'website:rock-laboratory' %}">{% translate 'تجهیزات آزمایشگاه سنگ'%}</a>
+							</li>
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="{% url 'website:weld-laboratory' %}">{% translate 'تجهیزات آزمایشگاه جوش'%}</a>
+							</li>
+							<li class="dropdown-submenu dropend">
+								<a class="dropdown-item dropdown-toggle" href="{% url 'website:asphalt-laboratory' %}">{% translate 'تجهیزات آزمایشگاه آسفالت'%}</a>
+							</li>
+							<li> <a class="dropdown-item" href="{% url 'product:pricelists' %}">{% translate 'خرید لیست تجهیزات پایه آزمایشگاه' %}</a> </li>
+							<li> <a class="dropdown-item" href="https://peykhaksang.com/conditions-for-establishing-a-soil-laboratory/">{% translate 'راه اندازی آزمایشگاه' %}</a> </li>
+							<li> <a class="dropdown-item" href="{% url 'website:blog-list' %}">{% translate 'کتابخانه' %}</a> </li>
 							<li> <a class="dropdown-item" href="#">{% translate 'نرم افزار' %}</a> </li>
 						</ul>
 					</li>
