@@ -68,9 +68,11 @@ def products_detail(request, slug):
 def price_list(request):
     products = Product.objects.all().order_by('-publish_date')[:5]
     categories = Category.objects.all()
-
+    pricelists = PageConfig.objects.all().order_by('-last_changes')
+    
     context = { 'products':products,
-                'categories':categories,         
+                'categories':categories, 
+                'pricelists': pricelists,        
             }
 
     return render (request,'product/product-pricelists.html', context)
