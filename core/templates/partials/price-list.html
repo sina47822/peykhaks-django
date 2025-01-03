@@ -124,7 +124,7 @@
 .price-list-khak{
   margin: 20px auto;
   box-sizing: border-box;
-  display: none;}
+  display: block;}
   .price-list-khak .columns{
       display: flex;
   }
@@ -169,7 +169,7 @@
         font-size: 20px;
       }
       
-      .price-list-khak.price-list-columns .button {
+      .price-list-khak .price-list-columns .buttonkhak {
         background-color: #e63f66;
         border: none;
         color: white !important;
@@ -181,7 +181,7 @@
         font-weight: bold;
          transition: 0.3s;
       }
-      .price-list-khak.price-list-columns .button:hover {
+      .price-list-khak.price-list-columns .buttonkhak:hover {
         background-color: #d42a5b;
       
       }
@@ -191,7 +191,48 @@
       .price-list-khak.price-list-columns .list-hover:hover{
           color: #318CE8 !important;
       }
-      
+      @media (max-width: 1200px) {
+        .price-list-khak .buttonkhak {
+          background-color: #5CA6FF;
+          border: none;
+          color: rgb(255, 255, 255) !important;
+          padding: 10px 35px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 14px;
+          border-radius: 15px;
+          font-weight: bold;
+            transition: 0.3s;
+        }
+      }
+      @media (max-width: 700px) {
+        .price-list-khak .buttonkhak {
+          background-color: #5CA6FF;
+          border: none;
+          color: white !important;
+          padding: 10px 35px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 14px;
+          border-radius: 15px;
+          font-weight: bold;
+            transition: 0.3s;
+        }
+      }
+      @media (max-width: 400px) {
+        .price-list-khak .buttonkhak {
+          background-color: #5CA6FF;
+          border: none;
+          color: white !important;
+          padding: 10px 10px;
+          text-align: center;
+          text-decoration: none;
+          font-size: 14px;
+          border-radius: 15px;
+          font-weight: bold;
+            transition: 0.3s;
+        }
+      }  
   .form-switch .form-check-input{
     width: 3.5em;
     transition: all 0.4s ease-in-out;
@@ -201,102 +242,74 @@
   }
 </style>
 {% endblock extra_css %}
-<div class="price-list-holder mx-2" id="listgheymat">
-    <div class="form-check form-switch d-flex flex-column justify-content-center">
-    <input class="form-check-input mx-auto" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
-    <label class="form-check-label mt-2 mx-auto" for="flexSwitchCheckChecked" id="flexSwitchCheckCheckedLable">
-        {% translate 'برای تغییر لیست از بتن به خاک روی سوییچ کلیک کنید' %}
-    </label>
-    </div>
-</div>
 
-<section class="price-list-beton">  
-    <h2 style="text-align:center">{{pricelist.title}}</h2>        
-    <p style="text-align:center">{{pricelist.upload_date}}</p>
+<section class="price-list-beton">
     <div class="columns row mx-1 mx-md-3 mx-lg-3">
         <div class="price-list-columns col-md-6 col-lg-4">
             <ul class="pricebeton">
                 <li class="header">
-                    
                     {% translate 'پایه سه بتن' %}
-                    
                 </li>
                 <li class="grey">      
                       {% translate 'لیست تجهیزات بتن پایه سه' %}        
                 </li>
                 <li>
-                    
                     <a href="#" target="_blank" class="list-hover">
-                     {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}
-                        </a>           
+                        {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}
+                    </a>           
                 </li>
                 <li>
-                    
                     <a href="#" class="list-hover">
-                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}   </a>         
-                            
+                        {% translate 'دانلود شیوه نامه نظام مهندسی' %}
+                    </a>
                 </li>
                 <li>
-                    
                     <a href="#" class="list-hover">
                     {% translate 'لیست نیروی انسانی آزمایشگاه بتن' %}   </a>         
                 </li>
                 <li>
-                    
                     <a href="#" class="list-hover">
                     {% translate 'فرمهای کاربردی' %}   </a>         
                 </li>
                 <li class="grey">
-                    <a href="{{pricelist.beton_3_document.url}}" class="buttonbeton">
+                    <a href="https://peykhaksang.com/product/pricelists/beton-paye-3/" class="buttonbeton">
                         {% translate 'دریافت پیش فاکتور پایه سه بتن' %}
                     </a>
                 </li>
             </ul>
-        </div>
-            
+        </div>    
         <div class="price-list-columns col-md-6 col-lg-4">
             <ul class="pricebeton">
                 <li class="header">
                     {% translate 'پایه دو بتن' %}
                 </li>
                 <li class="grey">
-                    
                     {% translate 'لیست تجهیزات بتن پایه دو' %}
-            
                 </li>
                 <li>
-                    
                     <a href="#" target="_blank" class="list-hover">
-                    {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}  
-                        </a>           
+                        {% translate 'مشاهده لیست تجهیزات آزمایشگاه بتن' %}  
+                    </a>           
                 </li>
-                <li>
-                    
+                <li>    
                     <a href="#" class="list-hover">
-                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
-                            
+                        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>                     
                 </li>
-                <li>
-                    
+                <li>    
                     <a href="#" class="list-hover">
                     {% translate 'لیست نیروی انسانی آزمایشگاه بتن' %}    </a>         
                 </li>
-                <li>
-                    
+                <li>    
                     <a href="#" class="list-hover">
                     {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey">
-                        <a href="{{pricelist.beton_2_document.url}}" class="buttonbeton">
-
-                    
+                        <a href="https://peykhaksang.com/product/pricelists/beton-paye-2/" class="buttonbeton">
                     {% translate 'دریافت پیش فاکتور پایه دو بتن' %}
-            
                     </a>
                 </li>
             </ul>
         </div>
-        
         <div class="price-list-columns col-md-6 col-lg-4">
             <ul class="pricebeton">
                 <li class="header">
@@ -336,11 +349,8 @@
                     {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
                 <li class="grey">
-                    <a href="{{pricelist.beton_1_document.url}}" class="buttonbeton">
-
-                    
+                    <a href="https://peykhaksang.com/product/pricelists/beton-paye-1/" class="buttonbeton">
                     {% translate 'دریافت پیش فاکتور پایه یک بتن' %}
-            
                     </a>
                 </li>
             </ul>
@@ -349,163 +359,108 @@
 </section>  
 
 <section class="price-list-khak">
+    <div class="columns row mx-1 mx-md-3 mx-lg-3">
+        <div class="price-list-columns col-md-6 col-lg-4">
+            <ul class="price">
+                <li class="header">
+                    
+                    {% translate 'پایه سه خاک' %}
+                    
+                    </li>
+                <li class="grey">
+                    
+                    {% translate 'لیست تجهیزات پایه سه خاک' %}
 
-    <h2 style="text-align:center">{{pricelist.title}}</h2>        
-    <p style="text-align:center">{{pricelist.upload_date}}</p>
-    <div class="columns row mx-5">
-        <div class="price-list-columns col-md-4">
-        <ul class="price">
-            <li class="header">
-                
-                {% translate 'پایه سه خاک' %}
-                
                 </li>
-            <li class="grey">
-                
-        {% translate 'لیست تجهیزات پایه سه خاک' %}
-
-        </li>
-            <li>
-                
-        <a href="
-
-
-
-        " target="_blank" class="list-hover">
-        {% translate 'مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک' %}  
-            </a>           
+                <li>
+                    <a href="#" target="_blank" class="list-hover">
+                        {% translate 'مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک' %}  
+                    </a>           
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
-                
+                <li>
+                    <a href="#" class="list-hover">
+                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>               
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-
-        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
-
-
-        </a>
+                <li>
+                    <a href="#" class="list-hover">
+                        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
+                    </a>
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-        {% translate 'فرمهای کاربردی' %}    </a>         
+                <li>
+                    
+                    <a href="#" class="list-hover">
+                    {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
-                <li class="grey"><a href="{{pricelist.khak_3_document.url}}" class="buttonbeton">
-
-                
-
-            {% translate 'دریافت پیش فاکتور پایه سه خاک' %}
-
-                </a></li>
-        </ul>
+                <li class="grey">
+                    <a href="https://peykhaksang.com/product/pricelists/khak-paye-3/" class="buttonkhak">
+                        {% translate 'دریافت پیش فاکتور پایه سه خاک' %}
+                    </a>
+                </li>
+            </ul>
         </div>
-
-        <div class="price-list-columns col-md-4">
-        <ul class="price">
-            <li class="header">
-                
-        {% translate 'پایه دو خاک' %}        
+        <div class="price-list-columns col-md-6 col-lg-4">
+            <ul class="price">
+                <li class="header">
+                    {% translate 'پایه دو خاک' %}        
                 </li>
-            <li class="grey">
-                
-        {% translate 'لیست تجهیزات پایه دو خاک' %}
+                <li class="grey">    
+                    {% translate 'لیست تجهیزات پایه دو خاک' %}
                 </li>
-            <li>
-                
-        <a href="
-
-
-
-
-
-        " target="_blank" class="list-hover">
-        {% translate 'مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک' %}  
-            </a>           
+                <li>  
+                    <a href="#" target="_blank" class="list-hover">
+                        {% translate 'مشاهده لیست تجهیزات آزمایشگاه مکانیک خاک' %}  
+                    </a>           
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
-                
+                <li>
+                    <a href="#" class="list-hover">
+                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>                
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-            
-
-        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
-
-        </a>         
+                <li>   
+                    <a href="#" class="list-hover">
+                    {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
+                    </a>         
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-        {% translate 'فرمهای کاربردی' %}    </a>         
+                <li>     
+                    <a href="#" class="list-hover">
+                    {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
-                <li class="grey"><a href="{{pricelist.khak_2_document.url}}" class="buttonbeton">
-
-                
-
-            {% translate 'دریافت پیش فاکتور پایه دو خاک' %}
-
-                </a></li>
-        </ul>
+                <li class="grey"><a href="https://peykhaksang.com/product/pricelists/khak-paye-2/" class="buttonkhak">
+                    {% translate 'دریافت پیش فاکتور پایه دو خاک' %}</a>
+                </li>
+            </ul>
         </div>
-
-        <div class="price-list-columns col-md-4">
-        <ul class="price">
-            <li class="header">
-                
-        {% translate 'پایه یک خاک' %}
+        <div class="price-list-columns col-md-6 col-lg-4">
+            <ul class="price">
+                <li class="header"> 
+                    {% translate 'پایه یک خاک' %}
 
                 </li>
-            <li class="grey">
-                
-        {% translate 'لیست تجهیزات پایه یک خاک' %}
+                <li class="grey">
+                    {% translate 'لیست تجهیزات پایه یک خاک' %}
                 </li>
-            <li>
-                
-        <a href="
-
-
-
-
-        " target="_blank" class="list-hover">
-        {% translate 'مشاهده لیست تجهیزات آزمایشگاه خاک' %}
-        </a>           
+                <li> 
+                    <a href="#" target="_blank" class="list-hover">
+                    {% translate 'مشاهده لیست تجهیزات آزمایشگاه خاک' %}
+                    </a>           
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-        {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
-                
+                <li>
+                    <a href="#" class="list-hover">
+                    {% translate 'دانلود شیوه نامه نظام مهندسی' %}    </a>         
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-
-        {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
-
-
-        </a>         
+                <li>
+                    <a href="#" class="list-hover">
+                    {% translate 'لیست نیروی انسانی آزمایشگاه خاک' %}   
+                    </a>         
                 </li>
-            <li>
-                
-        <a href="#" class="list-hover">
-        {% translate 'فرمهای کاربردی' %}    </a>         
+                <li>
+                    <a href="#" class="list-hover">
+                    {% translate 'فرمهای کاربردی' %}    </a>         
                 </li>
-                <li class="grey"><a href="{{pricelist.khak_1_document.url}}" class="buttonbeton">
-
-                
-        {% translate 'دریافت پیش فاکتور پایه یک خاک' %}
-
-            </a></li>
-        </ul>
+                <li class="grey"><a href="https://peykhaksang.com/product/pricelists/khak-paye-1/" class="buttonkhak">
+                    {% translate 'دریافت پیش فاکتور پایه یک خاک' %}
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 

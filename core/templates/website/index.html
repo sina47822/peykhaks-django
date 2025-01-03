@@ -46,66 +46,19 @@
         {% include 'partials/blog-carousel.html' %}
     </div>
 </section>
-            {% comment %} <section>
-                <div class="container mt-5">
-                    <div class="row">
-                    <div class="col-sm-4">
-                        <h2 class="font-weight-bold">دسته بندی مقالات</h2>
-                        <div class="laboratory">دستور العمل آزمایشگاه</div>
-                        <p>در این قسمت مطالب مربوط به هر قسمت از سایت را مشاهده می کنید.</p>
-                        <ul class="nav nav-pills flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">آزمایشگاه خاک</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">آزمایشگاه بتن</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">آزمایشگاه عمومی</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#">آزمایشگاه آسفالت</a>
-                            </li>
-                            </ul>
-                        <h3 class="mt-4">سایت مپ سایت</h3>
-                        <p>در این قسمت دسته بندی اصلی سایت را مشاهده می کنید</p>
-                        <ul class="nav nav-pills flex-column">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">صفحه اصلی</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">درباره ما</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">ارتباط با ما</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="#">شرایط و قوانین خرید از سایت</a>
-                        </li>
-                        </ul>
-                        <hr class="d-sm-none">
-                    </div>
-                    <div class="col-sm-8">
-                        <h2>هدر مقاله اول</h2>
-                        <h5>نویسنده : ادمین پی خاک سنگ, Dec 7, 2024</h5>
-                        <div class="blog-img">تصویر مقاله</div>
-                        <p>Some text..</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                
-                        <h2 class="mt-5">هدر مقاله دوم</h2>
-                        <h5>نویسنده : ادمین پی خاک سنگ, Sep 2, 2023</h5>
-                        <div class="blog-img">تصویر مقاله</div>
-                        <p>Some text..</p>
-                        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
-                    </div>
-                    </div>
-                </div>
-            </section> {% endcomment %}
+<!--=============== Pricelist Section ===============-->
 
-        <article></article>
-        {% include 'partials/price-list.html' %}
-
+<section class="py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-3 px-5 py-2 row" style="background: linear-gradient(180deg,rgb(245, 245, 247), rgb(230, 230, 230));">
+            <h2 class="h4 col-12 col-sm-6" style="text-align:center;">{% translate 'لیست قیمت و راهنمای خرید لوازم آزمایشگاه بتن و خاک' %}</h2>
+            <a href="{% url 'website:blog-list' %}" class="btn btn-link col-12 col-sm-6">{% translate 'راهنمای تاسیس آزمایشگاه' %}</a>
+        </div>
     </div>
+
+    {% include 'partials/price-list.html' %}
+</section>
+
 </main>
 
 {% endblock content%}
