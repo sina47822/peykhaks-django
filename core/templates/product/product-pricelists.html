@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{ forloop.counter }}</td>
                         <td>{{ pricelist.page_name }}</td>
-                        <td class="quantity"><a href="{% url 'product:pricelist' slug=pricelist.slug %}">مشاهده لیست قیمت</a></td>
+                        <td class=""><a class="btn btn-success" href="{% url 'product:pricelist' slug=pricelist.slug %}">مشاهده و دانلود لیست قیمت</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
